@@ -1,0 +1,117 @@
+import type { Program } from "./types";
+
+const WU = "10 min cardio";
+
+/** Refined from ImpactShredz "9 Week Lean Bulk". Single weekly template, progressed week to week. */
+export const leanBulk9Week: Program = {
+  meta: {
+    id: "lean-bulk-9week",
+    title: "9-Week Lean Bulk",
+    weeks: 9,
+    level: "intermediate",
+    goals: ["muscle-gain"],
+    equipment: "full-gym",
+    primaryCategory: "Physical Fitness",
+    personaTags: ["muscle-gain-strategist", "gym-program-architect"],
+    source: "ImpactShredz",
+    copyright: "© Code9 Fitness (C9F)",
+    refined: true,
+    purchasable: true,
+  },
+  focus: "Add lean muscle with controlled, progressive overload.",
+  goalStatement: "Progressive rinse & repeat — build muscle while limiting fat gain.",
+  overview:
+    "A push/pull/legs-style hypertrophy split run as a weekly template you progress across nine weeks — add load or reps each week while holding form.",
+  weeklyStructure: [
+    { day: 1, focus: "Upper Body (Push)" },
+    { day: 2, focus: "Lower Body" },
+    { day: 3, focus: "Active Recovery" },
+    { day: 4, focus: "Upper Body (Pull)" },
+    { day: 5, focus: "Lower Body" },
+    { day: 6, focus: "Active Recovery" },
+    { day: 7, focus: "Active Recovery" },
+  ],
+  phases: [
+    {
+      name: "Weekly Template (Weeks 1-9)",
+      weekStart: 1,
+      weekEnd: 9,
+      focus: "Progressive rinse & repeat — add load or reps each week.",
+      days: [
+        {
+          day: 1,
+          title: "Upper Body (Push)",
+          type: "strength",
+          warmup: WU,
+          exercises: [
+            { name: "Bench Press", pattern: "push", sets: 4, reps: "8-10" },
+            { name: "Overhead Shoulder Press", pattern: "push", sets: 4, reps: "8-10" },
+            { name: "Incline Dumbbell Press", pattern: "push", sets: 3, reps: "10-12" },
+            { name: "Lateral Raises", pattern: "push", sets: 3, reps: "12-15" },
+            { name: "Tricep Dips", pattern: "push", sets: 3, reps: "8-10" },
+            { name: "Cable Tricep Pushdown", pattern: "push", sets: 3, reps: "10-12" },
+            { name: "Planks", pattern: "core", sets: 3, durationSec: 45 },
+            { name: "Leg Raises", pattern: "core", sets: 3, durationSec: 45 },
+          ],
+        },
+        {
+          day: 2,
+          title: "Lower Body",
+          type: "strength",
+          warmup: WU,
+          exercises: [
+            { name: "Squats", pattern: "squat", sets: 4, reps: "8-10" },
+            { name: "Romanian Deadlift", pattern: "hinge", sets: 4, reps: "8-10" },
+            { name: "Leg Press", pattern: "squat", sets: 3, reps: "10-12" },
+            { name: "Lunges", pattern: "lunge", sets: 3, reps: "10", perSide: true },
+            { name: "Leg Curls", pattern: "hinge", sets: 3, reps: "10-12" },
+            { name: "Calf Raises", pattern: "core", sets: 4, reps: "15-20" },
+            { name: "Russian Twists", pattern: "core", sets: 3, reps: "15-20" },
+            { name: "Hanging Leg Raises", pattern: "core", sets: 3, reps: "15-20" },
+          ],
+        },
+        { day: 3, title: "Active Recovery", type: "recovery", exercises: [], notes: "Walking, stretching, yoga." },
+        {
+          day: 4,
+          title: "Upper Body (Pull)",
+          type: "strength",
+          warmup: WU,
+          exercises: [
+            { name: "Pull-Ups or Lat Pulldown", pattern: "pull", sets: 4, reps: "8-10" },
+            { name: "Barbell Row", pattern: "pull", sets: 4, reps: "8-10" },
+            { name: "Seated Cable Row", pattern: "pull", sets: 3, reps: "10-12" },
+            { name: "Face Pulls", pattern: "pull", sets: 3, reps: "12-15" },
+            { name: "Barbell or Dumbbell Curl", pattern: "pull", sets: 3, reps: "8-10" },
+            { name: "Hammer Curl", pattern: "pull", sets: 3, reps: "10-12" },
+            { name: "Bicycle Crunches", pattern: "core", sets: 3, reps: "15-20" },
+            { name: "Mountain Climbers", pattern: "conditioning", sets: 3, reps: "15-20" },
+          ],
+        },
+        {
+          day: 5,
+          title: "Lower Body",
+          type: "strength",
+          warmup: WU,
+          exercises: [
+            { name: "Deadlift", pattern: "hinge", sets: 4, reps: "6-8" },
+            { name: "Leg Extensions", pattern: "squat", sets: 3, reps: "12-15" },
+            { name: "Bulgarian Split Squats", pattern: "lunge", sets: 3, reps: "10", perSide: true },
+            { name: "Hamstring Curls", pattern: "hinge", sets: 3, reps: "10-12" },
+            { name: "Glute Bridge", pattern: "hinge", sets: 3, reps: "12-15" },
+            { name: "Calf Raises", pattern: "core", sets: 4, reps: "15-20" },
+            { name: "Side Planks", pattern: "core", sets: 3, reps: "15-20", perSide: true },
+            { name: "Toe Touches", pattern: "core", sets: 3, reps: "15-20" },
+          ],
+        },
+        { day: 6, title: "Active Recovery", type: "recovery", exercises: [], notes: "Steady run/swim 30 min, or walk/yoga/stretch." },
+        { day: 7, title: "Active Recovery", type: "recovery", exercises: [], notes: "Walk/yoga/stretch." },
+      ],
+      progression: [
+        "Rinse & repeat weekly; add load or a rep each week while holding form",
+        "Push the top-set intensity across weeks 4-6, then weeks 7-9",
+      ],
+    },
+  ],
+  nutrition: { note: "Eat in a modest surplus with high protein to support lean gains." },
+  recovery: ["Two+ active-recovery days weekly", "Prioritise sleep and protein for growth"],
+};

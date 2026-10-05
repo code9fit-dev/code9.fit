@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE9 FITNESS - Document Header</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+        }
+
+        .header-wrapper {
+            width: 100%;
+            background: #f7f4d6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Architectural columns background */
+        .architectural-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.4;
+            display: flex;
+            z-index: 1;
+        }
+
+        .column {
+            flex: 1;
+            border-right: 1px solid #e0d9b8;
+            height: 100%;
+        }
+
+        .column:last-child {
+            border-right: none;
+        }
+
+        /* Header content */
+        .header-container {
+            position: relative;
+            z-index: 2;
+            padding: 60px 80px;
+            background: linear-gradient(to right,
+                rgba(238, 232, 178, 0.95) 0%,
+                rgba(247, 244, 214, 0.95) 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            border-bottom: 3px solid #c18d52;
+            min-height: 240px;
+        }
+
+        .header-left {
+            flex: 1;
+            z-index: 3;
+        }
+
+        .accent-bar {
+            width: 6px;
+            height: 80px;
+            background: #c18d52;
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #081b1b;
+            margin-bottom: 8px;
+            font-family: 'Courier New', monospace;
+            line-height: 1;
+        }
+
+        .header-title .accent {
+            color: #c18d52;
+            font-weight: 900;
+        }
+
+        .header-subtitle {
+            font-size: 12px;
+            color: #5a4a3a;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            z-index: 3;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-badge {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid #c18d52;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: #081b1b;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo-badge .num {
+            color: #c18d52;
+            margin: 0 2px;
+        }
+
+        .version-tag {
+            font-size: 10px;
+            background: #c18d52;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Geometric accent element */
+        .geometric-accent {
+            position: absolute;
+            bottom: -40px;
+            right: -80px;
+            width: 300px;
+            height: 300px;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(193, 141, 82, 0.08),
+                rgba(193, 141, 82, 0.08) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            z-index: 1;
+            transform: rotate(15deg);
+        }
+
+        /* Content area */
+        .content-area {
+            padding: 60px 80px;
+            color: #081b1b;
+            background: #ffffff;
+        }
+
+        .content-area h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #081b1b;
+            margin-top: 0;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #c18d52;
+            letter-spacing: 0.5px;
+        }
+
+        .content-area p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #5a4a3a;
+            margin-bottom: 12px;
+        }
+
+        .document-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0d9b8;
+            font-size: 12px;
+            color: #8b7a6a;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .header-wrapper {
+                box-shadow: none;
+            }
+            .content-area {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-wrapper">
+        <!-- Architectural column background -->
+        <div class="architectural-bg">
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+        </div>
+
+        <!-- Geometric accent -->
+        <div class="geometric-accent"></div>
+
+        <!-- Main header -->
+        <div class="header-container">
+            <div class="header-left">
+                <div class="accent-bar"></div>
+                <div class="header-title">
+                    CODE<span class="accent">9</span><br>FITNESS
+                </div>
+                <div class="header-subtitle">Coaching & Training Platform</div>
+            </div>
+
+            <div class="header-right">
+                <div class="logo-container">
+                    <div class="logo-badge">
+                        C<span class="num">9</span>F
+                    </div>
+                    <div class="version-tag">V3.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content area for reference -->
+    <div class="content-area">
+        <h2>Document Header Template</h2>
+        <p>This header is designed to match the dashboard light theme and incorporate architectural design elements that reflect progression and structure—from foundation to achievement.</p>
+
+        <h2>To Save as PDF</h2>
+        <p><strong>1.</strong> Print this page (Cmd+P or Ctrl+P)</p>
+        <p><strong>2.</strong> Select "Save as PDF"</p>
+        <p><strong>3.</strong> Set margins to "None" for clean edges</p>
+        <p><strong>4.</strong> Save and use as your document header</p>
+
+        <h2>Design Elements</h2>
+        <p><strong>Warm-Sand Background:</strong> #f7f4d6 matches dashboard light theme</p>
+        <p><strong>Architectural Columns:</strong> Subtle grid background representing structure and foundation</p>
+        <p><strong>Clay Accent:</strong> #c18d52 clay bar and borders for visual hierarchy</p>
+        <p><strong>Logo Badge:</strong> C9F positioned bottom-right with version tag</p>
+
+        <div class="document-info">
+            <p><em>Generated for CODE9 FITNESS v3.0 • Professional Document Header • Customizable Template</em></p>
+        </div>
+    </div>
+</body>
+</html>

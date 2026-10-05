@@ -1,26 +1,218 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  C9F theming is auth-state driven (see C9F_App_Architecture_v1.md §2.8):
+  - Warm Sand  (data-theme="warm-sand") -> logged-out marketing site (default)
+  - Signature  (data-theme="signature") -> logged-in product (dark)
+  The switch is tied to auth state, not a user toggle. Landing defaults to warm-sand.
+*/
+
+:root,
+[data-theme="warm-sand"] {
+  --surface: #f5f1e8;
+  --panel: #faf7f0;
+  --accent: #c18d52;
+  --safety: #390517;
+  --ink: #081b1b;
+  --ink-dim: #5c6357;
+  --line: rgba(8, 27, 27, 0.14);
+  --on-accent: #ffffff;
+  --grid-opacity: 0.5;
+}
+
+[data-theme="signature"] {
+  --surface: #03110d;
+  --panel: #16302b;
+  --accent: #a38560;
+  /* Brand safety is deep maroon (#390517); lifted here for legibility on dark. */
+  --safety: #e5707e;
+  --ink: #e0e0e0;
+  --ink-dim: #8fa098;
+  --line: rgba(163, 133, 96, 0.18);
+  --on-accent: #03110d;
+  --grid-opacity: 0.5;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-accent: var(--accent);
+  --color-safety: var(--safety);
+  --color-ink: var(--ink);
+  --color-ink-dim: var(--ink-dim);
+  --color-line: var(--line);
+  --color-on-accent: var(--on-accent);
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  min-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Blueprint grid signature element */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--grid-opacity);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer components {
+  /* Theme-aware translucent fills (adapt automatically on theme switch) */
+  .fill-panel {
+    background: color-mix(in srgb, var(--ink) 4%, transparent);
+  }
+  .fill-accent {
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+  .fill-safety {
+    background: color-mix(in srgb, var(--safety) 8%, transparent);
+  }
+
+  /* Dynamic hover effect for containers */
+  .hover-card {
+    transition: all 0.2s ease;
+  }
+  .hover-card:hover {
+    background: var(--panel);
+    transform: translateY(-2px);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 4px;
+    display: inline-block;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover {
+    opacity: 0.88;
+  }
+  .btn-secondary {
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 0.9375rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 4px;
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+  }
+
+  /* Onboarding form primitives (theme-aware) */
+  .c9-input {
+    width: 100%;
+    background: color-mix(in srgb, var(--panel) 55%, transparent);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 0.8125rem 0.875rem;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    transition: border-color 0.15s;
+  }
+  .c9-input::placeholder {
+    color: var(--ink-dim);
+  }
+  .c9-input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  select.c9-input {
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .c9-chip {
+    border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--panel) 40%, transparent);
+    color: var(--ink);
+    padding: 0.6875rem 1.125rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .c9-chip:hover {
+    border-color: var(--accent);
+  }
+  .c9-chip[data-selected="true"] {
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .btn-back {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-dim);
+    font-size: 0.9375rem;
+    padding: 0.875rem 1.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .btn-back:hover {
+    border-color: var(--accent);
+  }
+
+  /* Schematic corner marks (blueprint signature detail) */
+  .schematic {
+    position: relative;
+  }
+  .schematic::before,
+  .schematic::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--accent);
+  }
+  .schematic::before {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+  }
+  .schematic::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+  }
 }

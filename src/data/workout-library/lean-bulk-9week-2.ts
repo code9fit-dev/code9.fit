@@ -1,0 +1,127 @@
+import type { Program } from "./types";
+
+const WU = "10-15 min dynamic stretching or light cardio";
+
+/** Refined from ImpactShredz "9 Week Lean Bulk 2.0". Higher-volume 6-day template. */
+export const leanBulk9Week2: Program = {
+  meta: {
+    id: "lean-bulk-9week-2",
+    title: "9-Week Lean Bulk 2.0",
+    weeks: 9,
+    level: "advanced",
+    goals: ["muscle-gain"],
+    equipment: "full-gym",
+    primaryCategory: "Physical Fitness",
+    personaTags: ["muscle-gain-strategist"],
+    source: "ImpactShredz",
+    copyright: "© Code9 Fitness (C9F)",
+    refined: true,
+    purchasable: true,
+  },
+  focus: "Advanced lean-mass continuation with strength-focused compounds.",
+  goalStatement: "Progressive rinse & repeat — higher volume and intensity for experienced lifters.",
+  overview:
+    "A six-day push/pull/legs plus upper/lower hybrid, strength-biased on the main lifts. Run as a weekly template progressed across nine weeks.",
+  weeklyStructure: [
+    { day: 1, focus: "Push (Chest, Shoulders, Triceps)" },
+    { day: 2, focus: "Pull (Back, Biceps)" },
+    { day: 3, focus: "Rest / Active Recovery" },
+    { day: 4, focus: "Legs (Quads, Hamstrings, Glutes)" },
+    { day: 5, focus: "Upper Body" },
+    { day: 6, focus: "Lower Body (Strength Focus)" },
+    { day: 7, focus: "Rest / Active Recovery" },
+  ],
+  phases: [
+    {
+      name: "Weekly Template (Weeks 1-9)",
+      weekStart: 1,
+      weekEnd: 9,
+      focus: "Progressive rinse & repeat — strength focus on the lead compounds.",
+      days: [
+        {
+          day: 1,
+          title: "Push (Chest, Shoulders, Triceps)",
+          type: "strength",
+          warmup: WU,
+          exercises: [
+            { name: "Barbell Bench Press", pattern: "push", sets: 4, reps: "11", notes: "Strength focus" },
+            { name: "Incline Dumbbell Press", pattern: "push", sets: 4, reps: "11" },
+            { name: "Overhead Shoulder Press", pattern: "push", sets: 4, reps: "11" },
+            { name: "Dumbbell Lateral Raise", pattern: "push", sets: 4, reps: "11" },
+            { name: "Tricep Dips (weighted)", pattern: "push", sets: 4, reps: "11" },
+            { name: "Cable Tricep Pushdown", pattern: "push", sets: 4, reps: "11" },
+            { name: "Face Pulls", pattern: "pull", sets: 4, reps: "11" },
+          ],
+        },
+        {
+          day: 2,
+          title: "Pull (Back, Biceps)",
+          type: "strength",
+          warmup: "10-15 min rowing or light cardio",
+          exercises: [
+            { name: "Deadlift", pattern: "hinge", sets: 4, reps: "6", notes: "Strength focus" },
+            { name: "Pull-Ups (weighted)", pattern: "pull", sets: 4, reps: "9-11" },
+            { name: "Bent-Over Barbell Row", pattern: "pull", sets: 4, reps: "9-11" },
+            { name: "Seated Cable Row", pattern: "pull", sets: 4, reps: "9-11" },
+            { name: "Face Pulls", pattern: "pull", sets: 4, reps: "9-11" },
+            { name: "Barbell or EZ-Bar Curl", pattern: "pull", sets: 4, reps: "9-11" },
+            { name: "Dumbbell Hammer Curls", pattern: "pull", sets: 3, reps: "11" },
+          ],
+        },
+        { day: 3, title: "Rest / Active Recovery", type: "recovery", exercises: [], notes: "Yoga, light walking, swimming, light cardio." },
+        {
+          day: 4,
+          title: "Legs (Quads, Hamstrings, Glutes)",
+          type: "strength",
+          warmup: WU,
+          exercises: [
+            { name: "Back Squats", pattern: "squat", sets: 4, reps: "9-11", notes: "Strength focus" },
+            { name: "Romanian Deadlifts", pattern: "hinge", sets: 4, reps: "9-11" },
+            { name: "Leg Press", pattern: "squat", sets: 3, reps: "9-11" },
+            { name: "Lunges (DB or barbell)", pattern: "lunge", sets: 4, reps: "11", perSide: true },
+            { name: "Leg Curls", pattern: "hinge", sets: 4, reps: "22" },
+            { name: "Calf Raises", pattern: "core", sets: 4, reps: "9-11" },
+            { name: "Planks or Hanging Leg Raises", pattern: "core", sets: 3, durationSec: 45 },
+          ],
+        },
+        {
+          day: 5,
+          title: "Upper Body",
+          type: "strength",
+          warmup: WU,
+          exercises: [
+            { name: "Barbell Bench Press", pattern: "push", sets: 5, reps: "5", notes: "Strength focus" },
+            { name: "Barbell Overhead Press", pattern: "push", sets: 4, reps: "6" },
+            { name: "Weighted Pull-Ups", pattern: "pull", sets: 4, reps: "5-6" },
+            { name: "Barbell Rows", pattern: "pull", sets: 4, reps: "6" },
+            { name: "Incline Dumbbell Press", pattern: "push", sets: 4, reps: "8-10" },
+            { name: "Dumbbell Shrugs", pattern: "pull", sets: 3, reps: "12-15" },
+            { name: "Face Pulls", pattern: "pull", sets: 3, reps: "12-15" },
+          ],
+        },
+        {
+          day: 6,
+          title: "Lower Body (Strength Focus)",
+          type: "strength",
+          warmup: WU,
+          exercises: [
+            { name: "Deadlifts", pattern: "hinge", sets: 5, reps: "6", notes: "Strength focus" },
+            { name: "Back Squats or Hack Squats", pattern: "squat", sets: 4, reps: "6" },
+            { name: "Bulgarian Split Squats", pattern: "lunge", sets: 3, reps: "9-11", perSide: true },
+            { name: "Leg Extensions", pattern: "squat", sets: 3, reps: "22" },
+            { name: "Hamstring Curls", pattern: "hinge", sets: 4, reps: "22" },
+            { name: "Calf Raises", pattern: "core", sets: 4, reps: "22" },
+            { name: "Russian Twists or Ab Wheel Rollouts", pattern: "core", sets: 3, reps: "22" },
+          ],
+        },
+        { day: 7, title: "Rest / Active Recovery", type: "recovery", exercises: [], notes: "Yoga, light walking, swimming, light cardio." },
+      ],
+      progression: [
+        "Rinse & repeat weekly; progress the strength-focus lead lifts (bench, deadlift, squat) first",
+        "Keep accessory work in the stated rep ranges and add volume/load over the blocks",
+      ],
+    },
+  ],
+  nutrition: { note: "Surplus with high protein; time carbs around training for the higher volume." },
+  recovery: ["Two rest/active-recovery days weekly", "Mobility work to stay injury-free under volume"],
+};

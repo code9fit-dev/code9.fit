@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE9 FITNESS - The 72-Hour Fast</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --surface: #f5f1e8;
+            --panel: #faf7f0;
+            --accent: #c18d52;
+            --ink: #081b1b;
+            --ink-dim: #5c6357;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            color: var(--ink);
+            background: var(--surface);
+            padding: 0;
+        }
+
+        .page {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.4in;
+            page-break-after: always;
+            min-height: 11in;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 0.3in;
+            padding-bottom: 0.15in;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .brand {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 4px;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 12px;
+            font-style: italic;
+            color: var(--ink-dim);
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 8px 0 6px 0;
+            padding-bottom: 3px;
+            border-bottom: 1.5px solid var(--accent);
+        }
+
+        h3 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ink);
+            margin: 6px 0 4px 0;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 6px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        ul, ol {
+            margin-left: 16px;
+            margin-bottom: 6px;
+            font-size: 11px;
+        }
+
+        li {
+            margin-bottom: 3px;
+            line-height: 1.4;
+        }
+
+        .section-box {
+            background: #ffffff;
+            border-left: 3px solid var(--accent);
+            padding: 6px;
+            margin: 6px 0;
+            border: 0.5px solid #e5e1d8;
+            border-left: 3px solid var(--accent);
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        .section-box p {
+            margin-bottom: 3px;
+            font-size: 10px;
+        }
+
+        .section-box ul {
+            margin-bottom: 0;
+            margin-left: 14px;
+            font-size: 10px;
+        }
+
+        .section-box li {
+            margin-bottom: 2px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 6px 0;
+            font-size: 10px;
+        }
+
+        th {
+            background: var(--accent);
+            color: white;
+            padding: 4px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 10px;
+        }
+
+        td {
+            border: 0.5px solid #ddd;
+            padding: 4px;
+            font-size: 10px;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f7f2;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.15in;
+            margin: 6px 0;
+        }
+
+        .two-col h3 {
+            grid-column: 1 / -1;
+            margin: 0 0 4px 0;
+        }
+
+        .col-section {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        .col-section p, .col-section li {
+            font-size: 10px;
+            margin-bottom: 2px;
+        }
+
+        .col-section ul {
+            margin-left: 12px;
+            margin-bottom: 0;
+        }
+
+        .footer {
+            font-size: 9px;
+            color: var(--ink-dim);
+            text-align: right;
+            margin-top: auto;
+            padding-top: 4px;
+            border-top: 0.5px solid #ddd;
+        }
+
+        .checkbox-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checkbox-list li {
+            margin-bottom: 3px;
+            display: flex;
+            gap: 6px;
+            font-size: 10px;
+        }
+
+        .checkbox-list li::before {
+            content: "☐";
+            min-width: 14px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        .warning {
+            background: #faf7f0;
+            border-left: 3px solid var(--accent);
+            padding: 6px;
+            margin: 6px 0;
+            font-size: 10px;
+            border: 0.5px solid #e5e1d8;
+            border-left: 3px solid var(--accent);
+            line-height: 1.4;
+        }
+
+        .em {
+            font-style: italic;
+            color: var(--ink-dim);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+    <div class="header-section">
+        <div class="brand">CODE9FITNESS</div>
+        <h1>The 72-Hour Fast</h1>
+        <div class="tagline">"Don't fast harder. Fast smarter."</div>
+    </div>
+
+    <h2>The Philosophy</h2>
+    <p>A 72-hour fast is a structured period without caloric intake designed to improve metabolic flexibility, reduce insulin exposure, and allow your body to transition from using dietary glucose to stored fat and ketones.</p>
+    <p>This manual is written for healthy first-time fasters who want a safe, evidence-informed approach. It is not a detox challenge, starvation protocol, or endurance contest.</p>
+
+    <h2>Before You Begin</h2>
+    <h3>Who should not do a 72-hour fast?</h3>
+    <p>Do not attempt this fast without medical guidance if you:</p>
+    <ul>
+        <li>Are pregnant or breastfeeding</li>
+        <li>Have type 1 diabetes or use glucose-lowering medication</li>
+        <li>Have a history of an eating disorder</li>
+        <li>Are underweight or malnourished</li>
+        <li>Have significant kidney, liver, or heart disease</li>
+    </ul>
+    <p class="em">If you're unsure, consult your healthcare professional first.</p>
+
+    <h3>Your preparation checklist</h3>
+    <p><strong>Complete this 24 hours before starting:</strong></p>
+    <ul class="checkbox-list">
+        <li>Eat a balanced final meal</li>
+        <li>Drink 2–3 L of water during the day</li>
+        <li>Sleep 7–9 hours</li>
+        <li>Buy electrolyte salt</li>
+        <li>Prepare chicken broth for Day 4</li>
+        <li>Set your exact finish time</li>
+    </ul>
+
+    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+    <h2>The Fasting Architecture</h2>
+
+    <h3>What you consume</h3>
+    <table>
+        <tr><th>Item</th><th>Notes</th></tr>
+        <tr><td>Water</td><td>Still or sparkling</td></tr>
+        <tr><td>Electrolytes</td><td>Sodium is essential</td></tr>
+        <tr><td>Coconut water</td><td>Unsweetened, in moderation</td></tr>
+        <tr><td>Black coffee / espresso</td><td>Optional (1–2 daily)</td></tr>
+        <tr><td>Unsweetened tea</td><td>Chamomile, peppermint, rooibos</td></tr>
+    </table>
+
+    <h3>What stays out</h3>
+    <p>Anything with calories stays out — including:</p>
+    <ul>
+        <li><strong>Carbohydrates:</strong> sugar, fruit, grains, starches</li>
+        <li><strong>Fats:</strong> oils, butter, nuts, avocado</li>
+        <li><strong>Proteins:</strong> meat, fish, eggs, legumes</li>
+        <li><strong>Dairy:</strong> milk, cream, cheese, yogurt</li>
+        <li><strong>Powders:</strong> protein powder, meal replacements</li>
+    </ul>
+
+    <h2>Daily Hydration Blueprint</h2>
+    <table>
+        <tr><th>Time</th><th>What to drink</th></tr>
+        <tr><td>Wake</td><td>500 mL water</td></tr>
+        <tr><td>Morning</td><td>Electrolyte water</td></tr>
+        <tr><td>Midday</td><td>Water + optional espresso</td></tr>
+        <tr><td>Afternoon</td><td>Water or herbal tea</td></tr>
+        <tr><td>Evening</td><td>Chamomile + water</td></tr>
+    </table>
+
+    <h3>Homemade electrolyte water</h3>
+    <div class="section-box">
+        <strong>Ingredients:</strong>
+        <ul>
+            <li>500 mL water</li>
+            <li>¼ tsp Himalayan or sea salt</li>
+        </ul>
+        <p><strong>Drink 1–3 servings daily</strong> depending on thirst and activity.</p>
+    </div>
+
+    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+    <h2>The 72-Hour Timeline</h2>
+
+    <h3>Hours 0–12 — The Transition</h3>
+    <div class="section-box">
+        <strong>Inside your body:</strong>
+        <ul>
+            <li>Digestion continues</li>
+            <li>Insulin gradually declines</li>
+            <li>Hunger is mostly habitual</li>
+        </ul>
+    </div>
+    <div class="section-box">
+        <strong>What you'll probably feel:</strong>
+        <ul>
+            <li>Normal</li>
+            <li>Thinking about food at meal times</li>
+            <li>Mild cravings</li>
+        </ul>
+    </div>
+    <p class="em"><strong>Coach's reminder:</strong> You're hungry because your body expects a meal, not because you're starving.</p>
+
+    <h3>Hours 12–24 — The Switch Begins</h3>
+    <p>This is where fasting starts becoming noticeable.</p>
+    <div class="section-box">
+        <strong>Inside your body:</strong>
+        <ul>
+            <li>Liver glycogen begins falling</li>
+            <li>Fat release increases</li>
+            <li>Ketone production begins rising</li>
+        </ul>
+    </div>
+
+    <h3>Common sensations</h3>
+    <table>
+        <tr><th>Normal</th><th>Concerning</th></tr>
+        <tr><td>Hunger waves</td><td>Fainting</td></tr>
+        <tr><td>Feeling colder</td><td>Chest pain</td></tr>
+        <tr><td>Mild headache</td><td>Confusion</td></tr>
+        <tr><td>Increased urination</td><td>Persistent vomiting</td></tr>
+    </table>
+
+    <div class="section-box">
+        <strong>What to do:</strong>
+        <ul>
+            <li>Drink water & replace sodium</li>
+            <li>Walk for 10–20 minutes</li>
+            <li>Avoid intense exercise</li>
+        </ul>
+    </div>
+
+    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+    <h3>Hours 24–36 — Entering Extended Fasting</h3>
+    <p>For many people, this is the hardest psychological phase.</p>
+    <div class="section-box">
+        <strong>Your metabolism:</strong>
+        <ul>
+            <li>Fat becomes the primary fuel source</li>
+            <li>Ketones become increasingly important</li>
+            <li>Hunger often becomes less frequent</li>
+            <li>Energy becomes steadier</li>
+        </ul>
+    </div>
+    <div class="section-box">
+        <strong>Stay busy:</strong>
+        <ul>
+            <li>Read a book or listen to a podcast</li>
+            <li>Work on a hobby or creative project</li>
+        </ul>
+    </div>
+
+    <h3>Hours 36–48 — Deep Fasting</h3>
+    <p>This is where prolonged fasting becomes biologically interesting.</p>
+    <div class="section-box">
+        <strong>What research supports:</strong>
+        <ul>
+            <li>Very low insulin</li>
+            <li>Increased fat oxidation</li>
+            <li>Elevated ketone production</li>
+        </ul>
+    </div>
+    <div class="warning">
+        <strong>What we don't know precisely:</strong> Claims like "autophagy peaks at 48 hours" or "stem cells activate at hour 60" go beyond current human evidence.
+    </div>
+
+    <h3>Hours 48–60 — The Psychological Peak</h3>
+    <p>Many people experience surprising mental clarity. Others feel tired. Both are normal.</p>
+    <div class="section-box">
+        <strong>Continue only if:</strong>
+        <ul>
+            <li>You can function normally</li>
+            <li>You're well hydrated</li>
+            <li>No red-flag symptoms are present</li>
+        </ul>
+    </div>
+
+    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+    <h3>Hours 60–72 — The Final Stretch</h3>
+    <p>You're no longer trying to prove anything. You're preparing to finish well.</p>
+    <div class="section-box">
+        <strong>Your priorities:</strong>
+        <ul>
+            <li>Water & Electrolytes</li>
+            <li>Gentle walking</li>
+            <li>Early evening relaxation</li>
+            <li>Prepare your broth</li>
+        </ul>
+    </div>
+
+    <h3>What You're Likely Feeling</h3>
+    <table>
+        <tr><th>Normal</th><th>Stop the fast</th></tr>
+        <tr><td>Hunger waves</td><td>Fainting</td></tr>
+        <tr><td>Feeling cold</td><td>Confusion</td></tr>
+        <tr><td>Mild fatigue</td><td>Severe dizziness</td></tr>
+        <tr><td>Clear mind</td><td>Chest pain</td></tr>
+        <tr><td>Food thoughts</td><td>Persistent palpitations</td></tr>
+    </table>
+
+    <h2>Movement During the Fast</h2>
+    <table>
+        <tr><th>Recommended</th><th>Avoid</th></tr>
+        <tr><td>Walking</td><td>Sprinting</td></tr>
+        <tr><td>Stretching</td><td>CrossFit</td></tr>
+        <tr><td>Mobility work</td><td>Heavy squats/deadlifts</td></tr>
+        <tr><td>Gentle cycling (Zone 1)</td><td>Long runs</td></tr>
+    </table>
+    <p class="em">The objective is circulation, not performance.</p>
+
+    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+    <h2>Sleep Protocol</h2>
+    <h3>60 minutes before bed</h3>
+    <ul>
+        <li>Dim lights & Stop screens</li>
+        <li>Drink chamomile tea</li>
+        <li>Take magnesium (if you normally use it)</li>
+        <li>Read or journal for 10 minutes</li>
+    </ul>
+
+    <h3>Optional supplements</h3>
+    <table>
+        <tr><th>Supplement</th><th>Appropriate?</th></tr>
+        <tr><td>Magnesium glycinate</td><td>Yes</td></tr>
+        <tr><td>Chamomile tea</td><td>Yes</td></tr>
+        <tr><td>Ashwagandha</td><td>Yes, if tolerated</td></tr>
+        <tr><td>Melatonin</td><td>Optional</td></tr>
+        <tr><td>Protein powder</td><td>No</td></tr>
+    </table>
+
+    <h2>Breaking the Fast (72 Hours)</h2>
+    <p>This is a graduated protein re-entry: broth first, then small staged additions every hour. Don't overload a gut that's had nothing solid for 3 days.</p>
+
+    <h3>Phase 1 — Broth (Hour 0)</h3>
+    <ul>
+        <li>1 cup chicken broth</li>
+        <li>Wait, then a second cup a little later</li>
+    </ul>
+    <p class="em">Sip slowly. This resets fluid and sodium before anything else is asked of your gut.</p>
+
+    <h3>Homemade Chicken Broth</h3>
+    <div class="section-box">
+        <strong>Ingredients:</strong>
+        <ul style="margin-bottom: 3px;">
+            <li>1 chicken carcass or 500 g chicken bones</li>
+            <li>2 carrots, 2 celery stalks, 1 onion</li>
+            <li>Handful parsley, 2 L water, 1 tsp sea salt</li>
+            <li>Optional: fresh ginger</li>
+        </ul>
+        <strong style="display: block; margin-top: 3px;">Method:</strong>
+        <ol style="margin: 3px 0 0 14px;">
+            <li>Add everything to a pot</li>
+            <li>Simmer gently for 3–4 hours</li>
+            <li>Strain the liquid & store in glass jars</li>
+        </ol>
+    </div>
+
+    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+    <h3>Phase 2 — Staged Protein Re-Entry (Hours +1 to +3)</h3>
+    <table>
+        <tr><th>Time</th><th>What to eat</th></tr>
+        <tr><td>+1 hour</td><td>1 medium soft-boiled egg</td></tr>
+        <tr><td>+2 hours</td><td>2 dates + 1 medium soft-boiled egg</td></tr>
+        <tr><td>+3 hours</td><td>2 medium soft-boiled eggs + 4 dates</td></tr>
+    </table>
+    <p class="em">Eggs are gentle on a fasted gut. Dates add quick glucose without a hard insulin spike.</p>
+
+    <h3>Phase 3 — Bridge Snack</h3>
+    <ul>
+        <li>Small bowl of Greek yogurt with natural honey</li>
+    </ul>
+    <p class="em">Good for gut bacteria and another gentle protein/carb combo.</p>
+
+    <h3>Phase 4 — Dinner (Same Day)</h3>
+    <ul>
+        <li>Chicken or beef</li>
+        <li>Some light carbs</li>
+        <li>Keep the meal small — think 60–70% full, not a feast</li>
+    </ul>
+
+    <h2>The Next 24 Hours</h2>
+    <div class="two-col">
+        <h3>Breakfast</h3>
+        <h3>Lunch</h3>
+        <div class="col-section">
+            <ul style="margin-bottom: 0;">
+                <li>Eggs</li>
+                <li>Fruit</li>
+                <li>Greek yogurt</li>
+            </ul>
+        </div>
+        <div class="col-section">
+            <ul style="margin-bottom: 0;">
+                <li>Chicken or fish</li>
+                <li>Vegetables</li>
+                <li>Rice or potato</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Dinner</h3>
+    <ul>
+        <li>Protein & plenty of vegetables & healthy fat</li>
+    </ul>
+
+    <h3>Keep avoiding</h3>
+    <ul style="margin-bottom: 0;">
+        <li>Alcohol & Ultra-processed foods & Huge desserts & Massive takeaway meals</li>
+    </ul>
+
+    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page">
+    <h2>The Science (Simplified)</h2>
+
+    <h3>What is well established?</h3>
+    <table>
+        <tr><th>Process</th><th>Evidence</th></tr>
+        <tr><td>Insulin decreases</td><td>Strong</td></tr>
+        <tr><td>Fat oxidation increases</td><td>Strong</td></tr>
+        <tr><td>Ketone production rises</td><td>Strong</td></tr>
+        <tr><td>Glycogen becomes depleted</td><td>Strong</td></tr>
+        <tr><td>Metabolic flexibility improves</td><td>Good evidence</td></tr>
+    </table>
+
+    <h3>What is promising but still being researched?</h3>
+    <ul>
+        <li>Magnitude of autophagy in humans</li>
+        <li>Exact timing of cellular recycling</li>
+        <li>Long-term longevity effects</li>
+        <li>Stem-cell regeneration timing</li>
+    </ul>
+    <p class="em">This is exciting science — but it should be presented honestly.</p>
+
+    <h2>Myth vs Reality</h2>
+    <table>
+        <tr><th>Myth</th><th>Reality</th></tr>
+        <tr><td>"72 hours detoxes the body."</td><td>Your liver and kidneys detox continuously.</td></tr>
+        <tr><td>"Autophagy starts exactly at 24h."</td><td>Human timing varies and isn't precisely measurable.</td></tr>
+        <tr><td>"Coffee ruins the fast."</td><td>Black coffee has negligible calories.</td></tr>
+        <tr><td>"Longer is always better."</td><td>More isn't automatically healthier.</td></tr>
+        <tr><td>"Break the fast with a feast."</td><td>Large meals often cause discomfort.</td></tr>
+    </table>
+
+    <h2>Final Words</h2>
+    <p><strong>What you accomplished:</strong> A successful 72-hour fast is not measured by how much you suffered.</p>
+    <p>It is measured by your ability to:</p>
+    <ul style="margin-bottom: 6px;">
+        <li>Prepare properly & Stay hydrated & Maintain electrolyte balance</li>
+        <li>Listen to your body & Finish at your planned endpoint</li>
+        <li>Reintroduce nutrition intelligently</li>
+    </ul>
+    <p class="em"><strong>The fast is only half the practice. The re-nutrition is the other half.</strong></p>
+    <p>This manual is designed to be repeated, refined, and respected — not to encourage pushing beyond your body's limits. Stay calm and trust the process.</p>
+
+    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+</div>
+
+</body>
+</html>

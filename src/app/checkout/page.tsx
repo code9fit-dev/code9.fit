@@ -1,0 +1,118 @@
+"use client";
+
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { ThemeController } from "@/components/ThemeController";
+import { ALL_TIERS, getCoachBySlug, type Tier } from "@/data/coaches";
+import { PAYMENT_TIERS, formatPrice } from "@/lib/payments/tiers";
+
+function CheckoutInner() {
+  const params = useSearchParams();
+  const slug = params.get("coach") ?? "";
+  const canceled = params.get("canceled") === "1";
+  const coach = getCoachBySlug(slug);
+  const [busy, setBusy] = useState<Tier | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  async function pay(tier: Tier) {
+    setBusy(tier);
+    setError(null);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ coachSlug: slug, tier }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.assign(data.url);
+        return;
+      }
+      setError(data.error ?? "Could not start checkout.");
+    } catch {
+      setError("Network error starting checkout.");
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  if (!coach) {
+    return (
+      <div className="py-20 text-center">
+        <p className="mb-4 text-ink-dim">Pick a coach first.</p>
+        <Link href="/#coaches" className="btn-primary">
+          See all coaches
+        </Link>
+      </div>
+    );
+  }
+
+  const purchasable = ALL_TIERS.filter(
+    (t) => t !== "Free" && coach.tiers.includes(t) && PAYMENT_TIERS[t],
+  );
+
+  return (
+    <div className="py-8">
+      <Link href={`/coach/${slug}`} className="font-mono text-xs text-ink-dim">
+        ← Back to {coach.name}
+      </Link>
+      <h1 className="mt-4 font-display text-2xl font-semibold">
+        Unlock {coach.name}
+      </h1>
+      <p className="mb-6 mt-1 text-sm text-ink-dim">
+        Secure checkout by Lemon Squeezy (tax handled for you). In test mode use
+        card 4242 4242 4242 4242, any future expiry, any CVC.
+      </p>
+
+      {canceled && (
+        <div className="mb-5 rounded border border-line fill-panel px-4 py-3 text-sm text-ink-dim">
+          Checkout canceled — no charge was made.
+        </div>
+      )}
+      {error && (
+        <div className="mb-5 rounded border border-safety bg-safety/10 px-4 py-3 text-sm text-ink">
+          {error}
+        </div>
+      )}
+
+      <div className="space-y-3">
+        {purchasable.map((tier) => {
+          const cfg = PAYMENT_TIERS[tier]!;
+          return (
+            <div
+              key={tier}
+              className="fill-panel flex items-center justify-between rounded border border-line p-5"
+            >
+              <div>
+                <div className="font-display font-semibold">{tier}</div>
+                <div className="mb-1 text-sm text-ink-dim">{cfg.blurb}</div>
+                <div className="font-mono text-sm text-accent">
+                  {formatPrice(cfg)}
+                </div>
+              </div>
+              <button
+                className="btn-primary disabled:opacity-40"
+                onClick={() => pay(tier)}
+                disabled={busy !== null}
+              >
+                {busy === tier ? "…" : "Pay"}
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <div className="mx-auto max-w-[560px] px-6">
+      <ThemeController theme="signature" />
+      <Suspense fallback={<div className="py-20 text-center text-ink-dim">Loading…</div>}>
+        <CheckoutInner />
+      </Suspense>
+    </div>
+  );
+}
