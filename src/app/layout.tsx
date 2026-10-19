@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { HeaderNav } from "@/components/HeaderNav";
+import { AuthProvider } from "@/lib/auth/context";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -47,7 +49,12 @@ export default function RootLayout({
       data-theme="warm-sand"
       className={`${spaceGrotesk.variable} ${plexSans.variable} ${plexMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AuthProvider>
+          <HeaderNav />
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   );
 }

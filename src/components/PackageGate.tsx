@@ -134,7 +134,7 @@ export function PackageGate({ packageId, children }: PackageGateProps) {
               </p>
             </div>
             <Link
-              href="/login"
+              href={`/login?redirect=${encodeURIComponent(window.location.pathname)}`}
               className="rounded bg-accent px-6 py-2 font-semibold text-white hover:opacity-90 transition-opacity"
             >
               Sign in

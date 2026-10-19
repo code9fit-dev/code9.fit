@@ -64,6 +64,16 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const isDev = process.env.NODE_ENV === 'development';
+    const adminSession = typeof window !== 'undefined' ? localStorage.getItem('admin_session') : null;
+
+    // Check for admin session first
+    if (adminSession) {
+      setUser({ id: 'admin', email: 'admin@localhost' });
+      const dayOfWeek = new Date().getDay();
+      setDailyMotivation(DAILY_MOTIVATIONS[dayOfWeek % DAILY_MOTIVATIONS.length]);
+      setLoading(false);
+      return;
+    }
 
     if (!supabase) {
       if (isDev) {
@@ -115,7 +125,7 @@ export default function DashboardPage() {
     return null;
   }
 
-  const plan = state.plans.length > 0 ? state.plans[0] : null;
+  const plan = Object.keys(state.plans).length > 0 ? Object.values(state.plans)[0] : null;
   const coach = plan ? getCoachBySlug(plan.coachSlug) : null;
   const currentWeekData = plan ? currentWeek(plan) : null;
   const weekly = plan ? weeklyProgress(plan) : null;

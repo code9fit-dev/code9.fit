@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 
@@ -11,7 +11,21 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const searchParams = useSearchParams();
   const supabase = getSupabaseBrowserClient();
+  const redirectUrl = searchParams.get('redirect');
+  const errorParam = searchParams.get('error');
+
+  useEffect(() => {
+    if (errorParam) {
+      const errorMessages: Record<string, string> = {
+        auth_failed: 'Authentication failed. Please try again.',
+        no_user: 'Could not retrieve user information. Please try again.',
+        callback_error: 'An error occurred during sign-in. Please try again.',
+      };
+      setError(errorMessages[errorParam] || 'An error occurred. Please try again.');
+    }
+  }, [errorParam]);
 
   const handleLogin = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -32,7 +46,21 @@ export default function LoginPage() {
       if (signInError) {
         setError(signInError.message);
       } else {
-        router.push('/dashboard');
+        // Redirect to original location or dashboard
+        if (redirectUrl) {
+          try {
+            const url = new URL(redirectUrl, window.location.origin);
+            if (url.origin === window.location.origin) {
+              router.push(redirectUrl);
+            } else {
+              router.push('/dashboard');
+            }
+          } catch {
+            router.push('/dashboard');
+          }
+        } else {
+          router.push('/dashboard');
+        }
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
@@ -52,11 +80,24 @@ export default function LoginPage() {
     setError(null);
 
     try {
+      // Build the email redirect URL with redirect parameter if provided
+      let emailRedirectTo = `${window.location.origin}/auth/callback`;
+      if (redirectUrl) {
+        try {
+          const url = new URL(redirectUrl, window.location.origin);
+          if (url.origin === window.location.origin) {
+            emailRedirectTo += `?redirect=${encodeURIComponent(redirectUrl)}`;
+          }
+        } catch {
+          // Keep default email redirect
+        }
+      }
+
       const { error: signUpError } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          emailRedirectTo,
         },
       });
 
@@ -64,7 +105,11 @@ export default function LoginPage() {
         setError(signUpError.message);
       } else {
         setError(null);
-        router.push('/onboarding');
+        // Redirect to onboarding with redirect parameter if provided
+        const onboardingUrl = redirectUrl
+          ? `/onboarding?redirect=${encodeURIComponent(redirectUrl)}`
+          : '/onboarding';
+        router.push(onboardingUrl);
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
