@@ -83,6 +83,9 @@ export function HeaderNav() {
                 <Link href="/library" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#13201C'; }}>
                   Find your program
                 </Link>
+                <Link href="/resources" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s', fontWeight: '600', color: '#B8915A' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#B8915A'; }}>
+                  📚 Free Resources
+                </Link>
                 <Link href="/onboarding" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#13201C'; }}>
                   Find your coach
                 </Link>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { FreeResourcesCTA } from './FreeResourcesCTA';
 
 export function HomePage({
   styles,
@@ -50,6 +51,7 @@ export function HomePage({
     <>
       <style dangerouslySetInnerHTML={{ __html: styles + '\n.c9 .bar { display: none !important; }' }} />
       <div dangerouslySetInnerHTML={{ __html: bodyContent }} />
+      <FreeResourcesCTA />
     </>
   );
 }
