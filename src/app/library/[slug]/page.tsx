@@ -6,6 +6,7 @@ import { Container } from "@/components/primitives";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ProgramDocument } from "@/components/ProgramDocument";
 import { PackageGate } from "@/components/PackageGate";
+import { StartNowButton } from "@/components/StartNowButton";
 import { getProgram } from "@/data/workout-library";
 import { programToMarkdown } from "@/data/workout-library/document";
 
@@ -40,13 +41,21 @@ export default function ProgramPage() {
     <>
       <main className="relative z-10 flex-1">
         <Container className="py-8">
-          <div className="mb-6 flex items-center justify-between">
-            <Link href="/library" className="font-mono text-xs text-ink-dim">
-              ← All packages
-            </Link>
+          <Link href="/library" className="font-mono text-xs text-ink-dim mb-6 inline-block">
+            ← All packages
+          </Link>
+
+          <div className="relative mb-6">
             <button onClick={download} className="btn-primary">
               Download package
             </button>
+            <div className="absolute top-0 right-0">
+              <StartNowButton
+                programId={program.meta.id}
+                programSlug={slug}
+                isPurchasable={program.meta.purchasable}
+              />
+            </div>
           </div>
 
           <PackageGate packageId={program.meta.id}>

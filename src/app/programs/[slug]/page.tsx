@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Container } from '@/components/primitives';
 import { ProgramDocument } from '@/components/ProgramDocument';
 import { PackageGate } from '@/components/PackageGate';
+import { StartNowButton } from '@/components/StartNowButton';
 import { getProgram } from '@/data/workout-library';
 
 export default function ProgramPage() {
@@ -30,14 +31,24 @@ export default function ProgramPage() {
           ← Back to Programs
         </Link>
 
-        {/* Package gate for paid programs */}
-        {program.meta.purchasable ? (
-          <PackageGate packageId={program.meta.id}>
+        <div className="relative">
+          <div className="absolute top-0 right-0">
+            <StartNowButton
+              programId={program.meta.id}
+              programSlug={slug}
+              isPurchasable={program.meta.purchasable}
+            />
+          </div>
+
+          {/* Package gate for paid programs */}
+          {program.meta.purchasable ? (
+            <PackageGate packageId={program.meta.id}>
+              <ProgramDocument program={program} />
+            </PackageGate>
+          ) : (
             <ProgramDocument program={program} />
-          </PackageGate>
-        ) : (
-          <ProgramDocument program={program} />
-        )}
+          )}
+        </div>
       </Container>
     </main>
   );

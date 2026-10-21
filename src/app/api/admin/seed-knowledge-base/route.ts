@@ -29,12 +29,13 @@ export async function POST(req: NextRequest) {
     }
 
     const result = await seedKnowledgeBase();
+    const { success: _, ...resultData } = result;
 
     return NextResponse.json(
       {
         success: true,
         message: 'Knowledge base seeded successfully',
-        ...result,
+        ...resultData,
       },
       { status: 200 }
     );

@@ -91,15 +91,15 @@ export const coaches: Coach[] = [
     desc: "Equipment-free and minimal-equipment training — the default on-ramp for absolute beginners.",
     category: "Structure",
     tiers: ["Free", "One-Time", "Subscription", "Premium"],
-    bundle: "Lifestyle & Recovery Coach",
+    bundle: "Recovery & Resilience Coach",
   },
   {
     id: 9,
     index: "09",
-    name: "Lifestyle & Recovery Coach",
-    desc: "Sleep, stress, and habit systems that make everything else stick.",
+    name: "Recovery & Resilience Coach",
+    desc: "Sleep, stress, habit systems, and nervous system awareness that make everything else stick — build capacity to perform and recover.",
     category: "Support",
-    // Trimmed: no One-Time — habit/mindset work doesn't fit a static program.
+    // Merged: Lifestyle & Recovery Coach + Nervous System Coach
     tiers: ["Free", "Subscription", "Premium"],
     bundle: "Home Workout Systems Builder",
   },

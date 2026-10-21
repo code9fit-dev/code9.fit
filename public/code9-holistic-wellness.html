@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holistic Wellness — Code9 Fitness</title>
+<meta name="description" content="A holistic wellness guide for the Code9 Fitness 9-week program: the 7 dimensions of wellness, 11 key categories, a daily self check-in and a library of health, wellness and fitness practices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* All styles are scoped to .c9 so this block can be embedded in an existing site */
+:root{
+  --c9-cream:#F5F1EA; --c9-cream-2:#F9F6F0; --c9-line:#E3DDD2; --c9-gold:#B8915A; --c9-gold-d:#94703F; --c9-gold-soft:#F2EADD;
+  --c9-ink:#13201C; --c9-ink-2:#1E2E29; --c9-muted:#5C605B; --c9-white:#fff;
+  --c9-green:#3C6B52; --c9-amber:#B5812F; --c9-plum:#7A5C78;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--c9-cream)}
+.c9{font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--c9-muted);font-size:16px;line-height:1.65;background:var(--c9-cream);
+  background-image:linear-gradient(var(--c9-line) 1px,transparent 1px),linear-gradient(90deg,var(--c9-line) 1px,transparent 1px);
+  background-size:96px 96px;background-attachment:fixed;-webkit-font-smoothing:antialiased}
+.c9 *{box-sizing:border-box}
+.c9 h1,.c9 h2,.c9 h3,.c9 h4{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;color:var(--c9-ink);margin:0;letter-spacing:-.01em}
+.c9 p{margin:0 0 .8em}
+.c9 strong{color:var(--c9-ink);font-weight:600}
+.c9 a{color:inherit}
+.c9 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.c9 .wrap{padding:0 16px}}
+
+/* header */
+.c9 .bar{position:sticky;top:0;z-index:20;background:rgba(253,252,249,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--c9-line)}
+.c9 .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.c9 .logo{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:22px;color:var(--c9-ink);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.c9 .logo b{color:var(--c9-gold)}
+.c9 nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.c9 nav::-webkit-scrollbar{display:none}
+.c9 nav a{font-size:13px;font-weight:500;color:var(--c9-ink);text-decoration:none;padding:7px 12px;border-radius:99px;white-space:nowrap;transition:background .2s}
+.c9 nav a:hover,.c9 nav a.on{background:var(--c9-gold-soft);color:var(--c9-gold-d)}
+@media (max-width:820px){.c9 nav{display:none}}
+
+/* shared */
+.c9 .eyebrow{font-size:13px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .card{background:var(--c9-white);border:1px solid var(--c9-line);border-radius:18px}
+.c9 section.block{padding:88px 0 0}
+.c9 .shead{display:flex;align-items:flex-end;gap:22px;margin-bottom:14px}
+.c9 .num{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:84px;line-height:.78;color:transparent;-webkit-text-stroke:1.5px var(--c9-gold);letter-spacing:-.03em;flex:none}
+.c9 .shead h2{font-size:clamp(28px,4vw,40px);line-height:1.08;margin-top:8px}
+.c9 .slede{font-size:18px;max-width:720px;margin:18px 0 34px}
+@media (max-width:600px){.c9 .num{font-size:56px}.c9 .shead{gap:14px}.c9 section.block{padding-top:64px}}
+
+/* hero */
+.c9 .hero{padding:80px 0 0}
+.c9 .hero h1{font-size:clamp(44px,7.5vw,84px);line-height:.98;margin:18px 0 22px;letter-spacing:-.025em}
+.c9 .hero .lede{font-size:clamp(17px,2vw,20px);max-width:720px}
+.c9 .philo{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:600;color:var(--c9-ink);font-size:20px;margin-top:26px}
+.c9 .philo span{color:var(--c9-gold)}
+.c9 .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;overflow:hidden}
+.c9 .stat{padding:24px 26px;border-right:1px solid var(--c9-line)}
+.c9 .stat:last-child{border-right:0}
+.c9 .stat b{display:block;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-size:40px;line-height:1;color:var(--c9-ink)}
+.c9 .stat span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold)}
+@media (max-width:700px){.c9 .stats{grid-template-columns:1fr 1fr}.c9 .stat:nth-child(2){border-right:0}.c9 .stat:nth-child(-n+2){border-bottom:1px solid var(--c9-line)}}
+.c9 .toc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.c9 .toc a{display:block;text-decoration:none;padding:18px 20px;transition:transform .2s,border-color .2s}
+.c9 .toc a:hover{transform:translateY(-2px);border-color:var(--c9-gold)}
+.c9 .toc small{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;color:var(--c9-gold);font-size:14px}
+.c9 .toc strong{display:block;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-size:17px;margin-top:4px}
+@media (max-width:820px){.c9 .toc{grid-template-columns:1fr 1fr}}
+
+/* dimensions */
+.c9 .dims{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.c9 .dim{padding:30px 32px;position:relative;overflow:hidden}
+.c9 .dim.wide{grid-column:1/-1}
+.c9 .dim .tagrow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.c9 .dim .dn{width:38px;height:38px;border-radius:50%;background:var(--c9-ink);color:var(--c9-gold);font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+.c9 .dim h3{font-size:24px}
+.c9 .dim .intro{color:var(--c9-ink-2);font-size:16.5px;margin-bottom:18px}
+.c9 .items{display:grid;gap:12px}
+.c9 .dim.wide .items{grid-template-columns:repeat(2,1fr)}
+.c9 .item{background:var(--c9-cream-2);border-radius:12px;padding:16px 18px}
+.c9 .item h4{font-size:16px;display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.c9 .item h4::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c9-gold);flex:none}
+.c9 .item p{margin:0;font-size:15px}
+@media (max-width:820px){.c9 .dims{grid-template-columns:1fr}.c9 .dim.wide .items{grid-template-columns:1fr}.c9 .dim{padding:24px 20px}}
+
+/* categories */
+.c9 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.c9 .cat{padding:26px 26px 22px;display:flex;flex-direction:column}
+.c9 .cat .cn{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:44px;line-height:.8;color:transparent;-webkit-text-stroke:1.2px var(--c9-gold);margin-bottom:14px}
+.c9 .cat h3{font-size:20px;margin-bottom:12px}
+.c9 .cat dl{margin:0}
+.c9 .cat dt{font-weight:600;color:var(--c9-ink);font-size:14.5px;margin-top:10px}
+.c9 .cat dd{margin:2px 0 0;font-size:14.5px}
+.c9 .cat.note{background:var(--c9-ink);border-color:var(--c9-ink);color:#C9CEC9;justify-content:center}
+.c9 .cat.note h3{color:#fff}
+.c9 .cat.note p{font-size:15px}
+.c9 .cat.note a{color:var(--c9-gold);font-weight:600;text-decoration:none}
+@media (max-width:900px){.c9 .cats{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.c9 .cats{grid-template-columns:1fr}}
+
+/* check-in */
+.c9 .ckwrap{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}
+.c9 .ckside{padding:28px;position:sticky;top:92px;background:var(--c9-ink);border-color:var(--c9-ink);color:#C9CEC9}
+.c9 .ring{width:150px;height:150px;margin:0 auto 18px;position:relative}
+.c9 .ring svg{transform:rotate(-90deg)}
+.c9 .ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.c9 .ring .val b{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;color:#fff;font-size:38px;line-height:1}
+.c9 .ring .val span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .ckside h3{color:#fff;font-size:20px;text-align:center}
+.c9 .ckside p{font-size:14.5px;text-align:center;margin-top:8px}
+.c9 .ckside .date{display:block;text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold);margin-bottom:6px}
+.c9 .btn{display:block;width:100%;margin-top:16px;font:600 14px "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;border-radius:99px;padding:11px 16px;border:1px solid #3A4A45;background:transparent;color:#fff;cursor:pointer;transition:background .2s}
+.c9 .btn:hover{background:#22332E}
+.c9 .cklist{display:grid;gap:12px}
+.c9 .ckrow{padding:20px 24px;display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start}
+.c9 .ckrow h4{font-size:17px;padding-top:9px}
+.c9 .ckrow h4 small{display:block;font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold);margin-bottom:2px}
+.c9 .qs{display:grid;gap:8px}
+.c9 .q{display:flex;gap:12px;align-items:center;padding:10px 14px;border-radius:10px;background:var(--c9-cream-2);cursor:pointer;color:var(--c9-ink);font-size:15px;user-select:none;transition:background .2s}
+.c9 .q:hover{background:var(--c9-gold-soft)}
+.c9 .q input{position:absolute;opacity:0;pointer-events:none}
+.c9 .q .box{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--c9-gold);background:#fff;flex:none;position:relative;transition:background .2s}
+.c9 .q input:checked + .box{background:var(--c9-gold)}
+.c9 .q input:checked + .box::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(40deg)}
+.c9 .q input:focus-visible + .box{outline:2px solid var(--c9-ink);outline-offset:2px}
+.c9 .q input:checked ~ span{color:var(--c9-muted)}
+@media (max-width:860px){.c9 .ckwrap{grid-template-columns:1fr}.c9 .ckside{position:static}}
+@media (max-width:600px){.c9 .ckrow{grid-template-columns:1fr;gap:6px;padding:18px}.c9 .ckrow h4{padding-top:0}}
+
+/* tips */
+.c9 .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.c9 .chip{font:500 14px "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;border:1px solid var(--c9-line);background:#fff;color:var(--c9-ink);border-radius:99px;padding:8px 16px;cursor:pointer;transition:all .2s}
+.c9 .chip:hover{border-color:var(--c9-gold)}
+.c9 .chip.on{background:var(--c9-ink);border-color:var(--c9-ink);color:#fff}
+.c9 .chip i{font-style:normal;color:var(--c9-gold);margin-left:6px;font-size:12px}
+.c9 .search{flex:1;min-width:200px;max-width:320px;margin-left:auto;font:15px "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding:9px 16px;border-radius:99px;border:1px solid var(--c9-line);background:#fff;color:var(--c9-ink)}
+.c9 .search:focus{outline:2px solid var(--c9-gold);outline-offset:1px}
+@media (max-width:700px){.c9 .search{margin-left:0;max-width:none}}
+.c9 .legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13.5px;margin:0 0 26px;padding:14px 18px;border-radius:12px;background:var(--c9-gold-soft);color:var(--c9-ink)}
+.c9 .legend b{font-weight:600}
+.c9 .ev{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.c9 .ev::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.c9 .ev.s{color:var(--c9-green)} .c9 .ev.m{color:var(--c9-amber)} .c9 .ev.t{color:var(--c9-plum)}
+.c9 .catgroup{margin-bottom:40px}
+.c9 .cghead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1.5px solid var(--c9-gold);padding-bottom:10px;margin-bottom:18px}
+.c9 .cghead h3{font-size:22px}
+.c9 .cghead span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.c9 .tip{padding:22px 24px}
+.c9 .tip header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.c9 .tip h4{font-size:19px;line-height:1.25}
+.c9 .tip h4 small{display:block;font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--c9-gold);margin-bottom:4px}
+.c9 .tip dl{margin:0;display:grid;grid-template-columns:62px 1fr;gap:0}
+.c9 .tip dt,.c9 .tip dd{padding:8px 0;border-top:1px solid var(--c9-line);font-size:14.5px;margin:0}
+.c9 .tip dt{font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--c9-gold-d);padding-top:10px}
+.c9 .tip dd{color:var(--c9-ink-2)}
+.c9 .empty{display:none;padding:40px;text-align:center}
+@media (max-width:760px){.c9 .tips{grid-template-columns:1fr}.c9 .tip{padding:20px}}
+
+/* quote + footer */
+.c9 .quote{margin:88px 0 0;padding:48px 52px;background:var(--c9-ink);border-radius:22px;color:#F5F1EA;position:relative;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:500;font-size:clamp(22px,3vw,32px);line-height:1.3}
+.c9 .quote::before{content:"“";position:absolute;left:30px;top:10px;color:var(--c9-gold);font-size:64px}
+.c9 .quote::after{content:"";position:absolute;right:52px;top:0;width:60px;height:5px;background:var(--c9-gold);border-radius:0 0 4px 4px}
+.c9 .quote p{margin:0;padding-left:28px}
+@media (max-width:600px){.c9 .quote{padding:36px 24px}.c9 .quote::before{left:14px}}
+.c9 footer{margin-top:72px;border-top:1px solid var(--c9-line);background:#FDFCF9}
+.c9 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:28px;padding-bottom:28px;flex-wrap:wrap}
+.c9 footer span{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:var(--c9-ink);color:var(--c9-gold);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:30}
+.c9 .top.show{opacity:1;pointer-events:auto}
+
+
+/* protocol */
+.c9 .phasebar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:18px}
+.c9 .pblabel{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold);margin-right:4px}
+.c9 .chip.on i{color:var(--c9-gold)}
+.c9 .pwrap{display:grid;grid-template-columns:1fr 300px;gap:18px;align-items:start}
+.c9 .pblocks{display:grid;gap:14px}
+.c9 .pblock{padding:24px 26px}
+.c9 .pb-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.c9 .pb-ico{width:44px;height:44px;border-radius:12px;background:var(--c9-gold-soft);display:flex;align-items:center;justify-content:center;flex:none}
+.c9 .pb-ico svg{width:22px;height:22px;stroke:var(--c9-gold-d);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.c9 .pb-head h3{font-size:22px;line-height:1.1}
+.c9 .pb-head small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold);margin-bottom:3px;font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:500}
+.c9 .pb-count{margin-left:auto;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:600;color:var(--c9-ink);font-size:15px;white-space:nowrap}
+.c9 .pb-count i{font-style:normal;color:var(--c9-gold)}
+.c9 .hab{display:flex;gap:14px;align-items:flex-start;padding:13px 16px;border-radius:12px;background:var(--c9-cream-2);cursor:pointer;margin-top:8px;user-select:none;transition:background .2s,opacity .2s;position:relative}
+.c9 .hab:hover{background:var(--c9-gold-soft)}
+.c9 .hab input{position:absolute;opacity:0;pointer-events:none}
+.c9 .hab .box{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--c9-gold);background:#fff;flex:none;position:relative;margin-top:1px;transition:background .2s}
+.c9 .hab input:checked + .box{background:var(--c9-gold)}
+.c9 .hab input:checked + .box::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(40deg)}
+.c9 .hab input:focus-visible + .box{outline:2px solid var(--c9-ink);outline-offset:2px}
+.c9 .hab .ht{flex:1;min-width:0}
+.c9 .hab .ht strong{display:block;font-size:15.5px;line-height:1.35}
+.c9 .hab .ht span{display:block;font-size:14px;margin-top:2px}
+.c9 .hab input:checked ~ .ht strong{text-decoration:line-through;text-decoration-color:var(--c9-gold);color:var(--c9-muted)}
+.c9 .dtag{flex:none;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--c9-gold-d);background:#fff;border:1px solid var(--c9-line);border-radius:99px;padding:3px 10px;margin-top:1px;white-space:nowrap}
+.c9 .hab.locked{opacity:.45;cursor:default}
+.c9 .hab.locked:hover{background:var(--c9-cream-2)}
+.c9 .hab.locked .box{border-style:dashed}
+.c9 .hab .lock{display:none;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--c9-gold-d);margin-top:6px}
+.c9 .hab.locked .lock{display:inline-block}
+.c9 .hab.locked .dtag{display:none}
+.c9 .pside{top:92px}
+.c9 .btn.gold{background:var(--c9-gold);border-color:var(--c9-gold);color:var(--c9-ink)}
+.c9 .btn.gold:hover{background:#C9A26B}
+.c9 .btn.gold.done{background:transparent;color:var(--c9-gold);border-color:var(--c9-gold)}
+.c9 .btn + .btn{margin-top:10px}
+@media (max-width:860px){.c9 .pwrap{grid-template-columns:1fr}.c9 .pside{position:static;order:-1}}
+@media (max-width:600px){.c9 .pblock{padding:20px 16px}.c9 .hab{padding:12px}.c9 .dtag{display:none}}
+
+/* roadmap */
+.c9 .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+.c9 .phase{padding:24px;display:flex;flex-direction:column;position:relative}
+.c9 .phase:not(.after)::after{content:"";position:absolute;right:-12px;top:34px;width:10px;height:10px;border-top:1.5px solid var(--c9-gold);border-right:1.5px solid var(--c9-gold);transform:rotate(45deg);z-index:2}
+.c9 .ph-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.c9 .ph-n{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--c9-ink);padding:4px 10px;border-radius:99px}
+.c9 .ph-w{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .phase h3{font-size:24px;margin-bottom:8px}
+.c9 .phase p{font-size:14.5px}
+.c9 .ph-dims{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.c9 .ph-dims span{font-size:12px;color:var(--c9-ink);background:var(--c9-cream-2);border:1px solid var(--c9-line);border-radius:99px;padding:3px 10px}
+.c9 .ph-count{margin-top:14px;padding-top:12px;border-top:1px solid var(--c9-line);font-size:13px}
+.c9 .ph-count b{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;color:var(--c9-ink);font-size:20px;margin-right:4px}
+.c9 .phase.after{background:var(--c9-ink);border-color:var(--c9-ink);color:#C9CEC9}
+.c9 .phase.after h3{color:#fff}
+.c9 .phase.after .ph-n{background:var(--c9-gold);color:var(--c9-ink)}
+.c9 .phase.cur{border-color:var(--c9-gold);box-shadow:0 0 0 2px var(--c9-gold-soft)}
+@media (max-width:980px){.c9 .phases{grid-template-columns:1fr 1fr}.c9 .phase::after{display:none}}
+@media (max-width:600px){.c9 .phases{grid-template-columns:1fr}}
+
+.c9 .tracker{margin-top:18px;padding:28px}
+.c9 .tr-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.c9 .tr-head h3{font-size:22px}
+.c9 .tr-head p{margin:4px 0 0;font-size:14.5px}
+.c9 .trgrid{display:grid;grid-template-columns:70px repeat(7,1fr);gap:6px;align-items:center}
+.c9 .trwk{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c9-gold);font-weight:600}
+.c9 .trwk.p2,.c9 .trwk.p3{}
+.c9 .day{height:34px;border-radius:8px;background:var(--c9-cream-2);border:1px solid var(--c9-line);font:500 12px "IBM Plex Sans",system-ui,sans-serif;color:#A39C8F;cursor:pointer;padding:0;transition:all .2s}
+.c9 .day:hover:not(:disabled){border-color:var(--c9-gold)}
+.c9 .day:disabled{cursor:default;opacity:.7}
+.c9 .day.done{background:var(--c9-gold);border-color:var(--c9-gold);color:#fff}
+.c9 .day.today{border:2px solid var(--c9-ink);color:var(--c9-ink);font-weight:700}
+.c9 .day.done.today{color:var(--c9-ink)}
+.c9 .trsep{grid-column:1/-1;height:1px;background:var(--c9-line);margin:4px 0}
+.c9 .tr-legend{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;margin-top:18px;font-size:13px}
+.c9 .lg{display:inline-block;width:14px;height:14px;border-radius:4px;background:var(--c9-cream-2);border:1px solid var(--c9-line);vertical-align:-2px;margin-right:6px}
+.c9 .lg.done{background:var(--c9-gold);border-color:var(--c9-gold)}
+.c9 .lg.today{border:2px solid var(--c9-ink)}
+.c9 .linkbtn{margin-left:auto;background:none;border:0;font:500 13px "IBM Plex Sans",system-ui,sans-serif;color:var(--c9-muted);text-decoration:underline;cursor:pointer;padding:0}
+@media (max-width:600px){.c9 .tracker{padding:20px 14px}.c9 .trgrid{grid-template-columns:40px repeat(7,1fr);gap:4px}.c9 .day{height:30px;font-size:10.5px}.c9 .trwk{font-size:9.5px;letter-spacing:.06em}}
+
+.c9 .toc{grid-template-columns:repeat(3,1fr)}
+@media (max-width:820px){.c9 .toc{grid-template-columns:1fr 1fr}}
+
+/* reveal */
+.c9 .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.c9 .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.c9 .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="c9" id="c9-top">
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#c9-top">CODE<b>9</b> FITNESS</a>
+    <nav aria-label="Sections">
+      <a href="#protocol">Daily Protocol</a>
+      <a href="#roadmap">9-Week Roadmap</a>
+      <a href="#dimensions">7 Dimensions</a>
+      <a href="#categories">Categories</a>
+      <a href="#checkin">Check-In</a>
+      <a href="#tips">Practices</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Holistic wellness · Free resource</div>
+    <h1>The Daily<br>Wellness Protocol</h1>
+    <p class="lede">Holistic wellness isn't something you do once — it's something you practise every day. This protocol focuses not just on physical health, but also on your mental, emotional and social well-being, so that reaching your fitness goal goes hand in hand with looking after the whole person.</p>
+    <p class="lede">Use the <strong>9-week roadmap</strong> as your guideline: three phases that build the protocol up step by step, until by week 9 it's simply how you live — and you've reached a new level of yourself.</p>
+    <p class="philo">Every day counts. <span>Nine weeks to a new level.</span></p>
+
+    <div class="card stats">
+      <div class="stat"><b>1</b><span>Daily protocol</span></div>
+      <div class="stat"><b>4</b><span>Moments a day</span></div>
+      <div class="stat"><b>7</b><span>Dimensions</span></div>
+      <div class="stat"><b>9</b><span>Week roadmap</span></div>
+    </div>
+
+    <div class="toc">
+      <a class="card" href="#protocol"><small>01</small><strong>The Daily Protocol</strong></a>
+      <a class="card" href="#roadmap"><small>02</small><strong>The 9-Week Roadmap</strong></a>
+      <a class="card" href="#dimensions"><small>03</small><strong>The 7 Dimensions</strong></a>
+      <a class="card" href="#categories"><small>04</small><strong>11 Key Categories</strong></a>
+      <a class="card" href="#checkin"><small>05</small><strong>Evening Check-In</strong></a>
+      <a class="card" href="#tips"><small>06</small><strong>Practices Library</strong></a>
+    </div>
+  </section>
+
+  <!-- 01 PROTOCOL -->
+  <section class="block" id="protocol">
+    <div class="shead rv"><div class="num">01</div><div><div class="eyebrow">Every day</div><h2>The Daily Protocol</h2></div></div>
+    <p class="slede rv">Four moments in your day, each with a handful of simple habits across the seven dimensions of wellness. Tick them off as you go — your progress for today is saved on this device.</p>
+    <div class="phasebar rv" role="group" aria-label="Show the protocol for">
+      <span class="pblabel">I'm in</span>
+      <button type="button" class="chip" data-p="1">Weeks 1–3 <i>Foundation</i></button>
+      <button type="button" class="chip" data-p="2">Weeks 4–6 <i>Build</i></button>
+      <button type="button" class="chip" data-p="3">Weeks 7–9 &amp; beyond <i>Elevate</i></button>
+    </div>
+    <div class="pwrap">
+      <div class="pblocks" id="pblocks"></div>
+      <aside class="card ckside pside">
+        <span class="date" id="pdate">Today</span>
+        <div class="ring">
+          <svg width="150" height="150" viewBox="0 0 150 150" aria-hidden="true">
+            <circle cx="75" cy="75" r="64" fill="none" stroke="#2B3B36" stroke-width="10"/>
+            <circle id="pring" cx="75" cy="75" r="64" fill="none" stroke="#B8915A" stroke-width="10" stroke-linecap="round" stroke-dasharray="402" stroke-dashoffset="402" style="transition:stroke-dashoffset .5s ease"/>
+          </svg>
+          <div class="val"><b id="pn">0</b><span id="pof">of 10</span></div>
+        </div>
+        <h3 id="ptitle">Today's protocol</h3>
+        <p id="pmsg">Start with the morning block. Small, consistent steps beat perfect days.</p>
+        <button class="btn gold" id="pdone" type="button">Mark today complete</button>
+        <button class="btn" id="preset" type="button">Reset today</button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 02 ROADMAP -->
+  <section class="block" id="roadmap">
+    <div class="shead rv"><div class="num">02</div><div><div class="eyebrow">Your guideline</div><h2>The 9-Week Roadmap</h2></div></div>
+    <p class="slede rv">You don't need to do the full protocol on day one. Each phase adds a new layer on top of the last, so the habits have time to stick before the next ones arrive.</p>
+    <div class="phases">
+      <article class="card phase rv"><div class="ph-top"><span class="ph-n">Phase 1</span><span class="ph-w">Weeks 1–3</span></div><h3>Foundation</h3>
+        <p>Lock in the physical anchors: daylight, hydration, balanced meals, training, mobility and sleep. Complete the evening check-in every day — even when the answer is no.</p>
+        <div class="ph-dims"><span>Physical</span><span>Sleep</span></div><div class="ph-count"><b>10</b> daily habits</div></article>
+      <article class="card phase rv"><div class="ph-top"><span class="ph-n">Phase 2</span><span class="ph-w">Weeks 4–6</span></div><h3>Build</h3>
+        <p>Add the mind: breathwork or meditation, affirmations, gratitude, journaling, a real mental break and one genuine connection a day. Try one new practice from the library each week.</p>
+        <div class="ph-dims"><span>Mental</span><span>Emotional</span><span>Social</span></div><div class="ph-count"><b>16</b> daily habits</div></article>
+      <article class="card phase rv"><div class="ph-top"><span class="ph-n">Phase 3</span><span class="ph-w">Weeks 7–9</span></div><h3>Elevate</h3>
+        <p>The full protocol across all seven dimensions: daily learning, connecting to your purpose, your environment and sustainable choices. In week 9, reflect on how far you've come.</p>
+        <div class="ph-dims"><span>Intellectual</span><span>Spiritual</span><span>Environmental</span></div><div class="ph-count"><b>20</b> daily habits</div></article>
+      <article class="card phase after rv"><div class="ph-top"><span class="ph-n">Then</span><span class="ph-w">Week 10 onwards</span></div><h3>Your new normal</h3>
+        <p>The protocol doesn't end — it's daily. Keep the habits that changed you, set new goals, and run the roadmap again whenever you're ready for the next level.</p></article>
+    </div>
+
+    <div class="card tracker rv">
+      <div class="tr-head">
+        <div><h3 id="trtitle">Your 63 days</h3><p id="trsub">Start your 9 weeks to track each completed day.</p></div>
+        <div class="tr-actions"><button type="button" class="chip on" id="trstart">Start my 9 weeks today</button></div>
+      </div>
+      <div class="trgrid" id="trgrid"></div>
+      <div class="tr-legend"><span><em class="lg done"></em>Completed</span><span><em class="lg today"></em>Today</span><span><em class="lg"></em>Upcoming / not marked</span><button type="button" class="linkbtn" id="trclear" hidden>Restart roadmap</button></div>
+    </div>
+  </section>
+
+  <!-- 03 DIMENSIONS -->
+  <section class="block" id="dimensions">
+    <div class="shead rv"><div class="num">03</div><div><div class="eyebrow">The why behind the protocol</div><h2>The 7 Dimensions of Wellness</h2></div></div>
+    <p class="slede rv">Wellness is more than training and nutrition. Every habit in the daily protocol serves one of these seven dimensions — and each one supports the others. When one is neglected, the rest feel it.</p>
+    <div class="dims" id="dims"></div>
+  </section>
+
+  <!-- 04 CATEGORIES -->
+  <section class="block" id="categories">
+    <div class="shead rv"><div class="num">04</div><div><div class="eyebrow">Where to improve</div><h2>11 Key Categories of Health &amp; Wellness</h2></div></div>
+    <p class="slede rv">We will look at 11 key categories of health and wellness where you can aim to improve in your daily life — ranging from physical fitness to mental and social well-being.</p>
+    <div class="cats" id="cats"></div>
+  </section>
+
+  <!-- 05 CHECK-IN -->
+  <section class="block" id="checkin">
+    <div class="shead rv"><div class="num">05</div><div><div class="eyebrow">Every evening</div><h2>Important Daily Self Check-Ins</h2></div></div>
+    <p class="slede rv">The last step of the daily protocol. Take two minutes at the end of each day and tick what you can honestly answer “yes” to — it's not a test, it's a way to notice patterns over time.</p>
+    <div class="ckwrap">
+      <aside class="card ckside rv">
+        <span class="date" id="ckdate">Today</span>
+        <div class="ring">
+          <svg width="150" height="150" viewBox="0 0 150 150" aria-hidden="true">
+            <circle cx="75" cy="75" r="64" fill="none" stroke="#2B3B36" stroke-width="10"/>
+            <circle id="ringbar" cx="75" cy="75" r="64" fill="none" stroke="#B8915A" stroke-width="10" stroke-linecap="round" stroke-dasharray="402" stroke-dashoffset="402" style="transition:stroke-dashoffset .5s ease"/>
+          </svg>
+          <div class="val"><b id="ckn">0</b><span>of 14</span></div>
+        </div>
+        <h3 id="cktitle">Start your check-in</h3>
+        <p id="ckmsg">Tick each question you can honestly answer “yes” to today.</p>
+        <button class="btn" id="ckreset" type="button">Reset today</button>
+      </aside>
+      <div class="cklist" id="cklist"></div>
+    </div>
+  </section>
+
+  <!-- 06 TIPS -->
+  <section class="block" id="tips">
+    <div class="shead rv"><div class="num">06</div><div><div class="eyebrow">Health, wellness &amp; fitness tips</div><h2>New-Age Practices for Mind &amp; Body</h2></div></div>
+    <p class="slede rv">A library of practices to explore — what each one is, how to do it, why people use it and when to try it. From week 4 of the roadmap, pick one new practice each week and add it to your day — rather than trying everything at once.</p>
+    <div class="tools rv" id="chips">
+      <input class="search" id="search" type="search" placeholder="Search practices…" aria-label="Search practices">
+    </div>
+    <div class="legend rv">
+      <span><b>Evidence level:</b></span>
+      <span class="ev s">Strong evidence</span>
+      <span class="ev m">Some / emerging evidence</span>
+      <span class="ev t">Traditional or experiential</span>
+    </div>
+    <div id="tiplist"></div>
+    <div class="card empty" id="empty">No practices match your search.</div>
+  </section>
+
+  <div class="quote rv"><p>Progress isn't always linear. Be kind to yourself — setbacks are a normal part of any fitness journey.</p></div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#c9-top" style="font-size:18px">CODE<b>9</b> FITNESS</a>
+    <span>Holistic wellness · 9-week program</span>
+  </div>
+</footer>
+<a class="top" id="totop" href="#c9-top" aria-label="Back to top">↑</a>
+
+<script>
+(function(){
+const esc = s => s;
+
+
+/* ---------- 01 daily protocol ---------- */
+const ICONS = {
+ sun:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+ day:'<svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>',
+ eve:'<svg viewBox="0 0 24 24"><path d="M17 18a5 5 0 0 0-10 0"/><path d="M12 2v7M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1M8 6l4-4 4 4"/></svg>',
+ moon:'<svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>'
+};
+// [id, title, detail, dimension, phase]
+const PROTOCOL = [
+ ['sun','Morning','Start the day',[
+  ['m1','Get daylight within an hour of waking','Wake with the sun where you can — morning light anchors your body clock.','Physical',1],
+  ['m2','Drink a large glass of water','Start hydrated. Add electrolytes after a heavy sweat or a hot day.','Physical',1],
+  ['m3','5–10 minutes of breathwork or meditation','Focus on your breath, be present and let go of stress. Box breathing is a good start.','Mental',2],
+  ['m4','Affirmations &amp; today\'s goal','Remind yourself of your goals and the progress you are making.','Mental',2],
+  ['m5','Write down 3 things you\'re grateful for','A small habit that grounds the rest of your day.','Spiritual',2]]],
+ ['day','During the day','Fuel, move, connect',[
+  ['d1','Eat balanced meals from your nutrition plan','Whole foods: vegetables, lean proteins, healthy fats and complex carbohydrates.','Physical',1],
+  ['d2','Keep drinking water throughout the day','Keep a bottle in sight and refill it.','Physical',1],
+  ['d3','Training or active recovery — as scheduled','Follow your program. Rest days are part of the plan, not a break from it.','Physical',1],
+  ['d4','10 minutes of stretching &amp; mobility','Improves flexibility and movement quality and reduces injury risk.','Physical',1],
+  ['d5','Take a real mental break','Step outside, get into nature, read or enjoy a hobby — away from screens.','Mental',2],
+  ['d6','Connect with someone','Call a friend, message family or train with your workout buddy.','Social',2],
+  ['d7','Learn something for 10 minutes','A podcast, a chapter, a documentary — fitness, nutrition or anything that interests you.','Intellectual',3],
+  ['d8','Connect today\'s effort to your bigger “why”','Remind yourself who and what you are doing this for.','Spiritual',3]]],
+ ['eve','Evening','Reflect and reset',[
+  ['e1','5-minute reset of your space','A clutter-free environment reduces stress and helps tomorrow start well.','Environmental',3],
+  ['e2','Journal: “What made me happy today?”','Acknowledge how you feel, without judgement.','Emotional',2],
+  ['e3','Make one sustainable choice','Reduce waste, recycle, or choose the reusable option.','Environmental',3],
+  ['e4','Complete your evening check-in','Two minutes across all seven dimensions — see section 05.','Emotional',1]]],
+ ['moon','Before bed','Protect your sleep',[
+  ['b1','Screens off one hour before bed','Less blue light and less stimulation make it easier to fall asleep.','Physical',1],
+  ['b2','Wind-down ritual in a cool, dark room','Blackout curtains, a cooler room and the same routine every night.','Physical',1],
+  ['b3','Lights out for 7–9 hours of sleep','Sleep is where muscle recovery and hormone regulation happen.','Physical',1]]]
+];
+const PNAMES = {1:'Weeks 4–6',2:'Weeks 7–9',3:''};
+const rd = (k,d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e) { return d; } };
+const wr = (k,v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} };
+const dayKey = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const TODAY = dayKey(new Date());
+const PKEY = 'c9-protocol-' + TODAY;
+let pstate = rd(PKEY, {});
+let road = rd('c9-roadmap', {start:null, done:[]});
+if(!Array.isArray(road.done)) road.done = [];
+const dayIndex = () => road.start ? Math.floor((new Date(TODAY) - new Date(road.start)) / 864e5) : -1;
+let phase = rd('c9-phase', null);
+if(!phase){ const di = dayIndex(); phase = di >= 42 ? 3 : di >= 21 ? 2 : 1; }
+
+document.getElementById('pdate').textContent = new Date().toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'});
+document.getElementById('pblocks').innerHTML = PROTOCOL.map(b=>`
+ <div class="card pblock rv"><div class="pb-head"><span class="pb-ico">${ICONS[b[0]]}</span><h3><small>${b[2]}</small>${b[1]}</h3><span class="pb-count" data-b="${b[0]}"></span></div>
+ ${b[3].map(h=>`<label class="hab" data-p="${h[4]}"><input type="checkbox" data-h="${h[0]}"><span class="box"></span><span class="ht"><strong>${h[1]}</strong><span>${h[2]}</span><em class="lock">${h[4]===2?'Unlocks in week 4':'Unlocks in week 7'}</em></span><span class="dtag">${h[3]}</span></label>`).join('')}
+ </div>`).join('');
+const habs = [...document.querySelectorAll('#pblocks input')];
+habs.forEach(i=>{ i.checked = !!pstate[i.dataset.h]; i.addEventListener('change',()=>{ pstate[i.dataset.h]=i.checked; wr(PKEY,pstate); pupd(); }); });
+document.querySelectorAll('.phasebar .chip').forEach(c=>c.addEventListener('click',()=>{ phase=+c.dataset.p; wr('c9-phase',phase); applyPhase(); }));
+function applyPhase(){
+  document.querySelectorAll('.phasebar .chip').forEach(c=>c.classList.toggle('on', +c.dataset.p===phase));
+  document.querySelectorAll('.hab').forEach(l=>{ const lk = +l.dataset.p > phase; l.classList.toggle('locked', lk); l.querySelector('input').disabled = lk; });
+  document.querySelectorAll('.phase').forEach((p,i)=>p.classList.toggle('cur', i===phase-1));
+  pupd();
+}
+const PMSG = [[0,'Today\'s protocol','Start with the morning block. Small, consistent steps beat perfect days.'],
+ [.01,'You\'ve started','Every habit you tick is a vote for the person you\'re becoming.'],
+ [.5,'Halfway there','Keep the momentum — the evening and bedtime blocks protect tomorrow.'],
+ [.85,'Almost complete','Just a few habits left for today.'],
+ [1,'Protocol complete','Every active habit done today. Mark the day on your roadmap.']];
+function pupd(){
+  const act = habs.filter(i=>!i.disabled), n = act.filter(i=>i.checked).length, t = act.length || 1;
+  document.getElementById('pn').textContent = n;
+  document.getElementById('pof').textContent = 'of ' + act.length;
+  document.getElementById('pring').style.strokeDashoffset = 402 - 402*(n/t);
+  const m = PMSG.filter(x=>n/t>=x[0]).pop();
+  document.getElementById('ptitle').textContent = m[1]; document.getElementById('pmsg').textContent = m[2];
+  document.querySelectorAll('.pb-count').forEach(el=>{
+    const ins = [...el.closest('.pblock').querySelectorAll('input')].filter(i=>!i.disabled);
+    el.innerHTML = ins.length ? `${ins.filter(i=>i.checked).length}<i> / ${ins.length}</i>` : '';
+  });
+}
+document.getElementById('preset').addEventListener('click',()=>{ pstate={}; wr(PKEY,pstate); habs.forEach(i=>i.checked=false); pupd(); });
+
+/* ---------- 02 roadmap tracker ---------- */
+const grid = document.getElementById('trgrid');
+function trRender(){
+  const di = dayIndex();
+  let h = '';
+  for(let w=0; w<9; w++){
+    if(w===3||w===6) h += '<div class="trsep"></div>';
+    h += `<div class="trwk">Wk ${w+1}</div>`;
+    for(let d=0; d<7; d++){
+      const i = w*7+d, done = road.done.includes(i), td = i===di;
+      h += `<button type="button" class="day${done?' done':''}${td?' today':''}" data-i="${i}" ${!road.start || i>di ? 'disabled' : ''} aria-label="Day ${i+1}${done?', completed':''}">${i+1}</button>`;
+    }
+  }
+  grid.innerHTML = h;
+  const t = document.getElementById('trtitle'), s = document.getElementById('trsub'), st = document.getElementById('trstart');
+  document.getElementById('trclear').hidden = !road.start;
+  st.hidden = !!road.start;
+  if(!road.start){ t.textContent='Your 63 days'; s.textContent='Start your 9 weeks to track each completed day. Your progress is saved on this device.'; }
+  else if(di>62){ t.textContent='Roadmap complete'; s.textContent=`You completed ${road.done.length} of 63 days. Keep the protocol daily — or restart the roadmap for your next level.`; }
+  else { t.textContent=`Week ${Math.floor(di/7)+1} · Day ${di+1} of 63`; s.textContent=`${road.done.length} day${road.done.length===1?'':'s'} completed so far. Tap a past day to mark or unmark it.`; }
+  const pd = document.getElementById('pdone'), on = road.start && di<=62 && road.done.includes(di);
+  pd.textContent = !road.start ? 'Start my 9 weeks' : di>62 ? 'Roadmap complete' : on ? '✓ Today marked complete' : 'Mark today complete';
+  pd.classList.toggle('done', !!on);
+}
+function toggleDay(i){ const k = road.done.indexOf(i); k>-1 ? road.done.splice(k,1) : road.done.push(i); wr('c9-roadmap',road); trRender(); }
+grid.addEventListener('click',e=>{ const b = e.target.closest('.day'); if(b && !b.disabled) toggleDay(+b.dataset.i); });
+function startRoad(){ road = {start:TODAY, done:[]}; phase = 1; wr('c9-roadmap',road); wr('c9-phase',phase); applyPhase(); trRender(); }
+document.getElementById('trstart').addEventListener('click', startRoad);
+document.getElementById('trclear').addEventListener('click',()=>{ if(confirm('Restart your 9-week roadmap from today? Your completed days will be cleared.')) startRoad(); });
+document.getElementById('pdone').addEventListener('click',()=>{
+  if(!road.start){ startRoad(); return; }
+  const di = dayIndex(); if(di>=0 && di<=62) toggleDay(di);
+});
+applyPhase(); trRender();
+
+/* ---------- 03 dimensions ---------- */
+const DIMS = [
+ ['Physical Wellness','Maintaining physical wellness goes beyond exercise. It includes proper nutrition, rest, and recovery.',[
+  ['Balanced Nutrition','Follow the provided nutrition plan, focusing on whole foods rich in vitamins, minerals and antioxidants. Incorporate plenty of vegetables, lean proteins, healthy fats and complex carbohydrates to fuel your workouts and recovery. Stay hydrated by drinking plenty of water throughout the day.'],
+  ['Adequate Sleep','Aim for 7–9 hours of quality sleep per night. Sleep is crucial for muscle recovery, hormone regulation and overall well-being.'],
+  ['Rest Days','Ensure you take rest or active recovery days as scheduled. Overtraining can lead to burnout, injury and decreased performance.'],
+  ['Stretching and Mobility','Incorporate daily stretching and mobility exercises to improve flexibility, reduce the risk of injury and enhance overall movement quality.']], true],
+ ['Mental Wellness','Mental wellness is vital for staying motivated, focused and resilient throughout the program.',[
+  ['Mindfulness and Meditation','Spend 5–10 minutes each day focusing on your breath, being present and letting go of stress. Apps like Headspace or Calm can guide you through meditation.'],
+  ['Positive Affirmations','Start your day with positive affirmations to set a positive mindset. Remind yourself of your goals and the progress you are making.'],
+  ['Stress Management','Identify stressors in your life and develop strategies to manage them — journaling, talking to a friend, or engaging in hobbies that bring you joy.'],
+  ['Breaks and Relaxation','Schedule time for relaxation and mental breaks: reading, spending time in nature, or enjoying a hobby.']], true],
+ ['Emotional Wellness','Emotional wellness involves understanding and managing your emotions, as well as fostering a positive outlook.',[
+  ['Emotional Check-Ins','Regularly check in with yourself to assess how you’re feeling. Acknowledge your emotions without judgement and address any negative feelings constructively.'],
+  ['Social Connections','Maintain regular contact with friends, family or a support group. Social interactions are crucial for emotional health and can provide motivation and encouragement.'],
+  ['Self-Compassion','Be kind to yourself, especially on challenging days. Progress isn’t always linear, and setbacks are a normal part of any fitness journey.']]],
+ ['Social Wellness','Social wellness emphasises the importance of relationships and a support system in your overall well-being.',[
+  ['Workout Buddy','If possible, find a workout partner or join a group fitness class. Sharing the journey increases accountability and makes workouts more enjoyable.'],
+  ['Community Involvement','Engage with a community, online or in-person, that shares your health and fitness goals. Forums, social media groups or local clubs offer support, motivation and advice.'],
+  ['Family and Friends','Share your goals with family and friends, seek their support, and maybe even encourage them to join you in healthy activities.']]],
+ ['Intellectual Wellness','Intellectual wellness involves stimulating your mind and maintaining curiosity and learning.',[
+  ['Learning and Growth','Dedicate time to learning something new each week — fitness, nutrition or another area of interest — through books, podcasts or documentaries.'],
+  ['Goal Setting and Reflection','Set specific, measurable goals for each week and reflect on your progress. Adjust your goals as needed to stay challenged and engaged.']]],
+ ['Spiritual Wellness','Spiritual wellness can involve a sense of purpose, connection to something greater, or simply an appreciation for life.',[
+  ['Purpose-Driven Goals','Connect your fitness journey to a larger purpose — being more active with family, supporting a cause or personal growth. A deeper reason enhances motivation.'],
+  ['Gratitude Practice','Begin or end each day by listing things you’re grateful for. This can enhance your sense of well-being and keep you grounded.'],
+  ['Nature and Reflection','Spend time in nature whenever possible — a walk in the park, a hike, or simply sitting outside can be rejuvenating and give space for reflection.']]],
+ ['Environmental Wellness','Environmental wellness involves creating and maintaining a healthy, supportive living and working environment.',[
+  ['Clean and Organise','Keep your living space clean and organised. A clutter-free environment can reduce stress and increase focus.'],
+  ['Healthy Surroundings','Surround yourself with positive influences, such as motivational quotes, healthy foods and supportive people.'],
+  ['Sustainable Choices','Reduce waste, recycle and use sustainable products. This benefits the environment and creates a sense of purpose and responsibility.']], true]
+];
+document.getElementById('dims').innerHTML = DIMS.map((d,i)=>`
+ <article class="card dim rv ${d[3]?'wide':''}">
+   <div class="tagrow"><span class="dn">${String(i+1).padStart(2,'0')}</span><h3>${d[0]}</h3></div>
+   <p class="intro">${d[1]}</p>
+   <div class="items">${d[2].map(it=>`<div class="item"><h4>${it[0]}</h4><p>${it[1]}</p></div>`).join('')}</div>
+ </article>`).join('');
+
+/* ---------- 02 categories ---------- */
+const CATS = [
+ ['Physical Fitness',[['Gym Knowledge & Training Techniques','Understanding different types of exercise (strength, cardio, flexibility), improving form and creating personalised workout plans.'],['Functional Fitness','Training for movements relevant to daily life, like mobility, balance and posture.']]],
+ ['Nutrition & Diet',[['Healthy Eating','Learning about macronutrients (proteins, fats, carbs) and micronutrients (vitamins, minerals), meal planning and portion control.'],['Hydration','Understanding daily water needs and the importance of staying hydrated for optimal body function.']]],
+ ['Mental Health & Emotional Wellness',[['Stress Management','Techniques like mindfulness, meditation and breathing exercises to manage stress and anxiety.'],['Emotional Intelligence','Developing self-awareness, empathy and emotional regulation to improve mental well-being.']]],
+ ['Sleep Health',[['Sleep Quality & Hygiene','Improving sleep habits (consistent bedtime, less screen time before bed) to ensure restorative sleep — essential for mental and physical recovery.']]],
+ ['Social Wellness',[['Building Healthy Relationships','Improving communication, setting boundaries and nurturing strong connections with friends, family and colleagues.'],['Community Engagement','Participating in group activities or volunteering for a sense of belonging and purpose.']]],
+ ['Work-Life Balance',[['Time Management','Prioritising tasks, setting clear boundaries between work and personal life, and taking breaks to prevent burnout.']]],
+ ['Financial Wellness',[['Managing Finances','Understanding budgeting, savings and investing to reduce financial stress and support overall well-being.']]],
+ ['Mindset & Personal Growth',[['Growth Mindset','Cultivating a mindset focused on continuous learning and self-improvement.'],['Goal Setting','Setting realistic short- and long-term goals, whether in career, personal life or health.']]],
+ ['Spiritual Wellness',[['Mindfulness & Meditation','Practising mindfulness or spiritual practices that foster a sense of peace and purpose.'],['Gratitude Practices','Regularly reflecting on and appreciating positive aspects of life, which can enhance happiness and contentment.']]],
+ ['Environmental Wellness',[['Living Environment','Creating a clean, organised and pleasant living space that promotes relaxation and productivity.'],['Sustainability','Making eco-friendly choices, like reducing waste or conserving resources, for a sense of responsibility and fulfilment.']]],
+ ['Preventive Health & Self-Care',[['Regular Check-Ups','Preventive health measures like routine physical exams, dental care and screenings.'],['Self-Care Practices','Habits like skincare, massage and relaxation techniques to prioritise self-care.']]]
+];
+document.getElementById('cats').innerHTML = CATS.map((c,i)=>`
+ <article class="card cat rv"><div class="cn">${String(i+1).padStart(2,'0')}</div><h3>${c[0]}</h3>
+ <dl>${c[1].map(x=>`<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join('')}</dl></article>`).join('')
+ + `<article class="card cat note rv"><h3>Start small</h3><p>You don't need to improve all 11 at once. The daily protocol covers the essentials — pick one or two categories to go deeper on each week.</p><a href="#protocol">Go to the daily protocol →</a></article>`;
+
+/* ---------- 03 check-in ---------- */
+const CK = [
+ ['Physical',['Did I eat balanced meals and stay hydrated?','Did I get enough sleep?']],
+ ['Mental',['Is my stress level manageable?','Did I practise mindfulness or meditation?']],
+ ['Emotional',['Have I checked in with how I’ve been feeling?','Have I connected with others?']],
+ ['Social',['Did I spend time with supportive people?','Have I reached out to my community?']],
+ ['Intellectual',['Did I learn something new?','Did I set and reflect on my goals?']],
+ ['Spiritual',['Did I do something that gives me a sense of purpose?','Have I practised gratitude?']],
+ ['Environmental',['Is my living space supporting my well-being?','Am I making sustainable choices?']]
+];
+const today = new Date().toISOString().slice(0,10);
+const KEY = 'c9-checkin-' + today;
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { state = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {} };
+
+document.getElementById('ckdate').textContent = new Date().toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'});
+document.getElementById('cklist').innerHTML = CK.map((r,i)=>`
+ <div class="card ckrow rv"><h4><small>${String(i+1).padStart(2,'0')}</small>${r[0]}</h4>
+ <div class="qs">${r[1].map((q,j)=>`<label class="q"><input type="checkbox" data-k="${i}-${j}"><span class="box"></span><span>${q}</span></label>`).join('')}</div></div>`).join('');
+const boxes = [...document.querySelectorAll('#cklist input')];
+boxes.forEach(b => { b.checked = !!state[b.dataset.k]; b.addEventListener('change', () => { state[b.dataset.k] = b.checked; save(); upd(); }); });
+const MSG = [[0,'Start your check-in','Tick each question you can honestly answer “yes” to today.'],
+ [1,'Good start','Every tick counts. Notice which areas come easily — and which don’t.'],
+ [6,'Building balance','You’re covering several dimensions today. Keep going.'],
+ [11,'Strong day','Nearly every dimension looked after. Well done.'],
+ [14,'Full check-in','All seven dimensions covered today. That’s holistic wellness in action.']];
+function upd(){
+  const n = boxes.filter(b=>b.checked).length;
+  document.getElementById('ckn').textContent = n;
+  document.getElementById('ringbar').style.strokeDashoffset = 402 - 402*(n/14);
+  const m = MSG.filter(x=>n>=x[0]).pop();
+  document.getElementById('cktitle').textContent = m[1];
+  document.getElementById('ckmsg').textContent = m[2];
+}
+document.getElementById('ckreset').addEventListener('click',()=>{ state={}; save(); boxes.forEach(b=>b.checked=false); upd(); });
+upd();
+
+/* ---------- 04 tips ---------- */
+// evidence: s = strong, m = some/emerging, t = traditional/experiential
+const TIPS = {
+ 'Mind Wellness':[
+  ['Mindful Meditation','Focused awareness on the present moment.','Sit silently, focus on breath or a mantra.','Reduces stress, improves emotional regulation.','Morning or before bed.','s'],
+  ['Digital Detox','Intentional break from screens and social media.','Use screen-time apps, schedule “no device” hours.','Reduces anxiety, improves real-world connection.','Daily, 1 hour before bed.','m'],
+  ['Journaling for Clarity','Writing thoughts to declutter the mind.','Free-write, gratitude journals, or prompts like “What made me happy today?”','Boosts self-awareness, mental clarity.','Morning or evening.','s'],
+  ['Sound Healing & Binaural Beats','Audio frequencies to influence brainwaves.','Use YouTube or apps to listen to theta/beta frequencies.','Promotes relaxation, focus, creativity.','During meditation, study, or before sleep.','m'],
+  ['Conscious Breathing / Breathwork','Controlled breathing techniques.','Box breathing, Wim Hof method, or alternate nostril breathing.','Enhances calm, oxygenation, energy.','Morning, stressful moments, workouts.','s'],
+  ['Neuroplasticity Practices','Brain-training to form new neural pathways.','Learning a language, puzzles, memory games.','Keeps the brain young and agile.','Daily or a few times per week.','m'],
+  ['Visualization','Mentally rehearsing goals or outcomes.','Guided imagery, vision boards.','Increases motivation, reduces fear.','Morning or before performance.','s'],
+  ['Mental Fasting (No Inputs)','A break from consuming information.','Avoid books, podcasts and media for a set time.','Resets focus, enhances your inner voice.','Weekly or monthly.','t'],
+  ['Brainwave Entrainment','Syncing brainwaves via audio or light pulses.','Use apps or light-sound devices.','Deepens states of focus and meditation.','During learning, sleep, or relaxation.','m'],
+  ['Positive Affirmations','Repeating empowering statements.','“I am confident,” “I trust life.” Write or say them aloud.','Rewires subconscious beliefs.','Morning or before challenges.','m']],
+ 'Body Fitness & Movement':[
+  ['Functional Fitness','Exercise mimicking real-life movement.','Squats, lunges, push-ups, kettlebell swings.','Improves mobility, strength, balance.','3–5 times per week.','s'],
+  ['Micro-Workouts','Short, intense exercise bursts.','5–15 min HIIT, Tabata, stairs, or jump rope.','Saves time, burns fat, boosts energy.','Anytime, especially busy days.','s'],
+  ['Ecstatic Dance / Freeform Movement','Unstructured dancing for emotional release.','Play music, let the body move freely. No judgement.','Relieves tension, boosts mood.','Alone or at dance events, as needed.','m'],
+  ['Barefoot Grounding (Earthing)','Walking barefoot on natural surfaces.','Grass, sand or soil for 10–30 minutes.','Reduces inflammation, connects with Earth.','Morning or sunset.','t'],
+  ['Infrared Sauna or Hot-Cold Therapy','Exposing the body to temperature extremes.','Infrared saunas, cold plunges, contrast showers.','Detox, boosts circulation, mental resilience.','Weekly or post-workout.','m'],
+  ['Animal Flow','Primal bodyweight movements.','Crab walks, ape hops, beast crawls.','Builds mobility — fun and strength.','As part of a workout or warm-up.','m'],
+  ['Rebounding (Mini-Trampoline)','Low-impact cardio via bouncing.','Use a mini trampoline for 10–20 mins.','Boosts lymph flow, energy.','Morning or midday.','m'],
+  ['Qi Gong','Gentle, meditative movement practice.','Flowing movements + breathing.','Energises and centres body and mind.','Morning or as active recovery.','s'],
+  ['Cold Exposure Workouts','Exercising in cold environments.','Outdoor runs, cold gyms, ice plunges.','Builds mental toughness, boosts metabolism.','Weekly.','m'],
+  ['Somatic Movement Release','Movements that process trauma.','Shake therapy, gentle stretches.','Releases stored tension, improves emotional well-being.','After stress or trauma recall.','m']],
+ 'Nutrition & Biohacking':[
+  ['Intermittent Fasting (IF)','Eating within a set time window.','16:8 or 18:6 fasting/eating ratio.','Supports fat loss, mental clarity, longevity.','Daily or 3–4x/week.','s'],
+  ['Adaptogens & Functional Herbs','Herbs that balance stress and body systems.','Ashwagandha, Rhodiola, Reishi in teas or capsules.','Boosts resilience, hormone balance.','Morning or as prescribed.','m'],
+  ['Hydration with Electrolytes','Enhancing water with minerals.','Add Himalayan salt, lemon, or electrolyte tablets.','Improves absorption, energy, performance.','Morning or post-exercise.','m'],
+  ['Gut Health Optimization','Supporting microbiome health.','Probiotics, fermented foods, fibre-rich diet.','Affects immunity, mood, digestion.','Daily with meals.','s'],
+  ['Blue Light Blocking for Sleep','Reducing screen exposure to blue light.','Use glasses, screen filters, or reduce screen time.','Enhances melatonin production, sleep quality.','2 hours before sleep.','m'],
+  ['Personalized Nutrition (DNA-based)','Eating based on genetic needs.','Get a DNA test, follow a tailored diet.','Targets deficiencies, optimises energy.','Long-term lifestyle shift.','t'],
+  ['Raw Food Days','Days consuming only uncooked, whole foods.','Salads, smoothies, fruit.','Boosts enzymes, reduces inflammation.','1–2x/week or as a cleanse.','t'],
+  ['Mushroom Nootropics','Brain-enhancing fungi.','Lion’s Mane, Cordyceps in coffee or capsules.','Enhances cognition, energy.','Morning or before mental work.','m'],
+  ['Collagen Boosting Foods','Supports skin, joints and gut.','Bone broth, vitamin C-rich foods.','Aids tissue repair, anti-ageing.','Daily.','m'],
+  ['Red Light Therapy','Exposing the body to red and near-infrared light.','Use red light panels or masks.','Improves skin, recovery, mood.','Daily or post-workout.','m']],
+ 'Emotional & Spiritual Health':[
+  ['Gratitude Practice','Daily acknowledgement of positives.','Write 3 things you’re grateful for.','Enhances happiness, rewires the brain.','Morning or before bed.','s'],
+  ['Digital Minimalism','Intentional use of tech to improve life.','Declutter apps, limit notifications.','Frees attention, lowers overwhelm.','Weekly resets or daily limits.','m'],
+  ['Shadow Work','Exploring repressed emotions and traits.','Journaling, therapy, guided prompts.','Fosters wholeness, self-acceptance.','During emotional triggers or reflection.','t'],
+  ['Energy Healing (Reiki, Chakra Work)','Practices to balance subtle energy systems.','Reiki sessions, chakra meditations, crystals.','Aligns mind-body, reduces energetic blocks.','Monthly or during stress.','t'],
+  ['Sacred Silence / Silent Retreats','Periods of intentional silence.','No talking, phones or media for hours or days.','Deepens inner clarity and peace.','Quarterly or during burnout.','m'],
+  ['Authentic Relating Practices','Structured vulnerability exercises.','Eye gazing, conscious conversations.','Builds intimacy, self-expression.','In safe group settings.','t'],
+  ['Psychedelic Integration Work','Making meaning from psychedelic insights.','Journaling, coaching, rituals.','Ensures lasting transformation.','After psychedelic sessions.','m'],
+  ['Dream Journaling','Recording dreams for insight.','Keep a notebook by your bed.','Unlocks subconscious wisdom.','Upon waking.','t'],
+  ['Altar Creation','A sacred space for intention.','Use symbols, candles, affirmations.','Grounds focus and spiritual intention.','During life changes or reflection.','t'],
+  ['Voice Activation','Releasing stuck energy through sound.','Chanting, toning, singing freely.','Clears the throat chakra, boosts confidence.','Alone or in circles.','t']],
+ 'Lifestyle & Recovery':[
+  ['Circadian Rhythm Alignment','Syncing habits with your natural clock.','Wake and sleep with the sun, eat in daylight.','Improves sleep, hormones, energy.','Daily.','s'],
+  ['Minimalist Living','Prioritising essentials, reducing clutter.','Declutter your home, spend mindfully.','Reduces stress, increases focus.','Monthly reviews.','m'],
+  ['Nature Immersion (Forest Bathing)','Mindful time in nature.','Walks in parks or forests without tech.','Lowers cortisol, boosts mood.','Weekly.','m'],
+  ['Sleep Optimization','Enhancing sleep quality.','Blackout curtains, cool room, wind-down rituals.','Critical for recovery, cognition, immunity.','Nightly.','s'],
+  ['Community & Tribe Connection','Bonding with like-minded individuals.','Join clubs, wellness groups, online forums.','Increases joy, reduces loneliness.','Weekly or monthly.','s'],
+  ['Blue Zones Habits','Lifestyle practices from the longest-living cultures.','Move naturally, plant-based diet, social connection.','Increases healthspan.','Daily.','m'],
+  ['Sabbath Day / Tech-Free Day','One day of full rest each week.','No work, devices or hustle.','Boosts creativity, recharges.','Weekly.','t'],
+  ['Sleep-Tracking Wearables','Tracking sleep via tech.','Oura ring, WHOOP, Fitbit.','Optimises sleep habits.','Nightly.','m']]
+};
+const EVL = {s:'Strong evidence', m:'Some evidence', t:'Traditional'};
+const total = Object.values(TIPS).reduce((a,b)=>a+b.length,0);
+
+
+const chips = document.getElementById('chips'), search = document.getElementById('search');
+let active = 'All';
+['All',...Object.keys(TIPS)].forEach(k=>{
+  const b = document.createElement('button'); b.type='button'; b.className='chip'+(k==='All'?' on':'');
+  b.innerHTML = k + `<i>${k==='All'?total:TIPS[k].length}</i>`;
+  b.onclick = ()=>{ active=k; chips.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b)); render(); };
+  chips.insertBefore(b, search);
+});
+function render(){
+  const q = search.value.trim().toLowerCase(); let shown = 0;
+  document.getElementById('tiplist').innerHTML = Object.entries(TIPS).filter(([k])=>active==='All'||active===k).map(([k,list])=>{
+    const f = list.filter(t=>!q || t.slice(0,5).join(' ').toLowerCase().includes(q));
+    shown += f.length; if(!f.length) return '';
+    return `<div class="catgroup"><div class="cghead"><h3>${k}</h3><span>${f.length} practice${f.length>1?'s':''}</span></div><div class="tips">`
+     + f.map(t=>`<article class="card tip"><header><h4>${t[0]}</h4><span class="ev ${t[5]}">${EVL[t[5]]}</span></header>
+       <dl><dt>What</dt><dd>${t[1]}</dd><dt>How</dt><dd>${t[2]}</dd><dt>Why</dt><dd>${t[3]}</dd><dt>When</dt><dd>${t[4]}</dd></dl></article>`).join('')
+     + '</div></div>';
+  }).join('');
+  document.getElementById('empty').style.display = shown ? 'none' : 'block';
+}
+search.addEventListener('input', render);
+render();
+
+/* ---------- reveal, nav highlight, back-to-top ---------- */
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{rootMargin:'0px 0px -40px 0px'}) : null;
+document.querySelectorAll('.c9 .rv').forEach(el=> io ? io.observe(el) : el.classList.add('in'));
+const links = [...document.querySelectorAll('.c9 nav a')], top = document.getElementById('totop');
+addEventListener('scroll',()=>{
+  top.classList.toggle('show', scrollY > 700);
+  let cur = null; links.forEach(a=>{ const s = document.querySelector(a.getAttribute('href')); if(s && s.getBoundingClientRect().top < 140) cur = a; });
+  links.forEach(a=>a.classList.toggle('on', a===cur));
+},{passive:true});
+})();
+</script>
+</div>
+</body>
+</html>

@@ -1,29 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { getSupabaseBrowserClient } from '@/lib/supabase/client';
-import { useEffect, useState } from 'react';
+import { useAuth } from '@/lib/hooks/useAuth';
+import { useState } from 'react';
 
 export function SiteHeader() {
-  const [user, setUser] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const { user, isAdmin, loading } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const supabase = getSupabaseBrowserClient();
-    if (!supabase) {
-      setLoading(false);
-      return;
-    }
-
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setUser(user);
-      setLoading(false);
-    });
-  }, []);
-
   return (
-    <header className="relative z-[9999] border-b border-line bg-white/80 backdrop-blur-sm px-6 py-4 w-full">
+    <header className="sticky top-0 z-[9999] border-b border-line bg-white/80 backdrop-blur-sm px-6 py-4 w-full">
       <div className="mx-auto flex max-w-[720px] w-full items-center justify-between">
       <Link href="/" className="font-display text-xl font-bold tracking-wide hover:opacity-80">
         CODE<span className="text-accent">9</span> FITNESS
@@ -53,6 +39,15 @@ export function SiteHeader() {
               >
                 Resources
               </Link>
+              <a
+                href="/code9-pricing.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-2.5 text-sm text-ink hover:bg-accent hover:text-white transition-colors border-b border-line last:border-b-0"
+                onClick={() => setMenuOpen(false)}
+              >
+                Pricing
+              </a>
               <Link
                 href="/login"
                 className="block px-4 py-2.5 text-sm text-ink hover:bg-accent hover:text-white transition-colors border-b border-line last:border-b-0"

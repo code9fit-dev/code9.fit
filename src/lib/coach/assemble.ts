@@ -15,6 +15,7 @@ import {
   NO_YES_MAN_PROTOCOL,
   SUPPLEMENT_PROTOCOL,
   VOICE_PRINCIPLES,
+  DAILY_CHECKIN_PROTOCOL,
 } from "./prompt-blocks";
 import type { Persona } from "./personas";
 
@@ -103,6 +104,57 @@ export const COACH_TOOLS = [
         reason: {
           type: "string",
           description: "Why an upgrade would help this specific client now.",
+        },
+      },
+      required: ["reason"],
+    },
+  },
+  {
+    name: "record_workout_completion",
+    description:
+      "Call when the client reports completing a workout. The app will create/update the session record with the completion status and any relevant details from the conversation.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        status: {
+          type: "string",
+          enum: ["completed", "not_yet", "skipped", "missed"],
+          description: "Whether the workout was completed, not yet done, skipped, or missed.",
+        },
+        reason: {
+          type: "string",
+          description: "If skipped/missed, why (e.g., 'sick', 'tired', 'busy', 'injury', 'other').",
+        },
+        rescheduled_for: {
+          type: "string",
+          description: "If not completed today, when they plan to do it (YYYY-MM-DD format).",
+        },
+        notes: {
+          type: "string",
+          description: "Any additional context about the workout or completion status.",
+        },
+      },
+      required: ["status"],
+    },
+  },
+  {
+    name: "record_missed_workout",
+    description:
+      "Call when a workout has been missed. Logs the reason and reschedule date for re-engagement tracking.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        reason: {
+          type: "string",
+          description: "Why the workout was missed (e.g., 'sick', 'tired', 'busy', 'injury', 'motivation').",
+        },
+        rescheduled_for: {
+          type: "string",
+          description: "When the client plans to reschedule this workout (YYYY-MM-DD format).",
+        },
+        notes: {
+          type: "string",
+          description: "Any coaching context or encouragement to include.",
         },
       },
       required: ["reason"],

@@ -4,32 +4,47 @@ import {
   trustPillars,
 } from "@/data/content";
 import { Container, Eyebrow, SectionHead } from "./primitives";
+import Image from "next/image";
 
 export function Trust() {
   return (
     <section id="trust" className="border-t border-line py-[60px]">
       <Container>
-        <SectionHead
-          eyebrow="Why C9F"
-          title="Built on real coaching. Not just a prompt."
-          sub="Every specialist in this system runs on methodology developed and tested through ImpactShredz — years of real training and high-level sport, turned into structured programming, not generated from a generic model with no coaching background behind it."
-        />
+        <div className="flex gap-12 items-start mb-12">
+          <div className="flex-shrink-0 w-[300px]">
+            <Image
+              src="/c9f-hero.png"
+              alt="C9F Coach"
+              width={300}
+              height={400}
+              className="rounded-lg"
+              priority
+            />
+          </div>
+          <div className="flex-1">
+            <SectionHead
+              eyebrow="Why C9F"
+              title="Built on real coaching. Not just a prompt."
+              sub="Every specialist in this system runs on methodology developed and tested through ImpactShredz — years of real training and high-level sport, turned into structured programming, not generated from a generic model with no coaching background behind it."
+            />
 
-        <div className="flex flex-col gap-4">
-          {trustPillars.map((pillar) => (
-            <div
-              key={pillar.mark}
-              className="fill-panel flex items-start gap-5 rounded border border-line p-7"
-            >
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-accent font-mono text-[11px] text-accent">
-                {pillar.mark}
-              </div>
-              <div>
-                <h3 className="mb-1.5 font-display text-base">{pillar.title}</h3>
-                <p className="text-sm text-ink-dim">{pillar.body}</p>
-              </div>
+            <div className="flex flex-col gap-4">
+              {trustPillars.map((pillar) => (
+                <div
+                  key={pillar.mark}
+                  className="fill-panel flex items-start gap-5 rounded border border-line p-7"
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-accent font-mono text-[11px] text-accent">
+                    {pillar.mark}
+                  </div>
+                  <div>
+                    <h3 className="mb-1.5 font-display text-base">{pillar.title}</h3>
+                    <p className="text-sm text-ink-dim">{pillar.body}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         {/* NOTE: fabricated testimonials are a launch blocker — real client

@@ -142,7 +142,7 @@ export function resolveMatch(state: IntakeState): CoachMatch {
       tag: "STRUCTURE — BEGINNER",
       name: "Home Workout Systems Builder",
       desc: "You're starting out and training at home, so we're routing you here — equipment-free and minimal-equipment systems built to get the fundamentals right first.",
-      bundleNote: "Lifestyle & Recovery Coach",
+      bundleNote: "Recovery & Resilience Coach",
     };
   }
 

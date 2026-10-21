@@ -336,3 +336,99 @@ create policy "coach grants own" on coach_grants
   for all using (coach_id = auth.uid() or is_admin()) with check (coach_id = auth.uid());
 create policy "client sees own grants" on coach_grants
   for select using (client_id = auth.uid());
+
+-- ─── Phase 1: Workout logging & session tracking ─────────────────────────
+-- workout_sessions: main tracking for each workout day
+create table workout_sessions (
+  id               uuid primary key default gen_random_uuid(),
+  client_id        uuid not null references auth.users on delete cascade,
+  program_id       text not null,               -- e.g. "hybrid-focus-intermediate"
+  week             integer,                     -- week of program
+  day              integer,                     -- day within week (1-7)
+  planned_date     date not null,
+  status           text not null default 'pending', -- pending | completed | missed | on_hold
+  completed_date   timestamptz,
+  created_at       timestamptz not null default now(),
+  updated_at       timestamptz not null default now()
+);
+
+-- session_exercises: individual exercise logs per session
+create table session_exercises (
+  id               uuid primary key default gen_random_uuid(),
+  session_id       uuid not null references workout_sessions on delete cascade,
+  name             text not null,
+  planned_sets     integer,
+  planned_reps     integer,
+  planned_weight   decimal,
+  actual_sets      integer,
+  actual_reps      integer,
+  actual_weight    decimal,
+  notes            text,
+  created_at       timestamptz not null default now()
+);
+
+-- session_missed: captures reason when workout is skipped
+create table session_missed (
+  id               uuid primary key default gen_random_uuid(),
+  session_id       uuid not null unique references workout_sessions on delete cascade,
+  reason           text,                       -- sick | tired | busy | injury | other
+  details          text,
+  on_hold_until    date,                       -- when resuming
+  created_at       timestamptz not null default now()
+);
+
+-- session_feelings: post-workout metrics
+create table session_feelings (
+  id               uuid primary key default gen_random_uuid(),
+  session_id       uuid not null unique references workout_sessions on delete cascade,
+  energy_level     integer,                    -- 1-10
+  soreness         integer,                    -- 1-10
+  mood             integer,                    -- 1-10
+  sleep_hours      decimal,
+  sleep_quality    integer,                    -- 1-10
+  created_at       timestamptz not null default now()
+);
+
+-- session_ai_summaries: AI-generated insights (optional)
+create table session_ai_summaries (
+  id               uuid primary key default gen_random_uuid(),
+  session_id       uuid not null unique references workout_sessions on delete cascade,
+  summary          text,
+  generated_at     timestamptz not null default now()
+);
+
+-- ─── Row-level security for workout tables ────────────────────────────────
+alter table workout_sessions     enable row level security;
+alter table session_exercises    enable row level security;
+alter table session_missed       enable row level security;
+alter table session_feelings     enable row level security;
+alter table session_ai_summaries enable row level security;
+
+-- workout_sessions: client sees own; admins see all
+create policy "client sessions"  on workout_sessions
+  for all using (client_id = auth.uid() or is_admin()) with check (client_id = auth.uid());
+
+-- related tables: visible through session ownership
+create policy "session exercises" on session_exercises
+  for all using (
+    exists (select 1 from workout_sessions ws where ws.id = session_exercises.session_id and ws.client_id = auth.uid())
+    or is_admin()
+  );
+
+create policy "session missed"    on session_missed
+  for all using (
+    exists (select 1 from workout_sessions ws where ws.id = session_missed.session_id and ws.client_id = auth.uid())
+    or is_admin()
+  );
+
+create policy "session feelings"  on session_feelings
+  for all using (
+    exists (select 1 from workout_sessions ws where ws.id = session_feelings.session_id and ws.client_id = auth.uid())
+    or is_admin()
+  );
+
+create policy "session summaries" on session_ai_summaries
+  for all using (
+    exists (select 1 from workout_sessions ws where ws.id = session_ai_summaries.session_id and ws.client_id = auth.uid())
+    or is_admin()
+  );

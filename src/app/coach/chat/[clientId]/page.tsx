@@ -7,7 +7,16 @@ import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 import { CheckInSidebar } from '@/components/CheckInSidebar';
 import { CheckInDetail } from '@/components/CheckInDetail';
 import { CheckInFlow } from '@/components/CheckInFlow';
-import { ClientCheckIn } from '@/lib/check-ins/types';
+import { DailyWorkoutCheckIn } from '@/components/DailyWorkoutCheckIn';
+import { ClientCheckIn, ClientSessionLog } from '@/lib/check-ins/types';
+import {
+  getLatestCheckIn,
+  getSessionLogs,
+} from '@/lib/check-ins/service';
+import {
+  shouldTriggerDailyCheckIn,
+  getWeekStartDate,
+} from '@/lib/coaching';
 
 export default function CoachChatPage() {
   const params = useParams();
@@ -19,7 +28,11 @@ export default function CoachChatPage() {
   const [clientEmail, setClientEmail] = useState('');
   const [selectedCheckIn, setSelectedCheckIn] = useState<ClientCheckIn | null>(null);
   const [showCheckInFlow, setShowCheckInFlow] = useState(false);
+  const [showDailyCheckIn, setShowDailyCheckIn] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [latestCheckIn, setLatestCheckIn] = useState<ClientCheckIn | null>(null);
+  const [recentSessions, setRecentSessions] = useState<ClientSessionLog[]>([]);
+  const [lastCheckInTime, setLastCheckInTime] = useState<string | null>(null);
 
   useEffect(() => {
     if (!supabase) {
@@ -39,8 +52,28 @@ export default function CoachChatPage() {
         // Get client email
         const { data: profile } = await supabase.from('profiles').select('email').eq('id', clientId).single();
         if (profile) setClientEmail(profile.email);
+
+        // Load latest check-in and recent sessions for daily check-in context
+        const latest = await getLatestCheckIn(supabase, user.id, clientId);
+        setLatestCheckIn(latest);
+        setLastCheckInTime(latest?.submitted_at || null);
+
+        if (latest) {
+          // Get recent sessions from this week
+          const weekStart = getWeekStartDate(new Date(latest.week_of));
+          const today = new Date().toISOString().split('T')[0];
+          const sessions = await getSessionLogs(supabase, user.id, clientId, weekStart, today);
+          setRecentSessions(sessions);
+
+          // Check if we should trigger daily check-in (24+ hours since last)
+          const shouldTrigger = shouldTriggerDailyCheckIn(latest.submitted_at);
+          setShowDailyCheckIn(shouldTrigger);
+        } else {
+          // No check-in yet, show daily check-in on first visit
+          setShowDailyCheckIn(true);
+        }
       } catch (error) {
-        console.error('Failed to load client:', error);
+        console.error('Failed to load client data:', error);
       } finally {
         setLoading(false);
       }
@@ -91,6 +124,27 @@ export default function CoachChatPage() {
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Messages area - placeholder for actual chat */}
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
+            {/* Daily Workout Check-In - appears at top if triggered */}
+            {showDailyCheckIn && (
+              <div className="max-w-2xl">
+                <DailyWorkoutCheckIn
+                  coachId={user.id}
+                  clientId={clientId}
+                  todayWorkoutType="today's workout"
+                  latestCheckIn={latestCheckIn}
+                  recentSessions={recentSessions}
+                  onResponse={(status, details) => {
+                    console.log('Daily check-in response:', { status, details });
+                    // Could auto-open check-in flow here if needed
+                    setShowDailyCheckIn(false);
+                  }}
+                  onClose={() => {
+                    setShowDailyCheckIn(false);
+                  }}
+                />
+              </div>
+            )}
+
             {selectedCheckIn ? (
               <div className="max-w-2xl">
                 <CheckInDetail checkIn={selectedCheckIn} />
@@ -103,6 +157,7 @@ export default function CoachChatPage() {
                   coachSlug="coach" // Would need actual coach slug in real implementation
                   onComplete={() => {
                     setShowCheckInFlow(false);
+                    setShowDailyCheckIn(false);
                   }}
                 />
               </div>

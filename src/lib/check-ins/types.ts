@@ -3,6 +3,17 @@ export interface NextWeekSession {
   type: string; // "Strength", "Cardio", "Mobility", "Rest-active"
 }
 
+export interface NervousSystemCheckIn {
+  // Specific to Nervous System Coach tracking
+  awareness_score?: number; // 1-10: how aware they are of their state
+  techniques_tried?: string[]; // which techniques they experimented with
+  techniques_helpful?: string[]; // which ones actually helped
+  stress_level?: number; // 1-10: overall stress (life + training)
+  sleep_hours?: number;
+  noticed_patterns?: string; // free-form: patterns they've observed
+  regulation_confidence?: number; // 1-10: confidence in using techniques
+}
+
 export interface ClientCheckIn {
   id: string;
   coach_id: string;
@@ -15,6 +26,7 @@ export interface ClientCheckIn {
   sleep_hours?: number;
   physical_issues?: string;
   next_week_plan: NextWeekSession[];
+  nervous_system?: NervousSystemCheckIn; // Optional nervous system coach data
   notes?: string;
   submitted_at: string; // ISO timestamp
   created_at: string;

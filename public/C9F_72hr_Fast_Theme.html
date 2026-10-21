@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODE9 FITNESS - The 72-Hour Fast</title>
+    <title>The 72-Hour Fast — CODE9 FITNESS</title>
     <style>
         * {
             margin: 0;
@@ -17,608 +17,737 @@
             --accent: #c18d52;
             --ink: #081b1b;
             --ink-dim: #5c6357;
+            --border: #e5e1d8;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.4;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
             color: var(--ink);
-            background: var(--surface);
+            background: white;
+            margin: 0;
             padding: 0;
         }
 
         .page {
-            max-width: 8.5in;
-            margin: 0 auto;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto 10mm;
+            padding: 18mm 18mm;
             background: white;
-            padding: 0.4in;
             page-break-after: always;
-            min-height: 11in;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        /* COVER PAGE */
+        .cover-page {
             display: flex;
             flex-direction: column;
-        }
-
-        .header-section {
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-bottom: 0.3in;
-            padding-bottom: 0.15in;
-            border-bottom: 2px solid var(--accent);
+            padding: 60mm 18mm;
         }
 
-        .brand {
-            font-size: 10px;
+        .cover-page .brand {
+            font-size: 11px;
             font-weight: 600;
-            letter-spacing: 1px;
-            color: var(--accent);
-            margin-bottom: 4px;
+            letter-spacing: 1.5px;
+            color: var(--ink-dim);
+            margin-bottom: 40mm;
             text-transform: uppercase;
         }
 
-        h1 {
+        .cover-page h1 {
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 8mm;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .cover-page .philosophy {
+            font-size: 18px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 60mm;
+            letter-spacing: 0.3px;
+        }
+
+        .cover-page .footer-text {
+            font-size: 9px;
+            color: var(--ink-dim);
+            font-style: italic;
+            margin-top: auto;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            text-align: left;
+            margin-bottom: 8mm;
+            padding-bottom: 6mm;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .page-header h1 {
             font-size: 28px;
             font-weight: 700;
             color: var(--ink);
-            margin-bottom: 4px;
-            line-height: 1.1;
+            margin: 0 0 2mm 0;
         }
 
-        .tagline {
-            font-size: 12px;
-            font-style: italic;
+        .page-header .tagline {
+            font-size: 10px;
             color: var(--ink-dim);
+            margin: 0;
+            font-weight: 400;
         }
 
         h2 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
             color: var(--ink);
-            margin: 8px 0 6px 0;
-            padding-bottom: 3px;
-            border-bottom: 1.5px solid var(--accent);
+            margin-top: 5mm;
+            margin-bottom: 4mm;
+            padding-bottom: 0;
+            border-bottom: none;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
         }
 
         h3 {
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--ink);
-            margin: 6px 0 4px 0;
-            line-height: 1.2;
+            margin-top: 4mm;
+            margin-bottom: 3mm;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            page-break-after: avoid;
+        }
+
+        h4 {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-top: 3mm;
+            margin-bottom: 2mm;
         }
 
         p {
-            margin-bottom: 6px;
-            font-size: 11px;
-            line-height: 1.5;
+            font-size: 10.5px;
+            line-height: 1.55;
+            margin-bottom: 3mm;
+            color: var(--ink);
+        }
+
+        p.intro {
+            font-size: 10.5px;
+            line-height: 1.6;
+            margin-bottom: 4mm;
+            font-weight: 500;
         }
 
         ul, ol {
-            margin-left: 16px;
-            margin-bottom: 6px;
-            font-size: 11px;
+            margin-left: 6mm;
+            margin-bottom: 3mm;
+            font-size: 10.5px;
         }
 
         li {
-            margin-bottom: 3px;
-            line-height: 1.4;
+            margin-bottom: 2mm;
+            line-height: 1.5;
         }
 
-        .section-box {
-            background: #ffffff;
-            border-left: 3px solid var(--accent);
-            padding: 6px;
-            margin: 6px 0;
-            border: 0.5px solid #e5e1d8;
-            border-left: 3px solid var(--accent);
+        .box {
+            background: var(--panel);
+            border-left: 4px solid var(--accent);
+            padding: 4mm 4mm 4mm 5mm;
+            margin: 4mm 0;
+            border-radius: 1px;
             font-size: 10px;
-            line-height: 1.4;
+            line-height: 1.55;
+            page-break-inside: avoid;
         }
 
-        .section-box p {
-            margin-bottom: 3px;
+        .box h3 {
+            margin-top: 0;
+            font-size: 11px;
+            color: var(--ink);
+            margin-bottom: 2mm;
+        }
+
+        .box p {
+            margin-bottom: 2mm;
             font-size: 10px;
         }
 
-        .section-box ul {
+        .box ul, .box ol {
+            margin-left: 5mm;
             margin-bottom: 0;
-            margin-left: 14px;
             font-size: 10px;
         }
 
-        .section-box li {
-            margin-bottom: 2px;
+        .box li {
+            margin-bottom: 1.5mm;
+            font-size: 10px;
+        }
+
+        .warning {
+            background: #fff8f0;
+            border-left: 4px solid #d97706;
+            padding: 4mm 4mm 4mm 5mm;
+            margin: 4mm 0;
+            border-radius: 1px;
+            font-size: 10px;
+            line-height: 1.55;
+            page-break-inside: avoid;
+        }
+
+        .warning strong {
+            color: #d97706;
+            font-weight: 700;
+        }
+
+        .timeline {
+            margin: 4mm 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 5mm;
+            border-left: 2px solid var(--accent);
+            padding-left: 4mm;
+            page-break-inside: avoid;
+        }
+
+        .timeline-item h4 {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 1.5mm;
+        }
+
+        .timeline-item p {
+            margin-bottom: 2mm;
+            font-size: 10px;
+            line-height: 1.5;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 6px 0;
-            font-size: 10px;
+            margin: 4mm 0;
+            font-size: 9.5px;
+            page-break-inside: avoid;
         }
 
         th {
             background: var(--accent);
             color: white;
-            padding: 4px;
+            padding: 3mm;
             text-align: left;
             font-weight: 600;
+            border: none;
             font-size: 10px;
         }
 
         td {
-            border: 0.5px solid #ddd;
-            padding: 4px;
-            font-size: 10px;
+            padding: 3mm;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.5;
         }
 
         tr:nth-child(even) {
-            background: #f9f7f2;
+            background: var(--panel);
         }
 
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.15in;
-            margin: 6px 0;
+            gap: 4mm;
+            margin: 4mm 0;
+            page-break-inside: avoid;
         }
 
-        .two-col h3 {
-            grid-column: 1 / -1;
-            margin: 0 0 4px 0;
-        }
-
-        .col-section {
+        .col {
             font-size: 10px;
-            line-height: 1.4;
+            line-height: 1.6;
         }
 
-        .col-section p, .col-section li {
-            font-size: 10px;
-            margin-bottom: 2px;
+        .col h4 {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 3mm;
+            margin-top: 0;
         }
 
-        .col-section ul {
-            margin-left: 12px;
-            margin-bottom: 0;
+        .col ul {
+            margin: 0;
+            margin-left: 5mm;
         }
 
-        .footer {
-            font-size: 9px;
-            color: var(--ink-dim);
-            text-align: right;
-            margin-top: auto;
-            padding-top: 4px;
-            border-top: 0.5px solid #ddd;
+        .col li {
+            margin-bottom: 1.5mm;
         }
 
-        .checkbox-list {
-            list-style: none;
-            margin-left: 0;
+        .highlight {
+            background: #fffbeb;
+            padding: 0.5mm 1.5mm;
+            color: var(--ink);
+            font-weight: 500;
         }
 
-        .checkbox-list li {
-            margin-bottom: 3px;
-            display: flex;
-            gap: 6px;
-            font-size: 10px;
-        }
-
-        .checkbox-list li::before {
-            content: "☐";
-            min-width: 14px;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 10px;
-        }
-
-        .warning {
-            background: #faf7f0;
-            border-left: 3px solid var(--accent);
-            padding: 6px;
-            margin: 6px 0;
-            font-size: 10px;
-            border: 0.5px solid #e5e1d8;
-            border-left: 3px solid var(--accent);
-            line-height: 1.4;
-        }
-
-        .em {
-            font-style: italic;
-            color: var(--ink-dim);
+        .section-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 6mm 0;
         }
 
         @media print {
             body {
                 background: white;
                 padding: 0;
+                margin: 0;
             }
             .page {
                 margin: 0;
                 box-shadow: none;
+                page-break-after: always;
+                page-break-before: auto;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- PAGE 1 -->
+<!-- PAGE 1: COVER -->
+<div class="page cover-page">
+    <div class="brand">CODE9 FITNESS</div>
+    <h1>The 72-Hour Fast</h1>
+    <div class="philosophy">Don't fast harder.<br>Fast smarter.</div>
+    <div class="footer-text">A professional guide to extended fasting<br>for first-timers</div>
+</div>
+
+<!-- PAGE 2: INTRODUCTION -->
 <div class="page">
-    <div class="header-section">
-        <div class="brand">CODE9FITNESS</div>
-        <h1>The 72-Hour Fast</h1>
-        <div class="tagline">"Don't fast harder. Fast smarter."</div>
+    <div class="page-header">
+        <h1>What is a 72-Hour Fast?</h1>
+        <p class="tagline">Understanding extended fasting and its potential benefits</p>
     </div>
 
-    <h2>The Philosophy</h2>
-    <p>A 72-hour fast is a structured period without caloric intake designed to improve metabolic flexibility, reduce insulin exposure, and allow your body to transition from using dietary glucose to stored fat and ketones.</p>
-    <p>This manual is written for healthy first-time fasters who want a safe, evidence-informed approach. It is not a detox challenge, starvation protocol, or endurance contest.</p>
+    <h2>The Basics</h2>
+    <p class="intro">
+        A 72-hour fast is a continuous period of 3 days without caloric intake. You drink water, electrolytes, and non-caloric beverages, but consume no food. It's a structured metabolic intervention used by athletes, health professionals, and individuals seeking metabolic flexibility.
+    </p>
 
-    <h2>Before You Begin</h2>
-    <h3>Who should not do a 72-hour fast?</h3>
-    <p>Do not attempt this fast without medical guidance if you:</p>
+    <h2>Why Do a 72-Hour Fast?</h2>
+    <p>The potential benefits include:</p>
+    <ul>
+        <li><strong>Metabolic Adaptation:</strong> Your body transitions from using glucose to fat as its primary fuel source</li>
+        <li><strong>Insulin Sensitivity:</strong> Prolonged fasting helps reset insulin signaling and improve glucose management</li>
+        <li><strong>Mental Clarity:</strong> Many report improved focus and cognitive function during extended fasts</li>
+        <li><strong>Cellular Health:</strong> Research suggests fasting may support cellular repair processes</li>
+        <li><strong>Metabolic Flexibility:</strong> Training your body to function efficiently without constant food intake</li>
+    </ul>
+
+    <div class="box">
+        <h3>Important Disclaimer</h3>
+        <p>
+            This guide is educational. Extended fasting is not appropriate for everyone. Consult with a healthcare provider before attempting a 72-hour fast, especially if you have a medical condition, take medications, are pregnant, breastfeeding, or have a history of disordered eating.
+        </p>
+    </div>
+</div>
+
+<!-- PAGE 3: BEFORE YOU BEGIN - PART 1 -->
+<div class="page">
+    <div class="page-header">
+        <h1>Before You Begin</h1>
+        <p class="tagline">Medical considerations and preparation</p>
+    </div>
+
+    <h2>Who Should Not Fast</h2>
+    <p>Do not attempt a 72-hour fast without medical clearance if you:</p>
     <ul>
         <li>Are pregnant or breastfeeding</li>
-        <li>Have type 1 diabetes or use glucose-lowering medication</li>
-        <li>Have a history of an eating disorder</li>
+        <li>Have Type 1 or Type 2 diabetes (unless under medical supervision)</li>
+        <li>Have a history of eating disorders</li>
         <li>Are underweight or malnourished</li>
-        <li>Have significant kidney, liver, or heart disease</li>
-    </ul>
-    <p class="em">If you're unsure, consult your healthcare professional first.</p>
-
-    <h3>Your preparation checklist</h3>
-    <p><strong>Complete this 24 hours before starting:</strong></p>
-    <ul class="checkbox-list">
-        <li>Eat a balanced final meal</li>
-        <li>Drink 2–3 L of water during the day</li>
-        <li>Sleep 7–9 hours</li>
-        <li>Buy electrolyte salt</li>
-        <li>Prepare chicken broth for Day 4</li>
-        <li>Set your exact finish time</li>
+        <li>Take medications that require food intake</li>
+        <li>Have heart disease or cardiac arrhythmias</li>
+        <li>Have kidney or liver disease</li>
     </ul>
 
-    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
-</div>
-
-<!-- PAGE 2 -->
-<div class="page">
-    <h2>The Fasting Architecture</h2>
-
-    <h3>What you consume</h3>
-    <table>
-        <tr><th>Item</th><th>Notes</th></tr>
-        <tr><td>Water</td><td>Still or sparkling</td></tr>
-        <tr><td>Electrolytes</td><td>Sodium is essential</td></tr>
-        <tr><td>Coconut water</td><td>Unsweetened, in moderation</td></tr>
-        <tr><td>Black coffee / espresso</td><td>Optional (1–2 daily)</td></tr>
-        <tr><td>Unsweetened tea</td><td>Chamomile, peppermint, rooibos</td></tr>
-    </table>
-
-    <h3>What stays out</h3>
-    <p>Anything with calories stays out — including:</p>
+    <h2>Who Should Consult a Healthcare Provider</h2>
+    <p>If you fall into any of these categories, seek medical guidance before fasting:</p>
     <ul>
-        <li><strong>Carbohydrates:</strong> sugar, fruit, grains, starches</li>
-        <li><strong>Fats:</strong> oils, butter, nuts, avocado</li>
-        <li><strong>Proteins:</strong> meat, fish, eggs, legumes</li>
-        <li><strong>Dairy:</strong> milk, cream, cheese, yogurt</li>
-        <li><strong>Powders:</strong> protein powder, meal replacements</li>
+        <li>Age over 65</li>
+        <li>Autoimmune conditions</li>
+        <li>History of low blood pressure</li>
+        <li>Taking blood pressure or blood sugar medications</li>
+        <li>Recovering from illness or surgery</li>
     </ul>
 
-    <h2>Daily Hydration Blueprint</h2>
-    <table>
-        <tr><th>Time</th><th>What to drink</th></tr>
-        <tr><td>Wake</td><td>500 mL water</td></tr>
-        <tr><td>Morning</td><td>Electrolyte water</td></tr>
-        <tr><td>Midday</td><td>Water + optional espresso</td></tr>
-        <tr><td>Afternoon</td><td>Water or herbal tea</td></tr>
-        <tr><td>Evening</td><td>Chamomile + water</td></tr>
-    </table>
-
-    <h3>Homemade electrolyte water</h3>
-    <div class="section-box">
-        <strong>Ingredients:</strong>
+    <h2>Pre-Fast Preparation (24 Hours Before)</h2>
+    <div class="box">
+        <h3>Your Preparation Checklist</h3>
         <ul>
-            <li>500 mL water</li>
-            <li>¼ tsp Himalayan or sea salt</li>
+            <li>Complete a normal, balanced final meal</li>
+            <li>Hydrate well—drink 2–3 liters of water throughout the day</li>
+            <li>Get 7–9 hours of quality sleep the night before</li>
+            <li>Reduce caffeine intake gradually (avoid withdrawal)</li>
+            <li>Have electrolyte solution ready (sodium, potassium, magnesium)</li>
+            <li>Prepare bone broth for breaking the fast</li>
+            <li>Set your start and end times clearly</li>
+            <li>Inform someone you trust about your intention</li>
         </ul>
-        <p><strong>Drink 1–3 servings daily</strong> depending on thirst and activity.</p>
     </div>
-
-    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
 </div>
 
-<!-- PAGE 3 -->
+<!-- PAGE 4: BEFORE YOU BEGIN - PART 2 -->
 <div class="page">
-    <h2>The 72-Hour Timeline</h2>
+    <h2>What to Gather</h2>
 
-    <h3>Hours 0–12 — The Transition</h3>
-    <div class="section-box">
-        <strong>Inside your body:</strong>
-        <ul>
-            <li>Digestion continues</li>
-            <li>Insulin gradually declines</li>
-            <li>Hunger is mostly habitual</li>
-        </ul>
+    <h3>Beverages</h3>
+    <p>Water, herbal tea (unsweetened, camomile, rooibos), black coffee (optional, limit to 1 cup)</p>
+
+    <h3>Electrolytes</h3>
+    <p>Sodium (salt), potassium (coconut water or supplement), magnesium. Consider a quality electrolyte supplement.</p>
+
+    <h3>Refeeding</h3>
+    <p>Bone broth, light broths, easily digestible proteins for breaking the fast</p>
+
+    <div class="section-divider"></div>
+
+    <h2>Daily Hydration & Electrolyte Protocol</h2>
+    <p class="intro">Proper hydration and electrolyte balance are critical for safety and comfort during a 72-hour fast.</p>
+
+    <h3>Water Intake</h3>
+    <ul>
+        <li>Aim for 2–3 liters per day (8–12 cups)</li>
+        <li>Drink consistently throughout the day—don't chug large amounts at once</li>
+        <li>Increase intake if exercising or if the environment is warm</li>
+        <li>Stop heavy water drinking 1–2 hours before bed to improve sleep</li>
+    </ul>
+
+    <h3>Electrolyte Guidelines</h3>
+    <div class="two-col">
+        <div class="col">
+            <h4>Sodium (Salt)</h4>
+            <ul>
+                <li>1–2 teaspoons per day</li>
+                <li>Critical for preventing headaches and fatigue</li>
+                <li>Use sea salt or pink salt</li>
+                <li>Add to water or consume with water</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h4>Potassium & Magnesium</h4>
+            <ul>
+                <li>Potassium: 1000–2000 mg daily (coconut water)</li>
+                <li>Magnesium: 300–400 mg daily</li>
+                <li>Use a quality electrolyte supplement if possible</li>
+                <li>Helps with muscle function and sleep</li>
+            </ul>
+        </div>
     </div>
-    <div class="section-box">
-        <strong>What you'll probably feel:</strong>
-        <ul>
-            <li>Normal</li>
-            <li>Thinking about food at meal times</li>
-            <li>Mild cravings</li>
-        </ul>
-    </div>
-    <p class="em"><strong>Coach's reminder:</strong> You're hungry because your body expects a meal, not because you're starving.</p>
-
-    <h3>Hours 12–24 — The Switch Begins</h3>
-    <p>This is where fasting starts becoming noticeable.</p>
-    <div class="section-box">
-        <strong>Inside your body:</strong>
-        <ul>
-            <li>Liver glycogen begins falling</li>
-            <li>Fat release increases</li>
-            <li>Ketone production begins rising</li>
-        </ul>
-    </div>
-
-    <h3>Common sensations</h3>
-    <table>
-        <tr><th>Normal</th><th>Concerning</th></tr>
-        <tr><td>Hunger waves</td><td>Fainting</td></tr>
-        <tr><td>Feeling colder</td><td>Chest pain</td></tr>
-        <tr><td>Mild headache</td><td>Confusion</td></tr>
-        <tr><td>Increased urination</td><td>Persistent vomiting</td></tr>
-    </table>
-
-    <div class="section-box">
-        <strong>What to do:</strong>
-        <ul>
-            <li>Drink water & replace sodium</li>
-            <li>Walk for 10–20 minutes</li>
-            <li>Avoid intense exercise</li>
-        </ul>
-    </div>
-
-    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
 </div>
 
-<!-- PAGE 4 -->
+<!-- PAGE 5: BEVERAGES & TRAINING GUIDANCE -->
 <div class="page">
-    <h3>Hours 24–36 — Entering Extended Fasting</h3>
-    <p>For many people, this is the hardest psychological phase.</p>
-    <div class="section-box">
-        <strong>Your metabolism:</strong>
-        <ul>
-            <li>Fat becomes the primary fuel source</li>
-            <li>Ketones become increasingly important</li>
-            <li>Hunger often becomes less frequent</li>
-            <li>Energy becomes steadier</li>
-        </ul>
-    </div>
-    <div class="section-box">
-        <strong>Stay busy:</strong>
-        <ul>
-            <li>Read a book or listen to a podcast</li>
-            <li>Work on a hobby or creative project</li>
-        </ul>
+    <h2>Beverages You Can Consume</h2>
+    <div class="box">
+        <p><strong>Allowed:</strong> Water, herbal tea (unsweetened, camomile, rooibos), black coffee (limit to 1 cup), bone broth (optional—some count this as breaking fast), electrolyte water</p>
+        <p><strong>Avoid:</strong> Artificial sweeteners, diet drinks, juice, milk, sports drinks with calories, alcohol</p>
     </div>
 
-    <h3>Hours 36–48 — Deep Fasting</h3>
-    <p>This is where prolonged fasting becomes biologically interesting.</p>
-    <div class="section-box">
-        <strong>What research supports:</strong>
-        <ul>
-            <li>Very low insulin</li>
-            <li>Increased fat oxidation</li>
-            <li>Elevated ketone production</li>
-        </ul>
+    <h2>Training Guidance</h2>
+    <div class="box">
+        <p>This is not the time to test performance. Walking, mobility and gentle stretching are reasonable for many healthy adults. Heavy lifting, HIIT, long endurance sessions and maximal efforts are better postponed.</p>
     </div>
-    <div class="warning">
-        <strong>What we don't know precisely:</strong> Claims like "autophagy peaks at 48 hours" or "stem cells activate at hour 60" go beyond current human evidence.
-    </div>
-
-    <h3>Hours 48–60 — The Psychological Peak</h3>
-    <p>Many people experience surprising mental clarity. Others feel tired. Both are normal.</p>
-    <div class="section-box">
-        <strong>Continue only if:</strong>
-        <ul>
-            <li>You can function normally</li>
-            <li>You're well hydrated</li>
-            <li>No red-flag symptoms are present</li>
-        </ul>
-    </div>
-
-    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
-</div>
-
-<!-- PAGE 5 -->
-<div class="page">
-    <h3>Hours 60–72 — The Final Stretch</h3>
-    <p>You're no longer trying to prove anything. You're preparing to finish well.</p>
-    <div class="section-box">
-        <strong>Your priorities:</strong>
-        <ul>
-            <li>Water & Electrolytes</li>
-            <li>Gentle walking</li>
-            <li>Early evening relaxation</li>
-            <li>Prepare your broth</li>
-        </ul>
-    </div>
-
-    <h3>What You're Likely Feeling</h3>
-    <table>
-        <tr><th>Normal</th><th>Stop the fast</th></tr>
-        <tr><td>Hunger waves</td><td>Fainting</td></tr>
-        <tr><td>Feeling cold</td><td>Confusion</td></tr>
-        <tr><td>Mild fatigue</td><td>Severe dizziness</td></tr>
-        <tr><td>Clear mind</td><td>Chest pain</td></tr>
-        <tr><td>Food thoughts</td><td>Persistent palpitations</td></tr>
-    </table>
 
     <h2>Movement During the Fast</h2>
     <table>
-        <tr><th>Recommended</th><th>Avoid</th></tr>
-        <tr><td>Walking</td><td>Sprinting</td></tr>
-        <tr><td>Stretching</td><td>CrossFit</td></tr>
-        <tr><td>Mobility work</td><td>Heavy squats/deadlifts</td></tr>
-        <tr><td>Gentle cycling (Zone 1)</td><td>Long runs</td></tr>
+        <tr>
+            <th>Recommended</th>
+            <th>Avoid</th>
+        </tr>
+        <tr>
+            <td>Walking (20–30 min, daily)</td>
+            <td>High-intensity training (HIIT, CrossFit)</td>
+        </tr>
+        <tr>
+            <td>Gentle stretching</td>
+            <td>Heavy lifting (>80% 1RM)</td>
+        </tr>
+        <tr>
+            <td>Mobility work</td>
+            <td>Long-distance running</td>
+        </tr>
+        <tr>
+            <td>Yoga or Pilates (gentle)</td>
+            <td>Intense competitive sports</td>
+        </tr>
+        <tr>
+            <td>Zone 1 cycling (very easy)</td>
+            <td>Any activity that leaves you exhausted</td>
+        </tr>
     </table>
-    <p class="em">The objective is circulation, not performance.</p>
 
-    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+    <p style="font-size: 9px; margin-top: 3mm; line-height: 1.5;">
+        The goal is circulation and light movement—not performance. Intense exercise depletes glycogen and stresses an already-challenged system.
+    </p>
 </div>
 
-<!-- PAGE 6 -->
+<!-- PAGE 6: THE 72-HOUR TIMELINE - PART 1 -->
+<div class="page">
+    <div class="page-header">
+        <h1>The 72-Hour Timeline</h1>
+        <p class="tagline">What to expect during each phase</p>
+    </div>
+
+    <p class="intro">
+        Understanding what happens in your body during each phase helps you recognize normal experiences and stay committed to the process.
+    </p>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <h4>Hours 0–12: The Transition Phase</h4>
+            <p><strong>What's happening:</strong> Digestion continues. Insulin gradually declines. Your body hasn't yet shifted to fat-burning mode—it's still using available glucose.</p>
+            <p><strong>What you'll feel:</strong> Relatively normal. Possible habitual hunger at meal times. Light cravings are common and expected.</p>
+            <p><strong>Your job:</strong> Stay busy, hydrate well, and remind yourself that hunger is often habitual, not physical need.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>Hours 12–24: The Switch Begins</h4>
+            <p><strong>What's happening:</strong> Liver glycogen depletes. Ketone production begins. Fat mobilization accelerates. This is where fasting becomes noticeable.</p>
+            <p><strong>What you'll feel:</strong> Increased hunger waves, possible mild fatigue, slight irritability. Cold sensitivity is common. Some people report mental clarity.</p>
+            <p><strong>Your job:</strong> Consume electrolytes, drink water consistently, take a gentle walk. Movement helps metabolic adaptation.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>Hours 24–36: Entering Deep Fasting</h4>
+            <p><strong>What's happening:</strong> Full ketosis established. Fat is now the primary fuel. Hunger often decreases. Insulin is very low.</p>
+            <p><strong>What you'll feel:</strong> For many, this is the hardest phase psychologically—but many also report the best mental clarity. Energy can fluctuate.</p>
+            <p><strong>Your job:</strong> Keep yourself occupied. Read, work on projects, or rest. Stay hydrated and electrolyte-balanced. Gentle movement only.</p>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 7: THE 72-HOUR TIMELINE - PART 2 -->
+<div class="page">
+    <div class="timeline">
+        <div class="timeline-item">
+            <h4>Hours 36–48: Deep Metabolic State</h4>
+            <p><strong>What's happening:</strong> Continued ketosis and fat oxidation. Growth hormone may increase. Metabolic adaptation is significant.</p>
+            <p><strong>What you'll feel:</strong> Many report surprising energy and clarity. Others feel tired. Both are normal responses.</p>
+            <p><strong>Your job:</strong> Continue normal daily activities if energy permits. Rest if needed. Maintain hydration and electrolytes.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>Hours 48–60: The Psychological Peak</h4>
+            <p><strong>What's happening:</strong> You're past the halfway point. Metabolically, you're in a deep fasted state. This is often the easiest phase mentally.</p>
+            <p><strong>What you'll feel:</strong> Mental clarity common. Hunger usually suppressed. Some fatigue possible if not eating well before the fast.</p>
+            <p><strong>Your job:</strong> You're on the downhill slope. Stay consistent. Continue protocols. Begin mentally preparing for refeeding.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>Hours 60–72: The Final Stretch</h4>
+            <p><strong>What's happening:</strong> Final hours of fasting. Your body is fully adapted. Water and electrolyte needs remain high.</p>
+            <p><strong>What you'll feel:</strong> Anticipation of the end. Possible increased hunger as you anticipate food. This is normal.</p>
+            <p><strong>Your job:</strong> Finish strong. Prepare your refeeding meal. Stay hydrated. Plan your break-fast carefully.</p>
+        </div>
+    </div>
+
+    <h2>What's Normal vs. Concerning</h2>
+    <table>
+        <tr>
+            <th>Normal Experiences</th>
+            <th>Concerning Symptoms (Stop the Fast)</th>
+        </tr>
+        <tr>
+            <td>Hunger waves</td>
+            <td>Fainting or severe dizziness</td>
+        </tr>
+        <tr>
+            <td>Feeling cold</td>
+            <td>Chest pain or heart palpitations</td>
+        </tr>
+        <tr>
+            <td>Mild headache</td>
+            <td>Confusion or disorientation</td>
+        </tr>
+        <tr>
+            <td>Slight fatigue</td>
+            <td>Severe abdominal pain</td>
+        </tr>
+        <tr>
+            <td>Bad breath (ketones)</td>
+            <td>Persistent nausea or vomiting</td>
+        </tr>
+        <tr>
+            <td>Increased urination</td>
+            <td>Vision changes</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 8: SLEEP & SAFETY -->
 <div class="page">
     <h2>Sleep Protocol</h2>
-    <h3>60 minutes before bed</h3>
+    <p>Sleep quality directly impacts how well you manage the fast. Prioritize rest.</p>
+
+    <h3>60 Minutes Before Bed</h3>
     <ul>
-        <li>Dim lights & Stop screens</li>
+        <li>Dim all lights or wear blue-light blocking glasses</li>
+        <li>Stop using screens and devices</li>
         <li>Drink chamomile tea</li>
-        <li>Take magnesium (if you normally use it)</li>
-        <li>Read or journal for 10 minutes</li>
+        <li>Practice deep breathing or gentle stretching</li>
+        <li>Journal or read (offline) to calm your mind</li>
     </ul>
 
-    <h3>Optional supplements</h3>
-    <table>
-        <tr><th>Supplement</th><th>Appropriate?</th></tr>
-        <tr><td>Magnesium glycinate</td><td>Yes</td></tr>
-        <tr><td>Chamomile tea</td><td>Yes</td></tr>
-        <tr><td>Ashwagandha</td><td>Yes, if tolerated</td></tr>
-        <tr><td>Melatonin</td><td>Optional</td></tr>
-        <tr><td>Protein powder</td><td>No</td></tr>
-    </table>
-
-    <h2>Breaking the Fast (72 Hours)</h2>
-    <p>This is a graduated protein re-entry: broth first, then small staged additions every hour. Don't overload a gut that's had nothing solid for 3 days.</p>
-
-    <h3>Phase 1 — Broth (Hour 0)</h3>
+    <h3>Optional Sleep Support</h3>
+    <p>Consider these if you typically use them (don't start new supplements):</p>
     <ul>
-        <li>1 cup chicken broth</li>
-        <li>Wait, then a second cup a little later</li>
+        <li><strong>Magnesium glycinate:</strong> 300–400 mg (helps relaxation and muscle recovery)</li>
+        <li><strong>Chamomile tea:</strong> 1 cup (mild relaxation)</li>
+        <li><strong>Ashwagandha:</strong> 300–600 mg (if tolerated; reduces stress)</li>
     </ul>
-    <p class="em">Sip slowly. This resets fluid and sodium before anything else is asked of your gut.</p>
 
-    <h3>Homemade Chicken Broth</h3>
-    <div class="section-box">
-        <strong>Ingredients:</strong>
-        <ul style="margin-bottom: 3px;">
-            <li>1 chicken carcass or 500 g chicken bones</li>
-            <li>2 carrots, 2 celery stalks, 1 onion</li>
-            <li>Handful parsley, 2 L water, 1 tsp sea salt</li>
-            <li>Optional: fresh ginger</li>
+    <h3>Avoid</h3>
+    <ul>
+        <li>Melatonin (can cause dependency)</li>
+        <li>Alcohol (disrupts sleep quality and dehydrates)</li>
+        <li>Screens or stimulating content</li>
+        <li>Heavy exercise within 4 hours of bedtime</li>
+    </ul>
+
+    <div class="warning">
+        <strong>⚠ Stop the Fast Immediately If:</strong> You experience fainting, chest pain, severe confusion, or any symptom that concerns you. There is no award for finishing if your body signals distress. Safety always comes first.
+    </div>
+</div>
+
+<!-- PAGE 9: BREAKING THE FAST -->
+<div class="page">
+    <div class="page-header">
+        <h1>Breaking the Fast</h1>
+        <p class="tagline">Critical refeeding protocol</p>
+    </div>
+
+    <p class="intro">
+        How you break your fast is as important as the fast itself. A 72-hour fast dramatically increases intestinal sensitivity. Refeeding must be gradual and thoughtful to avoid digestive distress and maximize results.
+    </p>
+
+    <div class="warning">
+        <strong>The Refeeding Principle:</strong> After 72 hours of fasting, your digestive system is essentially dormant. Introduce food gradually—large or heavy meals can cause bloating, cramping, or nausea. Think of your gut as needing to "wake up" slowly.
+    </div>
+
+    <h3>Hour 0: Bone Broth Phase</h3>
+    <ul>
+        <li>Drink 1–2 cups of warm bone broth slowly</li>
+        <li>This reintroduces salt, minerals, and collagen without overwhelming your system</li>
+        <li>Sip slowly over 20–30 minutes</li>
+        <li>Wait 1–2 hours before consuming anything else</li>
+    </ul>
+
+    <h3>Hours 1–3: Light Broth Continuation</h3>
+    <ul>
+        <li>Additional 1–2 cups of light broth or vegetable broth</li>
+        <li>Can add a pinch of sea salt</li>
+        <li>Continue sipping slowly</li>
+        <li>Monitor for any digestive discomfort</li>
+    </ul>
+
+    <h3>Hour 3+: Gentle Protein Re-Entry</h3>
+    <ul>
+        <li>Small portions of easily digestible protein</li>
+        <li>Options: soft-boiled eggs, white fish, chicken broth with shredded chicken, plain yogurt</li>
+        <li>Portion size: 2–3 oz (palm-sized)</li>
+        <li>Eat slowly and chew thoroughly</li>
+    </ul>
+
+    <h3>Hour 6+: Return to Normal</h3>
+    <ul>
+        <li>If digestion feels stable, add vegetables and healthy fats</li>
+        <li>Focus on whole, unprocessed foods</li>
+        <li>Avoid sugar, processed foods, and excessive fiber initially</li>
+        <li>Remain hydrated</li>
+    </ul>
+</div>
+
+<!-- PAGE 10: SAMPLE REFEEDING & WHAT TO AVOID -->
+<div class="page">
+    <div class="box">
+        <h3>Sample Refeeding Timeline</h3>
+        <ul>
+            <li><strong>Hour 0:</strong> 1 cup bone broth</li>
+            <li><strong>Hour 1.5:</strong> 1 cup bone broth + pinch of salt</li>
+            <li><strong>Hour 3:</strong> 3 oz poached chicken + 1/2 cup vegetables broth</li>
+            <li><strong>Hour 5:</strong> 4 oz white fish + roasted vegetables</li>
+            <li><strong>Hour 8+:</strong> Normal, balanced meal</li>
         </ul>
-        <strong style="display: block; margin-top: 3px;">Method:</strong>
-        <ol style="margin: 3px 0 0 14px;">
-            <li>Add everything to a pot</li>
-            <li>Simmer gently for 3–4 hours</li>
-            <li>Strain the liquid & store in glass jars</li>
-        </ol>
     </div>
 
-    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+    <h2>What to Avoid When Breaking the Fast</h2>
+    <ul>
+        <li>Large portions of food</li>
+        <li>High-fiber foods initially (raw vegetables, whole grains, beans)</li>
+        <li>Sugary foods and refined carbohydrates</li>
+        <li>Fried or heavy foods</li>
+        <li>Caffeine on an empty stomach (wait until you've eaten)</li>
+        <li>Alcohol</li>
+    </ul>
+
+    <h2>After the Fast: What to Expect</h2>
+
+    <h3>Days 1–3 Post-Fast</h3>
+    <p>Your body is readjusting to digestion and nutrient absorption. This is normal:</p>
+    <ul>
+        <li>Energy levels may dip as your body normalizes insulin and glucose</li>
+        <li>Digestion may take time to fully normalize</li>
+        <li>Appetite may increase significantly (this is normal adaptation)</li>
+        <li>Continue prioritizing whole foods and hydration</li>
+        <li>Avoid over-restricting calories; let hunger guide you within reason</li>
+    </ul>
+
+    <h3>Days 4–7 Post-Fast</h3>
+    <ul>
+        <li>Energy typically returns to baseline or improves</li>
+        <li>Mental clarity often remains heightened</li>
+        <li>Digestion normalizes</li>
+        <li>Return to regular training if desired</li>
+    </ul>
 </div>
 
-<!-- PAGE 7 -->
+<!-- PAGE 11: KEY TAKEAWAYS -->
 <div class="page">
-    <h3>Phase 2 — Staged Protein Re-Entry (Hours +1 to +3)</h3>
-    <table>
-        <tr><th>Time</th><th>What to eat</th></tr>
-        <tr><td>+1 hour</td><td>1 medium soft-boiled egg</td></tr>
-        <tr><td>+2 hours</td><td>2 dates + 1 medium soft-boiled egg</td></tr>
-        <tr><td>+3 hours</td><td>2 medium soft-boiled eggs + 4 dates</td></tr>
-    </table>
-    <p class="em">Eggs are gentle on a fasted gut. Dates add quick glucose without a hard insulin spike.</p>
-
-    <h3>Phase 3 — Bridge Snack</h3>
-    <ul>
-        <li>Small bowl of Greek yogurt with natural honey</li>
-    </ul>
-    <p class="em">Good for gut bacteria and another gentle protein/carb combo.</p>
-
-    <h3>Phase 4 — Dinner (Same Day)</h3>
-    <ul>
-        <li>Chicken or beef</li>
-        <li>Some light carbs</li>
-        <li>Keep the meal small — think 60–70% full, not a feast</li>
-    </ul>
-
-    <h2>The Next 24 Hours</h2>
-    <div class="two-col">
-        <h3>Breakfast</h3>
-        <h3>Lunch</h3>
-        <div class="col-section">
-            <ul style="margin-bottom: 0;">
-                <li>Eggs</li>
-                <li>Fruit</li>
-                <li>Greek yogurt</li>
-            </ul>
-        </div>
-        <div class="col-section">
-            <ul style="margin-bottom: 0;">
-                <li>Chicken or fish</li>
-                <li>Vegetables</li>
-                <li>Rice or potato</li>
-            </ul>
-        </div>
+    <h2>Key Takeaways</h2>
+    <div class="box">
+        <ul>
+            <li><strong>Preparation matters:</strong> Plan your fast carefully and prepare your environment</li>
+            <li><strong>Hydration and electrolytes are non-negotiable:</strong> They're the difference between a smooth experience and a difficult one</li>
+            <li><strong>Breaking the fast is as important as the fast:</strong> Rush it and you negate benefits and risk discomfort</li>
+            <li><strong>This is a tool, not a punishment:</strong> Use fasting intentionally as part of a sustainable health practice</li>
+        </ul>
     </div>
 
-    <h3>Dinner</h3>
-    <ul>
-        <li>Protein & plenty of vegetables & healthy fat</li>
-    </ul>
-
-    <h3>Keep avoiding</h3>
-    <ul style="margin-bottom: 0;">
-        <li>Alcohol & Ultra-processed foods & Huge desserts & Massive takeaway meals</li>
-    </ul>
-
-    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
-</div>
-
-<!-- PAGE 8 -->
-<div class="page">
-    <h2>The Science (Simplified)</h2>
-
-    <h3>What is well established?</h3>
-    <table>
-        <tr><th>Process</th><th>Evidence</th></tr>
-        <tr><td>Insulin decreases</td><td>Strong</td></tr>
-        <tr><td>Fat oxidation increases</td><td>Strong</td></tr>
-        <tr><td>Ketone production rises</td><td>Strong</td></tr>
-        <tr><td>Glycogen becomes depleted</td><td>Strong</td></tr>
-        <tr><td>Metabolic flexibility improves</td><td>Good evidence</td></tr>
-    </table>
-
-    <h3>What is promising but still being researched?</h3>
-    <ul>
-        <li>Magnitude of autophagy in humans</li>
-        <li>Exact timing of cellular recycling</li>
-        <li>Long-term longevity effects</li>
-        <li>Stem-cell regeneration timing</li>
-    </ul>
-    <p class="em">This is exciting science — but it should be presented honestly.</p>
-
-    <h2>Myth vs Reality</h2>
-    <table>
-        <tr><th>Myth</th><th>Reality</th></tr>
-        <tr><td>"72 hours detoxes the body."</td><td>Your liver and kidneys detox continuously.</td></tr>
-        <tr><td>"Autophagy starts exactly at 24h."</td><td>Human timing varies and isn't precisely measurable.</td></tr>
-        <tr><td>"Coffee ruins the fast."</td><td>Black coffee has negligible calories.</td></tr>
-        <tr><td>"Longer is always better."</td><td>More isn't automatically healthier.</td></tr>
-        <tr><td>"Break the fast with a feast."</td><td>Large meals often cause discomfort.</td></tr>
-    </table>
-
-    <h2>Final Words</h2>
-    <p><strong>What you accomplished:</strong> A successful 72-hour fast is not measured by how much you suffered.</p>
-    <p>It is measured by your ability to:</p>
-    <ul style="margin-bottom: 6px;">
-        <li>Prepare properly & Stay hydrated & Maintain electrolyte balance</li>
-        <li>Listen to your body & Finish at your planned endpoint</li>
-        <li>Reintroduce nutrition intelligently</li>
-    </ul>
-    <p class="em"><strong>The fast is only half the practice. The re-nutrition is the other half.</strong></p>
-    <p>This manual is designed to be repeated, refined, and respected — not to encourage pushing beyond your body's limits. Stay calm and trust the process.</p>
-
-    <div class="footer">CODE9 FITNESS | The 72hr Fast</div>
+    <p style="margin-top: 8mm; text-align: center; font-size: 11px; font-weight: 600; color: var(--ink);">
+        You've got this.
+    </p>
+    <p style="text-align: center; font-size: 10px; color: var(--ink-dim);">
+        This guide is your resource. Reference it before, during, and after your fast. Trust the process, trust your body, and reach out if you have questions.
+    </p>
 </div>
 
 </body>

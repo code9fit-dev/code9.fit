@@ -1,11 +1,13 @@
 import { SupabaseClient } from '@supabase/supabase-js';
+import { isUserAdmin } from '@/lib/admin/access';
 
 /**
  * Check if a user has access to a package
  * Cross-checks all access vectors:
- * 1. User tier (Premium grants all packages)
- * 2. Specific package purchase (from Lemon Squeezy)
- * 3. Coach grant (coach upgraded them to this package)
+ * 1. Admin access (admins see everything)
+ * 2. User tier (Premium grants all packages)
+ * 3. Specific package purchase (from Lemon Squeezy)
+ * 4. Coach grant (coach upgraded them to this package)
  */
 export async function canAccessPackage(
   supabase: SupabaseClient,
@@ -15,7 +17,11 @@ export async function canAccessPackage(
   if (!userId) return false;
 
   try {
-    // 1. Check if user is Premium (has all packages)
+    // 1. Check if user is admin (has full access)
+    const adminAccess = await isUserAdmin(supabase, userId);
+    if (adminAccess) return true;
+
+    // 2. Check if user is Premium (has all packages)
     // Note: This assumes coach_tiers stores subscription tier
     // Adjust based on your actual tier structure
     const { data: tierData } = await supabase
@@ -64,7 +70,13 @@ export async function getAccessiblePackages(
   try {
     const packages: string[] = [];
 
-    // 1. If Premium, return all packages (empty array = all)
+    // 1. If admin, return all packages
+    const adminAccess = await isUserAdmin(supabase, userId);
+    if (adminAccess) {
+      return ['*'];
+    }
+
+    // 2. If Premium, return all packages (empty array = all)
     const { data: tierData } = await supabase
       .from('coach_tiers')
       .select('tier')

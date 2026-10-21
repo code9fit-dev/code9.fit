@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fascia Training — Code9 Fitness</title>
+<meta name="description" content="A Code9 Fitness guide to fascia training: what fascia is, eight core techniques, eight techniques for hybrid athletes, ready-to-follow sessions and demo videos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* All styles are scoped to .c9 so this block can be embedded in an existing site */
+:root{
+  --c9-cream:#F5F1EA; --c9-cream-2:#F9F6F0; --c9-line:#E3DDD2; --c9-gold:#B8915A; --c9-gold-d:#94703F; --c9-gold-soft:#F2EADD;
+  --c9-ink:#13201C; --c9-ink-2:#1E2E29; --c9-muted:#5C605B; --c9-white:#fff;
+  --c9-green:#3C6B52; --c9-amber:#B5812F; --c9-plum:#7A5C78;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--c9-cream)}
+.c9{font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--c9-muted);font-size:16px;line-height:1.65;background:var(--c9-cream);
+  background-image:linear-gradient(var(--c9-line) 1px,transparent 1px),linear-gradient(90deg,var(--c9-line) 1px,transparent 1px);
+  background-size:96px 96px;background-attachment:fixed;-webkit-font-smoothing:antialiased}
+.c9 *{box-sizing:border-box}
+.c9 h1,.c9 h2,.c9 h3,.c9 h4{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;color:var(--c9-ink);margin:0;letter-spacing:-.01em}
+.c9 p{margin:0 0 .8em}
+.c9 strong{color:var(--c9-ink);font-weight:600}
+.c9 a{color:inherit}
+.c9 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.c9 .wrap{padding:0 16px}}
+
+/* header */
+.c9 .bar{position:sticky;top:0;z-index:20;background:rgba(253,252,249,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--c9-line)}
+.c9 .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.c9 .logo{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:22px;color:var(--c9-ink);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.c9 .logo b{color:var(--c9-gold)}
+.c9 nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.c9 nav::-webkit-scrollbar{display:none}
+.c9 nav a{font-size:13px;font-weight:500;color:var(--c9-ink);text-decoration:none;padding:7px 12px;border-radius:99px;white-space:nowrap;transition:background .2s}
+.c9 nav a:hover,.c9 nav a.on{background:var(--c9-gold-soft);color:var(--c9-gold-d)}
+@media (max-width:820px){.c9 nav{display:none}}
+
+/* shared */
+.c9 .eyebrow{font-size:13px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .card{background:var(--c9-white);border:1px solid var(--c9-line);border-radius:18px}
+.c9 section.block{padding:88px 0 0}
+.c9 .shead{display:flex;align-items:flex-end;gap:22px;margin-bottom:14px}
+.c9 .num{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:84px;line-height:.78;color:transparent;-webkit-text-stroke:1.5px var(--c9-gold);letter-spacing:-.03em;flex:none}
+.c9 .shead h2{font-size:clamp(28px,4vw,40px);line-height:1.08;margin-top:8px}
+.c9 .slede{font-size:18px;max-width:720px;margin:18px 0 34px}
+@media (max-width:600px){.c9 .num{font-size:56px}.c9 .shead{gap:14px}.c9 section.block{padding-top:64px}}
+
+/* hero */
+.c9 .hero{padding:80px 0 0}
+.c9 .hero h1{font-size:clamp(44px,7.5vw,84px);line-height:.98;margin:18px 0 22px;letter-spacing:-.025em}
+.c9 .hero .lede{font-size:clamp(17px,2vw,20px);max-width:720px}
+.c9 .philo{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:600;color:var(--c9-ink);font-size:20px;margin-top:26px}
+.c9 .philo span{color:var(--c9-gold)}
+.c9 .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;overflow:hidden}
+.c9 .stat{padding:24px 26px;border-right:1px solid var(--c9-line)}
+.c9 .stat:last-child{border-right:0}
+.c9 .stat b{display:block;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-size:40px;line-height:1;color:var(--c9-ink)}
+.c9 .stat span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold)}
+@media (max-width:700px){.c9 .stats{grid-template-columns:1fr 1fr}.c9 .stat:nth-child(2){border-right:0}.c9 .stat:nth-child(-n+2){border-bottom:1px solid var(--c9-line)}}
+.c9 .toc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.c9 .toc a{display:block;text-decoration:none;padding:18px 20px;transition:transform .2s,border-color .2s}
+.c9 .toc a:hover{transform:translateY(-2px);border-color:var(--c9-gold)}
+.c9 .toc small{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;color:var(--c9-gold);font-size:14px}
+.c9 .toc strong{display:block;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-size:17px;margin-top:4px}
+@media (max-width:820px){.c9 .toc{grid-template-columns:1fr 1fr}}
+
+/* dimensions */
+.c9 .dims{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.c9 .dim{padding:30px 32px;position:relative;overflow:hidden}
+.c9 .dim.wide{grid-column:1/-1}
+.c9 .dim .tagrow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.c9 .dim .dn{width:38px;height:38px;border-radius:50%;background:var(--c9-ink);color:var(--c9-gold);font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+.c9 .dim h3{font-size:24px}
+.c9 .dim .intro{color:var(--c9-ink-2);font-size:16.5px;margin-bottom:18px}
+.c9 .items{display:grid;gap:12px}
+.c9 .dim.wide .items{grid-template-columns:repeat(2,1fr)}
+.c9 .item{background:var(--c9-cream-2);border-radius:12px;padding:16px 18px}
+.c9 .item h4{font-size:16px;display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.c9 .item h4::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c9-gold);flex:none}
+.c9 .item p{margin:0;font-size:15px}
+@media (max-width:820px){.c9 .dims{grid-template-columns:1fr}.c9 .dim.wide .items{grid-template-columns:1fr}.c9 .dim{padding:24px 20px}}
+
+/* categories */
+.c9 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.c9 .cat{padding:26px 26px 22px;display:flex;flex-direction:column}
+.c9 .cat .cn{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:44px;line-height:.8;color:transparent;-webkit-text-stroke:1.2px var(--c9-gold);margin-bottom:14px}
+.c9 .cat h3{font-size:20px;margin-bottom:12px}
+.c9 .cat dl{margin:0}
+.c9 .cat dt{font-weight:600;color:var(--c9-ink);font-size:14.5px;margin-top:10px}
+.c9 .cat dd{margin:2px 0 0;font-size:14.5px}
+.c9 .cat.note{background:var(--c9-ink);border-color:var(--c9-ink);color:#C9CEC9;justify-content:center}
+.c9 .cat.note h3{color:#fff}
+.c9 .cat.note p{font-size:15px}
+.c9 .cat.note a{color:var(--c9-gold);font-weight:600;text-decoration:none}
+@media (max-width:900px){.c9 .cats{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.c9 .cats{grid-template-columns:1fr}}
+
+/* check-in */
+.c9 .ckwrap{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}
+.c9 .ckside{padding:28px;position:sticky;top:92px;background:var(--c9-ink);border-color:var(--c9-ink);color:#C9CEC9}
+.c9 .ring{width:150px;height:150px;margin:0 auto 18px;position:relative}
+.c9 .ring svg{transform:rotate(-90deg)}
+.c9 .ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.c9 .ring .val b{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;color:#fff;font-size:38px;line-height:1}
+.c9 .ring .val span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .ckside h3{color:#fff;font-size:20px;text-align:center}
+.c9 .ckside p{font-size:14.5px;text-align:center;margin-top:8px}
+.c9 .ckside .date{display:block;text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold);margin-bottom:6px}
+.c9 .btn{display:block;width:100%;margin-top:16px;font:600 14px "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;border-radius:99px;padding:11px 16px;border:1px solid #3A4A45;background:transparent;color:#fff;cursor:pointer;transition:background .2s}
+.c9 .btn:hover{background:#22332E}
+.c9 .cklist{display:grid;gap:12px}
+.c9 .ckrow{padding:20px 24px;display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start}
+.c9 .ckrow h4{font-size:17px;padding-top:9px}
+.c9 .ckrow h4 small{display:block;font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold);margin-bottom:2px}
+.c9 .qs{display:grid;gap:8px}
+.c9 .q{display:flex;gap:12px;align-items:center;padding:10px 14px;border-radius:10px;background:var(--c9-cream-2);cursor:pointer;color:var(--c9-ink);font-size:15px;user-select:none;transition:background .2s}
+.c9 .q:hover{background:var(--c9-gold-soft)}
+.c9 .q input{position:absolute;opacity:0;pointer-events:none}
+.c9 .q .box{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--c9-gold);background:#fff;flex:none;position:relative;transition:background .2s}
+.c9 .q input:checked + .box{background:var(--c9-gold)}
+.c9 .q input:checked + .box::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(40deg)}
+.c9 .q input:focus-visible + .box{outline:2px solid var(--c9-ink);outline-offset:2px}
+.c9 .q input:checked ~ span{color:var(--c9-muted)}
+@media (max-width:860px){.c9 .ckwrap{grid-template-columns:1fr}.c9 .ckside{position:static}}
+@media (max-width:600px){.c9 .ckrow{grid-template-columns:1fr;gap:6px;padding:18px}.c9 .ckrow h4{padding-top:0}}
+
+/* tips */
+.c9 .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.c9 .chip{font:500 14px "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;border:1px solid var(--c9-line);background:#fff;color:var(--c9-ink);border-radius:99px;padding:8px 16px;cursor:pointer;transition:all .2s}
+.c9 .chip:hover{border-color:var(--c9-gold)}
+.c9 .chip.on{background:var(--c9-ink);border-color:var(--c9-ink);color:#fff}
+.c9 .chip i{font-style:normal;color:var(--c9-gold);margin-left:6px;font-size:12px}
+.c9 .search{flex:1;min-width:200px;max-width:320px;margin-left:auto;font:15px "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding:9px 16px;border-radius:99px;border:1px solid var(--c9-line);background:#fff;color:var(--c9-ink)}
+.c9 .search:focus{outline:2px solid var(--c9-gold);outline-offset:1px}
+@media (max-width:700px){.c9 .search{margin-left:0;max-width:none}}
+.c9 .legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13.5px;margin:0 0 26px;padding:14px 18px;border-radius:12px;background:var(--c9-gold-soft);color:var(--c9-ink)}
+.c9 .legend b{font-weight:600}
+.c9 .ev{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.c9 .ev::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.c9 .ev.s{color:var(--c9-green)} .c9 .ev.m{color:var(--c9-amber)} .c9 .ev.t{color:var(--c9-plum)}
+.c9 .catgroup{margin-bottom:40px}
+.c9 .cghead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1.5px solid var(--c9-gold);padding-bottom:10px;margin-bottom:18px}
+.c9 .cghead h3{font-size:22px}
+.c9 .cghead span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.c9 .tip{padding:22px 24px}
+.c9 .tip header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.c9 .tip h4{font-size:19px;line-height:1.25}
+.c9 .tip h4 small{display:block;font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--c9-gold);margin-bottom:4px}
+.c9 .tip dl{margin:0;display:grid;grid-template-columns:62px 1fr;gap:0}
+.c9 .tip dt,.c9 .tip dd{padding:8px 0;border-top:1px solid var(--c9-line);font-size:14.5px;margin:0}
+.c9 .tip dt{font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--c9-gold-d);padding-top:10px}
+.c9 .tip dd{color:var(--c9-ink-2)}
+.c9 .empty{display:none;padding:40px;text-align:center}
+@media (max-width:760px){.c9 .tips{grid-template-columns:1fr}.c9 .tip{padding:20px}}
+
+/* quote + footer */
+.c9 .quote{margin:88px 0 0;padding:48px 52px;background:var(--c9-ink);border-radius:22px;color:#F5F1EA;position:relative;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:500;font-size:clamp(22px,3vw,32px);line-height:1.3}
+.c9 .quote::before{content:"“";position:absolute;left:30px;top:10px;color:var(--c9-gold);font-size:64px}
+.c9 .quote::after{content:"";position:absolute;right:52px;top:0;width:60px;height:5px;background:var(--c9-gold);border-radius:0 0 4px 4px}
+.c9 .quote p{margin:0;padding-left:28px}
+@media (max-width:600px){.c9 .quote{padding:36px 24px}.c9 .quote::before{left:14px}}
+.c9 footer{margin-top:72px;border-top:1px solid var(--c9-line);background:#FDFCF9}
+.c9 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:28px;padding-bottom:28px;flex-wrap:wrap}
+.c9 footer span{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--c9-gold)}
+.c9 .top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:var(--c9-ink);color:var(--c9-gold);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:30}
+.c9 .top.show{opacity:1;pointer-events:auto}
+
+
+
+/* fascia */
+.c9 .hero .lede + .lede{margin-top:-4px}
+.c9 .toc{grid-template-columns:repeat(5,1fr)}
+@media (max-width:980px){.c9 .toc{grid-template-columns:1fr 1fr}}
+.c9 .what{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;margin-bottom:18px}
+.c9 .what .card{padding:30px 32px}
+.c9 .what h3{font-size:22px;margin-bottom:10px}
+.c9 .what p{font-size:16px}
+.c9 .web{background:var(--c9-ink);border-color:var(--c9-ink);color:#C9CEC9;display:flex;flex-direction:column;justify-content:space-between;gap:18px;overflow:hidden;position:relative}
+.c9 .web h3{color:#fff}
+.c9 .web svg.net{position:absolute;right:-30px;top:-20px;width:260px;height:260px;opacity:.5}
+@media (max-width:600px){.c9 .web svg.net{opacity:.22}}
+.c9 .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative}
+.c9 .roles div{background:#1E2E29;border-radius:12px;padding:14px}
+.c9 .roles b{display:block;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;color:var(--c9-gold);font-size:15px}
+.c9 .roles span{font-size:13px}
+.c9 .benefits{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.c9 .benefits span{font-size:13.5px;color:var(--c9-ink);background:var(--c9-gold-soft);border-radius:99px;padding:5px 13px}
+.c9 .who{margin-top:18px;padding-top:16px;border-top:1px solid var(--c9-line);font-size:15px}
+@media (max-width:860px){.c9 .what{grid-template-columns:1fr}.c9 .roles{grid-template-columns:1fr}}
+
+.c9 .sublabel{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--c9-gold);margin:30px 0 14px}
+.c9 .comps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.c9 .comp{padding:22px 20px;position:relative}
+.c9 .cico{width:42px;height:42px;border-radius:12px;background:var(--c9-gold-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.c9 .cico svg,.c9 .demo svg{width:22px;height:22px;fill:none;stroke:var(--c9-gold-d);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.c9 .comp .cn{position:absolute;right:18px;top:18px;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;color:transparent;-webkit-text-stroke:1px var(--c9-gold);font-size:28px;line-height:1}
+.c9 .comp h3{font-size:17px;line-height:1.25;margin-bottom:8px}
+.c9 .comp p{font-size:14px;margin:0}
+@media (max-width:1000px){.c9 .comps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.c9 .comps{grid-template-columns:1fr}}
+
+.c9 .techs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.c9 .tech,.c9 .hyb{padding:26px 28px;display:flex;flex-direction:column}
+.c9 .tech header,.c9 .hyb header{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.c9 .tn{flex:none;width:40px;height:40px;border-radius:50%;background:var(--c9-ink);color:var(--c9-gold);font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.c9 .tech h3,.c9 .hyb h3{font-size:21px;line-height:1.2;margin-bottom:5px}
+.c9 .tq{color:var(--c9-ink-2);font-size:15.5px}
+.c9 .sub{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold);margin:6px 0 8px}
+.c9 .exs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.c9 .exs li{background:var(--c9-cream-2);border-radius:12px;padding:12px 16px;border-left:3px solid var(--c9-gold)}
+.c9 .exs li strong{display:block;font-size:15px}
+.c9 .exs li span{font-size:14px}
+.c9 .exs li.noex{border-left-color:var(--c9-line)}
+.c9 .evnote{font-size:13.5px;font-style:italic;margin:14px 0 0}
+.c9 .demo{margin-top:auto;display:flex;align-items:center;gap:12px;padding:12px 14px;margin-top:16px;border:1px solid var(--c9-line);border-radius:12px;text-decoration:none;color:var(--c9-ink);transition:border-color .2s,background .2s}
+.c9 .tech .demo{margin-top:auto}
+.c9 .tech .evnote{margin-bottom:16px}
+.c9 .demo:hover{border-color:var(--c9-gold);background:var(--c9-cream-2)}
+.c9 .demo svg{width:30px;height:30px;padding:7px;border-radius:50%;background:var(--c9-ink);fill:var(--c9-gold);stroke:none;flex:none}
+.c9 .demo span{font-weight:600;font-size:14px}
+.c9 .demo small{display:block;font-weight:400;color:var(--c9-muted);font-size:13px}
+.c9 .ev.t{color:#8A6F67}
+@media (max-width:820px){.c9 .techs{grid-template-columns:1fr}.c9 .tech,.c9 .hyb{padding:22px 20px}}
+
+.c9 .hybintro{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.c9 .hybintro div{background:var(--c9-ink);color:#C9CEC9;border-radius:16px;padding:20px}
+.c9 .hybintro b{display:block;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;color:#fff;font-size:18px;margin-bottom:4px}
+.c9 .hybintro span{font-size:14px}
+@media (max-width:820px){.c9 .hybintro{grid-template-columns:1fr 1fr}}
+.c9 .hyb dl{margin:0 0 6px}
+.c9 .hyb dt{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold-d);margin-top:8px}
+.c9 .hyb dd{margin:2px 0 0;font-size:15px;color:var(--c9-ink-2)}
+.c9 .ben{margin-top:auto;padding-top:14px}
+.c9 .ben{background:var(--c9-gold-soft);border-radius:12px;padding:14px 16px;margin-top:16px;font-size:14.5px;color:var(--c9-ink)}
+.c9 .ben b{display:block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold-d);margin-bottom:3px}
+
+.c9 .sessions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.c9 .sess{padding:26px 24px}
+.c9 .sess .sh{margin-bottom:16px}
+.c9 .sdur{display:inline-block;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:13px;color:var(--c9-ink);background:var(--c9-gold);border-radius:99px;padding:3px 12px;margin-bottom:12px}
+.c9 .sess h3{font-size:22px;margin-bottom:4px}
+.c9 .sess .sh p{font-size:14.5px;margin:0}
+.c9 .ssteps{display:grid;gap:8px}
+.c9 .sst{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:var(--c9-cream-2);cursor:pointer;user-select:none;position:relative;transition:background .2s}
+.c9 .sst:hover{background:var(--c9-gold-soft)}
+.c9 .sst input{position:absolute;opacity:0;pointer-events:none}
+.c9 .sst .box{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--c9-gold);background:#fff;flex:none;position:relative;margin-top:2px}
+.c9 .sst input:checked + .box{background:var(--c9-gold)}
+.c9 .sst input:checked + .box::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(40deg)}
+.c9 .sst input:focus-visible + .box{outline:2px solid var(--c9-ink);outline-offset:2px}
+.c9 .sx{flex:1;min-width:0}
+.c9 .sx small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--c9-gold-d)}
+.c9 .sx strong{display:block;font-size:14.5px;line-height:1.35;margin:2px 0}
+.c9 .sx span{font-size:13.5px}
+.c9 .sd{flex:none;font-size:12px;font-weight:600;color:var(--c9-ink);white-space:nowrap;margin-top:2px}
+.c9 .sst input:checked ~ .sx strong{text-decoration:line-through;text-decoration-color:var(--c9-gold);color:var(--c9-muted)}
+.c9 .sprog{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:13px}
+.c9 .sbar{flex:1;height:6px;border-radius:6px;background:var(--c9-line);overflow:hidden}
+.c9 .sbar i{display:block;height:100%;width:0;background:var(--c9-gold);transition:width .4s ease}
+.c9 .sess.dark{background:var(--c9-ink);border-color:var(--c9-ink);color:#C9CEC9}
+.c9 .sess.dark h3{color:#fff}
+.c9 .sess.dark .sst{background:#1E2E29}
+.c9 .sess.dark .sst:hover{background:#26382F}
+.c9 .sess.dark .sx strong,.c9 .sess.dark .sd{color:#fff}
+.c9 .sess.dark .sx span{color:#AEB5AF}
+.c9 .sess.dark .sx small{color:var(--c9-gold)}
+.c9 .sess.dark .sst .box{background:transparent}
+.c9 .sess.dark .sst input:checked + .box{background:var(--c9-gold)}
+.c9 .sess.dark .sbar{background:#2B3B36}
+@media (max-width:980px){.c9 .sessions{grid-template-columns:1fr}}
+
+.c9 .safe{margin-top:18px;padding:24px 28px;display:grid;grid-template-columns:200px 1fr;gap:20px;border-left:4px solid var(--c9-gold)}
+.c9 .safe h3{font-size:20px}
+.c9 .safe ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
+.c9 .safe li{position:relative;padding-left:18px;font-size:14.5px;color:var(--c9-ink-2)}
+.c9 .safe li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--c9-gold)}
+@media (max-width:760px){.c9 .safe{grid-template-columns:1fr}.c9 .safe ul{grid-template-columns:1fr}}
+
+.c9 .srchs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.c9 .srch{display:flex;align-items:center;gap:16px;padding:18px 22px;text-decoration:none;transition:border-color .2s,transform .2s}
+.c9 .srch:hover{border-color:var(--c9-gold);transform:translateY(-2px)}
+.c9 .play{width:44px;height:44px;border-radius:50%;background:var(--c9-ink);display:flex;align-items:center;justify-content:center;flex:none}
+.c9 .play svg{width:18px;height:18px;fill:var(--c9-gold)}
+.c9 .srch strong{display:block;font-size:16px}
+.c9 .srch small{font-size:13.5px}
+.c9 .arr{margin-left:auto;color:var(--c9-gold);font-size:20px}
+@media (max-width:700px){.c9 .srchs{grid-template-columns:1fr}}
+
+
+/* ---- levels ---- */
+.c9[data-level="beginner"] .lv-exp,.c9[data-level="experienced"] .lv-beg{display:none!important}
+.c9:not([data-level]) .lv-exp{display:none!important}
+.c9 .lvbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:28px;padding:10px 12px 10px 16px;background:#fff;border:1px solid var(--c9-line);border-radius:99px;width:max-content;max-width:100%;font-size:14px}
+.c9 .lvbar strong{color:var(--c9-ink)}
+.c9 .lvdot{width:10px;height:10px;border-radius:50%;background:var(--c9-gold);box-shadow:0 0 0 4px var(--c9-gold-soft)}
+.c9 .lvchange{font:600 13px "IBM Plex Sans",system-ui,sans-serif;background:var(--c9-ink);color:#fff;border:0;border-radius:99px;padding:6px 14px;cursor:pointer}
+.c9 .lvbar + .injury{margin-top:12px}
+.c9 .injury{padding:18px 22px;border-left:4px solid #A54B3E;margin-top:16px;max-width:760px}
+.c9 .injury b{color:#A54B3E;display:block;margin-bottom:4px}
+.c9 .injury p{margin:0;font-size:15px;color:var(--c9-ink-2)}
+.c9 .lvbar ~ .stats{margin-top:20px}
+
+.c9 .gate{position:fixed;inset:0;z-index:100;background:rgba(19,32,28,.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:16px}
+.c9 .gate[hidden]{display:none}
+.c9 .gcard{background:var(--c9-cream);border-radius:24px;padding:36px 38px;max-width:620px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.25);max-height:calc(100vh - 32px);overflow:auto;
+  background-image:linear-gradient(var(--c9-line) 1px,transparent 1px),linear-gradient(90deg,var(--c9-line) 1px,transparent 1px);background-size:48px 48px}
+.c9 .gcard .eyebrow{margin-top:26px}
+.c9 .gcard h2{font-size:clamp(26px,4vw,34px);line-height:1.1;margin:10px 0 10px}
+.c9 .gcard p{font-size:16px;margin-bottom:22px}
+.c9 .gopts{display:grid;gap:12px}
+.c9 .gopt{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;text-align:left;background:#fff;border:1.5px solid var(--c9-line);border-radius:16px;padding:18px 20px;cursor:pointer;font:inherit;color:var(--c9-muted);transition:border-color .2s,transform .2s}
+.c9 .gopt:hover,.c9 .gopt:focus-visible{border-color:var(--c9-gold);transform:translateY(-1px);outline:none}
+.c9 .gopt b{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-size:19px;color:var(--c9-ink);grid-column:1}
+.c9 .gopt span{font-size:14.5px;grid-column:1}
+.c9 .gopt i{grid-column:2;grid-row:1/3;font-style:normal;width:38px;height:38px;border-radius:50%;background:var(--c9-ink);color:var(--c9-gold);display:flex;align-items:center;justify-content:center;font-size:18px}
+.c9 .gback{margin-top:16px;background:none;border:0;font:500 14px "IBM Plex Sans",system-ui,sans-serif;color:var(--c9-muted);cursor:pointer;padding:0}
+@media (max-width:600px){.c9 .gcard{padding:26px 20px}}
+
+.c9 .move{padding:24px 26px;display:flex;flex-direction:column}
+.c9 .move header{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.c9 .move h3{font-size:20px;line-height:1.2}
+.c9 .mcat{display:block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c9-gold);margin-bottom:3px}
+.c9 .dose{margin-left:auto;flex:none;font-size:12.5px;font-weight:600;color:var(--c9-ink);background:var(--c9-gold-soft);border-radius:99px;padding:4px 11px;white-space:nowrap}
+.c9 .lvls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 0}
+.c9 .lv{background:var(--c9-cream-2);border-radius:12px;padding:11px 14px;font-size:14px;color:var(--c9-ink-2)}
+.c9 .lv b{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:2px}
+.c9 .lv.e b{color:#3C6B52} .c9 .lv.h b{color:var(--c9-gold-d)}
+.c9 .move .demo{margin-top:auto}
+.c9 .move .lvls{margin-bottom:16px}
+@media (max-width:600px){.c9 .lvls{grid-template-columns:1fr}.c9 .move{padding:20px}.c9 .move header{flex-wrap:wrap}.c9 .dose{margin-left:54px}}
+
+.c9 .bsess{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:start}
+.c9 .bside{display:grid;gap:16px}
+.c9 .freq{padding:24px 26px}
+.c9 .freq h3,.c9 .safe.col h3{font-size:20px;margin-bottom:8px}
+.c9 .fq{display:flex;align-items:baseline;gap:8px;margin:4px 0 8px}
+.c9 .fq b{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-size:44px;color:var(--c9-ink);line-height:1}
+.c9 .fq span{color:var(--c9-gold);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+.c9 .freq p{margin:0;font-size:14.5px}
+.c9 .safe.col{display:block;margin-top:0}
+.c9 .safe.col ul{grid-template-columns:1fr}
+@media (max-width:900px){.c9 .bsess{grid-template-columns:1fr}}
+
+.c9 .weeks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.c9 .wk{padding:24px}
+.c9 .wkn{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--c9-ink);padding:4px 10px;border-radius:99px;margin-bottom:12px}
+.c9 .wk h3{font-size:21px;margin-bottom:6px}
+.c9 .wk p{margin:0;font-size:15px}
+.c9 .ready{margin-top:16px;padding:28px;display:grid;grid-template-columns:1fr 1.3fr;gap:24px;background:var(--c9-ink);border-color:var(--c9-ink);color:#C9CEC9}
+.c9 .ready h3{color:#fff;font-size:24px;margin-bottom:8px}
+.c9 .rlist{display:grid;gap:8px}
+.c9 .ready .sst{background:#1E2E29}
+.c9 .ready .sst:hover{background:#26382F}
+.c9 .ready .sst .box{background:transparent}
+.c9 .ready .sst input:checked + .box{background:var(--c9-gold)}
+.c9 .ready .sx strong{color:#fff;font-weight:500}
+.c9 .ready .sst input:checked ~ .sx strong{color:#AEB5AF}
+.c9 .btn{display:block;width:100%;margin-top:6px;font:600 15px "IBM Plex Sans",system-ui,sans-serif;border-radius:99px;padding:13px 16px;border:1px solid var(--c9-gold);cursor:pointer;transition:all .2s}
+.c9 .btn.gold{background:var(--c9-gold);color:var(--c9-ink)}
+.c9 .btn:disabled{opacity:.35;cursor:not-allowed}
+@media (max-width:820px){.c9 .weeks{grid-template-columns:1fr}.c9 .ready{grid-template-columns:1fr;padding:22px}}
+
+/* reveal */
+.c9 .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.c9 .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.c9 .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="c9" id="c9-top">
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#c9-top">CODE<b>9</b> FITNESS</a>
+    <nav aria-label="Sections">
+      <a href="#fascia">What is fascia</a>
+      <a class="lv-beg" href="#b-moves">Starter Moves</a>
+      <a class="lv-beg" href="#b-session">Session</a>
+      <a class="lv-beg" href="#b-plan">4-Week Plan</a>
+      <a class="lv-exp" href="#techniques">8 Techniques</a>
+      <a class="lv-exp" href="#hybrid">Hybrid Athletes</a>
+      <a class="lv-exp" href="#sessions">Sessions</a>
+      <a href="#demos">Demos</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Movement guide · Free resource</div>
+    <h1>Fascia<br>Training</h1>
+    <p class="lede">Fascia is the connective tissue that envelops your muscles, organs and other structures. It plays a vital role in movement, stability and overall body function — and healthy fascia contributes to better performance, less pain and fewer injuries.</p>
+    <p class="lede lv-beg">This starter guide explains what fascia training is and gives you <strong>seven low-impact moves</strong>, one 12-minute session and a 4-week plan to build up safely.</p>
+    <p class="lede lv-exp">This guide covers what fascia training is, eight core techniques, the techniques that matter most for <strong>hybrid athletes</strong>, and three sessions you can follow today.</p>
+    <p class="philo">Train the muscles. <span>Train what connects them.</span></p>
+
+
+  <div class="lvbar" id="lvbar" hidden>
+    <span class="lvdot"></span><span>Showing content for: <strong id="lvname">—</strong></span>
+    <button type="button" class="lvchange" id="lvchange">Change</button>
+  </div>
+  <div class="injury card" id="injury" hidden>
+    <b>You mentioned pain or an injury.</b>
+    <p>Stick to the easier versions, skip anything that reproduces your pain, and avoid all bouncing and jumping until a physiotherapist or doctor has cleared you. If you're a Code9 client, let your coach know so your plan can be adjusted.</p>
+  </div>
+
+    <div class="card stats lv-beg">
+      <div class="stat"><b>5</b><span>Components</span></div>
+      <div class="stat"><b>7</b><span>Starter moves</span></div>
+      <div class="stat"><b>12</b><span>Minute session</span></div>
+      <div class="stat"><b>4</b><span>Week plan</span></div>
+    </div>
+    <div class="toc lv-beg">
+      <a class="card" href="#fascia"><small>01</small><strong>What Is Fascia Training?</strong></a>
+      <a class="card" href="#b-moves"><small>02</small><strong>Your 7 Starter Moves</strong></a>
+      <a class="card" href="#b-session"><small>03</small><strong>Your Starter Session</strong></a>
+      <a class="card" href="#b-plan"><small>04</small><strong>4-Week Starter Plan</strong></a>
+      <a class="card" href="#demos"><small>05</small><strong>Find Demonstrations</strong></a>
+    </div>
+
+    <div class="card stats lv-exp">
+      <div class="stat"><b>5</b><span>Components</span></div>
+      <div class="stat"><b>8</b><span>Core techniques</span></div>
+      <div class="stat"><b>8</b><span>Hybrid techniques</span></div>
+      <div class="stat"><b>3</b><span>Sessions</span></div>
+    </div>
+
+    <div class="toc lv-exp">
+      <a class="card" href="#fascia"><small>01</small><strong>What Is Fascia Training?</strong></a>
+      <a class="card" href="#techniques"><small>02</small><strong>The 8 Core Techniques</strong></a>
+      <a class="card" href="#hybrid"><small>03</small><strong>For Hybrid Athletes</strong></a>
+      <a class="card" href="#sessions"><small>04</small><strong>Follow-Along Sessions</strong></a>
+      <a class="card" href="#demos"><small>05</small><strong>Find Demonstrations</strong></a>
+    </div>
+  </section>
+
+  <!-- 01 -->
+  <section class="block" id="fascia">
+    <div class="shead rv"><div class="num">01</div><div><div class="eyebrow">The importance of fascia</div><h2>What Is Fascia Training?</h2></div></div>
+    <p class="slede rv">Fascia training uses exercises designed to stretch, strengthen and rehydrate this connective tissue — improving its elasticity, hydration and overall health.</p>
+    <div class="what">
+      <div class="card rv">
+        <h3>Why it's popular</h3>
+        <p>Fascia training has grown in popularity because of its ability to improve posture, flexibility and overall bodily efficiency. People who include it in their routine often report:</p>
+        <div class="benefits"><span>Better body awareness</span><span>Improved movement quality</span><span>Greater flexibility</span><span>Better posture</span><span>Reduced injury risk</span></div>
+        <p class="who"><strong>Particularly useful for</strong> athletes, dancers, and people recovering from injury or managing chronic pain.</p>
+      </div>
+      <div class="card web rv"><svg class="net" viewBox="0 0 200 200" fill="none" stroke="#B8915A" stroke-width="1"><path d="M0 10 C 50 -20, 150 40, 200 10"/><path d="M0 32 C 50 62, 150 2, 200 32"/><path d="M0 54 C 50 24, 150 84, 200 54"/><path d="M0 76 C 50 106, 150 46, 200 76"/><path d="M0 98 C 50 68, 150 128, 200 98"/><path d="M0 120 C 50 150, 150 90, 200 120"/><path d="M0 142 C 50 112, 150 172, 200 142"/><path d="M0 164 C 50 194, 150 134, 200 164"/><path d="M0 186 C 50 156, 150 216, 200 186"/><path d="M10 0 C -15 60, 35 140, 10 200"/><path d="M36 0 C 61 60, 11 140, 36 200"/><path d="M62 0 C 37 60, 87 140, 62 200"/><path d="M88 0 C 113 60, 63 140, 88 200"/><path d="M114 0 C 89 60, 139 140, 114 200"/><path d="M140 0 C 165 60, 115 140, 140 200"/><path d="M166 0 C 141 60, 191 140, 166 200"/><path d="M192 0 C 217 60, 167 140, 192 200"/></svg>
+        <div><h3>What fascia does</h3><p style="position:relative;max-width:300px;margin-top:10px">A continuous web of connective tissue that wraps and links your muscles — so movement is shared across the body, not isolated in one muscle.</p></div>
+        <div class="roles">
+          <div><b>Movement</b><span>Transmits force between muscles</span></div>
+          <div><b>Stability</b><span>Holds structures in place</span></div>
+          <div><b>Function</b><span>Envelops muscles and organs</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="sublabel rv">The 5 components of fascia training</div>
+    <div class="comps"><article class="card comp rv"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l6-8 4 3 6-11"/><circle cx="20" cy="4" r="1.5"/></svg></span><div class="cn">01</div><h3>Dynamic Stretching</h3><p>Movements such as lunges or side stretches, performed slowly and with control to actively engage and elongate the fascia.</p></article><article class="card comp rv"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18c2-8 4-8 6 0s4 8 6 0 4-8 6 0"/></svg></span><div class="cn">02</div><h3>Bouncing Movements</h3><p>Gentle, rhythmic motions that mimic the elastic nature of fascia, helping restore its natural elasticity.</p></article><article class="card comp rv"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3"/><path d="M7 9v6M11 9v6M15 9v6"/></svg></span><div class="cn">03</div><h3>Rolling &amp; Myofascial Release</h3><p>Foam rollers and massage balls to massage the tissue, release tension and promote tissue health.</p></article><article class="card comp rv"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a2 2 0 1 1 2-2 4 4 0 1 1-4-4 6 6 0 1 1-6 6"/></svg></span><div class="cn">04</div><h3>Multi-Directional Movements</h3><p>Exercises through various planes of motion — rotations and movements that replicate daily life — to stretch and strengthen fascia in every direction.</p></article><article class="card comp rv"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v14M5 9h14M7 9l-3 6h6zM17 9l-3 6h6zM8 21h8"/></svg></span><div class="cn">05</div><h3>Proprioception &amp; Balance</h3><p>Movements that challenge balance and coordination to enhance the responsiveness of the fascial system.</p></article></div>
+  </section>
+
+  <!-- 02 -->
+  
+  <!-- BEGINNER 02 -->
+  <section class="block lv-beg" id="b-moves">
+    <div class="shead rv"><div class="num">02</div><div><div class="eyebrow">Start here</div><h2>Your 7 Starter Moves</h2></div></div>
+    <p class="slede rv">Seven low-impact moves that cover all five components of fascia training. Every move has an easier and a harder version — start with whichever feels controlled and comfortable.</p>
+    <div class="techs"><article class="card move rv">
+  <header><span class="tn">01</span><div><small class="mcat">Dynamic stretching</small><h3>Lunge with Reach</h3></div><span class="dose">5 slow reps per side</span></header>
+  <p class="tq">Step forward into a comfortable lunge and reach both arms overhead. Feel the stretch along the front of the hip and the side of the body. Step back and switch.</p>
+  <div class="lvls"><div class="lv e"><b>Easier</b>Hold a chair or wall for balance and take a shorter step.</div><div class="lv h"><b>Harder</b>Step deeper and pause 2 seconds at the bottom.</div></div>
+  <a class="demo" href="https://www.youtube.com/results?search_query=lunge+with+overhead+reach+beginner" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“lunge with overhead reach beginner”</small></span></a>
+</article><article class="card move rv">
+  <header><span class="tn">02</span><div><small class="mcat">Dynamic stretching</small><h3>Standing Side Bend</h3></div><span class="dose">5 per side</span></header>
+  <p class="tq">Stand with feet wide. Reach one arm over your head and bend gently to the opposite side, then switch. Keep the movement slow and smooth.</p>
+  <div class="lvls"><div class="lv e"><b>Easier</b>Do it seated on a chair.</div><div class="lv h"><b>Harder</b>Hold each side for 3 slow breaths.</div></div>
+  <a class="demo" href="https://www.youtube.com/results?search_query=standing+side+bend+stretch" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“standing side bend stretch”</small></span></a>
+</article><article class="card move rv">
+  <header><span class="tn">03</span><div><small class="mcat">Bouncing</small><h3>Heel Bounce</h3></div><span class="dose">3 × 20 seconds</span></header>
+  <p class="tq">Stand tall and rise onto the balls of your feet, then let your heels drop and spring back up in a light, relaxed rhythm. Toes stay on the floor.</p>
+  <div class="lvls"><div class="lv e"><b>Easier</b>Slow heel raises without bouncing, holding a wall.</div><div class="lv h"><b>Harder</b>Tiny mini-jumps — light and quiet.</div></div>
+  <a class="demo" href="https://www.youtube.com/results?search_query=heel+bounce+exercise+fascia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“heel bounce exercise fascia”</small></span></a>
+</article><article class="card move rv">
+  <header><span class="tn">04</span><div><small class="mcat">Multi-directional</small><h3>Figure-8 Arms</h3></div><span class="dose">30 seconds each direction</span></header>
+  <p class="tq">Stand with soft knees and draw large figure-8 shapes in front of you with both arms, letting your upper back and ribs rotate with the movement.</p>
+  <div class="lvls"><div class="lv e"><b>Easier</b>One arm at a time, smaller shapes.</div><div class="lv h"><b>Harder</b>Add a gentle step and torso twist.</div></div>
+  <a class="demo" href="https://www.youtube.com/results?search_query=figure+8+arm+movement+mobility" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“figure 8 arm movement mobility”</small></span></a>
+</article><article class="card move rv">
+  <header><span class="tn">05</span><div><small class="mcat">Balance</small><h3>Single-Leg Balance with Reach</h3></div><span class="dose">30 seconds per leg</span></header>
+  <p class="tq">Stand on one leg with a soft knee. Slowly reach the other foot forward, to the side and behind you, then switch legs.</p>
+  <div class="lvls"><div class="lv e"><b>Easier</b>Keep a fingertip on a wall or chair.</div><div class="lv h"><b>Harder</b>Reach your arms in the opposite direction to your foot.</div></div>
+  <a class="demo" href="https://www.youtube.com/results?search_query=single+leg+balance+reach+beginner" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“single leg balance reach beginner”</small></span></a>
+</article><article class="card move rv">
+  <header><span class="tn">06</span><div><small class="mcat">Stretch & hold</small><h3>Hip Flexor Stretch with Reach</h3></div><span class="dose">Hold 30 seconds per side</span></header>
+  <p class="tq">Kneel in a half-lunge (pad under the knee). Gently push your hips forward and reach the arm on the kneeling side overhead. Breathe slowly.</p>
+  <div class="lvls"><div class="lv e"><b>Easier</b>Stand in a split stance holding a chair instead of kneeling.</div><div class="lv h"><b>Harder</b>Hold 45–60 seconds and add a slight side lean.</div></div>
+  <a class="demo" href="https://www.youtube.com/results?search_query=kneeling+hip+flexor+stretch+with+reach" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“kneeling hip flexor stretch with reach”</small></span></a>
+</article><article class="card move rv">
+  <header><span class="tn">07</span><div><small class="mcat">Release</small><h3>Glute Roll</h3></div><span class="dose">45 seconds per side</span></header>
+  <p class="tq">Sit on a foam roller with your hands behind you. Cross one ankle over the opposite knee and slowly roll the glute of the crossed leg.</p>
+  <div class="lvls"><div class="lv e"><b>Easier</b>Sit on the roller without crossing the leg, or use a softer roller.</div><div class="lv h"><b>Harder</b>Use a massage ball for a more targeted roll.</div></div>
+  <a class="demo" href="https://www.youtube.com/results?search_query=foam+roll+glutes+beginner" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“foam roll glutes beginner”</small></span></a>
+</article></div>
+  </section>
+
+  <!-- BEGINNER 03 -->
+  <section class="block lv-beg" id="b-session">
+    <div class="shead rv"><div class="num">03</div><div><div class="eyebrow">Put it into practice</div><h2>Your Starter Session</h2></div></div>
+    <p class="slede rv">All seven moves in one easy flow. Do it 2–3 times a week — on a rest day, or as a warm-up before your workout.</p>
+    <div class="bsess">
+      <article class="card sess rv">
+        <div class="sh"><span class="sdur">~12 min</span><h3>Fascia starter session</h3><p>No jumping, no heavy loads. You need a foam roller and a wall or chair.</p></div>
+        <div class="ssteps"><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>01</small><strong>Lunge with reach</strong><span>5 per side</span></span><span class="sd">2 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>02</small><strong>Standing side bend</strong><span>5 per side</span></span><span class="sd">1 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>03</small><strong>Heel bounce</strong><span>3 × 20 s</span></span><span class="sd">2 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>04</small><strong>Figure-8 arms</strong><span>30 s each way</span></span><span class="sd">1 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>05</small><strong>Single-leg balance with reach</strong><span>30 s per leg</span></span><span class="sd">2 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>06</small><strong>Hip flexor stretch with reach</strong><span>30 s per side</span></span><span class="sd">2 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>07</small><strong>Glute roll</strong><span>45 s per side</span></span><span class="sd">2 min</span></label></div>
+        <div class="sprog"><div class="sbar"><i></i></div><span>0 / 7 done</span></div>
+      </article>
+      <div class="bside">
+        <div class="card freq rv"><h3>How often</h3>
+          <div class="fq"><b>2–3×</b><span>per week</span></div>
+          <p>Leave at least one day between sessions in the first two weeks. It should feel refreshing, never exhausting.</p></div>
+        <div class="card safe col rv"><h3>Before you start</h3>
+          <ul>
+            <li>Move slowly and with control — quality over force.</li>
+            <li>Mild stretch or pressure is fine. Sharp, pinching or worsening pain means stop.</li>
+            <li>Roll firmly but never over bruises or recent injuries.</li>
+            <li>Pregnant, injured or managing chronic pain? Check with a professional first.</li>
+          </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEGINNER 04 -->
+  <section class="block lv-beg" id="b-plan">
+    <div class="shead rv"><div class="num">04</div><div><div class="eyebrow">Your first month</div><h2>4-Week Starter Plan</h2></div></div>
+    <p class="slede rv">Build up gradually. After four weeks you'll know the moves well enough to move on to the full experienced programme.</p>
+    <div class="weeks">
+      <article class="card wk rv"><span class="wkn">Weeks 1–2</span><h3>Learn the moves</h3><p>Use the <strong>easier</strong> versions. Focus on slow, controlled movement and steady breathing. 2 sessions per week.</p></article>
+      <article class="card wk rv"><span class="wkn">Week 3</span><h3>Build the base</h3><p>Move to the standard versions. Add a third session if you feel recovered.</p></article>
+      <article class="card wk rv"><span class="wkn">Week 4</span><h3>Add a challenge</h3><p>Try the <strong>harder</strong> version of 2–3 moves. Swap heel bounces for light mini-jumps if they feel easy.</p></article>
+    </div>
+    <div class="card ready rv">
+      <div><h3>Ready to level up?</h3><p>Tick all four and switch to the experienced content — the full set of techniques, hybrid-athlete training and longer sessions.</p></div>
+      <div class="rlist">
+        <label class="sst"><input type="checkbox" class="rd"><span class="box"></span><span class="sx"><strong>I've done the starter session 2–3× a week for 4 weeks</strong></span></label>
+        <label class="sst"><input type="checkbox" class="rd"><span class="box"></span><span class="sx"><strong>I can balance 30 seconds on each leg without support</strong></span></label>
+        <label class="sst"><input type="checkbox" class="rd"><span class="box"></span><span class="sx"><strong>I can do 8 controlled lunges per side, pain-free</strong></span></label>
+        <label class="sst"><input type="checkbox" class="rd"><span class="box"></span><span class="sx"><strong>Mini-jumps feel light and comfortable</strong></span></label>
+        <button type="button" class="btn gold" id="levelup" disabled>Switch to experienced content</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block lv-exp" id="techniques">
+    <div class="shead rv"><div class="num">02</div><div><div class="eyebrow">Techniques &amp; workouts</div><h2>The 8 Core Techniques</h2></div></div>
+    <p class="slede rv">Each technique targets a different part of the fascial system. Every card includes example exercises and a link to find a video demonstration.</p>
+    <div class="legend rv">
+      <span><b>Evidence level:</b></span>
+      <span class="ev s">Strong evidence</span>
+      <span class="ev m">Some evidence</span>
+      <span class="ev t">Limited evidence</span>
+    </div>
+    <div class="techs"><article class="card tech rv">
+  <header><span class="tn">01</span><div><h3>Dynamic Stretching</h3><span class="ev s">Strong evidence</span></div></header>
+  <p class="tq">Controlled, slow stretching movements aimed at lengthening fascia.</p>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Lunges with Reach</strong><span>Step forward into a lunge and reach overhead to stretch your body, focusing on the sides and hip flexors.</span></li><li><strong>Side-to-Side Stretches</strong><span>Standing with feet wide, bend side to side, elongating your lateral fascia.</span></li></ul>
+  <p class="evnote">A well-established way to warm up and improve range of motion.</p>
+  <a class="demo" href="https://www.youtube.com/results?search_query=Dynamic+Stretching+Fascia+Training" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“Dynamic Stretching Fascia Training”</small></span></a>
+</article><article class="card tech rv">
+  <header><span class="tn">02</span><div><h3>Rebounding / Bouncing Movements</h3><span class="ev m">Some evidence</span></div></header>
+  <p class="tq">Gentle, rhythmic bouncing that taps into the fascia's elastic properties.</p>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Mini-Jumps</strong><span>Stand with feet shoulder-width apart and perform light, rhythmic jumps with a spring-like quality.</span></li><li><strong>Bouncing Squats</strong><span>Lower into a squat and pulse slightly up and down without fully extending the legs.</span></li></ul>
+  <p class="evnote">Light, elastic loading is plausible and low-risk; fascia-specific research is still early.</p>
+  <a class="demo" href="https://www.youtube.com/results?search_query=Rebounding+Exercises+for+Fascia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“Rebounding Exercises for Fascia”</small></span></a>
+</article><article class="card tech rv">
+  <header><span class="tn">03</span><div><h3>Myofascial Release (Foam Rolling)</h3><span class="ev m">Some evidence</span></div></header>
+  <p class="tq">Self-massage using foam rollers or massage balls to release tension in the fascia.</p>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>IT Band Roll</strong><span>Lie on your side with the foam roller under your outer thigh, rolling slowly up and down.</span></li><li><strong>Glute Roll</strong><span>Sit on a foam roller and slowly roll back and forth across your glutes to release tension.</span></li></ul>
+  <p class="evnote">Shown to give short-term gains in mobility and reduce soreness.</p>
+  <a class="demo" href="https://www.youtube.com/results?search_query=Foam+Rolling+for+Fascia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“Foam Rolling for Fascia”</small></span></a>
+</article><article class="card tech rv">
+  <header><span class="tn">04</span><div><h3>Multi-Directional Movements</h3><span class="ev m">Some evidence</span></div></header>
+  <p class="tq">Exercises that work the body in different planes of motion to challenge fascia's elasticity and adaptability.</p>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Spiraling Lunges</strong><span>Perform a lunge and twist your torso in the opposite direction of the forward leg, then alternate sides.</span></li><li><strong>Figure-8 Movements</strong><span>Move your arms in large figure-8 patterns, engaging the fascia in your upper body.</span></li></ul>
+  <p class="evnote">Training in all planes is sound practice for real-world and sport movement.</p>
+  <a class="demo" href="https://www.youtube.com/results?search_query=Spiral+Movements+for+Fascia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“Spiral Movements for Fascia”</small></span></a>
+</article><article class="card tech rv">
+  <header><span class="tn">05</span><div><h3>Stretch &amp; Hold</h3><span class="ev s">Strong evidence</span></div></header>
+  <p class="tq">Long, deep stretches — slow, static stretching to lengthen fascia.</p>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Forward Fold with Reach</strong><span>Bend forward at the waist, reaching towards your feet, and hold to stretch the back of the legs and lower back.</span></li><li><strong>Hip Flexor Stretch with Reach</strong><span>In a lunge position, push your hips forward and reach your arms overhead, holding to open the front of the body.</span></li></ul>
+  <p class="evnote">Regular static stretching reliably improves flexibility over time.</p>
+  <a class="demo" href="https://www.youtube.com/results?search_query=Fascial+Stretching+Techniques" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“Fascial Stretching Techniques”</small></span></a>
+</article><article class="card tech rv">
+  <header><span class="tn">06</span><div><h3>Proprioceptive Training &amp; Balance</h3><span class="ev s">Strong evidence</span></div></header>
+  <p class="tq">Exercises that challenge balance and coordination, helping the fascia respond to different forces.</p>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Single-Leg Balance</strong><span>Stand on one leg while moving the other leg and your arms in different directions.</span></li><li><strong>Balance Line Walk</strong><span>Walk along a line or low beam while swinging the arms and torso.</span></li></ul>
+  <p class="evnote">Balance training has good evidence for reducing ankle and knee injuries.</p>
+  <a class="demo" href="https://www.youtube.com/results?search_query=Proprioceptive+Fascia+Training" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“Proprioceptive Fascia Training”</small></span></a>
+</article><article class="card tech rv">
+  <header><span class="tn">07</span><div><h3>Fascial Stretch Therapy (FST)</h3><span class="ev t">Limited evidence</span></div></header>
+  <p class="tq">Assisted stretching by professionals to stretch fascia in a more controlled and targeted way. Many of the stretches can also be done on your own.</p>
+  <div class="sub">Examples</div><ul class="exs"><li class="noex"><span>Look for a certified FST practitioner, or use the demo search to learn assisted-style stretches you can practise solo.</span></li></ul>
+  <p class="evnote">Assisted stretching improves flexibility; FST-specific research is limited.</p>
+  <a class="demo" href="https://www.youtube.com/results?search_query=Fascial+Stretch+Therapy+Demonstration" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“Fascial Stretch Therapy Demonstration”</small></span></a>
+</article><article class="card tech rv">
+  <header><span class="tn">08</span><div><h3>Elastic Recoil Training</h3><span class="ev s">Strong evidence</span></div></header>
+  <p class="tq">Uses the elastic properties of fascia to store and release energy.</p>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Springing Lunges</strong><span>Like normal lunges, but focus on the recoil effect as you push off the ground.</span></li><li><strong>Bounding</strong><span>Jump forward and backward in a bounding motion to engage the fascia's elastic quality.</span></li></ul>
+  <p class="evnote">Plyometric training is well proven for power and tendon stiffness.</p>
+  <a class="demo" href="https://www.youtube.com/results?search_query=Elastic+Recoil+Training+for+Fascia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Find a demo<small>“Elastic Recoil Training for Fascia”</small></span></a>
+</article></div>
+  </section>
+
+  <!-- 03 -->
+  <section class="block lv-exp" id="hybrid">
+    <div class="shead rv"><div class="num">03</div><div><div class="eyebrow">Strength · endurance · mobility</div><h2>Fascia Training for Hybrid Athletes</h2></div></div>
+    <p class="slede rv">Hybrid athletes train across multiple disciplines — strength, endurance and flexibility. They need tissue that is elastic, mobile and strong across every movement plane and energy system.</p>
+    <div class="hybintro">
+      <div class="rv"><b>Strength</b><span>Load the tissue, not just the muscle</span></div>
+      <div class="rv"><b>Flexibility</b><span>Keep range of motion between disciplines</span></div>
+      <div class="rv"><b>Stability</b><span>Control under fatigue and heavy load</span></div>
+      <div class="rv"><b>Coordination</b><span>Move well in every plane</span></div>
+    </div>
+    <div class="techs"><article class="card hyb rv">
+  <header><span class="tn">01</span><div><h3>Dynamic Stretching with Resistance</h3><span class="ev m">Some evidence</span></div></header>
+  <dl><dt>Why it's great</dt><dd>Prepares the fascia for the demands of hybrid performance by enhancing tissue elasticity, mobility and strength.</dd><dt>Technique</dt><dd>Use resistance bands or light weights during dynamic stretching to load the fascia in different planes of motion.</dd></dl>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Resistance Band Overhead Lunges</strong><span>Anchor a band, hold the other end and step into a lunge while stretching the arms overhead — legs, hips and upper body at once.</span></li></ul>
+  <div class="ben"><b>For hybrid athletes</b>Engages multiple muscle groups and fascial lines at once, preparing the tissue for strength and endurance demands.</div>
+</article><article class="card hyb rv">
+  <header><span class="tn">02</span><div><h3>Elastic Recoil Training</h3><span class="ev s">Strong evidence</span></div></header>
+  <dl><dt>Why it's great</dt><dd>Harnesses the fascia's natural elasticity to maximise energy return and movement efficiency.</dd><dt>Technique</dt><dd>Quick, spring-like motions that use the tissue's ability to store and release energy.</dd></dl>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Bounding &amp; Plyometric Jumps</strong><span>Focus on the stretch-shortening cycle: store energy on landing, release it explosively on the jump.</span></li><li><strong>Springing Lunges</strong><span>Focus on the bounce back from the bottom of the lunge to the start position.</span></li></ul>
+  <div class="ben"><b>For hybrid athletes</b>Improves power, speed and agility while reducing energy cost — explosive movement combined with endurance.</div>
+</article><article class="card hyb rv">
+  <header><span class="tn">03</span><div><h3>Multi-Directional Movements</h3><span class="ev m">Some evidence</span></div></header>
+  <dl><dt>Why it's great</dt><dd>Hybrid athletes lift, run and move in every plane. Training in multiple directions builds strength, mobility and durability across all patterns.</dd><dt>Technique</dt><dd>Exercises that challenge the body through rotational and lateral movement.</dd></dl>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Crossover Lunges with Rotation</strong><span>Step one foot across the body into a lunge while twisting the torso to the opposite side.</span></li><li><strong>Figure-8 Kettlebell Swings</strong><span>Swing the kettlebell in a figure-8 pattern for dynamic, multi-directional loading.</span></li></ul>
+  <div class="ben"><b>For hybrid athletes</b>Enhances mobility and strength in the complex, unpredictable patterns common in functional sport and cross-training.</div>
+</article><article class="card hyb rv">
+  <header><span class="tn">04</span><div><h3>Myofascial Release &amp; Recovery</h3><span class="ev m">Some evidence</span></div></header>
+  <dl><dt>Why it's great</dt><dd>Keeps tissue pliable, reduces muscle soreness and improves recovery after high-intensity hybrid training.</dd><dt>Technique</dt><dd>Foam rollers, massage balls or other tools for self-myofascial release to ease tightness and restore mobility.</dd></dl>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Foam Rolling the IT Band &amp; Quads</strong><span>Lie on your side with the roller under the outer thigh and roll slowly back and forth.</span></li><li><strong>Lacrosse Ball for the Feet</strong><span>Roll the sole of the foot over a lacrosse ball to release tension and help lower-body mobility.</span></li></ul>
+  <div class="ben"><b>For hybrid athletes</b>Improves recovery, increases mobility and reduces tightness after heavy sessions across multiple modalities.</div>
+</article><article class="card hyb rv">
+  <header><span class="tn">05</span><div><h3>Proprioception &amp; Stability Training</h3><span class="ev s">Strong evidence</span></div></header>
+  <dl><dt>Why it's great</dt><dd>Changing direction, lifting heavy and holding pace all demand body awareness and stability to prevent injury.</dd><dt>Technique</dt><dd>Balance and coordination drills that challenge the body to stabilise.</dd></dl>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Single-Leg Balance with Arm Movements</strong><span>Stand on one leg while moving the arms in different directions, connecting the feet to the upper body.</span></li><li><strong>Bosu Ball Squats</strong><span>Squat on an unstable surface like a Bosu ball to activate stabilisers across the body.</span></li></ul>
+  <div class="ben"><b>For hybrid athletes</b>Builds core stability and body control — crucial whether running, lifting or doing agility work.</div>
+</article><article class="card hyb rv">
+  <header><span class="tn">06</span><div><h3>Fascial Stretch Therapy (FST)</h3><span class="ev t">Limited evidence</span></div></header>
+  <dl><dt>Why it's great</dt><dd>Assisted, passive stretching that targets the tissue more deeply, helping maintain flexibility and joint health.</dd><dt>Technique</dt><dd>Assisted stretching with a partner or professional, elongating the tissue along key movement chains.</dd></dl>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Hip Flexor Assisted Stretch</strong><span>A therapist or partner stretches the hip flexor while you focus on breathing and relaxing.</span></li></ul>
+  <div class="ben"><b>For hybrid athletes</b>Increases range of motion, making it easier to switch between lifting and running without losing flexibility.</div>
+</article><article class="card hyb rv">
+  <header><span class="tn">07</span><div><h3>Oscillating Movements</h3><span class="ev t">Limited evidence</span></div></header>
+  <dl><dt>Why it's great</dt><dd>Small, quick movements that build elasticity and tissue readiness — useful when switching between explosive and endurance work.</dd><dt>Technique</dt><dd>Micro-movements: small rhythmic pulses.</dd></dl>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Rapid Arm Oscillations</strong><span>Hold light dumbbells and perform fast, small up-and-down movements with the arms.</span></li><li><strong>Shaking Squats</strong><span>Hold the bottom of a squat and add a slight, fast shaking motion.</span></li></ul>
+  <div class="ben"><b>For hybrid athletes</b>Prepares tissue for high-intensity movement, reducing the risk of strain during power-based training.</div>
+</article><article class="card hyb rv">
+  <header><span class="tn">08</span><div><h3>Functional Fascial Movement Patterns</h3><span class="ev m">Some evidence</span></div></header>
+  <dl><dt>Why it's great</dt><dd>Mimic everyday movement while strengthening the tissue, for sports that need fluid, natural motion.</dd><dt>Technique</dt><dd>Exercises built on real-world movement patterns that engage whole fascial lines.</dd></dl>
+  <div class="sub">Examples</div><ul class="exs"><li><strong>Turkish Get-Ups</strong><span>A complex movement that challenges mobility, strength and coordination across the whole body.</span></li><li><strong>Lateral Lunge with Arm Reach</strong><span>Step laterally into a deep lunge while reaching the arms in the opposite direction.</span></li></ul>
+  <div class="ben"><b>For hybrid athletes</b>Improves functional movement efficiency — better performance in CrossFit, trail running or martial arts.</div>
+</article></div>
+  </section>
+
+  <!-- 04 -->
+  <section class="block lv-exp" id="sessions">
+    <div class="shead rv"><div class="num">04</div><div><div class="eyebrow">Put it into practice</div><h2>Follow-Along Sessions</h2></div></div>
+    <p class="slede rv">Three ready-made sessions built from the exercises in this guide. Tick off each block as you go.</p>
+    <div class="sessions"><article class="card sess  rv">
+  <div class="sh"><span class="sdur">~20 min</span><h3>Everyday fascia session</h3><p>For anyone — a standalone session or a day off from training.</p></div>
+  <div class="ssteps"><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>01 · Dynamic stretching</small><strong>Lunges with reach · side-to-side stretches</strong><span>5 slow reps each side</span></span><span class="sd">4 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>02 · Bouncing</small><strong>Mini-jumps · bouncing squats</strong><span>3 × 30 s, easy and springy</span></span><span class="sd">3 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>03 · Multi-directional</small><strong>Spiraling lunges · figure-8 arms</strong><span>6 per side · 30 s arms</span></span><span class="sd">4 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>04 · Balance</small><strong>Single-leg balance with reaches · line walk</strong><span>45 s per leg · 1 min walk</span></span><span class="sd">3 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>05 · Stretch &amp; hold</small><strong>Forward fold with reach · hip flexor stretch with reach</strong><span>Hold 60 s each</span></span><span class="sd">3 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>06 · Release</small><strong>Glute roll · outer thigh roll</strong><span>60 s per side, slow</span></span><span class="sd">3 min</span></label></div>
+  <div class="sprog"><div class="sbar"><i></i></div><span>0 / 6 done</span></div>
+</article><article class="card sess dark rv">
+  <div class="sh"><span class="sdur">~12 min</span><h3>Hybrid pre-training activation</h3><p>Before strength, conditioning or running sessions.</p></div>
+  <div class="ssteps"><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>01 · Load the stretch</small><strong>Resistance band overhead lunges</strong><span>6 per side</span></span><span class="sd">2 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>02 · Wake the tissue</small><strong>Rapid arm oscillations · shaking squats</strong><span>2 × 20 s each</span></span><span class="sd">2 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>03 · Move in every plane</small><strong>Crossover lunges with rotation</strong><span>5 per side</span></span><span class="sd">2 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>04 · Whole-body pattern</small><strong>Turkish get-up (light)</strong><span>2 per side</span></span><span class="sd">3 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>05 · Elastic recoil</small><strong>Springing lunges → bounding / plyo jumps</strong><span>6 per side → 3 × 5</span></span><span class="sd">3 min</span></label></div>
+  <div class="sprog"><div class="sbar"><i></i></div><span>0 / 5 done</span></div>
+</article><article class="card sess  rv">
+  <div class="sh"><span class="sdur">~15 min</span><h3>Hybrid recovery</h3><p>After hard sessions or on recovery days.</p></div>
+  <div class="ssteps"><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>01 · Roll</small><strong>Foam roll IT band &amp; quads</strong><span>2 min per leg</span></span><span class="sd">4 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>02 · Feet</small><strong>Lacrosse ball under the foot</strong><span>1 min per foot</span></span><span class="sd">2 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>03 · Open the hips</small><strong>Lateral lunge with arm reach</strong><span>6 slow reps per side</span></span><span class="sd">3 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>04 · Stretch &amp; hold</small><strong>Hip flexor stretch with reach · forward fold</strong><span>Hold 60 s each</span></span><span class="sd">3 min</span></label><label class="sst"><input type="checkbox"><span class="box"></span><span class="sx"><small>05 · Assisted (optional)</small><strong>Partner-assisted hip flexor stretch</strong><span>Breathe and relax, 2 × 30 s per side</span></span><span class="sd">3 min</span></label></div>
+  <div class="sprog"><div class="sbar"><i></i></div><span>0 / 5 done</span></div>
+</article></div>
+    <div class="card safe rv">
+      <h3>Train it safely</h3>
+      <ul>
+        <li>Move slowly and with control — fascia responds to quality, not force.</li>
+        <li>Roll firmly but never into sharp pain; avoid bruises and recent injuries.</li>
+        <li>Build bouncing and plyometric work gradually, on a forgiving surface.</li>
+        <li>Recovering from injury or managing chronic pain? Start with guidance from a professional.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="block" id="demos">
+    <div class="shead rv"><div class="num">05</div><div><div class="eyebrow">Images &amp; videos</div><h2>Find Demonstrations</h2></div></div>
+    <p class="slede rv">These searches bring up well-known trainers and practitioners demonstrating fascia techniques — including <strong>Dr. Robert Schleip</strong>, one of the leading fascia researchers.</p>
+    <div class="srchs"><a class="card srch rv" href="https://www.youtube.com/results?search_query=Fascia+training+workout+video" target="_blank" rel="noopener"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span><strong>Fascia training workout video</strong><small>Full follow-along sessions</small></span><span class="arr">↗</span></a><a class="card srch rv" href="https://www.youtube.com/results?search_query=Dr.+Robert+Schleip+fascia+exercises" target="_blank" rel="noopener"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span><strong>Dr. Robert Schleip fascia exercises</strong><small>A leading fascia researcher</small></span><span class="arr">↗</span></a><a class="card srch rv" href="https://www.youtube.com/results?search_query=Fascia+stretching+exercises" target="_blank" rel="noopener"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span><strong>Fascia stretching exercises</strong><small>Stretch &amp; hold routines</small></span><span class="arr">↗</span></a><a class="card srch rv" href="https://www.youtube.com/results?search_query=Fascia+release+foam+rolling" target="_blank" rel="noopener"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span><strong>Fascia release foam rolling</strong><small>Proper rolling form</small></span><span class="arr">↗</span></a></div>
+  </section>
+
+  <div class="quote rv"><p>A resilient fascial system supports strength, mobility and recovery — across every way you train.</p></div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#c9-top" style="font-size:18px">CODE<b>9</b> FITNESS</a>
+    <span>Fascia training · Movement guide</span>
+  </div>
+</footer>
+
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-q1" hidden>
+  <div class="gcard">
+    <a class="logo" href="#c9-top" style="font-size:18px">CODE<b>9</b> FITNESS</a>
+    <div class="gstep" data-step="1">
+      <div class="eyebrow">Before you start · 1 of 2</div>
+      <h2 id="gate-q1">How experienced are you with training?</h2>
+      <p>We'll show you the content that fits where you are right now. You can change this at any time.</p>
+      <div class="gopts">
+        <button type="button" class="gopt" data-level="beginner"><b>New to training</b><span>Less than 6 months of regular training, or returning after a long break</span><i>→</i></button>
+        <button type="button" class="gopt" data-level="experienced"><b>Experienced</b><span>Training regularly for 6+ months — strength, conditioning, running or hybrid</span><i>→</i></button>
+      </div>
+    </div>
+    <div class="gstep" data-step="2" hidden>
+      <div class="eyebrow">Before you start · 2 of 2</div>
+      <h2>Any current pain or injury?</h2>
+      <p>This helps us point you to the safest starting point.</p>
+      <div class="gopts two">
+        <button type="button" class="gopt" data-injury="no"><b>No</b><span>I'm pain-free and ready to go</span><i>→</i></button>
+        <button type="button" class="gopt" data-injury="yes"><b>Yes</b><span>I have pain, an injury or a condition to work around</span><i>→</i></button>
+      </div>
+      <button type="button" class="gback" id="gback">← Back</button>
+    </div>
+  </div>
+</div>
+<a class="top" id="totop" href="#c9-top" aria-label="Back to top">↑</a>
+
+<script>
+
+/* ================= Experience profile =================
+   The visitor's answers are stored as a profile and shared through:
+   1. window.C9Profile.get()                    — read the current profile
+   2. window event "c9:profile"                 — fires on every answer/change (event.detail = profile)
+   3. window.dataLayer push { event:"c9_profile" } — for Google Tag Manager / analytics
+   4. Optional webhook: set window.C9_CONFIG = { webhookUrl:"https://..." } before this script
+      to POST the profile as JSON (e.g. to Zapier, Make, your CRM or your AI-coach backend).
+   5. Coaches can pre-set the level with a link: ?level=beginner or ?level=experienced
+   Optional: window.C9_CONFIG.clientId (or ?client=ID) to attach a known client ID.
+======================================================== */
+(function(){
+const root = document.querySelector('.c9');
+const KEY = 'c9-profile';
+const CFG = window.C9_CONFIG || {};
+const qs = new URLSearchParams(location.search);
+const rd = () => { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch(e) { return null; } };
+const wr = p => { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch(e) {} };
+let profile = rd();
+const memProfile = {v: profile};
+
+function publish(reason){
+  const p = memProfile.v; if(!p) return;
+  const detail = Object.assign({}, p, {page:'fascia-training', reason:reason, url:location.href});
+  window.dispatchEvent(new CustomEvent('c9:profile', {detail}));
+  (window.dataLayer = window.dataLayer || []).push(Object.assign({event:'c9_profile'}, detail));
+  if(CFG.webhookUrl){ try { fetch(CFG.webhookUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(detail), keepalive:true}).catch(()=>{}); } catch(e) {} }
+}
+function save(changes, reason){
+  const now = new Date().toISOString();
+  const prev = memProfile.v || {createdAt: now, history: []};
+  const next = Object.assign({}, prev, changes, {updatedAt: now});
+  next.clientId = qs.get('client') || CFG.clientId || prev.clientId || null;
+  next.history = (prev.history || []).concat([{at: now, change: changes, reason}]).slice(-20);
+  memProfile.v = next; wr(next); apply(); publish(reason);
+}
+window.C9Profile = {
+  get: () => memProfile.v ? JSON.parse(JSON.stringify(memProfile.v)) : null,
+  set: (changes) => save(changes, 'api'),
+  reset: () => { try { localStorage.removeItem(KEY); } catch(e) {} memProfile.v = null; root.removeAttribute('data-level'); openGate(); }
+};
+
+const NAMES = {beginner:'New to training', experienced:'Experienced'};
+function apply(){
+  const p = memProfile.v;
+  if(!p || !p.level){ root.removeAttribute('data-level'); return; }
+  root.setAttribute('data-level', p.level);
+  document.getElementById('lvbar').hidden = false;
+  document.getElementById('lvname').textContent = NAMES[p.level] || p.level;
+  document.getElementById('injury').hidden = p.injury !== 'yes';
+  document.querySelectorAll('.c9 .rv').forEach(el => el.classList.add('in'));
+}
+
+const gate = document.getElementById('gate');
+const steps = [...gate.querySelectorAll('.gstep')];
+let pending = {};
+function showStep(n){ steps.forEach(s => s.hidden = s.dataset.step != n); const b = gate.querySelector(`.gstep[data-step="${n}"] .gopt`); b && b.focus(); }
+function openGate(){ pending = {}; gate.hidden = false; document.documentElement.style.overflow = 'hidden'; showStep(1); }
+function closeGate(){ gate.hidden = true; document.documentElement.style.overflow = ''; }
+gate.querySelectorAll('[data-level]').forEach(b => b.addEventListener('click', () => { pending.level = b.dataset.level; showStep(2); }));
+gate.querySelectorAll('[data-injury]').forEach(b => b.addEventListener('click', () => {
+  pending.injury = b.dataset.injury;
+  const first = !memProfile.v || !memProfile.v.level;
+  save(pending, first ? 'onboarding' : 'changed'); closeGate(); scrollTo({top:0});
+}));
+document.getElementById('gback').addEventListener('click', () => showStep(1));
+document.getElementById('lvchange').addEventListener('click', openGate);
+gate.addEventListener('keydown', e => { if(e.key === 'Escape' && memProfile.v && memProfile.v.level) closeGate(); });
+
+// level-up checklist
+const rds = [...document.querySelectorAll('.rd')], lu = document.getElementById('levelup');
+rds.forEach(r => r.addEventListener('change', () => { lu.disabled = !rds.every(x => x.checked); }));
+lu.addEventListener('click', () => { save({level:'experienced', leveledUp:true}, 'level-up'); scrollTo({top:0, behavior:'smooth'}); });
+
+// start
+const urlLevel = qs.get('level');
+if(urlLevel === 'beginner' || urlLevel === 'experienced'){
+  if(!memProfile.v || memProfile.v.level !== urlLevel) save({level:urlLevel, injury:(memProfile.v && memProfile.v.injury) || 'unknown'}, 'coach-link');
+  else { apply(); publish('returning'); }
+  if(memProfile.v.injury === 'unknown'){ pending = {level:urlLevel}; gate.hidden = false; document.documentElement.style.overflow = 'hidden'; showStep(2); }
+} else if(memProfile.v && memProfile.v.level){ apply(); publish('returning'); }
+else openGate();
+})();
+
+(function(){
+document.querySelectorAll('.c9 .sess').forEach(s=>{
+  const ins=[...s.querySelectorAll('input')], bar=s.querySelector('.sbar i'), lab=s.querySelector('.sprog span');
+  const u=()=>{const n=ins.filter(i=>i.checked).length; bar.style.width=(n/ins.length*100)+'%'; lab.textContent=n===ins.length?'Session complete ✓':n+' / '+ins.length+' done';};
+  ins.forEach(i=>i.addEventListener('change',u));
+});
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{rootMargin:'0px 0px -40px 0px'}):null;
+document.querySelectorAll('.c9 .rv').forEach(el=>io?io.observe(el):el.classList.add('in'));
+const links=[...document.querySelectorAll('.c9 nav a')], top=document.getElementById('totop');
+addEventListener('scroll',()=>{
+  top.classList.toggle('show',scrollY>700);
+  let cur=null; links.forEach(a=>{const s=document.querySelector(a.getAttribute('href')); if(s&&s.getBoundingClientRect().top<140) cur=a;});
+  links.forEach(a=>a.classList.toggle('on',a===cur));
+},{passive:true});
+})();
+</script>
+</div>
+</body>
+</html>

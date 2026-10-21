@@ -21,6 +21,15 @@ export default function ProfilePage() {
   const [selectedCheckIn, setSelectedCheckIn] = useState<ClientCheckIn | null>(null);
 
   useEffect(() => {
+    const adminSession = typeof window !== 'undefined' ? localStorage.getItem('admin_session') : null;
+
+    // Check for admin session first
+    if (adminSession) {
+      setUser({ id: 'admin', email: 'admin@localhost' });
+      setLoading(false);
+      return;
+    }
+
     if (!supabase) {
       setLoading(false);
       return;
