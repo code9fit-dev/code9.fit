@@ -2,6 +2,8 @@
 
 import { Suspense, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { PageBranding } from "@/components/PageBranding";
 import { useSearchParams } from "next/navigation";
 import { ThemeController } from "@/components/ThemeController";
 import { ALL_TIERS, slugify, type Tier } from "@/data/coaches";
@@ -92,8 +94,18 @@ function OnboardingFlow() {
     <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[520px] flex-col px-6 pb-20 pt-7">
       <ThemeController theme="signature" />
 
-      <Link href="/" className="mb-6 font-display text-base font-bold tracking-wide">
-        CODE<span className="text-accent">9</span> FITNESS
+      <div className="mb-12 text-center">
+        <PageBranding variant="dark" centered={true} />
+      </div>
+
+      <Link href="/" className="mb-6">
+        <Image
+          src="/code9-logo-cream-transparent.svg"
+          alt="Code9 Fitness"
+          width={40}
+          height={40}
+          style={{ height: '40px', width: 'auto' }}
+        />
       </Link>
 
       {paidTier && (

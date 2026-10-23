@@ -3,8 +3,10 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 import { useStore } from '@/lib/store/store';
+import { PageBranding } from '@/components/PageBranding';
 import {
   currentWeek,
   todaysWorkout,
@@ -132,24 +134,44 @@ export default function DashboardPage() {
   const today = plan ? todaysWorkout(plan) : null;
 
   return (
-    <div className="min-h-screen bg-stone-50">
+    <div className="min-h-screen" style={{ background: 'var(--surface)' }} data-theme="signature">
       {/* Header */}
-      <header className="border-b border-stone-200 bg-white px-6 py-4">
+      <header className="px-6 py-4" style={{ borderBottom: '1px solid var(--line)', background: 'var(--panel)' }}>
         <div className="mx-auto max-w-4xl flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-stone-900">Dashboard</h1>
-            <p className="text-sm text-stone-600">Welcome, {user.email}</p>
+            <h1 className="text-2xl font-bold" style={{ color: 'var(--ink)' }}>Dashboard</h1>
+            <p className="text-sm" style={{ color: 'var(--ink-dim)' }}>Welcome, {user.email}</p>
           </div>
           <div className="flex gap-3">
             <Link
               href="/profile"
-              className="text-xs font-semibold text-stone-600 hover:text-stone-900 border border-stone-300 px-3 py-1.5 rounded hover:bg-stone-50"
+              className="text-xs font-semibold px-3 py-1.5 rounded transition-all"
+              style={{
+                color: 'var(--ink)',
+                border: '1px solid var(--line)',
+                background: 'transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--accent)';
+                e.currentTarget.style.color = 'var(--on-accent)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = 'var(--ink)';
+              }}
             >
               Profile
             </Link>
             <button
               onClick={handleLogout}
-              className="text-xs font-semibold text-stone-600 hover:text-stone-900"
+              className="text-xs font-semibold transition-colors"
+              style={{ color: 'var(--ink-dim)' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = 'var(--accent)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = 'var(--ink-dim)';
+              }}
             >
               Sign out
             </button>
@@ -157,27 +179,35 @@ export default function DashboardPage() {
         </div>
       </header>
 
+      {/* Branding Section */}
+      <section className="px-6 py-6" style={{ borderBottom: '1px solid var(--line)', background: 'var(--panel)' }}>
+        <div className="mx-auto max-w-4xl">
+          <PageBranding variant="dark" centered={true} />
+        </div>
+      </section>
+
       <main className="mx-auto max-w-4xl px-6 py-8 space-y-8">
         {/* Daily Motivation */}
-        <div className="rounded-lg border border-blue-200 bg-blue-50 p-6">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+        <div className="rounded-lg border p-6" style={{ borderColor: 'var(--accent)', background: 'color-mix(in srgb, var(--accent) 10%, var(--panel))' }}>
+          <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--accent)' }}>
             Daily Motivation
           </h2>
-          <h3 className="mt-2 text-xl font-bold text-blue-900">{dailyMotivation.title}</h3>
-          <p className="mt-3 text-base leading-relaxed text-blue-800">{dailyMotivation.message}</p>
-          <p className="mt-3 text-xs text-blue-700">— {dailyMotivation.source}</p>
+          <h3 className="mt-2 text-xl font-bold" style={{ color: 'var(--ink)' }}>{dailyMotivation.title}</h3>
+          <p className="mt-3 text-base leading-relaxed" style={{ color: 'var(--ink-dim)' }}>{dailyMotivation.message}</p>
+          <p className="mt-3 text-xs" style={{ color: 'var(--accent)' }}>— {dailyMotivation.source}</p>
         </div>
 
         {!plan ? (
           /* No Plan Yet */
-          <div className="rounded-lg border border-amber-200 bg-amber-50 p-6">
-            <h2 className="font-semibold text-amber-900">No Training Plan Yet</h2>
-            <p className="mt-2 text-sm text-amber-800">
+          <div className="rounded-lg border p-6" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
+            <h2 className="font-semibold" style={{ color: 'var(--ink)' }}>No Training Plan Yet</h2>
+            <p className="mt-2 text-sm" style={{ color: 'var(--ink-dim)' }}>
               Connect with a coach to get a personalized training plan and start your journey.
             </p>
             <Link
               href="/coach/lifestyle-recovery-coach"
-              className="mt-4 inline-block rounded bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+              className="mt-4 inline-block rounded px-4 py-2 text-sm font-semibold hover:opacity-90"
+              style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}
             >
               Browse Coaches
             </Link>
@@ -185,23 +215,24 @@ export default function DashboardPage() {
         ) : (
           <>
             {/* Coach & Plan Info */}
-            <div className="rounded-lg border border-stone-200 bg-white p-6">
+            <div className="rounded-lg border p-6" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
               <div className="flex items-start justify-between">
                 <div>
-                  <h2 className="text-sm font-semibold uppercase tracking-wide text-stone-600">
+                  <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--ink-dim)' }}>
                     Active Plan
                   </h2>
-                  <h3 className="mt-1 text-xl font-bold text-stone-900">{plan.title}</h3>
-                  <p className="mt-1 text-sm text-stone-600">
+                  <h3 className="mt-1 text-xl font-bold" style={{ color: 'var(--ink)' }}>{plan.title}</h3>
+                  <p className="mt-1 text-sm" style={{ color: 'var(--ink-dim)' }}>
                     Coached by <span className="font-semibold">{coach?.name}</span>
                   </p>
-                  <p className="mt-2 text-xs text-stone-500">
+                  <p className="mt-2 text-xs" style={{ color: 'var(--ink-dim)' }}>
                     Week {plan.currentWeek} of {plan.weeks}
                   </p>
                 </div>
                 <Link
                   href={`/coach/${plan.coachSlug}`}
-                  className="rounded bg-accent px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+                  className="rounded px-4 py-2 text-sm font-semibold hover:opacity-90"
+                  style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}
                 >
                   View Plan
                 </Link>
@@ -209,22 +240,22 @@ export default function DashboardPage() {
             </div>
 
             {/* Weekly Progress */}
-            <div className="rounded-lg border border-stone-200 bg-white p-6">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-stone-600">
+            <div className="rounded-lg border p-6" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
+              <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--ink-dim)' }}>
                 This Week's Progress
               </h2>
               <div className="mt-4 flex items-end gap-4">
                 <div>
-                  <div className="text-4xl font-bold text-stone-900">{weekly?.pct ?? 0}%</div>
-                  <p className="mt-1 text-sm text-stone-600">
+                  <div className="text-4xl font-bold" style={{ color: 'var(--accent)' }}>{weekly?.pct ?? 0}%</div>
+                  <p className="mt-1 text-sm" style={{ color: 'var(--ink-dim)' }}>
                     {weekly?.done ?? 0} of {weekly?.total ?? 0} workouts complete
                   </p>
                 </div>
                 <div className="flex-1">
-                  <div className="h-2 w-full rounded-full bg-stone-200">
+                  <div className="h-2 w-full rounded-full" style={{ background: 'var(--line)' }}>
                     <div
-                      className="h-full rounded-full bg-accent transition-all"
-                      style={{ width: `${weekly?.pct ?? 0}%` }}
+                      className="h-full rounded-full transition-all"
+                      style={{ width: `${weekly?.pct ?? 0}%`, background: 'var(--accent)' }}
                     />
                   </div>
                 </div>
@@ -233,72 +264,74 @@ export default function DashboardPage() {
 
             {/* Today's Workout */}
             {today ? (
-              <div className="rounded-lg border border-green-200 bg-green-50 p-6">
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-green-700">
+              <div className="rounded-lg border p-6" style={{ borderColor: 'var(--accent)', background: 'color-mix(in srgb, var(--accent) 10%, var(--panel))' }}>
+                <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--accent)' }}>
                   Today's Workout
                 </h2>
-                <h3 className="mt-2 text-2xl font-bold text-green-900">{today.title}</h3>
-                <p className="mt-1 text-green-800">{today.focus}</p>
+                <h3 className="mt-2 text-2xl font-bold" style={{ color: 'var(--ink)' }}>{today.title}</h3>
+                <p className="mt-1" style={{ color: 'var(--ink-dim)' }}>{today.focus}</p>
 
                 {today.exercises.length > 0 && (
                   <div className="mt-4 space-y-2">
                     {today.exercises.map((exercise) => (
                       <div
                         key={exercise.id}
-                        className="flex items-center gap-3 rounded bg-white p-3"
+                        className="flex items-center gap-3 rounded p-3"
+                        style={{ background: 'var(--surface)', borderColor: 'var(--line)', border: '1px solid' }}
                       >
                         <input
                           type="checkbox"
                           checked={exercise.done}
                           disabled
                           className="h-4 w-4"
+                          style={{ accentColor: 'var(--accent)' }}
                         />
                         <div>
-                          <p className="font-semibold text-stone-900">{exercise.name}</p>
-                          <p className="text-xs text-stone-600">{exercise.detail}</p>
+                          <p className="font-semibold" style={{ color: 'var(--ink)' }}>{exercise.name}</p>
+                          <p className="text-xs" style={{ color: 'var(--ink-dim)' }}>{exercise.detail}</p>
                         </div>
                       </div>
                     ))}
                   </div>
                 )}
 
-                <p className="mt-4 text-xs text-green-700">
+                <p className="mt-4 text-xs" style={{ color: 'var(--accent)' }}>
                   {workoutPct(today)}% complete — Go to the coach to update your progress
                 </p>
               </div>
             ) : (
-              <div className="rounded-lg border border-stone-200 bg-white p-6">
-                <p className="text-sm text-stone-600">No scheduled workout for today.</p>
+              <div className="rounded-lg border p-6" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
+                <p className="text-sm" style={{ color: 'var(--ink-dim)' }}>No scheduled workout for today.</p>
               </div>
             )}
 
             {/* Weekly Schedule */}
             {currentWeekData && (
-              <div className="rounded-lg border border-stone-200 bg-white p-6">
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-stone-600">
+              <div className="rounded-lg border p-6" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
+                <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--ink-dim)' }}>
                   This Week's Schedule
                 </h2>
                 <div className="mt-4 space-y-3">
                   {currentWeekData.workouts.map((workout) => (
                     <div
                       key={workout.id}
-                      className={`flex items-start justify-between rounded border p-3 ${
-                        workoutComplete(workout)
-                          ? 'border-green-200 bg-green-50'
-                          : 'border-stone-200 bg-stone-50'
-                      }`}
+                      className="flex items-start justify-between rounded border p-3"
+                      style={{
+                        borderColor: workoutComplete(workout) ? 'var(--accent)' : 'var(--line)',
+                        background: workoutComplete(workout) ? 'color-mix(in srgb, var(--accent) 10%, var(--surface))' : 'var(--surface)'
+                      }}
                     >
                       <div>
-                        <p className="font-semibold text-stone-900">
+                        <p className="font-semibold" style={{ color: 'var(--ink)' }}>
                           {workout.day} — {workout.title}
                         </p>
-                        <p className="text-xs text-stone-600">{workout.focus}</p>
+                        <p className="text-xs" style={{ color: 'var(--ink-dim)' }}>{workout.focus}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-sm font-bold text-stone-900">
+                        <div className="text-sm font-bold" style={{ color: 'var(--accent)' }}>
                           {workoutPct(workout)}%
                         </div>
-                        <div className="text-xs text-stone-600">
+                        <div className="text-xs" style={{ color: 'var(--ink-dim)' }}>
                           {workout.exercises.filter((e) => e.done).length}/{workout.exercises.length}
                         </div>
                       </div>
@@ -309,16 +342,17 @@ export default function DashboardPage() {
             )}
 
             {/* Insights */}
-            <div className="rounded-lg border border-stone-200 bg-white p-6">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-stone-600">
+            <div className="rounded-lg border p-6" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
+              <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--ink-dim)' }}>
                 Your Insights
               </h2>
-              <p className="mt-2 text-sm text-stone-600">
+              <p className="mt-2 text-sm" style={{ color: 'var(--ink-dim)' }}>
                 Curated wisdom from fitness and wellness books to support your journey.
               </p>
               <Link
                 href="/insights"
-                className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
+                className="mt-4 inline-block text-sm font-semibold hover:underline"
+                style={{ color: 'var(--accent)' }}
               >
                 View all insights →
               </Link>

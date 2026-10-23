@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 import Link from 'next/link';
+import Image from 'next/image';
+import { PageBranding } from '@/components/PageBranding';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -123,6 +125,10 @@ export default function LoginPage() {
       className="min-h-screen flex flex-col items-center justify-center px-6 py-8"
       style={{ background: 'var(--surface)' }}
     >
+      <div className="mb-12">
+        <PageBranding variant="dark" centered={true} />
+      </div>
+
       <div
         className="w-full max-w-md rounded-lg border p-8"
         data-theme="signature"
@@ -133,13 +139,21 @@ export default function LoginPage() {
       >
         {/* Logo & Heading */}
         <div className="mb-8 text-center">
-          <Link
-            href="/"
-            className="font-display text-2xl font-bold tracking-wide inline-block"
+          <Link href="/" className="flex justify-center mb-4">
+            <Image
+              src="/code9-logo-cream-transparent.svg"
+              alt="Code9 Fitness"
+              width={56}
+              height={56}
+              style={{ height: '56px', width: 'auto' }}
+            />
+          </Link>
+          <h2
+            className="font-display text-xl font-bold tracking-wide inline-block"
             style={{ color: 'var(--ink)' }}
           >
-            CODE<span className="text-accent">9</span> FITNESS
-          </Link>
+            Code9 Fitness
+          </h2>
           <p className="mt-3 text-sm" style={{ color: 'var(--ink-dim)' }}>
             Sign in to your account or create a new one
           </p>

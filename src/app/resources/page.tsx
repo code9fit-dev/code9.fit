@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/primitives';
+import { PageBranding } from '@/components/PageBranding';
 
 interface Resource {
   id: string;
@@ -84,20 +86,37 @@ export default function ResourcesPage() {
 
   return (
     <main className="flex-1 relative z-10">
+      {/* Branding Section */}
+      <section style={{ borderBottom: '1px solid var(--line)', paddingBottom: '24px', paddingTop: '24px', background: 'var(--surface)' }}>
+        <Container>
+          <PageBranding variant="light" centered={true} />
+        </Container>
+      </section>
+
       {/* Hero Section */}
       <section style={{ borderBottom: '1px solid var(--line)', paddingBottom: '48px', paddingTop: '48px' }}>
         <Container>
-          <div className="max-w-2xl">
-            <div className="mb-2 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.15em]" style={{ color: 'var(--accent)' }}>
-              <span className="inline-block h-px w-5" style={{ background: 'var(--accent)' }} />
-              Free Resources
+          <div className="flex gap-8 items-start">
+            <Image
+              src="/code9-logo-dark.svg"
+              alt="Code9 Fitness"
+              width={80}
+              height={80}
+              className="flex-shrink-0"
+              style={{ height: '80px', width: 'auto' }}
+            />
+            <div className="max-w-2xl">
+              <div className="mb-2 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.15em]" style={{ color: 'var(--accent)' }}>
+                <span className="inline-block h-px w-5" style={{ background: 'var(--accent)' }} />
+                Free Resources
+              </div>
+              <h1 className="font-display text-[40px] font-semibold leading-tight mb-4" style={{ color: 'var(--ink)' }}>
+                Learn & Grow for Free
+              </h1>
+              <p className="text-lg" style={{ color: 'var(--ink-dim)' }}>
+                Essential guides, protocols, and templates to optimize your training. Everything you need to get started—completely free.
+              </p>
             </div>
-            <h1 className="font-display text-[40px] font-semibold leading-tight mb-4" style={{ color: 'var(--ink)' }}>
-              Learn & Grow for Free
-            </h1>
-            <p className="text-lg" style={{ color: 'var(--ink-dim)' }}>
-              Essential guides, protocols, and templates to optimize your training. Everything you need to get started—completely free.
-            </p>
           </div>
         </Container>
       </section>
@@ -158,12 +177,12 @@ export default function ResourcesPage() {
                           {
                             num: '04',
                             title: 'Anything feel off physically',
-                            desc: 'Flag pain, soreness that doesn't feel normal, or dizziness here — early, small notes let us adjust before it becomes an injury.',
+                            desc: `Flag pain, soreness that doesn't feel normal, or dizziness here — early, small notes let us adjust before it becomes an injury.`,
                           },
                           {
                             num: '05',
-                            title: 'Next week's sessions',
-                            desc: 'Deciding the days and session types now, while it's fresh, makes you far more likely to actually follow through than deciding on the day.',
+                            title: `Next week's sessions`,
+                            desc: `Deciding the days and session types now, while it's fresh, makes you far more likely to actually follow through than deciding on the day.`,
                           },
                           {
                             num: '06',
@@ -199,7 +218,7 @@ export default function ResourcesPage() {
                         style={{
                           borderColor: 'var(--line)',
                           background: 'var(--ink)',
-                          color: 'var(--cream)',
+                          color: '#fff',
                         }}
                       >
                         <h5 className="font-semibold mb-3">A few ground rules</h5>
@@ -240,6 +259,7 @@ export default function ResourcesPage() {
                                   : '/resources/fascia-guide'
                               }
                               className="btn-primary"
+                              prefetch={true}
                             >
                               View Guide
                             </Link>

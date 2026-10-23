@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coaching Preferences & GDPR Compliance</title>
+  <style>
+    :root {
+      --c9-cream: #F5F1EA;
+      --c9-line: #E3DDD2;
+      --c9-gold: #B8915A;
+      --c9-gold-d: #94703F;
+      --c9-gold-soft: #F2EADD;
+      --c9-ink: #13201C;
+      --c9-ink-2: #1E2E29;
+      --c9-muted: #5C605B;
+      --c9-white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--c9-cream);
+      color: var(--c9-ink);
+      line-height: 1.6;
+    }
+
+    .preferences-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .header {
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c9-gold);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--c9-ink);
+    }
+
+    .description {
+      font-size: 16px;
+      color: var(--c9-muted);
+      margin-bottom: 32px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 24px;
+      border: 1px solid var(--c9-line);
+      border-radius: 8px;
+      background: var(--c9-white);
+    }
+
+    .section h2 {
+      font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--c9-ink);
+    }
+
+    .section p {
+      font-size: 14px;
+      color: var(--c9-muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .preference-group {
+      margin: 20px 0;
+    }
+
+    .checkbox-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: var(--c9-gold);
+    }
+
+    label {
+      font-size: 14px;
+      color: var(--c9-ink);
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checkbox-description {
+      font-size: 13px;
+      color: var(--c9-muted);
+      margin-top: 4px;
+      margin-left: 32px;
+    }
+
+    .legal-notice {
+      background: var(--c9-gold-soft);
+      border-left: 4px solid var(--c9-gold);
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--c9-ink-2);
+      line-height: 1.6;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--c9-gold);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--c9-gold-d);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--c9-line);
+      color: var(--c9-ink);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--c9-gold);
+      color: var(--c9-gold);
+    }
+
+    .required {
+      color: #d32f2f;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .preferences-container {
+        padding: 32px 16px;
+      }
+
+      button {
+        flex: 1;
+        min-width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="preferences-container">
+    <div class="header">
+      <div class="eyebrow">Privacy & Compliance</div>
+      <h1>Coaching Preferences</h1>
+      <p class="description">
+        Help us customize your coaching experience and ensure we're following GDPR regulations. All your choices can be updated anytime in your account settings.
+      </p>
+    </div>
+
+    <!-- Data & Analytics Section -->
+    <div class="section">
+      <h2>Data Collection & Analytics</h2>
+      <p>We use your training data to personalize coaching and improve recommendations. This section is required for our service to work.</p>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="training-data" name="training-data" required checked disabled>
+          <label for="training-data">
+            <strong>Training Data Collection</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          We collect your workout logs, performance metrics, and progress data to deliver personalized coaching. This is essential for the service.
+        </div>
+      </div>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="health-data" name="health-data">
+          <label for="health-data">
+            <strong>Health & Recovery Metrics</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          We analyze your sleep, energy levels, and recovery signals to adjust recommendations. Opt-in for enhanced personalization.
+        </div>
+      </div>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="analytics" name="analytics" checked>
+          <label for="analytics">
+            <strong>Performance Analytics</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          We track your progress trends (strength gains, adherence, etc.) for reporting and insights. You can view all this data in your dashboard.
+        </div>
+      </div>
+    </div>
+
+    <!-- Communication Preferences -->
+    <div class="section">
+      <h2>Communication Preferences</h2>
+      <p>Choose how and when we contact you about your coaching journey.</p>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="email-essential" name="email-essential" required checked disabled>
+          <label for="email-essential">
+            <strong>Essential Emails</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          Account updates, coaching messages, and important notifications. You can't opt out of these.
+        </div>
+      </div>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="email-weekly" name="email-weekly" checked>
+          <label for="email-weekly">
+            <strong>Weekly Check-In Reminders</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          Gentle reminders to complete your weekly check-in so your coach has accurate progress data.
+        </div>
+      </div>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="email-progress" name="email-progress" checked>
+          <label for="email-progress">
+            <strong>Progress Reports</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          Monthly summaries of your progress, achievements, and coaching recommendations.
+        </div>
+      </div>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="email-marketing" name="email-marketing">
+          <label for="email-marketing">
+            <strong>News & Special Offers</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          Updates about new programs, features, or special offers. We won't spam — max 2 emails per month.
+        </div>
+      </div>
+    </div>
+
+    <!-- Coach Access & Privacy -->
+    <div class="section">
+      <h2>Coach Access & Privacy</h2>
+      <p>Control what information your coach can see about your progress.</p>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="coach-full-access" name="coach-full-access" required checked disabled>
+          <label for="coach-full-access">
+            <strong>Full Coaching Access</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          Your assigned coach can see your complete workout logs, progress, and health metrics. Required for effective coaching.
+        </div>
+      </div>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="profile-visibility" name="profile-visibility">
+          <label for="profile-visibility">
+            <strong>Profile Visibility in Community</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          Allow other Code9 clients to see your name and progress highlights (achievements, streak). Your data stays private.
+        </div>
+      </div>
+
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="research-participation" name="research-participation">
+          <label for="research-participation">
+            <strong>Coaching Research & Improvement</strong>
+          </label>
+        </div>
+        <div class="checkbox-description">
+          Help us improve coaching by allowing anonymized research use of your progress data. No personal info is included.
+        </div>
+      </div>
+    </div>
+
+    <!-- GDPR Rights -->
+    <div class="section" style="background: var(--c9-gold-soft); border-color: var(--c9-gold);">
+      <h2 style="color: var(--c9-gold-d);">Your GDPR Rights</h2>
+      <p>Under GDPR, you have the right to:</p>
+      <ul style="margin-left: 20px; color: var(--c9-muted); font-size: 14px;">
+        <li style="margin-bottom: 8px;"><strong>Access:</strong> Request a copy of all data we hold about you</li>
+        <li style="margin-bottom: 8px;"><strong>Correct:</strong> Update or fix any inaccurate information</li>
+        <li style="margin-bottom: 8px;"><strong>Delete:</strong> Request deletion of your account and data (with limited exceptions)</li>
+        <li style="margin-bottom: 8px;"><strong>Withdraw:</strong> Opt-out of any communication or data use at any time</li>
+        <li><strong>Portability:</strong> Receive your data in a portable format</li>
+      </ul>
+      <p style="margin-top: 16px; font-size: 13px;">
+        To exercise any of these rights, email us at <strong>privacy@code9.fit</strong>
+      </p>
+    </div>
+
+    <!-- Required Consent -->
+    <div class="section" style="border-color: var(--c9-gold); background: var(--c9-gold-soft);">
+      <h2 style="color: var(--c9-gold-d);">Required Acknowledgment <span class="required">*</span></h2>
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+          <label for="privacy-policy">
+            I have read and agree to the <a href="/privacy-policy" style="color: var(--c9-gold); text-decoration: none; font-weight: 600;">Privacy Policy</a> and <a href="/terms" style="color: var(--c9-gold); text-decoration: none; font-weight: 600;">Terms of Service</a>
+          </label>
+        </div>
+      </div>
+      <div class="preference-group">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="data-processing" name="data-processing" required>
+          <label for="data-processing">
+            I consent to Code9 Fitness processing my personal data as described in these preferences
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="legal-notice">
+      <strong>Data Protection:</strong> Your data is encrypted and stored securely. We comply with GDPR, CCPA, and other privacy regulations. You can change these preferences anytime without penalty.
+    </div>
+
+    <div class="button-group">
+      <button type="button" class="btn-primary" id="accept-btn">Accept & Continue</button>
+      <button type="button" class="btn-secondary" id="customize-btn">Customize More</button>
+    </div>
+  </div>
+
+  <script>
+    // Basic form handling - will be enhanced by React
+    document.getElementById('accept-btn')?.addEventListener('click', function() {
+      const requiredChecks = document.querySelectorAll('#privacy-policy, #data-processing');
+      let allChecked = true;
+      requiredChecks.forEach(check => {
+        if (!check.checked) allChecked = false;
+      });
+
+      if (allChecked) {
+        // Emit event or call callback for React component
+        if (window.onPreferencesAccepted) {
+          window.onPreferencesAccepted({
+            trainingData: document.getElementById('training-data').checked,
+            healthData: document.getElementById('health-data').checked,
+            analytics: document.getElementById('analytics').checked,
+            emailEssential: document.getElementById('email-essential').checked,
+            emailWeekly: document.getElementById('email-weekly').checked,
+            emailProgress: document.getElementById('email-progress').checked,
+            emailMarketing: document.getElementById('email-marketing').checked,
+            coachFullAccess: document.getElementById('coach-full-access').checked,
+            profileVisibility: document.getElementById('profile-visibility').checked,
+            researchParticipation: document.getElementById('research-participation').checked,
+            privacyAgreed: document.getElementById('privacy-policy').checked,
+            dataProcessingConsent: document.getElementById('data-processing').checked,
+          });
+        }
+      } else {
+        alert('Please accept the Privacy Policy and Data Processing terms to continue');
+      }
+    });
+
+    document.getElementById('customize-btn')?.addEventListener('click', function() {
+      // Scroll to preferences
+      document.querySelector('.section').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

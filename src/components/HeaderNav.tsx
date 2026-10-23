@@ -1,16 +1,39 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export function HeaderNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-300 bg-white/94 backdrop-blur-sm" style={{ fontFamily: '"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif' }}>
+    <header
+      className="sticky top-0 z-50 border-b backdrop-blur-sm"
+      style={{
+        fontFamily: '"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif',
+        borderColor: 'var(--line)',
+        background: 'color-mix(in srgb, var(--panel) 95%, transparent)',
+        color: 'var(--ink)'
+      }}
+    >
       <div style={{ maxWidth: '1040px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '68px', gap: '16px' }}>
-        <Link href="/" className="font-bold text-xl" style={{ letterSpacing: '.01em', whiteSpace: 'nowrap', textDecoration: 'none', color: '#13201C' }}>
-          CODE<span style={{ color: '#B8915A' }}>9</span> FITNESS
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
+          <Image
+            src="/code9-logo-dark.svg"
+            alt="Code9 Fitness"
+            width={32}
+            height={32}
+            style={{ height: '32px', width: 'auto' }}
+          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+            <span className="font-display font-semibold" style={{ fontSize: '13px', letterSpacing: '.05em', color: 'var(--ink)', lineHeight: '1' }}>
+              CODE9
+            </span>
+            <span className="font-mono" style={{ fontSize: '10px', letterSpacing: '.08em', color: 'var(--ink-dim)', lineHeight: '1' }}>
+              FITNESS
+            </span>
+          </div>
         </Link>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -23,9 +46,9 @@ export function HeaderNav() {
               }}
               style={{
                 font: '500 13px/1 "IBM Plex Sans", sans-serif',
-                color: '#13201C',
+                color: 'var(--ink)',
                 background: 'transparent',
-                border: '1px solid #E3DDD2',
+                border: '1px solid var(--line)',
                 borderRadius: '99px',
                 padding: '9px 14px',
                 cursor: 'pointer',
@@ -35,15 +58,15 @@ export function HeaderNav() {
                 transition: 'all .2s'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#F2EADD';
-                e.currentTarget.style.borderColor = '#F2EADD';
-                e.currentTarget.style.color = '#94703F';
+                e.currentTarget.style.background = 'var(--accent)';
+                e.currentTarget.style.borderColor = 'var(--accent)';
+                e.currentTarget.style.color = 'var(--on-accent)';
               }}
               onMouseLeave={(e) => {
                 if (!menuOpen) {
                   e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.borderColor = '#E3DDD2';
-                  e.currentTarget.style.color = '#13201C';
+                  e.currentTarget.style.borderColor = 'var(--line)';
+                  e.currentTarget.style.color = 'var(--ink)';
                 }
               }}
             >
@@ -61,42 +84,42 @@ export function HeaderNav() {
                   right: 0,
                   top: 'calc(100% + 8px)',
                   minWidth: '210px',
-                  background: '#fff',
-                  border: '1px solid #E3DDD2',
+                  background: 'var(--panel)',
+                  border: '1px solid var(--line)',
                   borderRadius: '14px',
                   padding: '6px',
-                  boxShadow: '0 14px 34px rgba(19,32,28,.10)',
+                  boxShadow: '0 14px 34px rgba(0,0,0,.20)',
                 }}
               >
-                <Link href="/#coaches" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#13201C'; }}>
+                <Link href="/#coaches" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Coaches
                 </Link>
-                <Link href="/#how" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#13201C'; }}>
+                <Link href="/#how" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   How it works
                 </Link>
-                <Link href="/#trust" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#13201C'; }}>
+                <Link href="/#trust" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Why C9F
                 </Link>
-                <Link href="/#pricing" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#13201C'; }}>
+                <Link href="/#pricing" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Pricing
                 </Link>
-                <Link href="/library" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#13201C'; }}>
+                <Link href="/library" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Find your program
                 </Link>
-                <Link href="/resources" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s', fontWeight: '600', color: '#B8915A' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#B8915A'; }}>
+                <Link href="/resources" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--accent)', fontSize: '14px', transition: 'all .2s', fontWeight: '600' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)'; }}>
                   📚 Free Resources
                 </Link>
-                <Link href="/onboarding" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: '#13201C', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#F2EADD'; e.currentTarget.style.color = '#94703F'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#13201C'; }}>
+                <Link href="/onboarding" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Find your coach
                 </Link>
               </div>
             )}
           </div>
 
-          <span style={{ fontSize: '11px', fontWeight: '600', letterSpacing: '.14em', color: '#94703F', border: '1px solid #E3DDD2', borderRadius: '99px', padding: '6px 10px' }}>
+          <span style={{ fontSize: '11px', fontWeight: '600', letterSpacing: '.14em', color: 'var(--accent)', border: '1px solid var(--line)', borderRadius: '99px', padding: '6px 10px' }}>
             v3.0
           </span>
-          <Link href="/dashboard" style={{ fontSize: '13px', fontWeight: '600', color: '#fff', background: '#13201C', border: '1.5px solid #13201C', borderRadius: '99px', padding: '10px 16px', textDecoration: 'none', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#1E2E29'; }} onMouseLeave={(e) => { e.currentTarget.style.background = '#13201C'; }}>
+          <Link href="/dashboard" style={{ fontSize: '13px', fontWeight: '600', color: 'var(--on-accent)', background: 'var(--accent)', border: '1.5px solid var(--accent)', borderRadius: '99px', padding: '10px 16px', textDecoration: 'none', transition: 'all .2s', opacity: 0.9 }} onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }} onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.9'; }}>
             Dashboard
           </Link>
         </div>
