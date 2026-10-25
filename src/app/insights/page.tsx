@@ -32,7 +32,7 @@ export default async function InsightsPage() {
   const userId = user?.id || 'dev-user';
 
   // Get client's unlocked insights
-  const insights = await getClientUnlockedInsights(supabase, userId);
+  const insights = await getClientUnlockedInsights(supabase as any, userId);
 
   const groupedByCategory = insights.reduce(
     (acc, insight) => {
