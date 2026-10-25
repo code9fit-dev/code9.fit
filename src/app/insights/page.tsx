@@ -11,7 +11,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 async function markSeen(insightId: string, userId: string) {
   'use server';
   try {
-    await markInsightAsSeen(supabase, userId, insightId);
+    await markInsightAsSeen(supabase as any, userId, insightId);
   } catch (error) {
     console.error('Failed to mark insight as seen:', error);
   }
