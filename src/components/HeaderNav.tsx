@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 
 export function HeaderNav() {
@@ -18,22 +17,10 @@ export function HeaderNav() {
       }}
     >
       <div style={{ maxWidth: '1040px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '68px', gap: '16px' }}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-          <Image
-            src="/code9-logo-dark.svg"
-            alt="Code9 Fitness"
-            width={32}
-            height={32}
-            style={{ height: '32px', width: 'auto' }}
-          />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-            <span className="font-display font-semibold" style={{ fontSize: '13px', letterSpacing: '.05em', color: 'var(--ink)', lineHeight: '1' }}>
-              CODE9
-            </span>
-            <span className="font-mono" style={{ fontSize: '10px', letterSpacing: '.08em', color: 'var(--ink-dim)', lineHeight: '1' }}>
-              FITNESS
-            </span>
-          </div>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+          <span className="font-display font-bold" style={{ fontSize: '20px', letterSpacing: '-.01em', color: 'var(--ink)', lineHeight: '1' }}>
+            CODE9 FITNESS
+          </span>
         </Link>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
