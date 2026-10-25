@@ -18,8 +18,10 @@ export function HeaderNav() {
     >
       <div style={{ maxWidth: '1040px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '68px', gap: '16px' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-          <span className="font-display font-bold" style={{ fontSize: '20px', letterSpacing: '-.01em', color: 'var(--ink)', lineHeight: '1' }}>
-            CODE9 FITNESS
+          <span className="font-display font-bold" style={{ fontSize: '20px', letterSpacing: '-.01em', lineHeight: '1' }}>
+            <span style={{ color: 'var(--ink)' }}>CODE</span>
+            <span style={{ color: '#C87137' }}>9</span>
+            <span style={{ color: 'var(--ink)' }}> FITNESS</span>
           </span>
         </Link>
 
