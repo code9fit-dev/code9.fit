@@ -280,5 +280,5 @@ export function getNervousSystemKnowledge(topic: string): string | undefined {
     "scope": NERVOUS_SYSTEM_COACH_KNOWLEDGE.scope_boundaries,
   };
 
-  return flatMap[topic as keyof typeof flatMap];
+  return flatMap[topic as keyof typeof flatMap] as any;
 }

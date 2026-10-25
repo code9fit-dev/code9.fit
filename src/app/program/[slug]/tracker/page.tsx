@@ -246,9 +246,9 @@ export default function WorkoutTrackerPage({ params: rawParams }: { params: Prom
                           <input
                             type="number"
                             placeholder="Weight"
-                            value={exerciseLogs[setIdx]?.weight || ''}
+                            value={(exerciseLogs as any)[setIdx]?.weight || ''}
                             onChange={(e) => {
-                              const newLogs = { ...sessionLogs[sessionKey] };
+                              const newLogs: any = { ...sessionLogs[sessionKey] };
                               if (!newLogs[exIdx]) newLogs[exIdx] = [];
                               if (!newLogs[exIdx][setIdx]) newLogs[exIdx][setIdx] = { weight: '', reps: '' };
                               newLogs[exIdx][setIdx].weight = e.target.value;
@@ -260,9 +260,9 @@ export default function WorkoutTrackerPage({ params: rawParams }: { params: Prom
                           <input
                             type="text"
                             placeholder="Reps"
-                            value={exerciseLogs[setIdx]?.reps || ''}
+                            value={(exerciseLogs as any)[setIdx]?.reps || ''}
                             onChange={(e) => {
-                              const newLogs = { ...sessionLogs[sessionKey] };
+                              const newLogs: any = { ...sessionLogs[sessionKey] };
                               if (!newLogs[exIdx]) newLogs[exIdx] = [];
                               if (!newLogs[exIdx][setIdx]) newLogs[exIdx][setIdx] = { weight: '', reps: '' };
                               newLogs[exIdx][setIdx].reps = e.target.value;

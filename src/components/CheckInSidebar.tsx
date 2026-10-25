@@ -133,8 +133,8 @@ export function CheckInSidebar({ coachId, clientId, onSelectCheckIn }: CheckInSi
                               {expandedMonths.has(yearMonth) && (
                                 <div className="ml-2 space-y-1 py-1">
                                   {monthCheckIns
-                                    .sort((a, b) => new Date(b.week_of).getTime() - new Date(a.week_of).getTime())
-                                    .map((checkIn) => (
+                                    .sort((a: any, b: any) => new Date(b.week_of).getTime() - new Date(a.week_of).getTime())
+                                    .map((checkIn: any) => (
                                       <button
                                         key={checkIn.id}
                                         onClick={() => onSelectCheckIn?.(checkIn)}

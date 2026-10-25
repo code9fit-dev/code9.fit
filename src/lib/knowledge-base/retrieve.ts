@@ -38,7 +38,7 @@ export async function getCoachKnowledgeContext(
     return {
       coachSlug,
       clientProgressionLevel,
-      clientFocusAreas: focusAreas?.map((fa) => fa.focus_category) || [],
+      clientFocusAreas: (focusAreas as any)?.map((fa: any) => fa.focus_category) || [],
       applicableInsights: [],
       coachingFramework: {
         topInsight: null,
@@ -49,7 +49,7 @@ export async function getCoachKnowledgeContext(
   }
 
   // 3. Fetch full insights, filter by level, join with books
-  const insightIds = coachMap.map((cm) => cm.insight_id);
+  const insightIds = (coachMap as any).map((cm: any) => cm.insight_id);
   const { data: insights } = await supabase
     .from('book_insights')
     .select(
@@ -83,16 +83,16 @@ export async function getCoachKnowledgeContext(
     .eq('level', clientProgressionLevel);
 
   // 4. Filter by focus areas (if any are set)
-  let filtered = insights || [];
+  let filtered: any = insights || [];
   if (focusAreas && focusAreas.length > 0) {
-    const focusCategories = focusAreas.map((fa) => fa.focus_category);
-    filtered = filtered.filter((i) => focusCategories.includes(i.category));
+    const focusCategories = (focusAreas as any).map((fa: any) => fa.focus_category);
+    filtered = filtered.filter((i: any) => focusCategories.includes(i.category));
   }
 
   // 5. Sort by priority rank
-  const sorted = filtered.sort((a, b) => {
-    const rankA = coachMap.find((cm) => cm.insight_id === a.id)?.priority_rank || 3;
-    const rankB = coachMap.find((cm) => cm.insight_id === b.id)?.priority_rank || 3;
+  const sorted = filtered.sort((a: any, b: any) => {
+    const rankA = (coachMap as any).find((cm: any) => cm.insight_id === a.id)?.priority_rank || 3;
+    const rankB = (coachMap as any).find((cm: any) => cm.insight_id === b.id)?.priority_rank || 3;
     return rankA - rankB;
   });
 
@@ -105,7 +105,7 @@ export async function getCoachKnowledgeContext(
   return {
     coachSlug,
     clientProgressionLevel,
-    clientFocusAreas: focusAreas?.map((fa) => fa.focus_category) || [],
+    clientFocusAreas: (focusAreas as any)?.map((fa: any) => fa.focus_category) || [],
     applicableInsights: transformedInsights,
     coachingFramework: {
       topInsight: transformedInsights[0] || null,
@@ -144,16 +144,16 @@ export async function unlockInsightsForProgress(
     .eq('user_id', userId)
     .in(
       'insight_id',
-      insights.map((i) => i.id)
+      (insights as any).map((i: any) => i.id)
     );
 
-  const unlockedIds = new Set(unlocked?.map((u) => u.insight_id) || []);
-  const toUnlock = insights.filter((i) => !unlockedIds.has(i.id));
+  const unlockedIds = new Set((unlocked as any)?.map((u: any) => u.insight_id) || []);
+  const toUnlock = (insights as any).filter((i: any) => !unlockedIds.has(i.id));
 
   if (toUnlock.length === 0) return 0;
 
   const { error } = await supabase.from('client_insights_unlocked').insert(
-    toUnlock.map((i) => ({
+    toUnlock.map((i: any) => ({
       user_id: userId,
       insight_id: i.id,
       unlocked_reason: reason,
@@ -177,7 +177,7 @@ export async function setClientFocusArea(
   expiresAt?: Date
 ): Promise<void> {
   // Upsert the focus area
-  await supabase.from('client_focus_areas').upsert(
+  await (supabase as any).from('client_focus_areas').upsert(
     {
       user_id: userId,
       coach_slug: coachSlug,
@@ -203,15 +203,15 @@ export async function setClientFocusArea(
     .eq('user_id', userId)
     .in(
       'insight_id',
-      insights.map((i) => i.id)
+      (insights as any).map((i: any) => i.id)
     );
 
-  const unlockedIds = new Set(unlockedRows?.map((u) => u.insight_id) || []);
-  const toUnlock = insights.filter((i) => !unlockedIds.has(i.id));
+  const unlockedIds = new Set((unlockedRows as any)?.map((u: any) => u.insight_id) || []);
+  const toUnlock = (insights as any).filter((i: any) => !unlockedIds.has(i.id));
 
   if (toUnlock.length > 0) {
     await supabase.from('client_insights_unlocked').insert(
-      toUnlock.map((i) => ({
+      toUnlock.map((i: any) => ({
         user_id: userId,
         insight_id: i.id,
         unlocked_reason: 'focus-area-selected',
@@ -289,7 +289,7 @@ export async function markInsightAsSeen(
   userId: string,
   insightId: string
 ): Promise<void> {
-  const { error } = await supabase
+  const { error } = await (supabase as any)
     .from('client_insights_unlocked')
     .update({ seen_at: new Date().toISOString() })
     .eq('user_id', userId)

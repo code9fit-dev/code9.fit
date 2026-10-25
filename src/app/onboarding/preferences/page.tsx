@@ -27,6 +27,10 @@ export default function PreferencesPage() {
   const handlePreferencesComplete = async (preferences: PreferencesData) => {
     try {
       // Save preferences to user profile or preferences table
+      if (!supabase) {
+        console.error('Supabase client not initialized');
+        return;
+      }
       const { data: { user } } = await supabase.auth.getUser();
 
       if (user) {
