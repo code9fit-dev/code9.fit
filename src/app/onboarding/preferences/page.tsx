@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import { CoachingPreferencesForm } from '@/components/CoachingPreferencesForm';
 import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 
@@ -19,7 +20,7 @@ interface PreferencesData {
   dataProcessingConsent: boolean;
 }
 
-export default function PreferencesPage() {
+function PreferencesContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const supabase = getSupabaseBrowserClient();
@@ -71,5 +72,13 @@ export default function PreferencesPage() {
         showHeader={true}
       />
     </main>
+  );
+}
+
+export default function PreferencesPage() {
+  return (
+    <Suspense fallback={<div className="flex-1 flex items-center justify-center"><p>Loading...</p></div>}>
+      <PreferencesContent />
+    </Suspense>
   );
 }
