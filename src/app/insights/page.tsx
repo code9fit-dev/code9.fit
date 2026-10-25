@@ -83,7 +83,7 @@ export default async function InsightsPage() {
                     <InsightCard
                       key={insight.id}
                       insight={insight}
-                      onSeen={() => markSeen(insight.insight_id, user.id)}
+                      onSeen={() => markSeen(insight.insight_id, user?.id || '')}
                     />
                   ))}
                 </div>
