@@ -79,7 +79,7 @@ export default async function InsightsPage() {
                   {category}
                 </h2>
                 <div className='space-y-3'>
-                  {categoryInsights.map((insight) => (
+                  {categoryInsights.map((insight: any) => (
                     <InsightCard
                       key={insight.id}
                       insight={insight}
