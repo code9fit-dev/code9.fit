@@ -542,6 +542,108 @@ body{margin:0;background:var(--c9-cream)}
 @media (max-width:1000px){.c9 .bar nav{display:none}}
 @media (max-width:520px){.c9 .startnow{padding:9px 14px;font-size:12px}.c9 .card.diet,.c9 .card.equip{min-width:0;max-width:100%;overflow-wrap:anywhere}}
 
+/* fuel check */
+.c9 .fz{border-left:3px solid var(--c9-gold)}
+.c9 .fz h4{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.c9 .fz-set{color:var(--c9-gold-d);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.c9 .fz-mode a.fz-set{font-size:12.5px}
+.c9 .fz h4 small{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--c9-gold-d)}
+.c9 .fz-msg,.c9 .fz-me{font-size:14px;line-height:1.5;margin:8px 0 0;padding:10px 12px;border-radius:12px 12px 12px 4px;background:var(--c9-cream-2);color:var(--c9-ink)}
+.c9 .fz-msg b{font-weight:600}
+.c9 .fz-msg a{color:var(--c9-gold-d);font-weight:600}
+.c9 .fz-me{background:var(--c9-ink);color:#F5F1EA;border-radius:12px 12px 4px 12px;margin-left:24px}
+.c9 .fz-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.c9 .fz-chip{font:inherit;font-size:13px;font-weight:600;color:var(--c9-ink);background:#fff;border:1px solid var(--c9-line);border-radius:99px;padding:7px 12px;cursor:pointer}
+.c9 .fz-chip:hover{border-color:var(--c9-gold)}
+.c9 .fz-in{display:flex;gap:6px;margin-top:10px;align-items:flex-end}
+.c9 .fz-in textarea{flex:1;min-width:0;resize:vertical;font:inherit;font-size:13.5px;border:1px solid var(--c9-line);border-radius:10px;padding:8px 10px;background:#fff;color:var(--c9-ink)}
+.c9 .fz-in textarea:focus{outline:2px solid var(--c9-gold);outline-offset:1px}
+.c9 .fz-send{font:inherit;font-size:13px;font-weight:700;background:var(--c9-ink);color:#F5F1EA;border:0;border-radius:10px;padding:9px 12px;cursor:pointer}
+.c9 .fz-mode{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12.5px;color:#8C8A82;margin:10px 0 0}
+.c9 .fz-tag{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:var(--c9-cream-2);color:var(--c9-gold-d)}
+.c9 .fz-tag.on{background:var(--c9-ink);color:var(--c9-gold)}
+.c9 .fz-lnk{font:inherit;font-size:12.5px;font-weight:600;color:var(--c9-gold-d);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.c9 .fz-goal{margin-top:12px;padding:12px;border:1px solid var(--c9-line);border-radius:12px;background:#fff;display:grid;gap:8px}
+.c9 .fz-goal b{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;color:var(--c9-ink);font-size:15px}
+.c9 .fz-goal p{font-size:12.5px;margin:0}
+.c9 .fz-goal label{display:grid;gap:3px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c9-gold-d)}
+.c9 .fz-goal input{font:inherit;font-size:14px;letter-spacing:0;text-transform:none;color:var(--c9-ink);border:1px solid var(--c9-line);border-radius:8px;padding:7px 9px;min-width:0}
+.c9 .fz-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.c9 .fz-btn{font:inherit;font-size:13px;font-weight:700;background:var(--c9-ink);color:#F5F1EA;border:0;border-radius:99px;padding:9px 14px;cursor:pointer}
+.c9 .fz-note{font-size:12.5px;color:#3C6B52;margin:10px 0 0;font-weight:600}
+.c9 .fz-restbtn{display:block;width:100%;margin-top:8px;font:inherit;font-size:13px;font-weight:600;color:var(--c9-gold-d);background:transparent;border:1px dashed var(--c9-line);border-radius:12px;padding:9px;cursor:pointer}
+.c9 .fz-restbtn:hover{border-color:var(--c9-gold)}
+.c9 .fz-restbtn[hidden],.c9 .fz[hidden]{display:none}
+
+/* sets + plan */
+.c9 .set button.sbx{display:flex;align-items:center;gap:8px;min-width:78px;background:var(--c9-cream-2);color:var(--c9-ink)}
+.c9 .sbx i{position:relative;flex:none;width:17px;height:17px;border:1.6px solid #13201C;border-radius:5px;background:#fff;transition:background .15s,border-color .15s}
+.c9 .set.done{border-color:#13201C}
+.c9 .set.done button,.c9 .set.done button.sbx{background:var(--c9-cream-2);color:var(--c9-ink)}
+.c9 .set.done .sbx i{background:#13201C;border-color:#13201C}
+.c9 .set.done .sbx i::after{content:"";position:absolute;left:4.6px;top:1.2px;width:4px;height:8.5px;border:solid #F5F1EA;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.c9 .set.short{border-color:var(--c9-gold)}
+.c9 .set.short .sbx i{background:#fff;border-color:var(--c9-gold)}
+.c9 .set.short .sbx i::after{border-color:var(--c9-gold)}
+.c9 .exok{flex:none;display:none;width:34px;height:34px;border-radius:50%;background:#13201C;position:relative;align-self:center;margin-left:4px}
+.c9 .exok::after{content:"";position:absolute;left:12.5px;top:7.5px;width:7px;height:14px;border:solid #F5F1EA;border-width:0 3px 3px 0;transform:rotate(45deg)}
+.c9 .ex.complete .exok{display:block}
+.c9 .exok.part{background:#fff;border:2px solid var(--c9-gold)}
+.c9 .exok.part::after{border-color:var(--c9-gold);left:10.5px;top:5.5px}
+.c9 .ex.complete{border-color:#13201C}
+.c9 .ex.complete.part{border-color:var(--c9-gold)}
+.c9 .ex.complete .exn{background:#13201C;color:#F5F1EA}
+.c9 .c9plan{margin-top:14px;padding:24px 26px}
+.c9 .pl-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.c9 .pl-head h3{font-size:21px;margin:0 0 4px}
+.c9 .pl-head p{font-size:14.5px;margin:0}
+.c9 .pl-adm{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:#13201C;color:var(--c9-gold);border-radius:99px;padding:5px 11px;white-space:nowrap}
+.c9 .pl-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:16px 0 12px;padding-bottom:2px}
+.c9 .pl-tabs::-webkit-scrollbar{display:none}
+.c9 .pl-tab{flex:none;text-align:left;font:inherit;background:var(--c9-cream-2);border:1px solid var(--c9-line);border-radius:12px;padding:9px 14px;cursor:pointer;color:var(--c9-ink)}
+.c9 .pl-tab b{display:block;font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-size:15px}
+.c9 .pl-tab span{display:block;font-size:12px;color:#8C8A82;margin-top:1px}
+.c9 .pl-tab.on{background:#13201C;border-color:#13201C;color:#fff}
+.c9 .pl-tab.on span{color:var(--c9-gold)}
+.c9 .pl-tab.rs{border-style:dashed}
+.c9 .pl-note{font-size:14px;margin:0 0 12px;padding:10px 14px;border-radius:10px;background:var(--c9-gold-soft);color:var(--c9-ink)}
+.c9 .pl-note i{color:var(--c9-gold-d)}
+.c9 .pl-days{display:grid;gap:8px}
+.c9 .pl-day{border:1px solid var(--c9-line);border-radius:12px;background:#fff}
+.c9 .pl-day summary{list-style:none;display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px 16px;cursor:pointer}
+.c9 .pl-day summary::-webkit-details-marker{display:none}
+.c9 .pl-day summary::after{content:"";grid-column:3;justify-self:end;width:8px;height:8px;border:solid var(--c9-gold-d);border-width:0 2px 2px 0;transform:rotate(45deg);margin-left:12px;display:none}
+.c9 .pl-dn{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c9-gold-d)}
+.c9 .pl-dt{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-weight:600;color:var(--c9-ink);font-size:15.5px;line-height:1.25}
+.c9 .pl-ds{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#8C8A82;white-space:nowrap}
+.c9 .pl-day.rest .pl-dt{color:#8C8A82;font-weight:500}
+.c9 .pl-day[open]{border-color:#13201C}
+.c9 .pl-body{padding:0 16px 16px 92px}
+.c9 .pl-meta{font-size:12.5px;color:var(--c9-gold-d);font-weight:600;margin:0 0 8px}
+.c9 .pl-ex{margin:0;padding:0;list-style:none;counter-reset:x;display:grid;gap:2px}
+.c9 .pl-ex li{counter-increment:x;display:grid;grid-template-columns:26px 1fr auto;gap:2px 10px;padding:8px 0;border-top:1px solid var(--c9-line);font-size:14px}
+.c9 .pl-ex li::before{content:counter(x,decimal-leading-zero);font-size:11px;font-weight:700;color:var(--c9-gold-d);padding-top:2px}
+.c9 .pl-ex b{color:var(--c9-ink);font-weight:600}
+.c9 .pl-t{font-weight:600;color:var(--c9-ink);white-space:nowrap;text-align:right}
+.c9 .pl-ex em{grid-column:2/4;font-style:normal;font-size:12.5px;color:#8C8A82}
+.c9 .pl-tip,.c9 .pl-rest{font-size:13.5px;margin:10px 0 0;color:var(--c9-muted)}
+.c9 .pl-go{display:inline-block;margin-top:12px;font:inherit;font-size:13.5px;font-weight:700;color:#F5F1EA;background:#13201C;border:0;border-radius:99px;padding:9px 16px;cursor:pointer;text-decoration:none}
+.c9 .pl-lock{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:14px;color:var(--c9-muted)}
+.c9 .pl-lock .pl-go{margin-top:0}
+.c9 .pl-lk{width:14px;height:14px;fill:none;stroke:var(--c9-gold-d);stroke-width:2;flex:none}
+.c9 .c9w9{margin-bottom:12px;padding:14px 18px;display:flex;gap:14px;align-items:center;border-left:4px solid var(--c9-gold);flex-wrap:wrap}
+.c9 .c9w9 b{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;font-size:16px;color:var(--c9-ink);white-space:nowrap}
+.c9 .c9w9 span{font-size:14px}
+.c9 .c9w9 strong{color:var(--c9-ink)}
+@media (max-width:640px){.c9 .c9plan{padding:18px 16px}.c9 .pl-day summary{grid-template-columns:1fr auto;gap:4px 10px;padding:12px 14px}.c9 .pl-dn{grid-column:1/-1}.c9 .pl-body{padding:0 14px 14px}.c9 .pl-ex li{grid-template-columns:22px 1fr}.c9 .pl-t{grid-column:2;text-align:left}}
+
+/* admin bar */
+.c9adm{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:12px;background:#13201C;color:#F5F1EA;font:600 13px/1 "IBM Plex Sans",system-ui,sans-serif;padding:10px 16px;border-radius:99px;box-shadow:0 10px 30px rgba(19,32,28,.25)}
+.c9adm b{font-family:"Space Grotesk","Helvetica Neue",Arial,sans-serif;letter-spacing:.14em;color:#B8915A;font-size:12px}
+.c9adm i{width:8px;height:8px;border-radius:50%;background:#B8915A;display:inline-block}
+.c9adm a,.c9adm button{color:#F5F1EA;font:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:520px){.c9adm{left:10px;right:70px;bottom:10px;gap:9px;font-size:12px}.c9adm .w{display:none}}
+
 /* reveal */
 .c9 .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .c9 .rv.in{opacity:1;transform:none}
@@ -611,7 +713,7 @@ body{margin:0;background:var(--c9-cream)}
       <div class="card equip rv"><h3>Equipment used</h3><div class="eqlist"><div class="eq"><svg viewBox="0 0 24 24"><path d="M2 12h20M5 8v8M19 8v8M8 6v12M16 6v12"/></svg><span>Barbell &amp; hip-thrust bench<small>Hip thrusts, RDLs, squats</small></span></div><div class="eq"><svg viewBox="0 0 24 24"><path d="M6 8v8M3 10v4M18 8v8M21 10v4M6 12h12"/></svg><span>Dumbbells<small>Light to moderate</small></span></div><div class="eq"><svg viewBox="0 0 24 24"><path d="M5 3h14M12 3v6M8 9h8M6 21V12M18 21V12"/></svg><span>Cable machine<small>Kickbacks, laterals, rows, pushdowns</small></span></div><div class="eq"><svg viewBox="0 0 24 24"><path d="M4 20L16 8M14 6l4 4M4 20h6"/></svg><span>45° hyperextension bench<small>Glute-focused back extensions</small></span></div><div class="eq"><svg viewBox="0 0 24 24"><path d="M4 7c4 3 12 3 16 0M4 17c4-3 12-3 16 0M4 7v10M20 7v10"/></svg><span>Loop band<small>For abductions</small></span></div><div class="eq"><svg viewBox="0 0 24 24"><path d="M4 9h16v11H4zM4 9l3-4h10l3 4"/></svg><span>High box, treadmill &amp; bike<small>Step-ups and cardio</small></span></div></div></div>
     </div>
     <!--nutri--><div class="card nutri rv" id="nutrition"><div class="nu-plate"><svg class="plate" viewBox="0 0 42 42" width="148" height="148" role="img" aria-label="Fat loss plate: 50% vegetables, 25% protein, 25% carbs"><circle cx="21" cy="21" r="20" fill="#fff" stroke="#E3DDD2" stroke-width=".6"/><circle cx="21" cy="21" r="15.915" fill="none" stroke="#7FA88C" stroke-width="7" stroke-dasharray="48.8 51.2" stroke-dashoffset="25"/><circle cx="21" cy="21" r="15.915" fill="none" stroke="#13201C" stroke-width="7" stroke-dasharray="23.8 76.2" stroke-dashoffset="-25"/><circle cx="21" cy="21" r="15.915" fill="none" stroke="#B8915A" stroke-width="7" stroke-dasharray="23.8 76.2" stroke-dashoffset="-50"/><circle cx="21" cy="21" r="10.5" fill="#F9F6F0"/></svg><div class="pk">Your plate</div><h3>Fat loss</h3><div class="nu-leg"><span><i style="background:#7FA88C"></i>Vegetables <b>50%</b></span><span><i style="background:#13201C"></i>Protein <b>25%</b></span><span><i style="background:#B8915A"></i>Carbs <b>25%</b></span></div><p>Half vegetables, a quarter protein, a quarter carbs. Bigger carb portions on training days, smaller on rest days.</p></div><div class="nu-foods"><h3>Code9 Core Foods</h3><p>Build every meal from these. You choose the combinations — no fixed menu.</p><div class="nu-g"><b>Protein<em>Every meal</em></b><div class="nu-chips"><span class="nu-chip">Red meat</span><span class="nu-chip">Chicken</span><span class="nu-chip" title="oily fish 2× a week">Fish<small>oily fish 2× a week</small></span><span class="nu-chip">Eggs</span></div></div><div class="nu-g"><b>Dairy<em>Daily</em></b><div class="nu-chips"><span class="nu-chip">Greek yoghurt</span><span class="nu-chip">Quark</span><span class="nu-chip">Cheese</span><span class="nu-chip" title="raw if you choose*">Full-fat milk<small>raw if you choose*</small></span></div></div><div class="nu-g"><b>Carbs<em>Sized to your goal</em></b><div class="nu-chips"><span class="nu-chip">White rice</span><span class="nu-chip">Sweet potato</span><span class="nu-chip">Pasta</span><span class="nu-chip">Gnocchi</span><span class="nu-chip">Couscous</span><span class="nu-chip" title="breakfast or pre-training">Oats<small>breakfast or pre-training</small></span><span class="nu-chip" title="around training">Honey<small>around training</small></span></div></div><div class="nu-g"><b>Vegetables<em>Every meal</em></b><div class="nu-chips"><span class="nu-chip">Cucumber</span><span class="nu-chip">Cherry tomatoes</span><span class="nu-chip">Zucchini</span><span class="nu-chip">Eggplant</span><span class="nu-chip">Carrots</span><span class="nu-chip">Onions</span><span class="nu-chip">Shallots</span><span class="nu-chip">Ginger</span></div></div><div class="nu-g rot"><b>Rotate<em>2–4 meals a week</em></b><div class="nu-chips"><span class="nu-chip" title="small portions">Broccoli<small>small portions</small></span><span class="nu-chip" title="small portions">Leafy greens<small>small portions</small></span></div></div><div class="nu-g"><b>Fruit<em>Daily — all fruit</em></b><div class="nu-chips"><span class="nu-chip">Banana</span><span class="nu-chip">Kiwi</span><span class="nu-chip">Blueberries</span><span class="nu-chip">Other berries</span><span class="nu-chip">Any seasonal fruit</span></div></div><div class="nu-g"><b>Fats<em>Every day</em></b><div class="nu-chips"><span class="nu-chip" title="essential">Avocado<small>essential</small></span><span class="nu-chip" title="for cooking">Olive oil<small>for cooking</small></span><span class="nu-chip" title="for cooking">Butter<small>for cooking</small></span></div></div><div class="nu-g"><b>Drinks<em>All day</em></b><div class="nu-chips"><span class="nu-chip">Filtered water</span><span class="nu-chip" title="after long or hot sessions">Coconut water<small>after long or hot sessions</small></span><span class="nu-chip">Tea</span><span class="nu-chip">Matcha</span><span class="nu-chip" title="none after 2 pm">Coffee<small>none after 2 pm</small></span></div></div><div class="nu-x"><small>Recommended extras · not essential every day</small><div class="nu-g"><b>Seeds<em>Recommended, not essential</em></b><div class="nu-chips"><span class="nu-chip" title="fibre + omega-3">Chia seeds<small>fibre + omega-3</small></span><span class="nu-chip" title="zinc + magnesium">Pumpkin seeds<small>zinc + magnesium</small></span></div></div><div class="nu-g"><b>Nuts &amp; nut butter<em>A small handful, most days</em></b><div class="nu-chips"><span class="nu-chip" title="omega-3">Walnuts<small>omega-3</small></span><span class="nu-chip" title="vitamin E">Almonds<small>vitamin E</small></span><span class="nu-chip" title="magnesium">Cashews<small>magnesium</small></span><span class="nu-chip" title="healthy fats">Macadamias<small>healthy fats</small></span><span class="nu-chip" title="selenium · max 1–2 a day">Brazil nuts<small>selenium · max 1–2 a day</small></span><span class="nu-chip" title="100% peanuts · 1–2 tbsp">Peanut butter<small>100% peanuts · 1–2 tbsp</small></span></div></div></div></div><div class="nu-ai"><small>Members · AI Nutrition Coach</small><h4>Your weekly meal plan &amp; grocery list</h4><p>Built from the Core Foods around you — your age and life stage, goal, training days, allergies, budget and cooking time.</p><ul><li>Daily calorie &amp; protein targets</li><li>A 7-day plan you can swap freely</li><li>A grocery list by supermarket aisle</li><li>Weekly check-in that adjusts it</li></ul><a class="nb" href="code9-nutrition.html?plate=fatloss#coach">Build my nutrition plan</a><a class="nl" href="code9-nutrition.html">Read the Code9 Nutrition Guide →</a></div><p class="nu-raw">*Raw milk is a personal choice. It can carry bacteria such as Listeria and E. coli, so it isn’t recommended — and your AI coach switches to pasteurised — if you’re pregnant, over 65, under 18 or have a weakened immune system.</p></div><!--/nutri-->
-                        <div class="card budget coachc rv" id="coachrules"><div class="bh"><h3>Peachy rules</h3><p>How to get the shape — not just the sweat. These rules turn the plan’s three phases into results.</p></div><div class="buds"><div class="bud"><b>Feel the glute</b><span>Mind-muscle connection first: slow reps and a 1–2 second squeeze at the top of every glute exercise.</span></div><div class="bud"><b>RPE 6–7 to start</b><span>Weeks 1–3 end every set with 3–4 good reps left. Don’t chase failure yet — build clean movement.</span></div><div class="bud"><b>Heavy where it counts</b><span>Hip thrusts, RDLs and squats get heavier from week 4. Arms and shoulders progress slowly, in the 10–15 range.</span></div><div class="bud"><b>Burn-it sets</b><span>Weeks 7–9: on the last set of hip thrusts and abductions, drop the weight by ~30% and keep going.</span></div><div class="bud"><b>1.5 reps</b><span>One full rep plus one half rep counts as one. Brutal on the shoulders — in a good way.</span></div><div class="bud"><b>S/S = superset</b><span>Do the two exercises back to back, then rest. Saves time, adds pump.</span></div><div class="bud"><b>Toned = muscle + lean</b><span>The “toned” look is built muscle with less fat over it — so protein and nutrition matter as much as training.</span></div><div class="bud"><b>Log your hip thrust</b><span>It’s your headline lift. Beat it by a rep or 2.5 kg every week or two.</span></div></div></div>
+                                                                                        <div class="card budget coachc rv" id="coachrules"><div class="bh"><h3>Peachy rules</h3><p>How to get the shape — not just the sweat. These rules turn the plan’s three phases into results.</p></div><div class="buds"><div class="bud"><b>Feel the glute</b><span>Mind-muscle connection first: slow reps and a 1–2 second squeeze at the top of every glute exercise.</span></div><div class="bud"><b>RPE 6–7 to start</b><span>Weeks 1–3 end every set with 3–4 good reps left. Don’t chase failure yet — build clean movement.</span></div><div class="bud"><b>Heavy where it counts</b><span>Hip thrusts, RDLs and squats get heavier from week 4. Arms and shoulders progress slowly, in the 10–15 range.</span></div><div class="bud"><b>Burn-it sets</b><span>Weeks 7–9: on the last set of hip thrusts and abductions, drop the weight by ~30% and keep going.</span></div><div class="bud"><b>1.5 reps</b><span>One full rep plus one half rep counts as one. Brutal on the shoulders — in a good way.</span></div><div class="bud"><b>S/S = superset</b><span>Do the two exercises back to back, then rest. Saves time, adds pump.</span></div><div class="bud"><b>Toned = muscle + lean</b><span>The “toned” look is built muscle with less fat over it — so protein and nutrition matter as much as training.</span></div><div class="bud"><b>Log your hip thrust</b><span>It’s your headline lift. Beat it by a rep or 2.5 kg every week or two.</span></div></div></div>
     <div class="ov3">
       <div class="card scale rv"><h3>How hard should it feel?</h3><p>Every phase has a target effort on this 1–10 scale. Use the same scale to rate each session in the tracker — it's how your coach knows when to push or pull back.</p><div class="srows"><div class="srow s0"><b>1–2</b><span><strong>Very easy</strong>Barely working</span></div><div class="srow s1"><b>3–4</b><span><strong>Easy</strong>Could keep going for a long time</span></div><div class="srow s2"><b>5–6</b><span><strong>Moderate</strong>Breathing harder · 4+ good reps left</span></div><div class="srow s3"><b>7–8</b><span><strong>Hard</strong>Short sentences only · 2–3 reps left</span></div><div class="srow s4"><b>9</b><span><strong>Very hard</strong>1 good rep left</span></div><div class="srow s5"><b>10</b><span><strong>Maximal</strong>Nothing left</span></div></div></div>
       <div class="card before rv"><h3>Before you start</h3><ul><li>Check with your doctor before starting if you have a heart or lung condition, high blood pressure, diabetes, joint problems or are pregnant — or if it’s been a long time since you exercised.</li><li>Use a thick pad under the bar for hip thrusts, and set up the bench so it can’t slide.</li><li>Deficit lunges: a 5–10 cm plate under the front foot is enough — more isn’t better.</li><li>Stop and seek advice if you feel chest pain, dizziness, unusual breathlessness or sharp joint pain.</li></ul></div>
@@ -641,7 +743,24 @@ body{margin:0;background:var(--c9-cream)}
     
     
     
-    <!--peak--><div class="card peak rv"><b>Week 9 · Peak &amp; Test</b><span>The last week of the program is lighter, so you arrive fresh for your Code9 benchmarks: a hip thrust 8RM, max pull-ups, a plank hold and a 1-minute squat test. Complete it and your 9 weeks are done — compare with where you started.</span></div><!--/peak-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <!--peak--><div class="card peak rv"><b>Week 9 · Peak &amp; Test</b><span>The last week of the program is lighter, so you arrive fresh for your Code9 benchmarks: a hip thrust 8RM, max pull-ups, a plank hold and a 1-minute squat test. Complete it and your 9 weeks are done — compare with where you started.</span></div><!--/peak-->
+    <!--c9plan--><div class="card c9plan rv" id="c9plan"></div><!--/c9plan-->
     <div class="card ptable rv"><h3>Progression at a glance</h3>
       <table><thead><tr><th>Exercise</th><th>Weeks 1–3</th><th>Weeks 4–6</th><th>Weeks 7–9</th></tr></thead><tbody><tr><td>Barbell hip thrust</td><td>4 × 8–10</td><td>5 × 6–10</td><td>5 × 6–10 + drop set</td></tr><tr><td>Romanian deadlift</td><td>4 × 8–10</td><td>5 × 6–10</td><td>5 × 6–8</td></tr><tr><td>Squat / hack squat</td><td>4 × 8–10</td><td>4 × 6–10</td><td>4 × 6–8</td></tr><tr><td>Upper A reps</td><td>6–11</td><td>Arms &amp; delts 10–15</td><td>+ 20-rep burn sets</td></tr><tr><td>Band abductions</td><td>3 × 20–30</td><td>3 × 20–30</td><td>+ drop set</td></tr><tr><td>Planks</td><td>3 × 30–60 s</td><td>3 × 30–60 s</td><td>4 × 45–75 s</td></tr></tbody></table>
     </div>
@@ -1614,12 +1733,12 @@ if(document.readyState === 'loading') document.addEventListener('DOMContentLoade
 
 </script>
 <script>
-const PROGRAM = {"id": "peachy-progression", "phases": [{"n": 1, "name": "Foundation", "weeks": "1–3", "effort": "6–7", "goal": "The week as written: clean movement, glute connection, moderate weights.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Barbell Hip Thrust", "", 4, "8–10", "reps", false], ["Romanian Deadlifts", "", 4, "8–10", "reps", false], ["Deficit Reverse Lunges", "Each leg", 3, "10–12", "reps", false], ["45° Hyperextensions", "Glute focus", 3, "12–15", "reps", false], ["Cable Kickbacks", "Diagonal · Each leg", 3, "12–15", "reps", false], ["Weighted Cable Side Bends", "", 3, "12–15", "reps", true]], "tip": "Weeks 1–3: RPE 6–7 — feel every rep in the glutes.", "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Pull-Ups or Lat Pulldown", "", 4, "6–11", "reps", false], ["Dumbbell Overhead Press", "", 4, "6–11", "reps", false], ["Dumbbell Lateral Raises", "", 4, "6–11", "reps", false], ["Single-Arm Dumbbell Rows", "Each arm", 3, "6–11", "reps", false], ["Barbell Curls", "", 3, "6–11", "reps", false], ["Dumbbell Hammer Curls", "", 3, "6–11", "reps", false], ["Overhead Tricep Extensions", "", 3, "6–11", "reps", false], ["Hanging Knee Raises", "", 3, "6–11", "reps", false]], "tip": "6–11 reps on everything: pick a weight where 11 is hard, then build up to it.", "rest": 90}, {"type": "cardio", "short": "HIIT", "title": "HIIT + Hip Mobility", "ex": [["HIIT Class", "Your HIIT or group class", 1, "45", "min", false], ["Hip Mobility Drills", "Stretching + hip mobility", 1, "10", "min", false]], "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Arnold Press", "", 4, "8–10", "reps", false], ["Upright Rows", "", 3, "10–12", "reps", false], ["Cable Lateral Raises", "1.5 reps", 4, "12–15", "reps", false], ["Cable Face Pulls", "", 3, "12–15", "reps", false], ["Incline Dumbbell Curls", "", 3, "12", "reps", false], ["Rope Tricep Pushdowns", "", 3, "12–15", "reps", false], ["Ab Wheel Rollouts", "", 3, "8–12", "reps", false]], "rest": 90}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Squat or Hack Squat", "Glute-bias stance", 4, "8–10", "reps", false], ["B-Stance Hip Thrusts", "Each leg", 3, "10–12", "reps", false], ["High Box Step-Ups", "Each leg", 3, "10–12", "reps", false], ["Curtsy Lunges", "Each leg", 3, "12–15", "reps", false], ["Seated Band Abductions", "", 3, "20–30", "reps", false], ["Frog Pumps", "Burn finisher", 2, "30", "reps", false], ["Plank", "Front + side variations", 3, "30–60", "s", false]], "rest": 90}, {"type": "cardio", "short": "Cardio", "title": "Cardio + Core", "ex": [["Incline Walk", "Treadmill · 3–4 mph, 8–12% incline", 1, "15", "min", false], ["Ab Wheel Rollouts", "", 3, "8–12", "reps", false], ["Side Plank Hip Lifts", "", 3, "10–12", "reps", true]], "rest": 90}, {"type": "rest", "title": "Rest", "focus": "Full rest", "opts": ["Rest", "Stretching", "Walk"], "short": "Rest"}]}, {"n": 2, "name": "Overload", "weeks": "4–6", "effort": "7–8", "goal": "Heavier hip thrusts, RDLs and squats with an extra set; arms and delts at 10–15 reps.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Barbell Hip Thrust", "", 5, "6–10", "reps", false], ["Romanian Deadlifts", "", 5, "6–10", "reps", false], ["Deficit Reverse Lunges", "Each leg", 3, "10–12", "reps", false], ["45° Hyperextensions", "Glute focus", 3, "12–15", "reps", false], ["Cable Kickbacks", "Diagonal · Each leg", 3, "12–15", "reps", false], ["Weighted Cable Side Bends", "", 3, "12–15", "reps", true]], "tip": "Overload: 5 sets of hip thrusts and RDLs, heavier.", "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Pull-Ups or Lat Pulldown", "", 4, "8–11", "reps", false], ["Dumbbell Overhead Press", "", 4, "8–11", "reps", false], ["Dumbbell Lateral Raises", "", 4, "10–15", "reps", false], ["Single-Arm Dumbbell Rows", "Each arm", 3, "8–11", "reps", false], ["Barbell Curls", "", 3, "8–11", "reps", false], ["Dumbbell Hammer Curls", "", 3, "10–15", "reps", false], ["Overhead Tricep Extensions", "", 3, "10–15", "reps", false], ["Hanging Knee Raises", "", 3, "10–15", "reps", false]], "tip": "Arms and delts move to 10–15 reps — progress the weight slowly.", "rest": 90}, {"type": "cardio", "short": "HIIT", "title": "HIIT + Hip Mobility", "ex": [["HIIT Class", "Your HIIT or group class", 1, "45", "min", false], ["Hip Mobility Drills", "Stretching + hip mobility", 1, "10", "min", false]], "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Arnold Press", "", 4, "8–10", "reps", false], ["Upright Rows", "", 3, "10–12", "reps", false], ["Cable Lateral Raises", "1.5 reps", 4, "12–15", "reps", false], ["Cable Face Pulls", "", 3, "12–15", "reps", false], ["Incline Dumbbell Curls", "", 3, "12", "reps", false], ["Rope Tricep Pushdowns", "", 3, "12–15", "reps", false], ["Ab Wheel Rollouts", "", 3, "8–12", "reps", false]], "rest": 90}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Squat or Hack Squat", "Glute-bias stance · heavy", 4, "6–10", "reps", false], ["B-Stance Hip Thrusts", "Each leg", 3, "10–12", "reps", false], ["High Box Step-Ups", "Each leg", 3, "10–12", "reps", false], ["Curtsy Lunges", "Each leg", 3, "12–15", "reps", false], ["Seated Band Abductions", "", 3, "20–30", "reps", false], ["Frog Pumps", "Burn finisher", 2, "30", "reps", false], ["Plank", "Front + side variations", 3, "30–60", "s", false]], "rest": 90}, {"type": "cardio", "short": "Cardio", "title": "Cardio + Core", "ex": [["Incline Walk", "Treadmill · 3–4 mph, 8–12% incline", 1, "15", "min", false], ["Ab Wheel Rollouts", "", 3, "8–12", "reps", false], ["Side Plank Hip Lifts", "", 3, "10–12", "reps", true]], "rest": 90}, {"type": "rest", "title": "Rest", "focus": "Full rest", "opts": ["Rest", "Stretching", "Walk"], "short": "Rest"}]}, {"n": 3, "name": "Specialisation &amp; Sculpting", "weeks": "7–9", "effort": "8", "goal": "Drop sets on hip thrusts and abductions, 20-rep shoulder burn sets, longer planks.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Barbell Hip Thrust", "Last set: burn-it drop set", 5, "6–10", "reps", false], ["Romanian Deadlifts", "", 5, "6–8", "reps", false], ["Deficit Reverse Lunges", "Each leg", 3, "10–12", "reps", false], ["45° Hyperextensions", "Glute focus", 3, "12–15", "reps", false], ["Cable Kickbacks", "Diagonal · Each leg", 3, "12–15", "reps", false], ["Weighted Cable Side Bends", "", 3, "12–15", "reps", true]], "tip": "Burn-it set on the last hip thrust set.", "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Pull-Ups or Lat Pulldown", "", 4, "8–11", "reps", false], ["Dumbbell Overhead Press", "", 4, "8–11", "reps", false], ["Dumbbell Lateral Raises", "", 4, "10–15", "reps", false], ["Dumbbell Lateral Raises", "Finisher · 20-rep burn set", 1, "20", "reps", false], ["Single-Arm Dumbbell Rows", "Each arm", 3, "8–11", "reps", false], ["Barbell Curls", "", 3, "8–11", "reps", false], ["Dumbbell Hammer Curls", "", 3, "10–15", "reps", false], ["Overhead Tricep Extensions", "", 3, "10–15", "reps", false], ["Hanging Knee Raises", "", 3, "10–15", "reps", false]], "rest": 90}, {"type": "cardio", "short": "HIIT", "title": "HIIT + Hip Mobility", "ex": [["HIIT Class", "Your HIIT or group class", 1, "45", "min", false], ["Hip Mobility Drills", "Stretching + hip mobility", 1, "10", "min", false]], "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Arnold Press", "", 4, "8–10", "reps", false], ["Upright Rows", "", 3, "10–12", "reps", false], ["Cable Lateral Raises", "1.5 reps", 4, "12–15", "reps", false], ["Cable Lateral Raises", "Finisher · 20-rep burn set", 1, "20", "reps", false], ["Cable Face Pulls", "", 3, "12–15", "reps", false], ["Incline Dumbbell Curls", "", 3, "12", "reps", false], ["Rope Tricep Pushdowns", "", 3, "12–15", "reps", false], ["Ab Wheel Rollouts", "", 3, "8–12", "reps", false]], "rest": 90}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Squat or Hack Squat", "Glute-bias stance · heavy", 4, "6–8", "reps", false], ["B-Stance Hip Thrusts", "Each leg", 3, "10–12", "reps", false], ["High Box Step-Ups", "Each leg", 3, "10–12", "reps", false], ["Curtsy Lunges", "Each leg", 3, "12–15", "reps", false], ["Seated Band Abductions", "Last set: burn-it drop set", 3, "20–30", "reps", false], ["Frog Pumps", "Burn finisher", 2, "30", "reps", false], ["Plank", "Front + side variations", 4, "45–75", "s", false]], "rest": 90}, {"type": "cardio", "short": "Cardio", "title": "Cardio + Core", "ex": [["Incline Walk", "Treadmill · 3–4 mph, 8–12% incline", 1, "15", "min", false], ["Ab Wheel Rollouts", "", 3, "8–12", "reps", false], ["Side Plank Hip Lifts", "", 3, "10–12", "reps", true]], "rest": 90}, {"type": "rest", "title": "Rest", "focus": "Full rest", "opts": ["Rest", "Stretching", "Walk"], "short": "Rest"}]}, {"n": 3, "name": "Peak &amp; Test", "weeks": "9", "effort": "8", "goal": "Taper, test your Code9 benchmarks and finish strong.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Benchmark · Hip Thrust 8RM", "Build up to a heavy, clean set of 8 with a full lockout. Log the weight.", 1, "8", "reps", false], ["Barbell Hip Thrust", "Last set: burn-it drop set", 4, "6–10", "reps", false], ["Romanian Deadlifts", "", 4, "6–8", "reps", false], ["Deficit Reverse Lunges", "Each leg", 2, "10–12", "reps", false], ["45° Hyperextensions", "Glute focus", 2, "12–15", "reps", false], ["Cable Kickbacks", "Diagonal · Each leg", 2, "12–15", "reps", false], ["Weighted Cable Side Bends", "", 2, "12–15", "reps", true]], "tip": "Benchmark day: test first, while you’re fresh — then finish the (lighter) session. Log every benchmark: these numbers show your 9 weeks.", "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Benchmark · Max Pull-Ups", "Assisted counts — note the band or machine setting.", 1, "Max", "reps", false], ["Pull-Ups or Lat Pulldown", "", 3, "8–11", "reps", false], ["Dumbbell Overhead Press", "", 3, "8–11", "reps", false], ["Dumbbell Lateral Raises", "", 3, "10–15", "reps", false], ["Dumbbell Lateral Raises", "Finisher · 20-rep burn set", 1, "20", "reps", false], ["Single-Arm Dumbbell Rows", "Each arm", 2, "8–11", "reps", false], ["Barbell Curls", "", 2, "8–11", "reps", false], ["Dumbbell Hammer Curls", "", 2, "10–15", "reps", false], ["Overhead Tricep Extensions", "", 2, "10–15", "reps", false], ["Hanging Knee Raises", "", 2, "10–15", "reps", false]], "rest": 90, "tip": "Benchmark day: test first, while you’re fresh — then finish the (lighter) session. Log every benchmark: these numbers show your 9 weeks."}, {"type": "cardio", "short": "HIIT", "title": "HIIT + Hip Mobility", "ex": [["HIIT Class", "Your HIIT or group class", 1, "30", "min", false], ["Hip Mobility Drills", "Stretching + hip mobility", 1, "5", "min", false]], "rest": 90, "tip": "Peak &amp; Test week: one set fewer and the same weights as week 8. Arrive fresh for your benchmarks."}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Arnold Press", "", 3, "8–10", "reps", false], ["Upright Rows", "", 2, "10–12", "reps", false], ["Cable Lateral Raises", "1.5 reps", 3, "12–15", "reps", false], ["Cable Lateral Raises", "Finisher · 20-rep burn set", 1, "20", "reps", false], ["Cable Face Pulls", "", 2, "12–15", "reps", false], ["Incline Dumbbell Curls", "", 2, "12", "reps", false], ["Rope Tricep Pushdowns", "", 2, "12–15", "reps", false], ["Ab Wheel Rollouts", "", 2, "8–12", "reps", false]], "rest": 90, "tip": "Peak &amp; Test week: one set fewer and the same weights as week 8. Arrive fresh for your benchmarks."}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Benchmark · Plank Hold", "Hold with perfect form — stop when the hips sag.", 1, "Max", "s", false], ["Benchmark · 1-Minute Squats", "As many full bodyweight squats as you can in 60 seconds.", 1, "Max", "reps", false], ["Squat or Hack Squat", "Glute-bias stance · heavy", 3, "6–8", "reps", false], ["B-Stance Hip Thrusts", "Each leg", 2, "10–12", "reps", false], ["High Box Step-Ups", "Each leg", 2, "10–12", "reps", false], ["Curtsy Lunges", "Each leg", 2, "12–15", "reps", false], ["Seated Band Abductions", "Last set: burn-it drop set", 2, "20–30", "reps", false], ["Frog Pumps", "Burn finisher", 2, "30", "reps", false], ["Plank", "Front + side variations", 3, "45–75", "s", false]], "rest": 90, "tip": "Benchmark day: test first, while you’re fresh — then finish the (lighter) session. Log every benchmark: these numbers show your 9 weeks."}, {"type": "cardio", "short": "Cardio", "title": "Cardio + Core", "ex": [["Incline Walk", "Treadmill · 3–4 mph, 8–12% incline", 1, "10", "min", false], ["Ab Wheel Rollouts", "", 2, "8–12", "reps", false], ["Side Plank Hip Lifts", "", 2, "10–12", "reps", true]], "rest": 90, "tip": "Peak &amp; Test week: one set fewer and the same weights as week 8. Arrive fresh for your benchmarks."}, {"type": "rest", "title": "Rest", "focus": "Full rest", "opts": ["Rest", "Stretching", "Walk"], "short": "Rest"}]}, {"n": "+", "name": "Reset Week", "weeks": "10", "effort": "4–5", "goal": "Deload: half the volume, lighter weights, more recovery.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Barbell Hip Thrust", "Reset · ~60% of your usual weight · Last set: burn-it drop set", 3, "6–10", "reps", false], ["Romanian Deadlifts", "Reset · ~60% of your usual weight", 3, "6–8", "reps", false], ["Deficit Reverse Lunges", "Reset · ~60% of your usual weight · Each leg", 2, "10–12", "reps", false], ["45° Hyperextensions", "Reset · ~60% of your usual weight · Glute focus", 2, "12–15", "reps", false], ["Cable Kickbacks", "Reset · ~60% of your usual weight · Diagonal · Each leg", 2, "12–15", "reps", false], ["Weighted Cable Side Bends", "Reset · ~60% of your usual weight", 2, "12–15", "reps", true]], "tip": "Reset week: half the sets, about 60% of your usual weights, no finishers. Leave every session feeling better than you arrived.", "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Pull-Ups or Lat Pulldown", "Reset · ~60% of your usual weight", 2, "8–11", "reps", false], ["Dumbbell Overhead Press", "Reset · ~60% of your usual weight", 2, "8–11", "reps", false], ["Dumbbell Lateral Raises", "Reset · ~60% of your usual weight", 2, "10–15", "reps", false], ["Single-Arm Dumbbell Rows", "Reset · ~60% of your usual weight · Each arm", 2, "8–11", "reps", false], ["Barbell Curls", "Reset · ~60% of your usual weight", 2, "8–11", "reps", false], ["Dumbbell Hammer Curls", "Reset · ~60% of your usual weight", 2, "10–15", "reps", false], ["Overhead Tricep Extensions", "Reset · ~60% of your usual weight", 2, "10–15", "reps", false], ["Hanging Knee Raises", "Reset · easy, smooth reps", 2, "10–15", "reps", false]], "rest": 90, "tip": "Reset week: half the sets, about 60% of your usual weights, no finishers. Leave every session feeling better than you arrived."}, {"type": "rest", "title": "Active Recovery", "short": "Recovery", "focus": "Easy movement, 20–40 minutes", "opts": ["Walk", "Mobility", "Yoga", "Easy swim or ride"]}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": [["Dynamic Warm-Up", "Light cardio + shoulder activation", 1, "10", "min", false], ["Arnold Press", "Reset · ~60% of your usual weight", 2, "8–10", "reps", false], ["Upright Rows", "Reset · ~60% of your usual weight", 2, "10–12", "reps", false], ["Cable Lateral Raises", "Reset · ~60% of your usual weight · 1.5 reps", 2, "12–15", "reps", false], ["Cable Face Pulls", "Reset · ~60% of your usual weight", 2, "12–15", "reps", false], ["Incline Dumbbell Curls", "Reset · ~60% of your usual weight", 2, "12", "reps", false], ["Rope Tricep Pushdowns", "Reset · ~60% of your usual weight", 2, "12–15", "reps", false], ["Ab Wheel Rollouts", "Reset · easy, smooth reps", 2, "8–12", "reps", false]], "rest": 90, "tip": "Reset week: half the sets, about 60% of your usual weights, no finishers. Leave every session feeling better than you arrived."}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Squat or Hack Squat", "Reset · ~60% of your usual weight · Glute-bias stance · heavy", 2, "6–8", "reps", false], ["B-Stance Hip Thrusts", "Reset · ~60% of your usual weight · Each leg", 2, "10–12", "reps", false], ["High Box Step-Ups", "Reset · ~60% of your usual weight · Each leg", 2, "10–12", "reps", false], ["Curtsy Lunges", "Reset · ~60% of your usual weight · Each leg", 2, "12–15", "reps", false], ["Seated Band Abductions", "Reset · easy, smooth reps · Last set: burn-it drop set", 2, "20–30", "reps", false], ["Frog Pumps", "Reset · easy, smooth reps · Burn finisher", 1, "30", "reps", false], ["Plank", "Front + side variations", 2, "45–75", "s", false]], "rest": 90, "tip": "Reset week: half the sets, about 60% of your usual weights, no finishers. Leave every session feeling better than you arrived."}, {"type": "rest", "title": "Active Recovery", "short": "Recovery", "focus": "Easy movement, 20–40 minutes", "opts": ["Walk", "Mobility", "Yoga", "Easy swim or ride"]}, {"type": "rest", "title": "Rest", "focus": "Full rest", "opts": ["Rest", "Stretching", "Walk"], "short": "Rest"}], "label": "Bonus"}]};
+const PROGRAM = {"id": "peachy-progression", "phases": [{"n": 1, "name": "Foundation", "weeks": "1–3", "effort": "6–7", "goal": "The week as written: clean movement, glute connection, moderate weights.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": [["Dynamic Warm-Up", "Light cardio + glute activation", 1, "10", "min", false], ["Barbell Hip Thrust", "", 4, "8–10", "reps", false], ["Romanian Deadlifts", "", 4, "8–10", "reps", false], ["Deficit Reverse Lunges", "Each leg", 3, "10–12", "reps", false], ["45° Hyperextensions", "Glute focus", 3, "12–15", "reps", false], ["Cable Kickbacks", "Diagonal · Each leg", 3, "12–15", "reps", false], ["Weighted Cable Side Bends", "", 3, "12–15", "reps", true]], "tip": "Weeks 1–3: RPE 6–7 — feel every rep in the glutes.", "rest": 90}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": []}, {"type": "cardio", "short": "HIIT", "title": "HIIT + Hip Mobility", "ex": []}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": []}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": []}, {"type": "cardio", "short": "Cardio", "title": "Cardio + Core", "ex": []}, {"type": "rest", "short": "Rest", "title": "Rest", "ex": [], "opts": [], "focus": ""}]}, {"n": 2, "name": "Overload", "weeks": "4–6", "effort": "7–8", "goal": "Heavier hip thrusts, RDLs and squats with an extra set; arms and delts at 10–15 reps.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": []}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": []}, {"type": "cardio", "short": "HIIT", "title": "HIIT + Hip Mobility", "ex": []}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": []}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": []}, {"type": "cardio", "short": "Cardio", "title": "Cardio + Core", "ex": []}, {"type": "rest", "short": "Rest", "title": "Rest", "ex": [], "opts": [], "focus": ""}]}, {"n": 3, "name": "Specialisation &amp; Sculpting", "weeks": "7–9", "effort": "8", "goal": "Drop sets on hip thrusts and abductions, 20-rep shoulder burn sets, longer planks.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": []}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": []}, {"type": "cardio", "short": "HIIT", "title": "HIIT + Hip Mobility", "ex": []}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": []}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": []}, {"type": "cardio", "short": "Cardio", "title": "Cardio + Core", "ex": []}, {"type": "rest", "short": "Rest", "title": "Rest", "ex": [], "opts": [], "focus": ""}]}, {"n": 3, "name": "Peak &amp; Test", "weeks": "9", "effort": "8", "goal": "Taper, test your Code9 benchmarks and finish strong.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": []}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": []}, {"type": "cardio", "short": "HIIT", "title": "HIIT + Hip Mobility", "ex": []}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": []}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": []}, {"type": "cardio", "short": "Cardio", "title": "Cardio + Core", "ex": []}, {"type": "rest", "short": "Rest", "title": "Rest", "ex": [], "opts": [], "focus": ""}]}, {"n": "+", "name": "Reset Week", "weeks": "10", "effort": "4–5", "goal": "Deload: half the volume, lighter weights, more recovery.", "days": [{"type": "strength", "short": "Lower", "title": "Lower A · Glute Max + Tie-in", "ex": []}, {"type": "strength", "short": "Upper", "title": "Upper A · Back, Shoulders, Arms", "ex": []}, {"type": "rest", "short": "Recovery", "title": "Active Recovery", "ex": [], "opts": [], "focus": ""}, {"type": "strength", "short": "Upper", "title": "Upper B · Shoulder Roundness + Arms", "ex": []}, {"type": "strength", "short": "Lower", "title": "Lower B · Glute Roundness + Pump", "ex": []}, {"type": "rest", "short": "Recovery", "title": "Active Recovery", "ex": [], "opts": [], "focus": ""}, {"type": "rest", "short": "Rest", "title": "Rest", "ex": [], "opts": [], "focus": ""}], "label": "Bonus"}]};
 </script>
 <script>
-(function(){
+window.C9_BOOT = function(){
 const CFG = window.C9_CONFIG, qs = new URLSearchParams(location.search);
-const MEMBER = CFG.access === 'member' || qs.get('preview') === 'member';
+const MEMBER = CFG.access === 'member' || (qs.get('preview') === 'member' && location.protocol === 'file:');   // the test link only works on a local copy
 const PID = PROGRAM.id, LKEY = 'c9-log-' + PID, SKEY = 'c9-start-' + PID;
 const rd = (k,d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e) { return d; } };
 const wr = (k,v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} };
@@ -1629,6 +1748,7 @@ const clientId = qs.get('client') || CFG.clientId || (profile && profile.clientI
 const dk = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 const todayIdx = () => START ? Math.floor((new Date(dk(new Date())) - new Date(START)) / 864e5) : -1;
 const phaseOf = w => w <= 3 ? 0 : w <= 6 ? 1 : w <= 8 ? 2 : w === 9 ? 3 : 4;
+const resetOpen = () => CFG.role === 'admin' || todayIdx() >= 56 || [1,2,3,4,5,6,7].some(d => (LOG[key(9,d)] || {}).completedAt || (LOG[key(10,d)] || {}).completedAt) || [1,2,3,4,5,6,7].every(d => PROGRAM.phases[2].days[d-1].type === 'rest' || (LOG[key(8,d)] || {}).completedAt);
 const key = (w,d) => `w${w}-d${d}`;
 const UNIT = {reps:'', s:' sec', min:' min', m:' m', done:''};
 const fmt = e => e[4]==='done' ? e[3] : (e[2] === 1 ? e[3] + UNIT[e[4]] : e[2] + ' × ' + e[3] + UNIT[e[4]]) + (e[5] ? ' each side' : '');
@@ -1663,8 +1783,9 @@ function select(w,d){
 const wcard = document.getElementById('wcard');
 function sess(){ const k = key(W,D); return LOG[k] || (LOG[k] = {sets:{}, effort:null, notes:''}); }
 function render(){
-  { const rb = weeksEl.querySelector('[data-w="10"]'); if(rb) rb.hidden = !(W === 10 || [1,2,3,4,5,6,7].some(d => LOG[key(9,d)] && LOG[key(9,d)].completedAt)); }
+  { const rb = weeksEl.querySelector('[data-w="10"]'); if(rb) rb.hidden = !(W === 10 || resetOpen()); }
   const ph = PROGRAM.phases[phaseOf(W)], day = ph.days[D-1], s = sess();
+  try{ window.C9_VIEW = {w:W, d:D, type:day.type, done:!!s.completedAt, member:MEMBER, resetOpen:resetOpen(), role:CFG.role || 'preview'}; window.dispatchEvent(new CustomEvent('c9:view', {detail:window.C9_VIEW})); }catch(e){}
   weeksEl.querySelectorAll('.wchip').forEach(b => { const w = +b.dataset.w; b.classList.toggle('on', w===W); b.classList.toggle('locked', !MEMBER && w!==1);
     b.classList.toggle('done', [1,2,3,4,5,6,7].every(d => LOG[key(w,d)] && LOG[key(w,d)].completedAt)); const ti = todayIdx(); b.classList.toggle('now', ti>=0 && Math.floor(ti/7)+1===w); });
   daysEl.querySelectorAll('.dchip').forEach(b => { const d = +b.dataset.d, dd = ph.days[d-1]; b.innerHTML = `Day ${d}<small>${(dd.short || TYPE[dd.type])}</small>`;
@@ -1682,9 +1803,11 @@ function render(){
     day.ex.forEach((e,i) => {
       let sets = '';
       for(let j=0;j<e[2];j++){ const v = s.sets[i+'-'+j] || {}; const ph2 = e[3].split('–').pop();
-        sets += `<div class="set${v.done?' done':''}"><button type="button" data-s="${i}-${j}">${e[2]===1?'Done':((day.rounds && i>0) || /Finisher|AMRAP|For time/.test(e[1]||'') ? 'Round ' : /^(Sprint|Interval|Mile|Hill|Acceleration|Flying)/.test(e[0]) ? 'Rep ' : 'Set ')+(j+1)}</button><input ${e[4]==='done'?'hidden ':''}type="number" min="0" step="any" inputmode="decimal" data-v="${i}-${j}" value="${v.val??''}" placeholder="${ph2}" aria-label="${e[0]} set ${j+1} ${e[4]==='reps'?'reps':e[4]==='s'?'seconds':e[4]==='m'?'metres':'minutes'}">${isLoaded(e) ? `<input class="kg" type="text" inputmode="decimal" data-kg="${i}-${j}" value="${v.kg ?? ''}" placeholder="${lastKg(e,j) || 'kg'}" aria-label="${e[0]} set ${j+1} weight in kg">` : ''}</div>`; }
+        const _lo = (String(e[3]).match(/\d+(?:\.\d+)?/) || [])[0], _short = v.done && _lo && v.val !== undefined && v.val !== '' && +v.val < +_lo;
+        sets += `<div class="set${v.done?' done':''}${_short?' short':''}"><button type="button" class="sbx" aria-pressed="${!!v.done}" data-s="${i}-${j}"><i aria-hidden="true"></i><span>${e[2]===1?'Done':((day.rounds && i>0) || /Finisher|AMRAP|For time/.test(e[1]||'') ? 'Round ' : /^(Sprint|Interval|Mile|Hill|Acceleration|Flying)/.test(e[0]) ? 'Rep ' : 'Set ')+(j+1)}</span></button><input ${e[4]==='done'?'hidden ':''}type="number" min="0" step="any" inputmode="decimal" data-v="${i}-${j}" value="${v.val??''}" placeholder="${ph2}" aria-label="${e[0]} set ${j+1} ${e[4]==='reps'?'reps':e[4]==='s'?'seconds':e[4]==='m'?'metres':'minutes'}">${isLoaded(e) ? `<input class="kg" type="text" inputmode="decimal" data-kg="${i}-${j}" value="${v.kg ?? ''}" placeholder="${lastKg(e,j) || 'kg'}" aria-label="${e[0]} set ${j+1} weight in kg">` : ''}</div>`; }
       const doneAll = [...Array(e[2]).keys()].every(j => (s.sets[i+'-'+j]||{}).done);
-      h += `<div class="ex${doneAll?' complete':''}${e[0]==='Treadmill Warm-Up'?' wu':''}"><div class="exh"><button type="button" class="exthumb" data-i="${i}" aria-label="Show demo: ${e[0]}">${c9Gif(animFor(e), e[0])}<span class="exn">${String(i+1).padStart(2,'0')}</span></button><div class="exi"><b>${e[0]}</b>${e[1]?`<span>${e[1]}</span>`:''}${CUES[e[0]]?`<em class="cue">${CUES[e[0]].join(' · ')}</em>`:''}</div><span class="target">${fmt(e)}</span></div><div class="sets">${sets}</div></div>`;
+      const _lo2 = (String(e[3]).match(/\d+(?:\.\d+)?/) || [])[0], anyShort = doneAll && _lo2 && [...Array(e[2]).keys()].some(j => { const v = s.sets[i+'-'+j]||{}; return v.val !== undefined && v.val !== '' && +v.val < +_lo2; });
+      h += `<div class="ex${doneAll?' complete':''}${anyShort?' part':''}${e[0]==='Treadmill Warm-Up'?' wu':''}"><div class="exh"><button type="button" class="exthumb" data-i="${i}" aria-label="Show demo: ${e[0]}">${c9Gif(animFor(e), e[0])}<span class="exn">${String(i+1).padStart(2,'0')}</span></button><div class="exi"><b>${e[0]}</b>${e[1]?`<span>${e[1]}</span>`:''}${CUES[e[0]]?`<em class="cue">${CUES[e[0]].join(' · ')}</em>`:''}</div><span class="target">${fmt(e)}</span><span class="exok${anyShort?' part':''}" role="img" aria-label="${anyShort?'All sets done, some short of target':'Exercise complete'}"></span></div><div class="sets">${sets}</div></div>`;
     });
   }
   wcard.innerHTML = h;
@@ -1692,13 +1815,15 @@ function render(){
   wcard.querySelectorAll('.exthumb').forEach(b => b.onclick = () => openDemo(day.ex[+b.dataset.i]));
   wcard.querySelectorAll('[data-s]').forEach(b => b.onclick = () => toggleSet(b.dataset.s));
   wcard.querySelectorAll('[data-kg]').forEach(inp => inp.oninput = () => { const k = inp.dataset.kg; s.sets[k] = s.sets[k] || {}; s.sets[k].kg = inp.value; save(); });
-  wcard.querySelectorAll('[data-v]').forEach(inp => inp.oninput = () => { const k = inp.dataset.v; s.sets[k] = s.sets[k] || {}; s.sets[k].val = inp.value; if(inp.value && !s.sets[k].done){ s.sets[k].done = true; startClock(); inp.closest('.set').classList.add('done'); const ex = inp.closest('.ex'); ex.classList.toggle('complete', [...ex.querySelectorAll('.set')].every(x=>x.classList.contains('done'))); } save(); updSide(); });
+  wcard.querySelectorAll('[data-v]').forEach(inp => inp.oninput = () => { const k = inp.dataset.v; s.sets[k] = s.sets[k] || {}; s.sets[k].val = inp.value; if(inp.value && !s.sets[k].done){ s.sets[k].done = true; startClock(); inp.closest('.set').classList.add('done'); } save(); updSide(); });
+  wcard.querySelectorAll('[data-v]').forEach(inp => inp.onchange = () => { const y = scrollY; render(); scrollTo(0, y); });
   wcard.querySelectorAll('.ropt').forEach(b => b.onclick = () => { s.recovery = s.recovery || []; const o = b.dataset.o; s.recovery = s.recovery.includes(o) ? s.recovery.filter(x=>x!==o) : s.recovery.concat(o); b.classList.toggle('on'); save(); updSide(); });
   const rm = document.getElementById('rmin'); if(rm) rm.oninput = () => { s.minutes = rm.value; save(); };
   renderSide(); renderProgress();
   wcard.querySelectorAll('input,button').forEach(x => x.disabled = !MEMBER);
 }
-function toggleSet(k){ const s = sess(); s.sets[k] = s.sets[k] || {}; s.sets[k].done = !s.sets[k].done; if(s.sets[k].done){ startClock(); const dy = PROGRAM.phases[phaseOf(W)].days[D-1], ex = dy.ex[+k.split('-')[0]], m = /(\d+) sec rest/.exec(ex[1]||''); if(!dy.rounds && ex[2] > 1 && !/Finisher|AMRAP|For time|Tabata/.test(ex[1]||'')) restTimer(m ? +m[1] : (dy.rest || 0)); } save(); render(); }
+function toggleSet(k){ const s = sess(); s.sets[k] = s.sets[k] || {}; s.sets[k].done = !s.sets[k].done;
+  if(s.sets[k].done && (s.sets[k].val === undefined || s.sets[k].val === '')){ const _e = PROGRAM.phases[phaseOf(W)].days[D-1].ex[+k.split('-')[0]], _n = (String(_e[3]).match(/\d+(?:\.\d+)?/) || [])[0]; if(_n && _e[4] !== 'done') s.sets[k].val = _n; } if(s.sets[k].done){ startClock(); const dy = PROGRAM.phases[phaseOf(W)].days[D-1], ex = dy.ex[+k.split('-')[0]], m = /(\d+) sec rest/.exec(ex[1]||''); if(!dy.rounds && ex[2] > 1 && !/Finisher|AMRAP|For time|Tabata/.test(ex[1]||'')) restTimer(m ? +m[1] : (dy.rest || 0)); } save(); render(); }
 function save(){ wr(LKEY, LOG); }
 
 /* -------- demos -------- */
@@ -1769,7 +1894,7 @@ document.getElementById('complete').onclick = () => {
     completedAt:s.completedAt, startedAt:s.startedAt||null, durationSec:s.durationSec||0, setsDone:n, setsPlanned:t,
     effort:s.effort, notes:s.notes||'', recovery:s.recovery||null, recoveryMinutes:s.minutes||null,
     exercises: day.type==='rest' ? [] : day.ex.map((e,i)=>({name:e[0], target:fmt(e), unit:e[4], perSide:e[5],
-      sets:[...Array(e[2]).keys()].map(j=>({done:!!(s.sets[i+'-'+j]||{}).done, value:(s.sets[i+'-'+j]||{}).val||null, kg:(s.sets[i+'-'+j]||{}).kg||null}))})) };
+      sets:[...Array(e[2]).keys()].map(j=>({done:!!(s.sets[i+'-'+j]||{}).done, value:(s.sets[i+'-'+j]||{}).val||null, kg:(s.sets[i+'-'+j]||{}).kg||null, target:e[3]}))})) };
   emit('session', record);
   render();
 };
@@ -1812,19 +1937,543 @@ const io = 'IntersectionObserver' in window ? new IntersectionObserver(es=>es.fo
 document.querySelectorAll('.c9 .rv').forEach(el=> io ? io.observe(el) : el.classList.add('in'));
 const links = [...document.querySelectorAll('.c9 nav a')], top = document.getElementById('totop');
 addEventListener('scroll',()=>{ top.classList.toggle('show', scrollY > 700); let cur=null; links.forEach(a=>{ const s=document.querySelector(a.getAttribute('href')); if(s && s.getBoundingClientRect().top < 140) cur=a; }); links.forEach(a=>a.classList.toggle('on', a===cur)); },{passive:true});
-})();
+};
 </script>
 </div>
+<script>/* c9access — asks the server who this is; admin or a paying client gets the full program, everyone else the 1-day preview */
+(function(){
+  var C = window.C9_CONFIG = window.C9_CONFIG || {}, url = C.accessUrl || '/api/c9/access', done = false;
+  var local = location.protocol === 'file:' || C.accessUrl === false;
+  function bar(){ var d = document.createElement('div'); d.className = 'c9adm'; d.setAttribute('role', 'status');
+    d.innerHTML = '<i></i><b>ADMIN VIEW</b><span class="w">Full program unlocked</span><a href="' + (C.adminUrl || 'code9-admin.html') + '">All programs</a><button type="button">Log out</button>';
+    d.querySelector('button').onclick = function(){ fetch(C.logoutUrl || '/api/c9/admin/logout', {method:'POST', credentials:'include'}).finally(function(){ location.reload(); }); };
+    (document.querySelector('.c9') || document.body).appendChild(d); }
+  function boot(role){ if(done) return; done = true; C.role = role || 'preview'; if(role === 'admin' || role === 'member') C.access = 'member';
+    try{ window.C9_BOOT(); }catch(e){ console.error(e); }
+    if(role === 'admin') bar();
+    try{ window.dispatchEvent(new CustomEvent('c9:access', {detail:{role:C.role, programId:PROGRAM.id}})); }catch(e){} }
+  if(local){ boot(C.access === 'member' ? 'member' : 'preview'); return; }
+  var t = setTimeout(function(){ boot('preview'); }, 3000);
+  fetch(url + '?program=' + encodeURIComponent(PROGRAM.id), {credentials:'include', headers:{Accept:'application/json'}, cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : {role:'preview'}; })
+    .then(function(j){ clearTimeout(t); if(done) return; var ok = (j.role === 'admin' || j.role === 'member') && j.program && j.program.id === PROGRAM.id && j.program.phases;
+      if(ok) PROGRAM.phases = j.program.phases; boot(ok ? j.role : 'preview'); })
+    .catch(function(){ clearTimeout(t); boot('preview'); });
+})();</script>
 <script>/* START NOW: member → full plan + coaching · logged in → pay · not logged in → log in */
-(function(){ var b = document.getElementById('c9start'); if(!b) return;
+(function(){ function go(){ var b = document.getElementById('c9start'); if(!b) return;
   var C = window.C9_CONFIG || {}, q = new URLSearchParams(location.search), id = (typeof PROGRAM !== 'undefined' && PROGRAM.id) || '';
   var real = function(u){ return u && u !== '#'; }, add = function(u, k, v){ return u + (u.indexOf('?') > -1 ? '&' : '?') + k + '=' + encodeURIComponent(v); };
-  var member = C.access === 'member' || q.get('preview') === 'member', state, href;
+  var member = C.access === 'member' || (q.get('preview') === 'member' && location.protocol === 'file:'), state, href;
   if(member){ state = 'member'; href = real(C.appUrl) ? add(C.appUrl, 'program', id) : '#tracker'; }
   else if(C.loggedIn){ state = 'buy'; href = real(C.purchaseUrl) ? add(C.purchaseUrl, 'program', id) : real(C.subscribeUrl) ? C.subscribeUrl : 'code9-pricing.html'; }
   else { state = 'login'; href = real(C.loginUrl) ? add(C.loginUrl, 'next', location.pathname + '?start=1') : 'code9-pricing.html'; }
   b.href = href; b.dataset.state = state;
-  b.addEventListener('click', function(){ try{ window.dispatchEvent(new CustomEvent('c9:start', {detail:{programId:id, state:state, href:href}})); (window.dataLayer = window.dataLayer || []).push({event:'c9_start', program:id, state:state}); }catch(e){} });
-})();</script>
+  b.onclick = function(){ try{ window.dispatchEvent(new CustomEvent('c9:start', {detail:{programId:id, state:state, href:href}})); (window.dataLayer = window.dataLayer || []).push({event:'c9_start', program:id, state:state}); }catch(e){} };
+} go(); window.addEventListener('c9:access', go); })();</script>
+<script>/* c9fuel */
+/* Code9 · Fuel check — the coach's nutrition question after every session.
+   Reads: c9-log-<id> (sessions), c9-nutrition (profile from the Nutrition Guide), c9-goal (focus goal), c9-fuel-<id> (answers).
+   Sends: c9:fuel_check and c9:checkin_report (window event + dataLayer + webhookUrl). With C9_CONFIG.coachUrl set, the AI coach writes the replies. */
+(function(){
+'use strict';
+var CFG = window.C9_CONFIG || {}, Q = new URLSearchParams(location.search);
+if(typeof PROGRAM === 'undefined') return;
+var P = PROGRAM, PID = P.id, FKEY = 'c9-fuel-' + PID, LKEY = 'c9-log-' + PID;
+var TIER = (Q.get('tier') || CFG.tier || 'onetime').toLowerCase().replace(/[^a-z]/g, '');   // free | onetime | subscription | premium — set by your platform
+var PAID = TIER === 'subscription' || TIER === 'premium', PREM = TIER === 'premium';
+window.addEventListener('c9:access', function(ev){ if(ev.detail && ev.detail.role === 'admin' && !Q.get('tier') && !(window.C9_CONFIG || {}).tier){ TIER = 'premium'; PAID = true; PREM = true; } });   // admin sees every feature
+var COACH = CFG.coachName || 'your coach';
+var PREFS = function(){ return rd('c9-prefs', null); };   // set in onboarding or Coaching preferences (code9-coaching-preferences.html)
+var SETTINGS = CFG.prefsUrl || 'code9-coaching-preferences.html';
+var DETAIL = function(){ var p = PREFS(); return p && p.detail || 'protein'; };
+var rd = function(k, d){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } };
+var wr = function(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} };
+var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+var FUEL = rd(FKEY, {}), META = rd('c9-fuel-meta', {last:[]});
+var VIEW = {w:1, d:1, type:'strength', done:false, member:false};
+var phaseOf = function(w){ return w <= 3 ? 0 : w <= 6 ? 1 : w <= 8 ? 2 : w === 9 ? 3 : 4; };
+var dayOf = function(w, d){ var ph = P.phases[phaseOf(w)]; return ph && ph.days[d-1]; };
+var k = function(w, d){ return 'w' + w + '-d' + d; };
+var pick = function(id, arr){ var used = META.last || [], c = arr.map(function(_, i){ return i; }).filter(function(i){ return used.indexOf(id + i) < 0; }); var i = (c.length ? c : arr.map(function(_, i){ return i; }))[Math.floor(Math.random() * (c.length || arr.length))]; META.last = [id + i].concat(used).slice(0, 12); wr('c9-fuel-meta', META); return arr[i]; };
+
+/* ---------- who is this person ---------- */
+function profile(){
+  var n = rd('c9-nutrition', null) || {}, g = rd('c9-goal', null), lw = rd('c9-weight', null);
+  var wt = +(g && g.weighins && g.weighins.length ? g.weighins[g.weighins.length - 1].kg : 0) || +n.weight || +lw || 0;
+  return {age:+n.age || 0, weight:wt, height:+n.height || 0, sex:n.sex || '', stage:n.stage || 'none', plate:n.plate || plateFor(PID), meals:+n.meals || 4, medical:(n.medical || []).length > 0, goal:g};
+}
+function plateFor(id){ return /lean-bulk/.test(id) ? 'bulk' : /hybrid/.test(id) ? 'perform' : /^fat-to-fit(-intermediate|-advanced|-light-budget)?$/.test(id) ? 'lowcarb' : 'fatloss'; }
+function targets(p, rest){
+  if(!p.weight) return null;
+  var w = p.weight, h = p.height || 170, a = p.age || 35, m = p.sex === 'm';
+  var bmr = 10*w + 6.25*h - 5*a + (m ? 5 : -161), tdee = bmr * 1.55;
+  var kcal = p.plate === 'bulk' ? tdee + 300 : p.plate === 'perform' ? tdee : tdee - Math.min(tdee * .18, 600);
+  if(p.goal && p.goal.mode === 'focused' && p.goal.kcalDelta) kcal = tdee + p.goal.kcalDelta;
+  kcal = Math.max(kcal, m ? 1500 : 1200); if(rest && p.plate !== 'bulk') kcal -= 150;
+  var bmi = h ? w / Math.pow(h/100, 2) : 25, wb = bmi > 30 ? 27 * Math.pow(h/100, 2) : w;
+  var gpk = {lowcarb:1.6, fatloss:2.0, perform:1.8, bulk:2.0}[p.plate] || 1.8; if(a >= 40 || p.stage === 'peri' || p.stage === 'meno') gpk = Math.min(2.2, Math.max(gpk + .2, 1.8));
+  return {kcal:Math.round(kcal / 10) * 10, protein:Math.round(wb * gpk / 5) * 5};
+}
+function blocked(p){ return (p.age && p.age < 18) || p.stage === 'pregnant'; }   // no targets, no focused mode
+
+/* ---------- when do they train ---------- */
+function slotOf(iso){ var h = new Date(iso).getHours(); return h < 9 ? 'early' : h < 12 ? 'morning' : h < 15 ? 'midday' : h < 18 ? 'afternoon' : h < 22 ? 'evening' : 'late'; }
+var SLOTN = {early:'early morning', morning:'morning', midday:'midday', afternoon:'afternoon', evening:'evening', late:'late evening'};
+var EXPECT = {early:.15, morning:.3, midday:.45, afternoon:.6, evening:.8, late:.9};   // share of the day's protein you'd expect by now
+function timing(){
+  var log = rd(LKEY, {}), by = {}, list = [];
+  Object.keys(log).forEach(function(key){ var s = log[key]; if(!s.completedAt) return; var m = key.match(/\d+/g), dy = dayOf(+m[0], +m[1]); if(!dy || dy.type === 'rest') return;
+    var sl = slotOf(s.completedAt); (by[sl] = by[sl] || {n:0, eff:0, effN:0}).n++; if(s.effort){ by[sl].eff += +s.effort; by[sl].effN++; } list.push({at:s.completedAt, slot:sl}); });
+  list.sort(function(a, b){ return a.at < b.at ? -1 : 1; });
+  var usual = Object.keys(by).sort(function(a, b){ return by[b].n - by[a].n; })[0] || null;
+  return {by:by, usual:usual, n:list.length, recent:list.slice(-6).map(function(x){ return x.slot; })};
+}
+
+/* ---------- what did they eat (rough, Core-Foods-first) ---------- */
+var NUM = {a:1, an:1, one:1, two:2, three:3, four:4, five:5, couple:2, few:3, half:.5, double:2};
+var FOODS = [ // [pattern, label, protein g, kcal, group] — per typical portion
+ ['chicken (wrap|burrito)', 'chicken wrap', 32, 480, 'meal'], ['(chicken|beef|tuna|salmon|egg) salad', 'protein salad', 32, 420, 'meal'], ['poke ?bowl', 'poke bowl', 30, 600, 'meal'], ['burrito', 'burrito', 30, 700, 'meal'],
+ ['kebab|shawarma|gyros', 'kebab', 35, 700, 'meal'], ['sushi', 'sushi', 25, 500, 'meal'], ['curry', 'curry', 28, 650, 'meal'], ['stir[- ]?fry', 'stir-fry', 30, 520, 'meal'], ['pizza', 'pizza', 30, 900, 'treat'],
+ ['burger', 'burger', 28, 600, 'meal'], ['omelet+e?', 'omelette', 20, 300, 'protein'], ['overnight oats', 'overnight oats', 15, 380, 'carb'], ['protein (shake|smoothie)|shake', 'protein shake', 25, 140, 'protein'],
+ ['protein bar', 'protein bar', 20, 220, 'protein'], ['smoothie', 'smoothie', 6, 250, 'fruit'], ['sandwich|tosti|panini', 'sandwich', 18, 420, 'meal'], ['soup', 'soup', 10, 220, 'meal'], ['lasagn[ae]', 'lasagne', 30, 650, 'meal'],
+ ['spaghetti bolognese|bolognese', 'pasta bolognese', 32, 700, 'meal'], ['eggs?', 'eggs', 6, 75, 'protein', 1], ['chicken', 'chicken', 38, 230, 'protein'], ['turkey', 'turkey', 32, 190, 'protein'], ['steak|beef|lamb', 'red meat', 42, 380, 'protein'],
+ ['mince', 'mince', 30, 300, 'protein'], ['salmon|mackerel|trout', 'oily fish', 34, 360, 'protein'], ['tuna', 'tuna', 26, 130, 'protein'], ['cod|white fish|haddock|fish', 'fish', 30, 160, 'protein'], ['prawns?|shrimps?', 'prawns', 20, 110, 'protein'],
+ ['tofu|tempeh', 'tofu', 20, 190, 'protein'], ['greek (yoghurt|yogurt)|skyr|quark|kwark', 'Greek yoghurt', 22, 170, 'protein'], ['cottage cheese', 'cottage cheese', 20, 160, 'protein'], ['(yoghurt|yogurt)', 'yoghurt', 9, 150, 'dairy'],
+ ['cheese', 'cheese', 7, 120, 'dairy'], ['milk|latte|cappuccino', 'milk', 8, 150, 'dairy'], ['ham|salami|chorizo', 'cold cuts', 9, 90, 'protein'], ['sausages?|bacon', 'sausage / bacon', 10, 230, 'protein'],
+ ['lentils|beans|chickpeas|dahl|dal', 'lentils / beans', 12, 230, 'protein'], ['hummus', 'hummus', 4, 150, 'fat'], ['oats|porridge|oatmeal', 'oats', 8, 260, 'carb'], ['granola|muesli|cereal', 'cereal', 6, 270, 'carb'],
+ ['bagel', 'bagel', 10, 280, 'carb'], ['toast|bread|roll|baguette|crackers?', 'toast', 5, 110, 'carb', 1], ['wraps?|tortilla', 'wrap', 5, 190, 'carb'], ['rice', 'rice', 5, 260, 'carb'], ['pasta|noodles', 'pasta', 12, 400, 'carb'],
+ ['gnocchi', 'gnocchi', 6, 330, 'carb'], ['couscous|quinoa|bulgur', 'couscous / quinoa', 7, 230, 'carb'], ['sweet potato', 'sweet potato', 3, 180, 'carb'], ['potato(es)?|mash', 'potatoes', 4, 190, 'carb'], ['fries|chips', 'fries', 4, 400, 'treat'],
+ ['bananas?', 'banana', 1, 100, 'fruit', 1], ['apples?|pears?|oranges?|kiwis?|mango|grapes|pineapple|melon|fruit', 'fruit', 1, 80, 'fruit', 1], ['berries|blueberries|strawberries|raspberries', 'berries', 1, 50, 'fruit'],
+ ['avocado', 'avocado', 3, 240, 'fat'], ['peanut butter|almond butter|nut butter', 'nut butter', 8, 190, 'fat'], ['nuts|almonds|walnuts|cashews|macadamias?|brazil nuts|pistachios|seeds', 'nuts / seeds', 6, 180, 'fat'],
+ ['salad', 'salad', 2, 90, 'veg'], ['broccoli|spinach|greens|veg(gies|etables|gie)?|carrots?|courgette|zucchini|peppers?|tomato(es)?|beans? green|green beans|cucumber|kale|asparagus', 'vegetables', 3, 60, 'veg'],
+ ['chocolate|cake|cookies?|biscuits?|brownie|pastry|croissant|donut|doughnut|muffin|sweets|candy|ice ?cream|crisps', 'treat', 3, 280, 'treat'],
+ ['beers?|wine|cocktails?|gin|vodka|prosecco', 'alcohol', 0, 170, 'alcohol', 1], ['coke|cola|soda|energy drink|juice', 'sugary drink', 0, 140, 'drink']
+];
+function parse(text){
+  var t = ' ' + String(text || '').toLowerCase().replace(/[^a-z0-9à-ÿ ]+/g, ' ') + ' ', items = [], meals = {};
+  ['breakfast', 'lunch', 'dinner|supper|tea', 'snack'].forEach(function(m){ if(new RegExp('\\b(' + m + ')\\b').test(t)) meals[m.split('|')[0]] = true; });
+  FOODS.forEach(function(f){
+    var re = new RegExp('(?:\\b(\\d+(?:\\.\\d+)?|a|an|one|two|three|four|five|couple of|few|half|double)\\s+(?:of\\s+)?)?\\b(' + f[0] + ')\\b', 'g'), m;
+    while((m = re.exec(t))){ var lab = f[1] === 'protein salad' ? m[2] : f[1]; var qw = (m[1] || '').replace(' of', ''), q = qw ? (+qw || NUM[qw] || 1) : (f[5] ? 1 : 1); if(!f[5] && q > 3) q = 1;   // "200 g chicken" → one portion
+      items.push({n:lab, q:q, p:f[2] * q, k:f[3] * q, g:f[4]}); t = t.slice(0, m.index) + ' '.repeat(m[0].length) + t.slice(m.index + m[0].length); re.lastIndex = 0; }
+  });
+  var p = items.reduce(function(a, x){ return a + x.p; }, 0), kc = items.reduce(function(a, x){ return a + x.k; }, 0);
+  var has = function(g){ return items.some(function(x){ return x.g === g; }); };
+  return {items:items, protein:Math.round(p), kcal:Math.round(kc / 10) * 10, meals:Object.keys(meals), veg:has('veg'), fruit:has('fruit'), treat:items.filter(function(x){ return x.g === 'treat'; }).length,
+          alcohol:items.filter(function(x){ return x.g === 'alcohol'; }).reduce(function(a, x){ return a + x.q; }, 0), skipped:/\bskip|didn ?t eat|haven ?t eaten|nothing\b|no breakfast|no lunch/.test(text.toLowerCase())};
+}
+
+/* ---------- reading the session ---------- */
+var LOW = /\b(rough|tired|exhausted|knackered|stressed|bad day|sick|ill|barely|drained|awful|terrible|no energy|burnt out|burned out)\b/i;
+var PAIN = /\b(pain|hurt|hurts|injur|sharp|tweak|pulled|strain|swollen|dizzy|faint|chest)\b/i;
+var SERIOUS = /\b(wedding|holiday|vacation|competition|comp|photo ?shoot|shoot|race day|marathon|deadline|lose \d+|drop \d+|\d+ ?kg (by|before|in))\b/i;
+function prs(rec){
+  var log = rd(LKEY, {}), out = [];
+  (rec.exercises || []).forEach(function(e){ var now = Math.max.apply(null, [0].concat(e.sets.map(function(s){ return +s.kg || 0; }))); if(!now) return; var prev = 0;
+    Object.keys(log).forEach(function(key){ if(key === k(rec.week, rec.day)) return; var s = log[key], m = key.match(/\d+/g), dy = dayOf(+m[0], +m[1]); if(!s.completedAt || !dy || !dy.ex) return;
+      dy.ex.forEach(function(x, i){ if(x[0] !== e.name) return; Object.keys(s.sets || {}).forEach(function(sk){ if(sk.split('-')[0] == i) prev = Math.max(prev, +(s.sets[sk].kg) || 0); }); }); });
+    if(prev && now > prev) out.push({name:e.name, kg:now, prev:prev}); });
+  return out;
+}
+function focusOf(day){ var t = (day && day.title || '') + ' ' + (day && day.short || ''); return /glute|lower|leg/i.test(t) ? 'leg' : /upper|push|pull|shoulder|back/i.test(t) ? 'upper' : /long run|endurance|run|swim|interval|tempo|fartlek/i.test(t) ? 'endurance' : /circuit|hiit|amrap|conditioning|metcon/i.test(t) ? 'conditioning' : 'training'; }
+var DAYN = {leg:'leg day', upper:'upper-body day', endurance:'endurance day', conditioning:'conditioning day', training:'training day'};
+var AN = function(w){ return (/^[aeiou]/i.test(w) ? 'an ' : 'a ') + w; };
+function idea(focus, slot, plate){
+  var late = slot === 'evening' || slot === 'late';
+  if(plate === 'bulk') return late ? 'a proper dinner plus a bowl of quark or Greek yoghurt before bed' : 'a big next meal — rice or pasta with a protein portion and a half';
+  if(focus === 'endurance') return late ? 'a carb-and-protein dinner — rice or pasta with chicken or fish — to refill the tank' : 'carbs back in at your next meal — rice, potatoes or a wrap — with a palm of protein';
+  if(focus === 'leg') return late ? 'a protein-heavy dinner — salmon, chicken or lean beef, a palm and a half' : 'your next meal built around protein — eggs, chicken or Greek yoghurt — with some carbs';
+  return late ? 'dinner built on protein — chicken, fish, eggs or tofu — with veg filling half the plate' : 'protein at your next meal — eggs, yoghurt, chicken or a shake if you’re on the go';
+}
+
+/* ---------- the coach's opening ---------- */
+function opening(rec, day, ctx){
+  var name = (rd('c9-profile', {}) || {}).firstName, hi = name ? name + ', ' : '';
+  var eff = +rec.effort || 0, pr = ctx.pr[0], rest = ctx.rest, s = ctx.slot, fresh = ctx.t.usual && ctx.t.n >= 4 && ctx.t.usual !== s && ctx.t.recent.slice(-3).indexOf(s) < 0;
+  var lead;
+  if(rest) lead = pick('rest', ['Rest day logged — this is where the training actually turns into progress.', 'Good call resting. Recovery happens in the kitchen and in bed as much as in the gym.', 'Rest day. The muscles you trained this week are rebuilding today — they need the material.']);
+  else if(pr) lead = pick('pr', ['That’s a new best on ' + pr.name.toLowerCase() + ' — ' + pr.kg + ' kg, up from ' + pr.prev + '.', pr.name + ' at ' + pr.kg + ' kg. Last time your best was ' + pr.prev + '. That’s the progress we’re after.', 'New top weight on ' + pr.name.toLowerCase() + ': ' + pr.kg + ' kg.']);
+  else if(eff >= 7){ var ph = P.phases[phaseOf(rec.week)] || {}, tr = String(ph.effort || '').match(/\d+/g) || [], tmax = tr.length ? +tr[tr.length - 1] : 0, tmin = tr.length ? +tr[0] : 0;
+    lead = tmax && eff > tmax ? pick('over', [eff + '/10 — harder than this phase asks for (' + ph.effort + '). Strong work, but there’s no prize for going above it yet.', 'That was ' + eff + '/10, above the ' + ph.effort + ' this phase is built on. Keep a rep or two in the tank next time.'])
+      : tmin && eff >= tmin ? pick('hard', [eff + '/10 — right in the ' + ph.effort + ' this phase is built on.', 'A properly hard ' + DAYN[ctx.focus] + ' — ' + eff + '/10, exactly where this phase wants you.'])
+      : pick('hard2', ['That one cost you something — ' + eff + '/10.', eff + '/10 on ' + AN(DAYN[ctx.focus]) + '. Solid.']); }
+  else if(rec.setsPlanned && rec.setsDone < rec.setsPlanned * .6) lead = pick('short', ['Shorter session today — still counts, and it keeps the habit alive.', 'Not every session has to be a full one. You showed up.']);
+  else lead = pick('ok', ['Session logged — week ' + rec.week + ', day ' + rec.day + ' done.', 'Another one in the bank: week ' + rec.week + ', day ' + rec.day + '.', 'Logged. That’s ' + ctx.weekDone + ' session' + (ctx.weekDone === 1 ? '' : 's') + ' this week.']);
+  var tline = !rest && fresh ? ' ' + (s === 'early' || s === 'morning' ? 'Earlier than usual today' : s === 'evening' || s === 'late' ? 'Later than usual today' : 'A different time slot today') + ' — the timing of your food shifts with it.' : '';
+  var ask;
+  if(rest) ask = 'What have you eaten so far today?';
+  else if(s === 'early' || s === 'morning') ask = pick('askam', ['Did you eat anything before training — and what’s the plan for breakfast now?', 'What did you have before the session? The meal you eat next is the important one.', 'Have you eaten since? What’s breakfast looking like?']);
+  else if(s === 'midday') ask = pick('askmid', ['What have you eaten so far today?', 'Have you had lunch yet — and what was breakfast?']);
+  else ask = pick('askpm', ['What have you eaten today?', 'How did the eating go today — what did you have?', 'Did you get your meals in today? Tell me what you had.']);
+  return {html:esc(hi ? hi.charAt(0).toUpperCase() + hi.slice(1) : '') + esc(lead) + esc(tline) + ' <b>' + esc(ask) + '</b>', lead:lead + tline, ask:ask};
+}
+
+/* ---------- the coach's answer ---------- */
+function reply(entry, ctx){
+  var p = ctx.p, tg = ctx.tg, x = entry.parsed, s = ctx.slot, focus = ctx.focus, out = [], flags = [];
+  var focused = PAID && p.goal && p.goal.mode === 'focused' && !blocked(p);
+  if(entry.answer === 'notyet' && ctx.rest){
+    out.push(s === 'evening' || s === 'late' ? 'Then make dinner a proper one tonight — ' + idea(focus, s, p.plate) + '. Rest days still need the protein; it’s when the muscle actually gets built.' : 'No problem — just don’t let a rest day turn into a not-eating day. Protein at each meal today, a little lighter on the carbs if fat loss is the goal.');
+  } else if(entry.answer === 'notyet'){
+    out.push(s === 'early' || s === 'morning' ? 'Then that’s the job for the next hour or two: ' + idea(focus, s, p.plate) + '. It’s when the session turns into progress.' :
+             s === 'midday' || s === 'afternoon' ? 'Get a proper meal in soon — ' + idea(focus, s, p.plate) + '. Training and then skipping food is how the next session ends up feeling heavy.' :
+             'Then dinner is the priority tonight — something simple counts: ' + idea(focus, s, p.plate) + '. Don’t go to bed on an empty tank after training.');
+    if(s === 'evening' || s === 'late') flags.push('no_food_by_evening');
+  } else if(entry.answer === 'skipped' || x.skipped){
+    out.push('No stress — one skipped meal doesn’t undo anything. Make the next one count: ' + idea(focus, s, p.plate) + '.');
+    out.push(pick('skipq', ['Was it time, appetite or just forgot? If it keeps happening on ' + DAYN[focus] + 's, we’ll plan around it.', 'If that meal keeps getting skipped on busy days, tell me — there are 2-minute options.']));
+    flags.push('skipped_meal');
+  } else {
+    var sofar = x.protein, exp = tg ? tg.protein * EXPECT[s] : 0;
+    if(!x.items.length) out.push('Good — thanks. If you tell me roughly what it was next time (e.g. “eggs and toast, chicken wrap”), I can tell you how you’re doing against your protein for the day.');
+    else {
+      var names0 = x.items.slice(0, 4).map(function(i){ return i.g === 'alcohol' ? i.q + (i.q > 1 ? ' drinks' : ' drink') : (i.q > 1 && i.q === Math.round(i.q) ? i.q + ' ' : '') + i.n; }).join(', ').replace(/, ([^,]*)$/, ' and $1'), names = names0.charAt(0).toUpperCase() + names0.slice(1);
+      if(tg && !blocked(p) && TIER !== 'free' && (focused || DETAIL() !== 'habits')){
+        var left = Math.max(0, tg.protein - sofar), good = sofar >= exp * .85;
+        out.push((good ? pick('good', ['Nice. ', 'Solid. ', 'Good start. ']) : pick('low', ['OK. ', 'Thanks. ', 'Got it. '])) + (/— $/.test('x') ? '' : '') + names + ' comes to roughly ' + sofar + ' g of protein so far.');
+        if(left > 10) out.push((focused ? 'Still to go today: about ' + left + ' g protein' + (PAID ? ' and roughly ' + Math.max(0, tg.kcal - x.kcal) + ' kcal' : '') + '. ' : PAID && DETAIL() === 'full' ? 'That’s roughly ' + x.kcal + ' kcal so far. Your target on ' + AN(ctx.rest ? 'rest day' : DAYN[focus]) + ' is around ' + tg.protein + ' g protein and ' + tg.kcal + ' kcal, so ' : 'Your target on ' + AN(ctx.rest ? 'rest day' : DAYN[focus]) + ' is around ' + tg.protein + ' g, so ') +
+          (focused ? planRest(left, s, p) : 'make the next meal count — ' + idea(focus, s, p.plate) + '.'));
+        else out.push('You’re basically at your protein for the day — anything from here is a bonus. ' + (x.veg ? '' : 'If dinner hasn’t happened yet, get some veg on the plate.'));
+        if((s === 'evening' || s === 'late') && x.kcal && x.kcal < tg.kcal * .45 && !ctx.rest){ flags.push('low_intake_reported'); if(PAID) out.push('Is that everything today? If so, it’s light for a training day — under-eating is the quickest way to stall and to feel flat next session.' + (PREM ? ' I’ll keep an eye on the pattern with ' + COACH + '.' : '')); }
+      } else {
+        var protMeals = x.items.filter(function(i){ return i.p >= 15; }).length;
+        out.push(pick('tq', ['Thanks. ', 'Good. ', 'Noted. ']) + names + '. ' + (protMeals >= 2 ? 'There’s protein in more than one meal — that’s the habit.' : protMeals ? 'There’s some decent protein in there.' : 'Next meal: make sure there’s a palm of protein on the plate.') + (DETAIL() === 'habits' && !ctx.rest ? ' ' + idea(focus, s, p.plate).charAt(0).toUpperCase() + idea(focus, s, p.plate).slice(1) + ' would round today off.' : ''));
+      }
+      if(x.alcohol >= 2) { out.push('Go easy on the drinks around training days — they hit sleep and recovery harder than the calories suggest.'); flags.push('alcohol'); }
+      if(x.treat >= 2) flags.push('treat_heavy');
+    }
+  }
+  if(SERIOUS.test(entry.text || '') && PAID && !(p.goal && p.goal.mode === 'focused') && !blocked(p)) out.push('Sounds like you’re working towards something with a date. Want me to switch to focused mode? <button type="button" class="fz-lnk" data-act="goal">Set a goal</button>');
+  out = out.filter(Boolean); if(out.length > 3) out = out.slice(0, 2).concat(out.slice(2).filter(function(x){ return /button/.test(x); }).concat(out.slice(2))[0] ? [out.slice(2).filter(function(x){ return /button/.test(x); })[0] || out[2]] : []);   // one coach reply = max 3 points
+  return {text:out.join(' '), flags:flags};
+}
+function planRest(left, s, p){
+  var meals = s === 'early' || s === 'morning' ? ['lunch', 'dinner', 'an evening snack'] : s === 'midday' || s === 'afternoon' ? ['dinner', 'an evening snack'] : ['dinner or a late snack'];
+  var per = Math.min(50, Math.round(left / meals.length / 5) * 5), short = left - per * meals.length;
+  return 'Roughly ' + per + ' g at ' + meals.join(' and ') + (short > 15 ? ' — you won’t close the whole gap tonight, and that’s fine; don’t force it' : '') + ' — e.g. a palm and a half of chicken, fish or tofu, or quark with berries for the snack. ' + (p.plate === 'lowcarb' ? 'Keep the carbs to the meal around training.' : 'A fist of carbs with each meal, half the plate veg.');
+}
+
+/* ---------- goal & focused mode ---------- */
+function goalCheck(g, p){
+  var weeks = Math.max(1, (new Date(g.date) - new Date()) / 6048e5), diff = g.targetKg - g.startKg, rate = diff / weeks, pct = Math.abs(rate) / g.startKg * 100;
+  var lose = diff < 0, safe = lose ? .75 : .35, max = lose ? 1.0 : .5, real = Math.round((lose ? -1 : 1) * Math.min(Math.abs(diff), g.startKg * safe / 100 * weeks) * 10) / 10;
+  var verdict = pct <= safe ? 'ok' : pct <= max ? 'ambitious' : 'unsafe';
+  var useRate = Math.min(Math.abs(rate), g.startKg * (pct > max ? safe : max) / 100), kcalDelta = (lose ? -1 : 1) * Math.round(useRate * 7700 / 7 / 10) * 10;
+  kcalDelta = lose ? Math.max(kcalDelta, -750) : Math.min(kcalDelta, 400);
+  return {weeks:Math.round(weeks * 10) / 10, rate:Math.round(rate * 100) / 100, pct:Math.round(pct * 100) / 100, verdict:verdict, realistic:Math.round((g.startKg + real) * 10) / 10, kcalDelta:kcalDelta};
+}
+function goalForm(p){
+  var g = p.goal || {};
+  return '<form class="fz-goal" id="fzgoal"><b>Working towards a date?</b><p>Focused mode logs every meal, shows what’s left for the day and checks your pace each week.</p>' +
+    '<label>What for<input name="event" maxlength="40" placeholder="e.g. wedding, holiday, race" value="' + esc(g.event || '') + '"></label>' +
+    '<label>Date<input name="date" type="date" required value="' + esc(g.date || '') + '"></label>' +
+    '<label>Weight now (kg)<input name="startKg" type="number" step="0.1" min="35" max="250" required value="' + esc(g.startKg || p.weight || '') + '"></label>' +
+    '<label>Goal weight (kg)<input name="targetKg" type="number" step="0.1" min="35" max="250" required value="' + esc(g.targetKg || '') + '"></label>' +
+    '<div class="fz-row"><button type="submit" class="fz-btn">Switch to focused mode</button>' + (g.mode === 'focused' ? '<button type="button" class="fz-lnk" data-act="relax">Back to relaxed mode</button>' : '<button type="button" class="fz-lnk" data-act="close">Not now</button>') + '</div></form>';
+}
+
+/* ---------- UI ---------- */
+var box, restBtn;
+function mount(){
+  var aside = document.querySelector('#tracker .spanel') || document.querySelector('.spanel'); if(!aside) return false;
+  box = document.createElement('div'); box.className = 'card sp fz'; box.id = 'c9fuel'; box.hidden = true; box.setAttribute('aria-live', 'polite');
+  var fb = document.getElementById('coachfb'); (fb && fb.closest('.card') ? fb.closest('.card') : aside.lastElementChild).insertAdjacentElement('afterend', box);
+  restBtn = document.createElement('button'); restBtn.type = 'button'; restBtn.className = 'fz-restbtn'; restBtn.textContent = 'Taking a rest day today instead?'; restBtn.hidden = true;
+  var cb = document.getElementById('complete'); if(cb) cb.insertAdjacentElement('afterend', restBtn);
+  restBtn.onclick = function(){ if(!confirm('Mark today as a rest day? Your coach will move the session, not count it as missed.')) return;
+    var e = FUEL[k(VIEW.w, VIEW.d)] = FUEL[k(VIEW.w, VIEW.d)] || {}; e.restDeclared = new Date().toISOString(); save(); restBtn.hidden = true;
+    send('rest_day', {week:VIEW.w, day:VIEW.d, workout:(dayOf(VIEW.w, VIEW.d) || {}).title, declaredAt:e.restDeclared});
+    var pr = PREFS(); if(TIER === 'free' || (pr && pr.fuel && pr.restChecks !== false)) ask({week:VIEW.w, day:VIEW.d, completedAt:e.restDeclared, effort:null, notes:'', exercises:[], setsDone:0, setsPlanned:0}, true);
+    else { box.dataset.key = k(VIEW.w, VIEW.d); box.innerHTML = '<h4>Rest day</h4><p class="fz-msg">Rest day logged — your coach will move this session. Enjoy it.</p>'; box.hidden = false; } };
+  box.addEventListener('click', onClick); box.addEventListener('submit', onSubmit);
+  return true;
+}
+function save(){ wr(FKEY, FUEL); }
+function ctxFor(rec, restDecl){
+  var day = dayOf(rec.week, rec.day) || {}, p = profile(), rest = restDecl || day.type === 'rest', log = rd(LKEY, {});
+  var weekDone = [1,2,3,4,5,6,7].filter(function(d){ var s = log[k(rec.week, d)], dy = dayOf(rec.week, d); return s && s.completedAt && dy && dy.type !== 'rest'; }).length;
+  return {day:day, p:p, rest:rest, slot:slotOf(rec.completedAt || new Date().toISOString()), focus:rest ? 'training' : focusOf(day), t:timing(), pr:rest ? [] : prs(rec), tg:blocked(p) ? null : targets(p, rest), weekDone:weekDone};
+}
+function ask(rec, restDecl){
+  if(!box) return; var key = k(rec.week, rec.day), e = FUEL[key] = FUEL[key] || {}, ctx = ctxFor(rec, restDecl);
+  e.slot = ctx.slot; e.rest = ctx.rest; e.restDeclared = e.restDeclared || (restDecl ? new Date().toISOString() : undefined); e.tier = TIER; e.mode = ctx.p.goal && ctx.p.goal.mode === 'focused' && PAID ? 'focused' : 'relaxed'; e.askedAt = new Date().toISOString();
+  var mood = LOW.test(rec.notes || ''), pain = PAIN.test(rec.notes || '');
+  if(TIER === 'free'){ e.prompt = 'reminder'; e.head = '<p class="fz-msg">Don’t forget to eat your meals today — protein at each one. <a href="code9-nutrition.html">Your Nutrition Guide →</a></p>'; e.chips = null; save(); redraw(key); return; }
+  if(PAID && (mood || pain)){
+    e.prompt = mood ? 'mood' : 'pain'; e.flags = (e.flags || []).concat(pain ? ['pain_note'] : ['low_mood']); save();
+    var m = pain ? 'You mentioned something that sounds like pain. Don’t train through it — ' + (PREM ? 'I’ve flagged it for ' + COACH + ', who’ll check in with you.' : 'note where and when it hurts, and check it with your coach or a physio if it’s still there tomorrow.') + ' Food can wait a moment — how are you feeling now?'
+                 : 'Sounds like a tough one. How are you doing, honestly? No food questions tonight — just make sure you eat something decent and get to bed on time.';
+    e.head = '<p class="fz-msg">' + esc(m) + '</p>'; e.chips = [['ok', 'I’m OK'], ['meh', 'Not great'], ['eat', 'Ask me about food']]; save(); redraw(key);
+    send('fuel_check', payload(rec, e, ctx, {prompt:e.prompt})); return;
+  }
+  var op = opening(rec, ctx.day, ctx); e.prompt = 'fuel'; e.ask = op.ask; e.head = '<p class="fz-msg">' + op.html + '</p>'; e.chips = [['yes', 'Yes, I’ve eaten'], ['notyet', 'Not yet'], ['skipped', 'Skipped a meal']]; save(); redraw(key);
+  send('fuel_check', payload(rec, e, ctx, {prompt:'fuel', question:op.lead + ' ' + op.ask}));
+}
+function optIn(rec){
+  box.dataset.key = k(rec.week, rec.day);
+  box.innerHTML = '<h4>Fuel check <small>New</small></h4><p class="fz-msg">Want me to check in on your food after sessions? One quick question — no food diary. I’ll use it to guide you and spot when things drift.</p>' +
+    '<div class="fz-chips"><button type="button" class="fz-chip" data-opt="habits">Yes — habits only</button><button type="button" class="fz-chip" data-opt="protein">Yes — with protein numbers</button><button type="button" class="fz-chip" data-opt="no">Not now</button></div>' +
+    '<p class="fz-mode">Yes means you agree that Code9 stores your food answers and session notes to coach you. Change or delete it any time in <a class="fz-set" href="' + esc(SETTINGS) + '">Coaching preferences</a>.</p>';
+  box.hidden = false; box._optRec = rec;
+}
+function chips(arr){ return '<div class="fz-chips">' + arr.map(function(c){ return '<button type="button" class="fz-chip" data-a="' + c[0] + '">' + esc(c[1]) + '</button>'; }).join('') + '</div>'; }
+function area(){ return '<form class="fz-in"><textarea rows="2" maxlength="600" placeholder="e.g. eggs and toast for breakfast, chicken wrap for lunch"></textarea><button type="submit" class="fz-send" aria-label="Send">Send</button></form>'; }
+function modeLine(p){
+  if(!PAID) return '';
+  if(blocked(p)) return '';
+  var g = p.goal;
+  if(g && g.mode === 'focused'){ var c = goalCheck(g, p); return '<p class="fz-mode"><span class="fz-tag on">Focused</span>' + esc(g.event || 'Goal') + ' · ' + esc(g.targetKg) + ' kg by ' + new Date(g.date).toLocaleDateString(undefined, {day:'numeric', month:'short'}) + ' · ' + c.weeks + ' weeks left <button type="button" class="fz-lnk" data-act="goal">Edit</button> <button type="button" class="fz-lnk" data-act="weigh">Log weight</button></p>'; }
+  return '<p class="fz-mode"><span class="fz-tag">Relaxed</span>Working towards a date? <button type="button" class="fz-lnk" data-act="goal">Focused mode</button></p>';
+}
+function draw(key, head, controls){ box.dataset.key = key; box.innerHTML = '<h4>Fuel check <small>' + (TIER === 'free' ? 'Reminder' : PAID ? 'Your coach' : 'Coach tip') + ' · <a class="fz-set" href="' + esc(SETTINGS) + '?back=' + encodeURIComponent(location.pathname.split('/').pop() + location.search) + '" aria-label="Fuel check settings">Settings</a></small></h4>' + head + thread(key) + (controls || ''); box.hidden = false; }
+function thread(key){ var e = FUEL[key] || {}; return (e.thread || []).map(function(m){ return '<p class="fz-' + (m.who === 'me' ? 'me' : 'msg') + '">' + (m.who === 'me' ? esc(m.text) : m.html || esc(m.text)) + '</p>'; }).join(''); }
+function onClick(ev){
+  var b = ev.target.closest('button'); if(!b) return;
+  if(b.dataset.opt){ var now = new Date().toISOString(), yes = b.dataset.opt !== 'no', p0 = profile();
+    var pr = {fuel:yes, detail:yes ? (blocked(p0) ? 'habits' : b.dataset.opt) : 'habits', restChecks:yes && PAID, consentAt:yes ? now : null, decidedAt:now, updatedAt:now, source:'program'};
+    wr('c9-prefs', pr); send('prefs', {prefs:pr});
+    if(yes && box._optRec) ask(box._optRec, false); else { box.innerHTML = '<h4>Fuel check</h4><p class="fz-msg">No problem. If you change your mind, it’s in <a class="fz-set" href="' + esc(SETTINGS) + '">Coaching preferences</a>.</p>'; }
+    return; } var key = box.dataset.key, e = FUEL[key] = FUEL[key] || {}, m = key.match(/\d+/g), rec = {week:+m[0], day:+m[1], completedAt:e.askedAt};
+  if(b.dataset.a){ var a = b.dataset.a;
+    if(a === 'ok' || a === 'meh'){ push(e, 'me', b.textContent); push(e, 'coach', a === 'ok' ? 'Good. Eat something proper tonight, protein first — we’ll talk food tomorrow.' : 'Thanks for being honest. Keep tonight simple: a warm meal, water, early night. If it’s more than a bad day, tell me — we can lighten next week.'); e.mood = a; save(); redraw(); return; }
+    if(a === 'eat'){ e.prompt = 'fuel'; e.thread = []; save(); ask(Object.assign(rec, {notes:''}), e.rest && !!e.restDeclared); return; }
+    e.answer = a; if(a === 'yes'){ box.querySelector('textarea').focus(); box.querySelector('textarea').placeholder = 'What did you have? e.g. 3 eggs and toast, chicken wrap for lunch'; return; }
+    respond(key, b.textContent, a); return; }
+  var act = b.dataset.act;
+  if(act === 'goal'){ box.insertAdjacentHTML('beforeend', goalForm(profile())); var f = box.querySelector('#fzgoal'); if(f) f.scrollIntoView({block:'nearest'}); }
+  if(act === 'close'){ var g = box.querySelector('#fzgoal'); if(g) g.remove(); }
+  if(act === 'relax'){ var gg = rd('c9-goal', null); if(gg){ gg.mode = 'relaxed'; wr('c9-goal', gg); send('goal', {goal:gg, change:'relaxed'}); } redraw(); }
+  if(act === 'weigh'){ var v = prompt('Your weight this morning (kg):'); if(v && +v > 30){ var G = rd('c9-goal', {}); G.weighins = (G.weighins || []).concat([{date:new Date().toISOString().slice(0, 10), kg:+v}]); wr('c9-goal', G); wr('c9-weight', +v); send('weigh_in', {kg:+v, goal:G}); push(e, 'coach', paceLine(G)); save(); redraw(); } }
+}
+function paceLine(G){
+  var w = G.weighins || []; if(w.length < 2) return 'Logged. Weigh in on the same morning each week — one number means little, the trend means everything.';
+  var a = w[w.length - 2], b = w[w.length - 1], days = Math.max(1, (new Date(b.date) - new Date(a.date)) / 864e5), wk = (b.kg - a.kg) / days * 7, c = goalCheck({startKg:b.kg, targetKg:G.targetKg, date:G.date}, {});
+  var need = c.rate, on = Math.abs(wk - need) <= Math.max(.25, Math.abs(need) * .4);
+  return 'Logged: ' + b.kg + ' kg (' + (wk > 0 ? '+' : '') + (Math.round(wk * 10) / 10) + ' kg a week lately). ' + (on ? 'Right on pace — keep doing exactly this.' : (Math.abs(wk) < Math.abs(need) ? 'A little behind the pace you need. Weekends usually explain it — we’ll tighten one meal, not the whole week.' : 'Faster than planned. That sounds good, but too fast costs muscle — eat a bit more on training days.'));
+}
+function onSubmit(ev){
+  ev.preventDefault(); var f = ev.target;
+  if(f.id === 'fzgoal'){
+    var p = profile(), g = {event:f.event.value.trim(), date:f.date.value, startKg:+f.startKg.value, targetKg:+f.targetKg.value, createdAt:new Date().toISOString(), mode:'focused', weighins:[{date:new Date().toISOString().slice(0, 10), kg:+f.startKg.value}]};
+    if(!g.date || !g.startKg || !g.targetKg || new Date(g.date) <= new Date()) { alert('Add a date in the future, your weight now and your goal weight.'); return; }
+    var c = goalCheck(g, p), key = box.dataset.key, e = FUEL[key] = FUEL[key] || {};
+    if(c.verdict === 'unsafe'){ g.requestedKg = g.targetKg; g.targetKg = c.realistic; g.flag = 'unsafe_rate'; }
+    g.kcalDelta = c.kcalDelta; g.check = c; wr('c9-goal', g); wr('c9-weight', g.startKg); send('goal', {goal:g});
+    var msg = c.verdict === 'ok' ? 'Done — focused mode is on. ' + Math.abs(g.targetKg - g.startKg).toFixed(1) + ' kg in ' + Math.round(c.weeks) + ' weeks is a realistic pace (about ' + Math.abs(c.rate) + ' kg a week). Log every meal from now on and I’ll tell you what’s left each day.'
+      : c.verdict === 'ambitious' ? 'Focused mode is on. ' + Math.abs(g.targetKg - g.startKg).toFixed(1) + ' kg in ' + Math.round(c.weeks) + ' weeks is ambitious but possible — it means being consistent every week, weekends included. Log every meal and weigh in weekly.'
+      : 'Focused mode is on — but I’ve set the target to ' + g.targetKg + ' kg. Going for ' + g.requestedKg + ' kg in ' + Math.round(c.weeks) + ' weeks would mean losing more than 1% of your body weight a week, which mostly costs muscle and energy and tends to bounce back.' + (PREM ? ' ' + COACH.charAt(0).toUpperCase() + COACH.slice(1) + ' will go through it with you.' : ' Hit ' + g.targetKg + ' kg looking strong rather than drained.');
+    push(e, 'coach', msg); save(); redraw(); return;
+  }
+  if(f.classList.contains('fz-in')){ var t = f.querySelector('textarea').value.trim(); if(!t) return; var kk = box.dataset.key, ee = FUEL[kk] = FUEL[kk] || {}; respond(kk, t, /\b(skip|skipped|nothing|haven.?t eaten|didn.?t eat)\b/i.test(t) ? 'skipped' : 'yes', t); }
+}
+function push(e, who, text){ (e.thread = e.thread || []).push(who === 'me' ? {who:'me', text:text, at:new Date().toISOString()} : {who:'coach', html:text.indexOf('<button') > -1 ? text : esc(text), at:new Date().toISOString()}); }
+function respond(key, shown, answer, text){
+  var e = FUEL[key] = FUEL[key] || {}, m = key.match(/\d+/g), rec = {week:+m[0], day:+m[1], completedAt:e.askedAt || new Date().toISOString()}, ctx = ctxFor(rec, !!e.restDeclared);
+  e.answer = answer; e.text = ((e.text ? e.text + ' · ' : '') + (text || '')).trim(); e.parsed = parse(e.text); e.answeredAt = new Date().toISOString();
+  var r = reply(e, ctx); e.flags = Array.from(new Set((e.flags || []).concat(r.flags))); e.targets = ctx.tg;
+  push(e, 'me', shown); save();
+  if(CFG.coachUrl){ push(e, 'coach', '…'); redraw(); var idx = e.thread.length - 1;
+    fetch(CFG.coachUrl, {method:'POST', headers:{'Content-Type':'application/json'}, credentials:'include', body:JSON.stringify(payload(rec, e, ctx, {prompt:'fuel_answer', answer:answer, message:text || shown, draftReply:r.text}))})
+      .then(function(res){ return res.json(); }).then(function(j){ e.thread[idx] = {who:'coach', html:esc(j.reply || r.text), at:new Date().toISOString(), ai:!!j.reply}; if(j.flags) e.flags = Array.from(new Set(e.flags.concat(j.flags))); save(); redraw(); })
+      .catch(function(){ e.thread[idx] = {who:'coach', html:r.text.indexOf('<button') > -1 ? r.text : esc(r.text), at:new Date().toISOString()}; save(); redraw(); });
+  } else { push(e, 'coach', r.text); save(); redraw(); }
+  send('fuel_answer', payload(rec, e, ctx, {answer:answer}));
+  drift(); maybeReport(rec.week);
+}
+function redraw(key){ key = key || box.dataset.key; var e = FUEL[key] || {}, m = key.match(/\d+/g), rec = {week:+m[0], day:+m[1], completedAt:e.askedAt}, ctx = ctxFor(rec, !!e.restDeclared);
+  var answered = (e.thread || []).length > 0;
+  draw(key, e.head || '<p class="fz-msg"><b>What have you eaten today?</b></p>', (!answered && e.chips ? chips(e.chips) : '') + (TIER === 'free' ? '' : area()) + (e.prompt === 'reminder' ? '' : modeLine(ctx.p))); }
+
+/* ---------- drift & check-in reports ---------- */
+function days(fromW, toW){ var out = []; for(var w = fromW; w <= toW; w++) for(var d = 1; d <= 7; d++) out.push({w:w, d:d, key:k(w, d), day:dayOf(w, d)}); return out; }
+function drift(){
+  if(!PAID) return; var log = rd(LKEY, {}), all = Object.keys(FUEL).map(function(key){ return Object.assign({key:key}, FUEL[key]); }).filter(function(e){ return e.answeredAt || e.askedAt; }).sort(function(a, b){ return (a.askedAt || '') < (b.askedAt || '') ? -1 : 1; });
+  var last7 = all.filter(function(e){ return new Date() - new Date(e.askedAt) < 7 * 864e5; }), alerts = [];
+  var low = last7.filter(function(e){ return (e.flags || []).some(function(f){ return f === 'low_intake_reported' || f === 'no_food_by_evening' || f === 'skipped_meal'; }); }).length;
+  if(low >= 3) alerts.push({code:'under_fuelling', text:low + ' of the last ' + last7.length + ' check-ins show skipped meals or low intake.'});
+  var lastLog = Object.keys(log).map(function(x){ return log[x].completedAt; }).filter(Boolean).sort().pop();
+  if(lastLog && new Date() - new Date(lastLog) > 5 * 864e5) alerts.push({code:'gone_quiet', text:'No session logged for ' + Math.floor((new Date() - new Date(lastLog)) / 864e5) + ' days.'});
+  var unanswered = last7.filter(function(e){ return e.prompt === 'fuel' && !e.answeredAt; }).length; if(unanswered >= 3) alerts.push({code:'ignoring_checks', text:unanswered + ' fuel checks unanswered this week.'});
+  var pains = all.filter(function(e){ return (e.flags || []).indexOf('pain_note') > -1 && new Date() - new Date(e.askedAt) < 14 * 864e5; }).length; if(pains >= 2) alerts.push({code:'repeated_pain', text:'Pain mentioned in ' + pains + ' sessions in two weeks.', human:true});
+  var G = rd('c9-goal', null); if(G && G.flag === 'unsafe_rate') alerts.push({code:'unsafe_goal', text:'Asked for ' + G.requestedKg + ' kg by ' + G.date + ' — above 1% of body weight a week. Target set to ' + G.targetKg + ' kg.', human:true});
+  var sent = rd('c9-drift-' + PID, {}), fresh = alerts.filter(function(a){ return !sent[a.code] || new Date() - new Date(sent[a.code]) > 7 * 864e5; });
+  if(fresh.length){ fresh.forEach(function(a){ sent[a.code] = new Date().toISOString(); }); wr('c9-drift-' + PID, sent); send('drift_alert', {alerts:fresh, humanReview:PREM && fresh.some(function(a){ return a.human; })}); }
+  return alerts;
+}
+function exStats(fromW, toW){
+  var log = rd(LKEY, {}), by = {}, planned = 0, done = 0, short = 0, num = function(t){ var m = String(t).match(/\d+(?:\.\d+)?/g); return m ? m.map(Number) : null; };
+  for(var w = fromW; w <= toW; w++) for(var d = 1; d <= 7; d++){ var dy = dayOf(w, d), s = log[k(w, d)]; if(!dy || dy.type === 'rest' || !dy.ex || !s || !s.completedAt) continue;
+    dy.ex.forEach(function(e, i){ if(/Warm|Cool/.test(e[0]) || e[4] === 'done') return; var r = num(e[3]), lo = r ? r[0] : null, hi = r ? r[r.length - 1] : null, x = by[e[0]] = by[e[0]] || {name:e[0], planned:0, done:0, short:0, atTop:0, sessions:[]};
+      var sess = {week:w, done:0, short:0, top:e[4] === 'reps'};   // only rep-based lifts can be 'ready to progress'
+      for(var j = 0; j < e[2]; j++){ var v = (s.sets || {})[i + '-' + j] || {}; x.planned++; planned++;
+        if(v.done){ x.done++; done++; sess.done++; var val = v.val !== undefined && v.val !== '' ? +v.val : null;
+          if(lo != null && val != null && val < lo){ x.short++; short++; sess.short++; } if(hi == null || val == null || val < hi) sess.top = false; } else sess.top = false; }
+      if(sess.top) x.atTop++; x.sessions.push(sess); }); }
+  var list = Object.keys(by).map(function(n){ var x = by[n]; x.completionPct = x.planned ? Math.round(x.done / x.planned * 100) : null; return x; });
+  var missed = list.filter(function(x){ return x.planned && (x.done < x.planned || x.short); }).sort(function(a, b){ return (b.planned - b.done + b.short) - (a.planned - a.done + a.short); }).slice(0, 4)
+                   .map(function(x){ return {name:x.name, setsDone:x.done, setsPlanned:x.planned, setsShort:x.short}; });
+  var ready = list.filter(function(x){ var l = x.sessions.slice(-2); return l.length === 2 && l.every(function(q){ return q.top; }); }).map(function(x){ return x.name; });
+  return {setsPlanned:planned, setsDone:done, completionPct:planned ? Math.round(done / planned * 100) : null, setsShort:short, mostMissed:missed, readyToProgress:ready};
+}
+function report(block){
+  var to = block * 3, from = to - 2, log = rd(LKEY, {}), D = days(from, to), prevD = block > 1 ? days(from - 3, from - 1) : [], G = rd('c9-goal', null), p = profile();
+  function trainStats(list){ var planned = 0, done = 0, eff = [], slots = {}, notes = [], restDecl = 0;
+    list.forEach(function(x){ if(!x.day) return; var s = log[x.key], f = FUEL[x.key] || {}; if(f.restDeclared) restDecl++; if(x.day.type === 'rest') return; planned++;
+      if(s && s.completedAt){ done++; if(s.effort) eff.push(+s.effort); var sl = slotOf(s.completedAt); (slots[sl] = slots[sl] || {n:0, eff:[]}).n++; if(s.effort) slots[sl].eff.push(+s.effort); if(s.notes) notes.push({week:x.w, day:x.d, text:s.notes}); } });
+    var avg = function(a){ return a.length ? Math.round(a.reduce(function(x, y){ return x + y; }, 0) / a.length * 10) / 10 : null; };
+    Object.keys(slots).forEach(function(k2){ slots[k2] = {sessions:slots[k2].n, avgEffort:avg(slots[k2].eff)}; });
+    return {planned:planned, done:done, adherencePct:planned ? Math.round(done / planned * 100) : null, avgEffort:avg(eff), restDaysDeclared:restDecl, bySlot:slots, notes:notes}; }
+  function fuelStats(list){ var c = 0, ans = 0, fed = 0, prot = [], pctT = [], flags = {}, alc = 0, treats = 0, restChecks = 0;
+    list.forEach(function(x){ var f = FUEL[x.key]; if(!f || !f.askedAt) return; c++; if(f.rest) restChecks++; if(f.answeredAt) ans++; if(f.answer === 'yes' && f.parsed && f.parsed.items.length) fed++;
+      if(f.parsed && f.parsed.protein){ prot.push(f.parsed.protein); if(f.targets && f.targets.protein) pctT.push(f.parsed.protein / (f.targets.protein * (EXPECT[f.slot] || .7))); }
+      (f.flags || []).forEach(function(fl){ flags[fl] = (flags[fl] || 0) + 1; }); if(f.parsed){ alc += f.parsed.alcohol; treats += f.parsed.treat; } });
+    var avg = function(a){ return a.length ? Math.round(a.reduce(function(x, y){ return x + y; }, 0) / a.length) : null; };
+    return {checks:c, answered:ans, answerRatePct:c ? Math.round(ans / c * 100) : null, fuelledReports:fed, restDayChecks:restChecks, avgProteinSoFar:avg(prot), proteinVsExpectedPct:pctT.length ? Math.round(pctT.reduce(function(x, y){ return x + y; }, 0) / pctT.length * 100) : null, flags:flags, alcoholDrinks:alc, treats:treats}; }
+  var T = trainStats(D), F = fuelStats(D), T0 = prevD.length ? trainStats(prevD) : null, F0 = prevD.length ? fuelStats(prevD) : null, dev = [], advice = [];
+  var X = exStats(from, to), X0 = block > 1 ? exStats(from - 3, from - 1) : null;
+  if(X0 && X.completionPct != null && X0.completionPct != null && Math.abs(X.completionPct - X0.completionPct) >= 10) dev.push('Sets completed ' + (X.completionPct > X0.completionPct ? 'up' : 'down') + ' from ' + X0.completionPct + '% to ' + X.completionPct + '%.');
+  X.mostMissed.slice(0, 2).forEach(function(m){ advice.push(m.name + ': ' + m.setsDone + ' of ' + m.setsPlanned + ' sets done' + (m.setsShort ? ', ' + m.setsShort + ' short of target reps' : '') + '. Check the load or technique — drop ~10% or add a rest-pause before progressing.'); });
+  if(X.readyToProgress.length) advice.push('Ready to progress (target reps hit on every set, two sessions running): ' + X.readyToProgress.slice(0, 5).join(', ') + '. Add 2.5–5% weight or a rep next time.');
+  if(T0 && T.adherencePct != null && T0.adherencePct != null && Math.abs(T.adherencePct - T0.adherencePct) >= 15) dev.push('Session adherence ' + (T.adherencePct > T0.adherencePct ? 'up' : 'down') + ' from ' + T0.adherencePct + '% to ' + T.adherencePct + '%.');
+  if(T0 && T.avgEffort && T0.avgEffort && Math.abs(T.avgEffort - T0.avgEffort) >= 1) dev.push('Average effort ' + (T.avgEffort > T0.avgEffort ? 'up' : 'down') + ' from ' + T0.avgEffort + ' to ' + T.avgEffort + '/10.');
+  if(F0 && F.proteinVsExpectedPct != null && F0.proteinVsExpectedPct != null && Math.abs(F.proteinVsExpectedPct - F0.proteinVsExpectedPct) >= 15) dev.push('Protein vs expected ' + (F.proteinVsExpectedPct > F0.proteinVsExpectedPct ? 'up' : 'down') + ' from ' + F0.proteinVsExpectedPct + '% to ' + F.proteinVsExpectedPct + '%.');
+  var su = Object.keys(T.bySlot).sort(function(a, b){ return T.bySlot[b].sessions - T.bySlot[a].sessions; }), su0 = T0 ? Object.keys(T0.bySlot).sort(function(a, b){ return T0.bySlot[b].sessions - T0.bySlot[a].sessions; }) : [];
+  if(su[0] && su0[0] && su[0] !== su0[0]) dev.push('Main training time moved from ' + SLOTN[su0[0]] + ' to ' + SLOTN[su[0]] + '.');
+  if(su.length > 1){ var hi = su.filter(function(s){ return T.bySlot[s].avgEffort; }).sort(function(a, b){ return T.bySlot[b].avgEffort - T.bySlot[a].avgEffort; }); if(hi.length > 1 && T.bySlot[hi[0]].avgEffort - T.bySlot[hi[hi.length - 1]].avgEffort >= 1.2) dev.push(SLOTN[hi[0]].charAt(0).toUpperCase() + SLOTN[hi[0]].slice(1) + ' sessions feel harder (' + T.bySlot[hi[0]].avgEffort + ' vs ' + T.bySlot[hi[hi.length - 1]].avgEffort + '/10 ' + SLOTN[hi[hi.length - 1]] + ').'); }
+  if(T.adherencePct != null && T.adherencePct < 70) advice.push('Adherence is under 70%. Ask what got in the way before changing the plan — a 4-day version of this program may fit their week better.');
+  if(F.flags.low_intake_reported || F.flags.no_food_by_evening) advice.push('Possible under-fuelling showed up ' + ((F.flags.low_intake_reported || 0) + (F.flags.no_food_by_evening || 0)) + ' times. Check appetite and schedule on training days; suggest one easy pre-planned meal for the busiest day.');
+  if(F.flags.skipped_meal >= 2) advice.push('Meals skipped ' + F.flags.skipped_meal + ' times — find out which meal and why (time, appetite, habit). Offer a 2-minute fallback.');
+  if(F.proteinVsExpectedPct != null && F.proteinVsExpectedPct < 75) advice.push('Protein is running at about ' + F.proteinVsExpectedPct + '% of what we’d expect. One protein add-on per day (quark, eggs, a shake) is the simplest fix.');
+  if(F.answerRatePct != null && F.answerRatePct < 50) advice.push('Fewer than half of the fuel checks get answered. Keep questions shorter, or move them to a weekly summary for this client.');
+  if(F.alcoholDrinks >= 6) advice.push(F.alcoholDrinks + ' drinks mentioned in three weeks — worth a non-judgemental chat about sleep and recovery.');
+  if(F.flags.pain_note) advice.push('Pain noted ' + F.flags.pain_note + ' time(s) — review these notes personally before progressing loads.');
+  if(F.flags.low_mood >= 2) advice.push('Low mood or stress came up ' + F.flags.low_mood + ' times — consider a lighter week and a personal message.');
+  if(G && G.mode === 'focused'){ var gc = goalCheck({startKg:(G.weighins && G.weighins.length ? G.weighins[G.weighins.length - 1].kg : G.startKg), targetKg:G.targetKg, date:G.date}, p); advice.push('Focused goal: ' + (G.event || 'goal') + ', ' + G.targetKg + ' kg by ' + G.date + '. Now ' + gc.weeks + ' weeks out, needs ' + Math.abs(gc.rate) + ' kg a week (' + gc.verdict + ').' + (G.flag === 'unsafe_rate' ? ' Their original request (' + G.requestedKg + ' kg) was unsafe — confirm they’re OK with the adjusted target.' : '')); }
+  if(!advice.length) advice.push('On track. Reinforce what’s working — name one specific win from the notes in your check-in.');
+  return {type:'checkin_report', block:block, weeks:from + '–' + to, programId:PID, programLevel:P.level || null, tier:TIER, generatedAt:new Date().toISOString(),
+    client:{clientId:CFG.clientId || Q.get('client') || (rd('c9-profile', {}) || {}).clientId || null, weight:p.weight || null, age:p.age || null, lifeStage:p.stage, plate:p.plate},
+    training:T, exercises:X, fuel:F, previousBlock:T0 ? {training:T0, exercises:X0, fuel:F0} : null, goal:G, deviations:dev, currentAlerts:drift() || [], adviceForCoach:advice,
+    note:'Food figures are rough estimates from what the client typed (±25%). Read the trend, not single days.'};
+}
+function weekSummary(){
+  var sent = rd('c9-weeks-' + PID, {}), log = rd(LKEY, {});
+  for(var w = 1; w <= 9; w++){ if(sent[w]) continue; var planned = 0, doneN = 0;
+    for(var d = 1; d <= 7; d++){ var dy = dayOf(w, d), s = log[k(w, d)]; if(dy && dy.type !== 'rest'){ planned++; if(s && s.completedAt) doneN++; } }
+    var later = Object.keys(log).some(function(key){ var m = key.match(/\d+/g); return +m[0] > w && log[key].completedAt; });
+    if(planned && (doneN >= planned || (later && doneN))){ var x = exStats(w, w); sent[w] = new Date().toISOString(); wr('c9-weeks-' + PID, sent);
+      send('week_summary', {week:w, sessionsDone:doneN, sessionsPlanned:planned, exercises:x, forNextWeek:x.mostMissed.map(function(m){ return m.name; }), readyToProgress:x.readyToProgress}); } }
+}
+function maybeReport(week){
+  weekSummary();
+  if(!PAID) return; var sent = rd('c9-reports-' + PID, {});
+  [1, 2, 3].forEach(function(b){ var last = b * 3; if(sent[b]) return; var log = rd(LKEY, {}), planned = 0, done = 0, any = false;
+    for(var d = 1; d <= 7; d++){ var dy = dayOf(last, d), s = log[k(last, d)]; if(dy && dy.type !== 'rest'){ planned++; if(s && s.completedAt) done++; } if(s && s.completedAt) any = true; }
+    var later = Object.keys(log).some(function(key){ var m = key.match(/\d+/g); return +m[0] > last && log[key].completedAt; });
+    if((any && done >= planned) || later){ var r = report(b); sent[b] = r.generatedAt; wr('c9-reports-' + PID, sent); send('checkin_report', r);
+      if(box && !box.hidden) box.insertAdjacentHTML('beforeend', '<p class="fz-note">✓ Your week ' + last + ' check-in has been sent to ' + esc(COACH) + '.</p>'); } });
+}
+function payload(rec, e, ctx, extra){
+  return Object.assign({programId:PID, tier:TIER, week:rec.week, day:rec.day, slot:e.slot, restDay:!!e.rest, restDeclared:!!e.restDeclared, mode:e.mode, workout:(ctx.day || {}).title || null, workoutType:(ctx.day || {}).type || null,
+    focus:ctx.focus, personalBests:ctx.pr, targets:ctx.tg, profile:{weight:ctx.p.weight || null, age:ctx.p.age || null, lifeStage:ctx.p.stage, plate:ctx.p.plate}, goal:ctx.p.goal || null,
+    timing:{usual:ctx.t.usual, bySlot:ctx.t.by}, text:e.text || null, parsed:e.parsed || null, flags:e.flags || []}, extra || {});
+}
+function send(type, detail){
+  var clientId = CFG.clientId || Q.get('client') || (rd('c9-profile', {}) || {}).clientId || null;
+  var pl = Object.assign({type:type, programId:PID, clientId:clientId, tier:TIER, sentAt:new Date().toISOString()}, detail);
+  try{ window.dispatchEvent(new CustomEvent('c9:' + type, {detail:pl})); (window.dataLayer = window.dataLayer || []).push(Object.assign({event:'c9_' + type}, {programId:PID, tier:TIER})); }catch(e){}
+  if(CFG.webhookUrl){ try{ fetch(CFG.webhookUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(pl), keepalive:true}).catch(function(){}); }catch(e){} }
+}
+
+/* ---------- wiring ---------- */
+window.addEventListener('c9:view', function(ev){
+  VIEW = ev.detail; if(!box && !mount()) return;
+  var key = k(VIEW.w, VIEW.d), e = FUEL[key], dy = dayOf(VIEW.w, VIEW.d) || {};
+  restBtn.hidden = !(VIEW.member && dy.type !== 'rest' && !VIEW.done && !(e && e.restDeclared) && VIEW.w <= 9);
+  var pr = PREFS(); if(VIEW.member && e && e.askedAt && !(pr && !pr.fuel)){ redraw(key); } else if(box.dataset.key === key && !box.hidden && (box._optRec || e && e.restDeclared)){ /* keep the opt-in / rest note on screen */ } else box.hidden = true;
+});
+window.addEventListener('c9:session', function(ev){
+  var r = ev.detail; if(!r || !r.week || r.type !== 'session') return; setTimeout(function(){ maybeReport(r.week); }, 0);   // training reports go out even if the Fuel check is off
+  if(!box && !mount()) return;
+  var key = k(r.week, r.day), e = FUEL[key] || {}, pr = PREFS(), dy = dayOf(r.week, r.day) || {};
+  if(e.askedAt && e.answeredAt){ redraw(key); return; }
+  if(TIER !== 'free' && !pr){ optIn(r); return; }
+  if(pr && !pr.fuel){ box.hidden = true; return; }
+  if(dy.type === 'rest' && PAID && pr && pr.restChecks === false){ box.hidden = true; return; }
+  FUEL[key] = e; ask(r, false);
+  setTimeout(function(){ box.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 120);
+  maybeReport(r.week); drift();
+});
+if(window.C9_VIEW) window.dispatchEvent(new CustomEvent('c9:view', {detail:window.C9_VIEW}));
+window.C9Fuel = {report:report, drift:drift, parse:parse, tier:TIER, data:function(){ return {fuel:FUEL, goal:rd('c9-goal', null)}; }};
+})();
+</script>
+<script>/* c9plan */
+/* Code9 · The workouts, phase by phase (in the 3 Phases section) + week 9 notice + Reset week reveal.
+   Full sessions for admin and paying clients; visitors see week 1, day 1 and the day titles. The Reset week (10) stays hidden until the start of week 9. */
+(function(){
+'use strict';
+if(typeof PROGRAM === 'undefined') return;
+var box = document.getElementById('c9plan'); if(!box) return;
+var C = window.C9_CONFIG || {};
+var UNIT = {reps:'', s:' sec', min:' min', m:' m', done:''};
+var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+var fmt = function(e){ return e[4] === 'done' ? e[3] : (e[2] === 1 ? e[3] + UNIT[e[4]] : e[2] + ' × ' + e[3] + UNIT[e[4]]) + (e[5] ? ' each side' : ''); };
+var LOCK = '<svg class="pl-lk" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+var TABS = [{i:0, lab:'Phase 1', wk:'Weeks 1–3', start:1}, {i:1, lab:'Phase 2', wk:'Weeks 4–6', start:4}, {i:2, lab:'Phase 3', wk:'Weeks 7–8', start:7}, {i:3, lab:'Week 9', wk:'Peak & Test', start:9}, {i:4, lab:'Week 10', wk:'Reset · bonus', start:10, reset:true}];
+var VIEW = window.C9_VIEW || {}, cur = 0, sig = '';
+function member(){ return C.access === 'member' || VIEW.member; }
+function admin(){ return C.role === 'admin'; }
+function resetOpen(){ return admin() || !!VIEW.resetOpen; }
+function weekFor(t){ var w = VIEW.w || 1; if(t.i === 0 && w >= 1 && w <= 3) return w; if(t.i === 1 && w >= 4 && w <= 6) return w; if(t.i === 2 && w >= 7 && w <= 8) return w; return t.start; }
+function dayBody(dy, unlocked){
+  if(!unlocked) return '<div class="pl-lock">' + LOCK + '<span>This session is part of the full program.</span><a class="pl-go" href="#tracker" data-unlock="1">Unlock the program →</a></div>';
+  if(dy.type === 'rest') return '<p class="pl-rest">' + esc(dy.focus || 'Rest or easy movement') + (dy.opts && dy.opts.length ? ' · ' + esc(dy.opts.join(', ')) : '') + '</p>';
+  var meta = dy.rounds ? (dy.amrap ? 'AMRAP ' + esc(dy.amrap) : 'Circuit × ' + esc(dy.roundsLabel || dy.rounds) + ' rounds') + ' · move straight between exercises' : 'Rest ' + (dy.rest || 60) + ' s between sets';
+  return '<p class="pl-meta">' + meta + '</p><ol class="pl-ex">' + (dy.ex || []).map(function(e){ return '<li><b>' + esc(e[0]) + '</b><span class="pl-t">' + esc(fmt(e)) + '</span>' + (e[1] ? '<em>' + esc(e[1]) + '</em>' : '') + '</li>'; }).join('') + '</ol>' + (dy.tip ? '<p class="pl-tip">' + esc(dy.tip) + '</p>' : '');
+}
+function render(){
+  var open = resetOpen(), m = member(), s = [m, open, admin(), cur].join('|'); if(s === sig) return; sig = s;
+  var tabs = TABS.filter(function(t){ return !t.reset || open; });
+  if(!tabs.some(function(t){ return t.i === cur; })) cur = 0;
+  var t = TABS[cur], ph = PROGRAM.phases[t.i] || {days:[]};
+  var h = '<div class="pl-head"><div><h3>The workouts, phase by phase</h3><p>Every day of every phase — open a day to see the full session, then start it in the tracker.</p></div>' + (admin() ? '<span class="pl-adm">Admin · full view</span>' : '') + '</div>';
+  h += '<div class="pl-tabs" role="tablist">' + tabs.map(function(x){ return '<button type="button" role="tab" class="pl-tab' + (x.i === cur ? ' on' : '') + (x.reset ? ' rs' : '') + '" aria-selected="' + (x.i === cur) + '" data-t="' + x.i + '"><b>' + x.lab + '</b><span>' + x.wk + '</span></button>'; }).join('') + '</div>';
+  if(t.i === 3) h += '<p class="pl-note"><b>Peak &amp; Test.</b> One set fewer, same weights — and your Code9 benchmarks. Give them everything.' + (open ? ' Next week is a calmer Reset week to recover.' : '') + '</p>';
+  if(t.reset) h += '<p class="pl-note"><b>Bonus Reset week.</b> Half the sets, about 60% of your usual weights, no intervals or finishers. It doesn’t count towards your 9 weeks — it sets you up for the next block.' + (admin() ? ' <i>Clients see this from the start of week 9.</i>' : '') + '</p>';
+  h += '<div class="pl-days">' + ph.days.map(function(dy, d){
+    var unlocked = m || (t.i === 0 && d === 0), n = (dy.ex || []).length, sets = (dy.ex || []).reduce(function(a, e){ return a + (e[2] || 0); }, 0);
+    var sub = dy.type === 'rest' ? 'Recovery' : unlocked && n ? n + ' exercises · ' + sets + ' ' + (dy.rounds ? 'blocks' : 'sets') : ({strength:'Strength', cardio:'Cardio / HIIT', circuit:'Circuit'}[dy.type] || '');
+    return '<details class="pl-day' + (dy.type === 'rest' ? ' rest' : '') + '"' + (d === 0 && cur === 0 ? ' open' : '') + '><summary><span class="pl-dn">Day ' + (d + 1) + '</span><span class="pl-dt">' + esc(dy.title || dy.short || '') + '</span><span class="pl-ds">' + (unlocked ? '' : LOCK) + esc(sub) + '</span></summary>' +
+      '<div class="pl-body">' + dayBody(dy, unlocked) + (unlocked && dy.type !== 'rest' ? '<button type="button" class="pl-go" data-w="' + weekFor(t) + '" data-d="' + (d + 1) + '">Start in the tracker · week ' + weekFor(t) + ', day ' + (d + 1) + ' →</button>' : '') + '</div></details>';
+  }).join('') + '</div>';
+  box.innerHTML = h;
+}
+box.addEventListener('click', function(ev){
+  var tb = ev.target.closest('.pl-tab'); if(tb){ cur = +tb.dataset.t; sig = ''; render(); return; }
+  var g = ev.target.closest('.pl-go'); if(!g) return; ev.preventDefault();
+  var tr = document.getElementById('tracker');
+  if(g.dataset.w){ var w = +g.dataset.w, d = +g.dataset.d, wb = document.querySelector('.wchip[data-w="' + w + '"]'); if(wb){ wb.hidden = false; wb.click(); } var db = document.querySelectorAll('.dchip')[d - 1]; if(db) db.click(); }
+  else { var lk = document.querySelector('.wchip[data-w="2"]'); if(lk) lk.click(); }
+  if(tr) tr.scrollIntoView({behavior:'smooth', block:'start'});
+});
+/* week 9 notice in the tracker */
+function notice(){
+  var wc = document.getElementById('wcard'); if(!wc) return; var n = document.getElementById('c9w9');
+  var show = VIEW.w === 9 && member();
+  if(!show){ if(n) n.remove(); return; }
+  if(!n){ n = document.createElement('div'); n.id = 'c9w9'; n.className = 'card c9w9'; wc.parentNode.insertBefore(n, wc); }
+  n.innerHTML = '<b>Week 9 · Peak &amp; Test</b><span>Give your benchmarks everything this week. <strong>Next week is a calmer Reset week</strong> — half the volume, lighter weights — so there’s nothing to save it for.</span>';
+}
+function unlockedOnce(){
+  if(!VIEW.resetOpen || admin()) return; var k = 'c9-reset-open-' + PROGRAM.id; try{ if(localStorage.getItem(k)) return; localStorage.setItem(k, new Date().toISOString()); }catch(e){ return; }
+  try{ window.dispatchEvent(new CustomEvent('c9:reset_unlocked', {detail:{programId:PROGRAM.id, at:new Date().toISOString()}})); }catch(e){}
+  if(C.webhookUrl) try{ fetch(C.webhookUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({type:'reset_unlocked', programId:PROGRAM.id, clientId:C.clientId || null, sentAt:new Date().toISOString()}), keepalive:true}).catch(function(){}); }catch(e){}
+}
+window.addEventListener('c9:view', function(ev){ VIEW = ev.detail || {}; render(); notice(); unlockedOnce(); });
+window.addEventListener('c9:access', function(){ sig = ''; render(); notice(); });
+render();
+})();
+</script>
 </body>
 </html>
