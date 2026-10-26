@@ -165,6 +165,17 @@ export default function CartPage() {
                           <p style={{ color: 'var(--ink-dim)', marginTop: '4px' }}>
                             {details.description}
                           </p>
+                          {item.type === 'program' && (
+                            <a
+                              href={`/pdfs/${item.slug}.pdf`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-block mt-4 px-4 py-2 rounded text-sm font-semibold"
+                              style={{ background: 'var(--accent)', color: 'var(--on-accent)', textDecoration: 'none' }}
+                            >
+                              Download Now
+                            </a>
+                          )}
                         </div>
                         <button
                           onClick={() => handleRemove(item.type, item.slug)}
