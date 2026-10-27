@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from '@/components/primitives';
@@ -17,6 +18,16 @@ interface Resource {
 }
 
 const resources: Resource[] = [
+  {
+    id: 'checkin-guide',
+    title: 'Weekly Check-In Guide',
+    description: 'A 60-second habit that helps coaches improve your training. Learn how to fill in your weekly check-in for maximum coaching effectiveness.',
+    category: 'guides',
+    file: '/C9F_CheckIn_Guide.pdf',
+    fileSize: '83 KB',
+    type: 'pdf',
+    viewable: false,
+  },
   {
     id: 'fasting',
     title: '72-Hour Fasting Protocol',
@@ -70,9 +81,112 @@ const resources: Resource[] = [
 ];
 
 const categories = [
+  { id: 'guides', name: 'Guides' },
   { id: 'wellness', name: 'Wellness & Recovery' },
   { id: 'checklists', name: 'Check-In Checklists' },
 ];
+
+interface FreePackage {
+  id: 'bundle-3x4' | 'bundle-4x4' | 'session-tracker';
+  title: string;
+  description: string;
+  files: string[];
+  highlight?: boolean;
+}
+
+const freePackages: FreePackage[] = [
+  {
+    id: 'bundle-3x4',
+    title: '3-Day Program Pack',
+    description: 'Complete 3-day training program with daily check-in templates to track your progress and adjust as needed.',
+    files: ['3x4 Program Pack', 'Check-in Templates (3x)'],
+    highlight: true,
+  },
+  {
+    id: 'bundle-4x4',
+    title: '4-Day Program Pack',
+    description: 'Full 4-day periodized program with comprehensive check-in system for consistent tracking.',
+    files: ['4x4 Program Pack', 'Check-in Templates (4x)'],
+    highlight: true,
+  },
+  {
+    id: 'session-tracker',
+    title: 'Session Tracker',
+    description: 'Simple but powerful template to log every training session and monitor your consistency.',
+    files: ['Session Tracker PDF'],
+  },
+];
+
+function FreeDownloadForm({ packageId, packageTitle }: { packageId: 'bundle-3x4' | 'bundle-4x4' | 'session-tracker'; packageTitle: string }) {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch('/api/free-downloads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, packageId }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || 'Failed to process request');
+        setLoading(false);
+        return;
+      }
+
+      setSuccess(true);
+      setEmail('');
+      setTimeout(() => setSuccess(false), 5000);
+    } catch (err) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-3">
+      {error && (
+        <div className="text-sm p-3 rounded" style={{ background: '#fee', color: '#d32f2f' }}>
+          {error}
+        </div>
+      )}
+      {success && (
+        <div className="text-sm p-3 rounded" style={{ background: '#efe', color: '#2d7a2d' }}>
+          ✓ Check your email for {packageTitle}!
+        </div>
+      )}
+      <div className="flex gap-2">
+        <input
+          type="email"
+          placeholder="your@email.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="flex-1 px-3 py-2 rounded text-sm"
+          style={{ borderColor: 'var(--line)', border: '1px solid', background: 'var(--surface)', color: 'var(--ink)' }}
+        />
+        <button
+          type="submit"
+          disabled={loading || !email}
+          className="px-4 py-2 rounded font-semibold text-sm transition-all disabled:opacity-40"
+          style={{ background: 'var(--accent)', color: 'var(--on-accent)', border: 'none', cursor: loading ? 'wait' : 'pointer' }}
+        >
+          {loading ? 'Sending...' : 'Get Free'}
+        </button>
+      </div>
+    </form>
+  );
+}
 
 export default function ResourcesPage() {
   const groupedResources = resources.reduce(
@@ -117,6 +231,61 @@ export default function ResourcesPage() {
                 Essential guides, protocols, and templates to optimize your training. Everything you need to get started—completely free.
               </p>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Free Multi-Package Downloads Section */}
+      <section style={{ background: 'var(--panel)', borderBottom: '1px solid var(--line)' }}>
+        <Container className="py-16">
+          <div className="max-w-3xl mb-12">
+            <div className="mb-2 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.15em]" style={{ color: 'var(--accent)' }}>
+              <span className="inline-block h-px w-5" style={{ background: 'var(--accent)' }} />
+              Free Multi-Package Downloads
+            </div>
+            <h2 className="font-display text-2xl font-semibold mb-4" style={{ color: 'var(--ink)' }}>
+              Complete Training Bundles
+            </h2>
+            <p style={{ color: 'var(--ink-dim)' }}>
+              Get everything you need to start training effectively. Programs, templates, and trackers—all sent straight to your email.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {freePackages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className="rounded border p-6 transition-all"
+                style={{
+                  borderColor: pkg.highlight ? 'var(--accent)' : 'var(--line)',
+                  background: 'var(--surface)',
+                  borderWidth: pkg.highlight ? '2px' : '1px',
+                }}
+              >
+                {pkg.highlight && (
+                  <div className="mb-3 inline-block px-2 py-1 rounded text-xs font-semibold" style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}>
+                    Popular
+                  </div>
+                )}
+                <h3 className="font-display font-semibold text-lg mb-2" style={{ color: 'var(--ink)' }}>
+                  {pkg.title}
+                </h3>
+                <p className="text-sm mb-4" style={{ color: 'var(--ink-dim)' }}>
+                  {pkg.description}
+                </p>
+
+                <div className="mb-6 space-y-2">
+                  {pkg.files.map((file, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm" style={{ color: 'var(--ink-dim)' }}>
+                      <span style={{ color: 'var(--accent)' }}>✓</span>
+                      {file}
+                    </div>
+                  ))}
+                </div>
+
+                <FreeDownloadForm packageId={pkg.id} packageTitle={pkg.title} />
+              </div>
+            ))}
           </div>
         </Container>
       </section>

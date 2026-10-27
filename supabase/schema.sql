@@ -106,16 +106,25 @@ create table bookings (
   created_at       timestamptz not null default now()
 );
 
+-- ─── free download signups (for email marketing follow-ups) ───────────────
+create table free_download_signups (
+  id         uuid primary key default gen_random_uuid(),
+  email      text not null,
+  package_id text not null,                -- 'bundle-3x4' | 'bundle-4x4' | 'session-tracker'
+  created_at timestamptz not null default now()
+);
+
 -- ─── row-level security ──────────────────────────────────────────────────
-alter table profiles      enable row level security;
-alter table consent       enable row level security;
-alter table coach_tiers   enable row level security;
-alter table chats         enable row level security;
-alter table plans         enable row level security;
-alter table logs          enable row level security;
-alter table coaches_human enable row level security;
-alter table availability  enable row level security;
-alter table bookings      enable row level security;
+alter table profiles              enable row level security;
+alter table consent               enable row level security;
+alter table coach_tiers           enable row level security;
+alter table chats                 enable row level security;
+alter table plans                 enable row level security;
+alter table logs                  enable row level security;
+alter table coaches_human         enable row level security;
+alter table availability          enable row level security;
+alter table bookings              enable row level security;
+alter table free_download_signups enable row level security;
 
 -- profiles: read/update your own; admins read all
 create policy "own profile"     on profiles for select using (id = auth.uid() or is_admin());
@@ -140,6 +149,10 @@ create policy "booking parties" on bookings for select
 create policy "client creates booking" on bookings for insert with check (client_user_id = auth.uid());
 create policy "parties update booking" on bookings for update
   using (client_user_id = auth.uid() or coach_user_id = auth.uid() or is_admin());
+
+-- free download signups: admins can view for follow-ups, service can insert
+create policy "read free downloads" on free_download_signups for select using (is_admin());
+create policy "insert free downloads" on free_download_signups for insert with check (true);
 
 -- auto-create a profile row on sign-up
 create or replace function handle_new_user() returns trigger
