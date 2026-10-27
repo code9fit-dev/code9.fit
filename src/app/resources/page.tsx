@@ -441,9 +441,6 @@ export default function ResourcesPage() {
                               Download
                             </a>
                           )}
-                          <span className="text-xs font-mono uppercase" style={{ color: 'var(--ink-dim)' }}>
-                            {resource.type.toUpperCase()} • {resource.fileSize}
-                          </span>
                         </div>
                       </div>
                     ))}
