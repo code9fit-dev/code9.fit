@@ -6,6 +6,10 @@ import { useState } from 'react';
 export function HeaderNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleLogoClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header
       className="sticky top-0 z-50 border-b backdrop-blur-sm"
@@ -17,7 +21,7 @@ export function HeaderNav() {
       }}
     >
       <div style={{ maxWidth: '1040px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '68px', gap: '16px' }}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+        <Link href="/" onClick={handleLogoClick} style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', cursor: 'pointer' }}>
           <span className="font-display font-bold" style={{ fontSize: '20px', letterSpacing: '-.01em', lineHeight: '1' }}>
             <span style={{ color: 'var(--ink)' }}>CODE</span>
             <span style={{ color: '#C87137' }}>9</span>
@@ -80,25 +84,25 @@ export function HeaderNav() {
                   boxShadow: '0 14px 34px rgba(0,0,0,.20)',
                 }}
               >
-                <Link href="/#coaches" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
+                <Link href="/#coaches" onClick={() => { setMenuOpen(false); }} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Coaches
                 </Link>
-                <Link href="/#how" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
+                <Link href="/#how" onClick={() => { setMenuOpen(false); }} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   How it works
                 </Link>
-                <Link href="/#trust" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
+                <Link href="/#trust" onClick={() => { setMenuOpen(false); }} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Why C9F
                 </Link>
-                <Link href="/#pricing" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
+                <Link href="/#pricing" onClick={() => { setMenuOpen(false); }} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Pricing
                 </Link>
-                <Link href="/library" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
+                <Link href="/library" onClick={() => { setMenuOpen(false); }} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Find your program
                 </Link>
-                <Link href="/resources" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--accent)', fontSize: '14px', transition: 'all .2s', fontWeight: '600' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)'; }}>
+                <Link href="/resources" onClick={() => { setMenuOpen(false); }} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--accent)', fontSize: '14px', transition: 'all .2s', fontWeight: '600' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)'; }}>
                   📚 Free Resources
                 </Link>
-                <Link href="/onboarding" onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
+                <Link href="/onboarding" onClick={() => { setMenuOpen(false); }} style={{ display: 'block', padding: '9px 12px', borderRadius: '9px', textDecoration: 'none', color: 'var(--ink)', fontSize: '14px', transition: 'all .2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--on-accent)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink)'; }}>
                   Find your coach
                 </Link>
               </div>
