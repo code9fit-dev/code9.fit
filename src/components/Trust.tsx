@@ -25,7 +25,7 @@ export function Trust() {
             <SectionHead
               eyebrow="Why C9F"
               title="Built on real coaching. Not just a prompt."
-              sub="Every specialist in this system runs on methodology developed and tested through ImpactShredz — years of real training and high-level sport, turned into structured programming, not generated from a generic model with no coaching background behind it."
+              sub="Every specialist in this system runs on methodology developed and tested through @hybrid.impact — years of real training and high-level sport, turned into structured programming, not generated from a generic model with no coaching background behind it."
             />
 
             <div className="flex flex-col gap-4">
