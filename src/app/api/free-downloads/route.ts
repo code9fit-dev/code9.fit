@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface FreeDownloadRequest {
   email: string;
@@ -30,7 +27,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabase = getSupabaseServerClient();
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY not configured');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
+
+    const { Resend } = await import('resend');
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    const supabase = await getSupabaseServerClient();
+
+    if (!supabase) {
+      return NextResponse.json(
+        { error: 'Supabase not configured' },
+        { status: 500 }
+      );
+    }
 
     // Store email for follow-up promotions
     const { error: dbError } = await supabase
