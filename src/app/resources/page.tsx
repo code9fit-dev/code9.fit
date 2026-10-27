@@ -81,9 +81,9 @@ const resources: Resource[] = [
 ];
 
 const categories = [
+  { id: 'checklists', name: 'Check-In Checklists' },
   { id: 'guides', name: 'Guides' },
   { id: 'wellness', name: 'Wellness & Recovery' },
-  { id: 'checklists', name: 'Check-In Checklists' },
 ];
 
 interface FreePackage {
