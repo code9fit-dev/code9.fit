@@ -273,35 +273,35 @@ export default function CoachChatPage() {
   }
 
   return (
-    <div className="mx-auto flex h-screen max-w-[640px] flex-col px-4 sm:px-6">
+    <div className="mx-auto flex h-dvh max-w-full sm:max-w-[640px] flex-col px-3 sm:px-6">
       <ThemeController theme="signature" />
 
       {/* Header */}
-      <header className="border-b border-line py-4">
+      <header className="border-b border-line py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/#coaches" className="font-mono text-xs text-ink-dim">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+            <Link href="/#coaches" className="font-mono text-xs text-ink-dim flex-shrink-0">
               ←
             </Link>
-            <div>
-              <div className="font-display text-base font-semibold leading-tight">
+            <div className="min-w-0 flex-1">
+              <div className="font-display text-sm sm:text-base font-semibold leading-tight truncate">
                 {coach.name}
               </div>
-              <div className="font-mono text-[10px] uppercase tracking-wide text-accent">
-                C9F Coach {coach.index} · {tier} tier
+              <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-tight sm:tracking-wide text-accent truncate">
+                C9F Coach {coach.index} · {tier}
               </div>
             </div>
           </div>
           {tier === "Free" ? (
             <Link
               href={`/checkout?coach=${slug}`}
-              className="font-mono text-[11px] text-accent underline"
+              className="font-mono text-[10px] sm:text-[11px] text-accent underline flex-shrink-0 ml-2"
             >
-              Unlock plans →
+              Unlock →
             </Link>
           ) : (
             isAdmin(state) && (
-              <span className="font-mono text-[10px] text-ink-dim">admin</span>
+              <span className="font-mono text-[9px] sm:text-[10px] text-ink-dim flex-shrink-0">admin</span>
             )
           )}
         </div>
@@ -317,9 +317,9 @@ export default function CoachChatPage() {
 
       {tab === "chat" ? (
         <>
-          <div ref={scrollRef} className="flex-1 space-y-4 overflow-y-auto py-6">
+          <div ref={scrollRef} className="flex-1 space-y-3 sm:space-y-4 overflow-y-auto py-4 sm:py-6 px-0">
             {chat.length === 0 && (
-              <div className="fill-panel schematic rounded border border-line p-5 text-sm text-ink-dim">
+              <div className="fill-panel schematic rounded border border-line p-4 sm:p-5 text-sm text-ink-dim">
                 <div className="mb-1.5 font-display text-base font-semibold text-ink">
                   You&rsquo;re talking to the {coach.name}.
                 </div>
@@ -353,11 +353,11 @@ export default function CoachChatPage() {
             )}
           </div>
 
-          <div className="border-t border-line py-4">
+          <div className="border-t border-line py-3 sm:py-4 px-0">
             <div className="flex items-end gap-2">
               <textarea
-                className="c9-input max-h-40 min-h-[46px] flex-1 resize-none"
-                placeholder={`Message the ${coach.name}…`}
+                className="c9-input max-h-40 min-h-[44px] flex-1 resize-none text-sm"
+                placeholder={`Message…`}
                 rows={1}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -369,16 +369,15 @@ export default function CoachChatPage() {
                 }}
               />
               <button
-                className="btn-primary disabled:cursor-not-allowed disabled:opacity-40"
+                className="btn-primary disabled:cursor-not-allowed disabled:opacity-40 flex-shrink-0 px-3 sm:px-4 py-2.5 min-h-[44px]"
                 onClick={send}
                 disabled={busy || !input.trim()}
               >
                 {busy ? "…" : "Send"}
               </button>
             </div>
-            <p className="mt-2 font-mono text-[10px] text-ink-dim">
-              C9F AI coach — not a licensed medical professional. Pain or injury
-              is routed to a human.
+            <p className="mt-2 font-mono text-[9px] sm:text-[10px] text-ink-dim">
+              AI coach — not a licensed professional
             </p>
           </div>
         </>
@@ -591,7 +590,7 @@ function MessageBubble({
   return (
     <div className={isUser ? "flex justify-end" : "flex justify-start"}>
       <div
-        className={`max-w-[85%] whitespace-pre-wrap rounded-lg px-4 py-2.5 text-sm ${
+        className={`max-w-[90%] sm:max-w-[85%] whitespace-pre-wrap rounded-lg px-3 sm:px-4 py-2 sm:py-2.5 text-sm ${
           isUser
             ? "bg-accent text-on-accent"
             : "fill-panel border border-line text-ink"
