@@ -139,12 +139,12 @@ export function DailyWorkoutCheckIn({
       {step === 'missed_reason' && (
         <div className="space-y-3">
           <p className="text-sm font-medium text-stone-900">{reasonPrompt}</p>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {missedOptions.map((option) => (
               <button
                 key={option.value}
                 onClick={() => handleMissedReason(option.value)}
-                className="rounded border border-blue-300 bg-white px-3 py-2 text-xs font-medium text-stone-700 hover:bg-blue-100"
+                className="rounded border border-blue-300 bg-white px-3 py-2 text-xs font-medium text-stone-700 hover:bg-blue-100 min-h-[44px] flex items-center justify-center"
                 title={option.description}
               >
                 {option.label}

@@ -11,10 +11,10 @@ export function CheckInDetail({ checkIn }: CheckInDetailProps) {
   weekEndDate.setDate(weekEndDate.getDate() + 6);
 
   return (
-    <div className="rounded-lg border border-stone-200 bg-white p-6 space-y-6">
+    <div className="rounded-lg border border-stone-200 bg-white p-4 sm:p-6 space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className="border-b border-stone-200 pb-4">
-        <h3 className="text-lg font-semibold text-stone-900">
+      <div className="border-b border-stone-200 pb-3 sm:pb-4">
+        <h3 className="text-base sm:text-lg font-semibold text-stone-900">
           Week of {new Date(checkIn.week_of).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
         </h3>
         <p className="text-xs text-stone-600 mt-1">
@@ -23,27 +23,27 @@ export function CheckInDetail({ checkIn }: CheckInDetailProps) {
       </div>
 
       {/* Summary grid */}
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        <div className="rounded bg-stone-50 p-4">
+      <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="rounded bg-stone-50 p-3 sm:p-4">
           <p className="text-xs font-semibold text-stone-600 uppercase">Sessions</p>
-          <p className="text-2xl font-bold text-stone-900 mt-2">{checkIn.sessions_completed}</p>
+          <p className="text-xl sm:text-2xl font-bold text-stone-900 mt-2">{checkIn.sessions_completed}</p>
           {checkIn.missed_reason && <p className="text-xs text-stone-600 mt-1">Reason: {checkIn.missed_reason}</p>}
         </div>
 
-        <div className="rounded bg-stone-50 p-4">
+        <div className="rounded bg-stone-50 p-3 sm:p-4">
           <p className="text-xs font-semibold text-stone-600 uppercase">Mood</p>
-          <p className="text-2xl font-bold text-stone-900 mt-2">{checkIn.mood || '—'}</p>
+          <p className="text-xl sm:text-2xl font-bold text-stone-900 mt-2">{checkIn.mood || '—'}</p>
         </div>
 
-        <div className="rounded bg-stone-50 p-4">
+        <div className="rounded bg-stone-50 p-3 sm:p-4">
           <p className="text-xs font-semibold text-stone-600 uppercase">Sleep</p>
-          <p className="text-2xl font-bold text-stone-900 mt-2">{checkIn.sleep_hours ? `${checkIn.sleep_hours}h` : '—'}</p>
+          <p className="text-xl sm:text-2xl font-bold text-stone-900 mt-2">{checkIn.sleep_hours ? `${checkIn.sleep_hours}h` : '—'}</p>
           <p className="text-xs text-stone-600 mt-1">/night</p>
         </div>
 
-        <div className="rounded bg-stone-50 p-4">
+        <div className="rounded bg-stone-50 p-3 sm:p-4">
           <p className="text-xs font-semibold text-stone-600 uppercase">Status</p>
-          <p className={`text-sm font-bold mt-2 ${checkIn.sessions_completed >= 3 ? 'text-green-700' : 'text-amber-700'}`}>
+          <p className={`text-xs sm:text-sm font-bold mt-2 ${checkIn.sessions_completed >= 3 ? 'text-green-700' : 'text-amber-700'}`}>
             {checkIn.sessions_completed >= 3 ? '✓ On Track' : '⚠ Below Target'}
           </p>
         </div>

@@ -248,7 +248,7 @@ export function WorkoutLoggingForm({
                 {/* Exercise name and planned details */}
                 <div>
                   <h4 className="font-semibold text-ink">{log.name}</h4>
-                  <div className="mt-2 grid grid-cols-3 gap-3 text-xs text-ink-dim">
+                  <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3 text-xs text-ink-dim">
                     {log.planned.sets && (
                       <div>
                         <p className="uppercase tracking-wide">Planned Sets</p>
