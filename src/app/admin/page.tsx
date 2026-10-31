@@ -96,6 +96,25 @@ export default function AdminDashboard() {
             <h1 className="text-2xl font-bold" style={{ color: 'var(--ink)' }}>Admin Dashboard</h1>
           </div>
           <div className="flex gap-3">
+            <Link
+              href="/admin/library"
+              className="text-xs font-semibold px-3 py-1.5 rounded transition-all"
+              style={{
+                color: 'var(--ink)',
+                border: '1px solid var(--line)',
+                background: 'transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--accent)';
+                e.currentTarget.style.color = 'var(--on-accent)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = 'var(--ink)';
+              }}
+            >
+              📚 Programs
+            </Link>
             <a
               href="/"
               className="text-xs font-semibold px-3 py-1.5 rounded transition-all"
