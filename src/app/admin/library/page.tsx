@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Container } from '@/components/primitives';
 import { PageBranding } from '@/components/PageBranding';
-import { getAllPrograms } from '@/data/workout-library';
+import { library } from '@/data/workout-library';
 
 export const metadata = {
   title: 'Admin - Program Library — Code9 Fitness',
@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default function AdminLibraryPage() {
-  const programs = getAllPrograms();
+  const programs = library;
 
   return (
     <main className="flex-1 relative z-10">
