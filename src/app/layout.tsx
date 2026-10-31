@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { HeaderNav } from "@/components/HeaderNav";
 import { AuthProvider } from "@/lib/auth/context";
 import "./globals.css";
@@ -54,6 +55,7 @@ export default function RootLayout({
           <HeaderNav />
           {children}
         </AuthProvider>
+        <Analytics />
       </body>
     </html>
   );
