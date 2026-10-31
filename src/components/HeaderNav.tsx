@@ -20,12 +20,10 @@ export function HeaderNav() {
         color: 'var(--ink)'
       }}
     >
-      <div style={{ maxWidth: '1040px', margin: '0 auto', padding: '0 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 'auto', minHeight: '56px', gap: '8px' }} className="sm:gap-4 sm:px-6">
-        <Link href="/" onClick={handleLogoClick} style={{ display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none', cursor: 'pointer', flexShrink: 0 }}>
-          <span className="font-display font-bold" style={{ fontSize: 'clamp(14px, 4vw, 20px)', letterSpacing: '-.01em', lineHeight: '1' }}>
-            <span style={{ color: 'var(--ink)' }}>CODE</span>
-            <span style={{ color: '#C87137' }}>9</span>
-            <span style={{ color: 'var(--ink)' }}> FITNESS</span>
+      <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 'auto', minHeight: '56px', paddingLeft: '12px', paddingRight: '12px', gap: '6px', boxSizing: 'border-box' }} className="sm:px-6 sm:gap-4">
+        <Link href="/" onClick={handleLogoClick} style={{ display: 'flex', alignItems: 'center', gap: '0px', textDecoration: 'none', cursor: 'pointer', flexShrink: 0, minWidth: 0 }}>
+          <span className="font-display font-bold" style={{ fontSize: 'clamp(13px, 3.5vw, 20px)', letterSpacing: '-0.5px', lineHeight: '1.1', whiteSpace: 'nowrap' }}>
+            <span style={{ color: 'var(--ink)' }}>CODE</span><span style={{ color: '#C87137' }}>9</span><span style={{ color: 'var(--ink)' }}> FIT</span>
           </span>
         </Link>
 
@@ -38,19 +36,21 @@ export function HeaderNav() {
                 setMenuOpen(!menuOpen);
               }}
               style={{
-                font: 'clamp(12px, 2.5vw, 13px) 500 "IBM Plex Sans", sans-serif',
+                font: 'clamp(11px, 2.2vw, 13px) 500 "IBM Plex Sans", sans-serif',
                 color: 'var(--ink)',
                 background: 'transparent',
                 border: '1px solid var(--line)',
                 borderRadius: '99px',
-                padding: 'clamp(6px, 1.5vw, 9px) clamp(10px, 2vw, 14px)',
+                padding: 'clamp(5px, 1.2vw, 9px) clamp(8px, 1.8vw, 14px)',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '4px',
+                gap: '3px',
                 transition: 'all .2s',
                 whiteSpace: 'nowrap',
-                flexShrink: 0
+                flexShrink: 0,
+                minHeight: '32px',
+                maxWidth: 'fit-content'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'var(--accent)';
@@ -117,8 +117,8 @@ export function HeaderNav() {
           <span style={{ fontSize: 'clamp(9px, 2vw, 11px)', fontWeight: '600', letterSpacing: '.14em', color: 'var(--accent)', border: '1px solid var(--line)', borderRadius: '99px', padding: 'clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 10px)', display: 'none' }} className="sm:inline-block">
             v3.0
           </span>
-          <Link href="/dashboard" style={{ fontSize: 'clamp(11px, 2.5vw, 13px)', fontWeight: '600', color: 'var(--on-accent)', background: 'var(--accent)', border: '1.5px solid var(--accent)', borderRadius: '99px', padding: 'clamp(6px, 1.5vw, 10px) clamp(10px, 2vw, 16px)', textDecoration: 'none', transition: 'all .2s', opacity: 0.9, whiteSpace: 'nowrap', flexShrink: 0 }} onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }} onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.9'; }}>
-            Dashboard
+          <Link href="/dashboard" style={{ fontSize: 'clamp(10px, 2.2vw, 13px)', fontWeight: '600', color: 'var(--on-accent)', background: 'var(--accent)', border: '1.5px solid var(--accent)', borderRadius: '99px', padding: 'clamp(5px, 1.2vw, 10px) clamp(8px, 1.8vw, 16px)', textDecoration: 'none', transition: 'all .2s', opacity: 0.9, whiteSpace: 'nowrap', flexShrink: 0, minHeight: '32px', display: 'flex', alignItems: 'center' }} onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }} onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.9'; }}>
+            <span>Dashboard</span>
           </Link>
         </div>
       </div>
