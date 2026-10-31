@@ -159,13 +159,13 @@ export default function AdminLibraryPage() {
                 {/* Action Buttons */}
                 <div className="flex flex-col gap-2">
                   <Link
-                    href={`/admin/workout-viewer/${program.slug}`}
+                    href={`/admin/program/${program.meta.id}`}
                     className="btn-primary text-center"
                   >
-                    View Full Workout
+                    View Full Details
                   </Link>
                   <Link
-                    href={`/program/${program.slug}`}
+                    href={`/admin/workout-viewer/${program.meta.id}`}
                     className="px-4 py-2 rounded font-semibold text-sm text-center"
                     style={{
                       background: 'var(--surface)',
@@ -173,7 +173,7 @@ export default function AdminLibraryPage() {
                       border: '1px solid var(--line)',
                     }}
                   >
-                    Client View
+                    View HTML Breakdown
                   </Link>
                 </div>
               </div>
