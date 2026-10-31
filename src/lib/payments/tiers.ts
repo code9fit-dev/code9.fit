@@ -11,7 +11,7 @@ export interface PaidTierConfig {
 /** Purchasable tiers only — Free is never checked out. Amounts mirror the landing pricing. */
 export const PAYMENT_TIERS: Partial<Record<Tier, PaidTierConfig>> = {
   "One-Time": {
-    amount: 4400,
+    amount: 3900,
     mode: "payment",
     blurb: "A complete structured program from your coach. Yours to keep.",
     variantEnv: "LEMONSQUEEZY_VARIANT_ONE_TIME",

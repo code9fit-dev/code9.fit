@@ -18,7 +18,7 @@ export const tiers: Tier[] = [
   {
     name: "One-Time",
     desc: "A complete structured program from your chosen coach. Yours to keep.",
-    value: "€44 / one-time",
+    value: "€39 / one-time",
   },
   {
     name: "Subscription",
