@@ -9,7 +9,38 @@ export const metadata = {
 };
 
 export default function AdminLibraryPage() {
-  const programs = library;
+  // Filter to only programs with available HTML files
+  const programsWithHTML = [
+    'fat-to-fit',
+    'fat-to-fit-advanced',
+    'fat-to-fit-foundations-gym',
+    'fat-to-fit-foundations-home',
+    'fat-to-fit-intermediate',
+    'fat-to-fit-light-budget',
+    'fat-to-fit-momentum-gym',
+    'fat-to-fit-momentum-home',
+    'hybrid-athlete',
+    'hybrid-base',
+    'hybrid-base-4day',
+    'hybrid-base-6day',
+    'hybrid-explosive',
+    'hybrid-performance',
+    'hybrid-race',
+    'hybrid-sport',
+    'lean-bulk',
+    'lean-bulk-2',
+    'machine-starter',
+    'peachy-progression',
+    'peachy-progression-3day',
+    'peachy-progression-4day',
+    'peachy-progression-5day',
+    'peachy-pump',
+    'find-your-program',
+  ];
+
+  const programs = library.filter((p) =>
+    programsWithHTML.includes(p.meta.id)
+  );
 
   return (
     <main className="flex-1 relative z-10">
