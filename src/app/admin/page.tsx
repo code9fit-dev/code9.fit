@@ -212,6 +212,19 @@ export default function AdminDashboard() {
                 >
                   → View Library
                 </Link>
+                <Link
+                  href="/admin/workout-builder"
+                  className="block rounded px-4 py-3 font-semibold transition-all"
+                  style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = '0.9';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                  }}
+                >
+                  ⚡ Create New Workout
+                </Link>
                 <button
                   onClick={() => setActiveTab('checkins')}
                   className="block rounded px-4 py-3 font-semibold transition-all"
