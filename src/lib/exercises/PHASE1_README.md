@@ -7,11 +7,14 @@ Phase 1 establishes the foundation for AI-powered workout program creation in th
 
 ### 1. Exercise Database (`database.ts`)
 - **Exercise interface** with: name, equipment, muscle groups, category, difficulty
-- **13 starter exercises** covering major lifts (bench press, squat, deadlift, rows, etc.)
+- **65+ curated starter exercises** covering all movement patterns from programs
+- **Extracted from 217 unique exercises** across 25 existing programs
+- **Top 15 most common exercises** included (push-ups, plank, bench press, rows, deadlift, squat, curls, glute bridges, pull-ups, overhead press, Romanian deadlift, mountain climbers, burpees, lat pulldown, dumbbell bench press)
 - **Organized by muscle group** for quick filtering
 - **Helpers**: `getExercisesByCategory()`, `getExerciseById()`
-- **Equipment types**: barbell, dumbbell, kettlebell, machine, bodyweight, etc.
+- **Equipment types**: barbell, dumbbell, kettlebell, machine, bodyweight, cable, resistance-band, medicine-ball
 - **Categories**: compound, isolation, cardio, mobility, plyometric, isometric
+- **Difficulty levels**: beginner, intermediate, advanced
 
 ### 2. Template System (`templates.ts`)
 - **3 pre-built templates**: Strength Focus, Hypertrophy Focus, Conditioning & HIIT
