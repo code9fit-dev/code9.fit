@@ -5,6 +5,7 @@ import { COMMON_EXERCISES } from '@/lib/exercises/database';
 import { DAY_TYPES, type DraftDay } from '@/lib/workout-builder/draft';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 
 const MODEL = 'claude-sonnet-5';
 const MAX_EXERCISES_PER_DAY = 10;
