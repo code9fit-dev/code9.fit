@@ -484,7 +484,7 @@ export default function AdminDashboard() {
                       </div>
                       <div className="flex gap-2">
                         <Link
-                          href={`/admin/workout-viewer/${program.meta.id}`}
+                          href={`/admin/program/${program.meta.id}`}
                           className="px-3 py-2 rounded text-xs font-semibold transition-all"
                           style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}
                         >
