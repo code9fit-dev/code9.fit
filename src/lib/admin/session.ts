@@ -56,10 +56,14 @@ export function verifySetupToken(token: string): boolean {
 
 export function checkAdmin(email: string, password: string): boolean {
   const okEmail = admins().includes(String(email || '').trim().toLowerCase());
-  const [algo, salt, hash] = (process.env.C9_ADMIN_PASSWORD_HASH || '').split('$');
-  if (algo !== 'scrypt' || !salt || !hash) return false;
-  const got = scryptSync(String(password || ''), Buffer.from(salt, 'base64url'), 64).toString('base64url');
-  return okEmail && same(got, hash);
+  const stored = process.env.C9_ADMIN_PASSWORD_HASH || '';
+  if (!okEmail || !stored) return false;
+  const [algo, salt, hash] = stored.split('$');
+  if (algo === 'scrypt' && salt && hash) {
+    const got = scryptSync(String(password || ''), Buffer.from(salt, 'base64url'), 64).toString('base64url');
+    return same(got, hash);
+  }
+  return same(String(password || ''), stored);
 }
 
 export function makeSession(email: string): string {
