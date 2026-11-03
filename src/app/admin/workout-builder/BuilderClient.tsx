@@ -28,9 +28,12 @@ const btn = 'rounded px-4 py-2 text-sm font-semibold disabled:opacity-50';
 const btnPrimary = { background: 'var(--accent)', color: 'var(--on-accent)' };
 const btnGhost = { border: '1px solid var(--line)', color: 'var(--ink)', background: 'transparent' };
 
-export function BuilderClient() {
+export function BuilderClient({ initialId }: { initialId?: string }) {
   const [draft, setDraft] = useState<DraftProgram>(EMPTY_DRAFT);
   const [loaded, setLoaded] = useState(false);
+  const [savedId, setSavedId] = useState<string | null>(null);
+  const [savedStatus, setSavedStatus] = useState<'draft' | 'complete' | null>(null);
+  const [saving, setSaving] = useState<'day' | 'full' | null>(null);
   const [idTouched, setIdTouched] = useState(false);
   const [aiPrompt, setAiPrompt] = useState('');
   const [aiBusy, setAiBusy] = useState(false);
@@ -48,8 +51,22 @@ export function BuilderClient() {
         localStorage.removeItem(STORAGE_KEY);
       }
     }
+    if (initialId) {
+      fetch(`/api/admin/saved-workouts/${initialId}`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((w) => {
+          if (!w) {
+            setMessage({ kind: 'error', text: 'That saved workout could not be opened.' });
+            return;
+          }
+          setDraft({ ...EMPTY_DRAFT, ...w.draft });
+          setIdTouched(true);
+          setSavedId(w.id);
+          setSavedStatus(w.status);
+        });
+    }
     setLoaded(true);
-  }, []);
+  }, [initialId]);
 
   useEffect(() => {
     if (loaded) localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
@@ -134,9 +151,38 @@ export function BuilderClient() {
     });
   };
 
+  const saveWorkout = async (mode: 'day' | 'full') => {
+    setMessage(null);
+    setErrors([]);
+    setSaving(mode);
+    const res = await fetch('/api/admin/saved-workouts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: savedId ?? undefined, mode, draft }),
+    }).catch(() => null);
+    setSaving(null);
+    const body = await res?.json().catch(() => null);
+    if (res?.ok && body?.id) {
+      setSavedId(body.id);
+      setSavedStatus(body.status);
+      setMessage({
+        kind: 'ok',
+        text: mode === 'full'
+          ? 'Full workout saved. It is in the library under Saved workouts, ready to upload or share.'
+          : 'Progress saved. Use Full save when every day is done.',
+      });
+    } else {
+      const text = body?.error || 'Saving failed. Check the connection and try again.';
+      setMessage({ kind: 'error', text });
+      if (mode === 'full') setErrors(text.split('. ').filter(Boolean));
+    }
+  };
+
   const reset = () => {
     if (!confirm('Clear this draft?')) return;
     setDraft(EMPTY_DRAFT);
+    setSavedId(null);
+    setSavedStatus(null);
     setIdTouched(false);
     setErrors([]);
     setMessage(null);
@@ -354,10 +400,21 @@ export function BuilderClient() {
         ))}
       </datalist>
 
-      <div className="flex flex-wrap gap-3">
-        <button onClick={download} className={btn} style={btnPrimary}>
+      <div className="flex flex-wrap items-center gap-3">
+        <button onClick={() => saveWorkout('day')} disabled={saving !== null} className={btn} style={btnGhost}>
+          {saving === 'day' ? 'Saving…' : 'Save day'}
+        </button>
+        <button onClick={() => saveWorkout('full')} disabled={saving !== null} className={btn} style={btnPrimary}>
+          {saving === 'full' ? 'Saving…' : 'Full save'}
+        </button>
+        <button onClick={download} className={btn} style={btnGhost}>
           Download program file
         </button>
+        {savedStatus && (
+          <span className="text-sm" style={{ color: 'var(--ink-dim)' }}>
+            Saved as {savedStatus === 'complete' ? 'complete' : 'draft'}
+          </span>
+        )}
       </div>
     </main>
   );
