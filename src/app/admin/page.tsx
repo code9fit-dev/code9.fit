@@ -337,171 +337,23 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-semibold" style={{ color: 'var(--ink)' }}>Programs ({library.length})</h2>
-              <Link
-                href="/admin/programs/new"
-                className="px-4 py-2 rounded font-semibold text-sm transition-all"
-                style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}
-              >
-                + New Program
-              </Link>
+              <div className="flex gap-2">
+                <Link
+                  href="/admin/library"
+                  className="px-4 py-2 rounded font-semibold text-sm transition-all"
+                  style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}
+                >
+                  Open all programs
+                </Link>
+                <Link
+                  href="/admin/workout-builder"
+                  className="px-4 py-2 rounded font-semibold text-sm transition-all"
+                  style={{ border: '1px solid var(--line)', color: 'var(--ink)' }}
+                >
+                  + Create workout
+                </Link>
+              </div>
             </div>
-
-            {selectedProgram ? (
-              <div className="rounded-lg border p-6" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
-                {library.find(p => p.meta.id === selectedProgram) && (
-                  <>
-                    <button
-                      onClick={() => setSelectedProgram(null)}
-                      className="mb-4 text-sm font-semibold" style={{ color: 'var(--accent)' }}
-                    >
-                      ← Back to List
-                    </button>
-                    {(() => {
-                      const program = library.find(p => p.meta.id === selectedProgram);
-                      return (
-                        <div className="space-y-6 max-h-[80vh] overflow-y-auto">
-                          {/* Program Header */}
-                          <div>
-                            <h3 className="text-2xl font-semibold mb-2" style={{ color: 'var(--ink)' }}>{program?.meta.title}</h3>
-                            <p className="mb-4" style={{ color: 'var(--ink-dim)' }}>{program?.focus}</p>
-                            <p style={{ color: 'var(--ink-dim)' }}>{program?.overview}</p>
-                          </div>
-
-                          {/* Program Metadata */}
-                          <div className="grid grid-cols-4 gap-4 p-4 rounded" style={{ background: 'var(--surface)' }}>
-                            <div>
-                              <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>Level</p>
-                              <p className="font-semibold mt-1" style={{ color: 'var(--ink)' }}>{program?.meta.level}</p>
-                            </div>
-                            <div>
-                              <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>Days/Week</p>
-                              <p className="font-semibold mt-1" style={{ color: 'var(--ink)' }}>{program?.meta.daysPerWeek}</p>
-                            </div>
-                            <div>
-                              <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>Duration</p>
-                              <p className="font-semibold mt-1" style={{ color: 'var(--ink)' }}>{program?.meta.weeks} weeks</p>
-                            </div>
-                            <div>
-                              <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>Equipment</p>
-                              <p className="font-semibold mt-1" style={{ color: 'var(--ink)' }}>{program?.meta.equipment}</p>
-                            </div>
-                          </div>
-
-                          {/* Weekly Structure */}
-                          {program?.weeklyStructure && (
-                            <div>
-                              <h4 className="font-semibold mb-3" style={{ color: 'var(--ink)' }}>Weekly Structure</h4>
-                              <div className="grid grid-cols-7 gap-2">
-                                {program.weeklyStructure.map((day: any, idx: number) => (
-                                  <div key={idx} className="p-3 rounded text-center text-sm" style={{ background: 'var(--surface)' }}>
-                                    <p className="font-semibold" style={{ color: 'var(--ink)' }}>Day {day.day}</p>
-                                    <p className="text-xs mt-1" style={{ color: 'var(--ink-dim)' }}>{day.focus}</p>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Phases with Detailed Workouts */}
-                          {program?.phases && (
-                            <div>
-                              <h4 className="font-semibold mb-4" style={{ color: 'var(--ink)' }}>Training Phases</h4>
-                              <div className="space-y-6">
-                                {program.phases.map((phase: any, phaseIdx: number) => (
-                                  <div key={phaseIdx} className="p-4 rounded" style={{ background: 'var(--surface)', borderLeft: `4px solid var(--accent)` }}>
-                                    <h5 className="font-semibold mb-2" style={{ color: 'var(--ink)' }}>{phase.name}</h5>
-                                    <p className="text-sm mb-4" style={{ color: 'var(--ink-dim)' }}>{phase.focus}</p>
-
-                                    {/* Workouts in Phase */}
-                                    <div className="space-y-4">
-                                      {phase.days?.map((workout: any, dayIdx: number) => (
-                                        <div key={dayIdx} className="p-3 rounded" style={{ background: 'var(--panel)' }}>
-                                          <div className="flex justify-between items-start mb-3">
-                                            <div>
-                                              <p className="font-semibold" style={{ color: 'var(--accent)' }}>Day {workout.day} — {workout.title}</p>
-                                              <p className="text-xs" style={{ color: 'var(--ink-dim)' }}>{workout.type}</p>
-                                            </div>
-                                          </div>
-
-                                          {workout.warmup && (
-                                            <div className="mb-3 pb-3" style={{ borderBottom: '1px solid var(--line)' }}>
-                                              <p className="text-xs font-semibold mb-1" style={{ color: 'var(--ink-dim)' }}>Warmup</p>
-                                              <p className="text-sm" style={{ color: 'var(--ink)' }}>{workout.warmup}</p>
-                                            </div>
-                                          )}
-
-                                          {/* Exercises */}
-                                          <div className="space-y-2">
-                                            {workout.exercises?.map((ex: any, exIdx: number) => (
-                                              <div key={exIdx} className="text-sm" style={{ color: 'var(--ink)' }}>
-                                                <div className="flex justify-between">
-                                                  <span className="font-semibold">{ex.name}</span>
-                                                  <span style={{ color: 'var(--accent)' }}>
-                                                    {ex.sets && `${ex.sets}x${ex.reps}${ex.durationSec ? `(${ex.durationSec}s)` : ''}`}
-                                                  </span>
-                                                </div>
-                                                {ex.notes && (
-                                                  <p className="text-xs" style={{ color: 'var(--ink-dim)' }}>{ex.notes}</p>
-                                                )}
-                                                {ex.pattern && (
-                                                  <p className="text-xs" style={{ color: 'var(--ink-dim)' }}>Pattern: {ex.pattern}</p>
-                                                )}
-                                              </div>
-                                            ))}
-                                          </div>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })()}
-                  </>
-                )}
-              </div>
-            ) : (
-              <div className="space-y-3">
-                {library.map((program) => (
-                  <div
-                    key={program.meta.id}
-                    onClick={() => setSelectedProgram(program.meta.id)}
-                    className="rounded-lg border p-4 hover:shadow-lg transition-all cursor-pointer"
-                    style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}
-                  >
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <h3 className="font-semibold" style={{ color: 'var(--ink)' }}>{program.meta.title}</h3>
-                        <p className="text-xs mt-1" style={{ color: 'var(--ink-dim)' }}>{program.focus}</p>
-                        <div className="flex gap-2 mt-3 flex-wrap">
-                          <span className="text-xs px-2 py-1 rounded" style={{ background: 'var(--surface)', color: 'var(--ink)' }}>{program.meta.level}</span>
-                          <span className="text-xs px-2 py-1 rounded" style={{ background: 'var(--surface)', color: 'var(--ink)' }}>{program.meta.daysPerWeek}-day/week</span>
-                          <span className="text-xs px-2 py-1 rounded" style={{ background: 'var(--surface)', color: 'var(--ink)' }}>{program.meta.weeks} weeks</span>
-                        </div>
-                      </div>
-                      <div className="flex gap-2">
-                        <Link
-                          href={`/admin/program/${program.meta.id}`}
-                          className="px-3 py-2 rounded text-xs font-semibold transition-all"
-                          style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}
-                        >
-                          View Full Program
-                        </Link>
-                        <button
-                          className="px-3 py-2 rounded text-xs font-semibold transition-all"
-                          style={{ background: 'var(--panel)', color: 'var(--ink)', border: '1px solid var(--line)' }}
-                        >
-                          Edit
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         )}
 
