@@ -111,7 +111,7 @@ export default function AdminLibraryPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {programs.map((program) => (
               <div
-                key={program.slug}
+                key={program.meta.id}
                 className="rounded border p-6 transition-all hover:border-accent"
                 style={{
                   borderColor: 'var(--line)',
@@ -131,28 +131,28 @@ export default function AdminLibraryPage() {
                   <p style={{ color: 'var(--ink-dim)', fontSize: '14px' }}>
                     <strong>Focus:</strong> {program.focus}
                   </p>
-                  {program.meta.difficulty && (
+                  {program.meta.level && (
                     <p style={{ color: 'var(--ink-dim)', fontSize: '14px' }}>
-                      <strong>Level:</strong> {program.meta.difficulty}
+                      <strong>Level:</strong> {program.meta.level}
                     </p>
                   )}
-                  {program.meta.durationWeeks && (
+                  {program.meta.weeks && (
                     <p style={{ color: 'var(--ink-dim)', fontSize: '14px' }}>
-                      <strong>Duration:</strong> {program.meta.durationWeeks} weeks
+                      <strong>Duration:</strong> {program.meta.weeks} weeks
                     </p>
                   )}
-                  {program.meta.sessionsPerWeek && (
+                  {program.meta.daysPerWeek && (
                     <p style={{ color: 'var(--ink-dim)', fontSize: '14px' }}>
-                      <strong>Sessions/Week:</strong> {program.meta.sessionsPerWeek}
+                      <strong>Sessions/Week:</strong> {program.meta.daysPerWeek}
                     </p>
                   )}
                 </div>
 
                 {/* Description */}
-                {program.description && (
+                {program.overview && (
                   <p className="text-sm mb-6" style={{ color: 'var(--ink-dim)' }}>
-                    {program.description.substring(0, 150)}
-                    {program.description.length > 150 ? '...' : ''}
+                    {program.overview.substring(0, 150)}
+                    {program.overview.length > 150 ? '...' : ''}
                   </p>
                 )}
 
