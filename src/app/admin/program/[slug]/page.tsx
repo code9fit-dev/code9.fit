@@ -1,295 +1,106 @@
-'use client';
-
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { Container } from '@/components/primitives';
+import { notFound } from 'next/navigation';
 import { getProgram } from '@/data/workout-library';
+import type { ExercisePrescription, Phase, TrainingDay } from '@/data/workout-library/types';
 
-export default function AdminProgramPage() {
-  const params = useParams();
-  const slug = params.slug as string;
-  const program = getProgram(slug) as any;
+function prescription(ex: ExercisePrescription): string {
+  const parts: string[] = [];
+  if (ex.sets && ex.reps) parts.push(`${ex.sets} × ${ex.reps}`);
+  else if (ex.sets) parts.push(`${ex.sets} sets`);
+  else if (ex.reps) parts.push(ex.reps);
+  if (ex.durationSec) parts.push(`${ex.durationSec}s`);
+  if (ex.perSide) parts.push('per side');
+  return parts.join(' · ');
+}
 
-  if (!program) {
-    return (
-      <main className="flex-1 relative z-10">
-        <section style={{ paddingTop: '48px', paddingBottom: '48px' }}>
-          <Container>
-            <div className="max-w-2xl text-center">
-              <h1 className="font-display text-2xl font-semibold mb-4" style={{ color: 'var(--ink)' }}>
-                Program not found
-              </h1>
-              <p style={{ color: 'var(--ink-dim)' }} className="mb-8">
-                The program "{slug}" doesn't exist in our library.
-              </p>
-              <Link
-                href="/admin/library"
-                className="px-6 py-3 rounded font-semibold text-sm"
-                style={{ background: 'var(--accent)', color: 'var(--on-accent)' }}
-              >
-                Back to Programs
-              </Link>
-            </div>
-          </Container>
-        </section>
-      </main>
-    );
-  }
+function DayBlock({ day }: { day: TrainingDay }) {
+  return (
+    <div className="rounded border p-4" style={{ borderColor: 'var(--line)', background: 'var(--surface)' }}>
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h4 className="font-semibold">Day {day.day} — {day.title}</h4>
+        <span className="text-xs uppercase" style={{ color: 'var(--ink-dim)' }}>{day.type}</span>
+      </div>
+      {day.warmup && <p className="mt-2 text-sm" style={{ color: 'var(--ink-dim)' }}>Warm-up: {day.warmup}</p>}
+      {day.exercises.length > 0 && (
+        <ul className="mt-3 space-y-2">
+          {day.exercises.map((ex, i) => (
+            <li key={i} className="text-sm">
+              <div className="flex flex-wrap justify-between gap-2">
+                <span className="font-medium">{ex.name}</span>
+                <span style={{ color: 'var(--accent)' }}>{prescription(ex)}</span>
+              </div>
+              {ex.notes && <p className="text-xs" style={{ color: 'var(--ink-dim)' }}>{ex.notes}</p>}
+            </li>
+          ))}
+        </ul>
+      )}
+      {day.notes && <p className="mt-2 text-sm" style={{ color: 'var(--ink-dim)' }}>{day.notes}</p>}
+      {day.cooldown && <p className="mt-2 text-sm" style={{ color: 'var(--ink-dim)' }}>Cool-down: {day.cooldown}</p>}
+    </div>
+  );
+}
+
+function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
+  return (
+    <section className="space-y-4 rounded-lg border p-6" style={{ borderColor: 'var(--line)', background: 'var(--panel)' }}>
+      <div>
+        <h3 className="text-lg font-semibold">{phase.name || `Phase ${index + 1}`}</h3>
+        <p className="text-xs uppercase" style={{ color: 'var(--ink-dim)' }}>Weeks {phase.weekStart}–{phase.weekEnd}</p>
+        <p className="mt-2 text-sm">{phase.focus}</p>
+      </div>
+      {phase.days?.map((day) => <DayBlock key={day.day} day={day} />)}
+      {phase.progression && phase.progression.length > 0 && (
+        <div>
+          <p className="text-sm font-semibold">Progression</p>
+          <ul className="mt-1 list-disc space-y-1 pl-5 text-sm" style={{ color: 'var(--ink-dim)' }}>
+            {phase.progression.map((p, i) => <li key={i}>{p}</li>)}
+          </ul>
+        </div>
+      )}
+      {phase.keyChanges && phase.keyChanges.length > 0 && (
+        <div>
+          <p className="text-sm font-semibold">Key changes</p>
+          <ul className="mt-1 list-disc space-y-1 pl-5 text-sm" style={{ color: 'var(--ink-dim)' }}>
+            {phase.keyChanges.map((k, i) => <li key={i}>{k}</li>)}
+          </ul>
+        </div>
+      )}
+    </section>
+  );
+}
+
+export default async function AdminProgramPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const program = getProgram(slug);
+  if (!program) notFound();
+
+  const { meta } = program;
+  const hasHtml = `/admin/workout-viewer/${meta.id}`;
 
   return (
-    <main className="flex-1 relative z-10">
-      {/* Header */}
-      <section
-        style={{
-          borderBottom: '1px solid var(--line)',
-          paddingBottom: '24px',
-          paddingTop: '24px',
-          background: 'var(--surface)',
-        }}
-      >
-        <Container>
-          <div className="flex items-center gap-4 mb-6">
-            <Link
-              href="/admin/library"
-              className="px-3 py-2 rounded text-sm font-semibold"
-              style={{
-                background: 'var(--surface)',
-                color: 'var(--ink)',
-                border: '1px solid var(--line)',
-              }}
-            >
-              ← Back to Library
-            </Link>
-            <span
-              className="text-xs font-semibold px-3 py-1.5 rounded"
-              style={{
-                background: 'var(--accent)',
-                color: 'var(--on-accent)',
-              }}
-            >
-              ADMIN FULL ACCESS
-            </span>
-          </div>
-          <h1 className="font-display text-3xl font-semibold" style={{ color: 'var(--ink)' }}>
-            {program.meta.title}
-          </h1>
-        </Container>
-      </section>
+    <main className="mx-auto max-w-5xl space-y-8 px-6 py-8" style={{ color: 'var(--ink)' }}>
+      <div>
+        <Link href="/admin/library" className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>← Back to library</Link>
+        <h1 className="mt-2 text-3xl font-semibold">{meta.title}</h1>
+        <p className="mt-1" style={{ color: 'var(--ink-dim)' }}>{program.focus}</p>
+        <p className="mt-2 text-xs uppercase" style={{ color: 'var(--ink-dim)' }}>
+          {meta.level} · {meta.weeks} weeks · {meta.daysPerWeek ?? '—'} days/week · {meta.equipment}
+        </p>
+        <Link href={hasHtml} className="mt-4 inline-block rounded px-4 py-2 text-sm font-semibold" style={{ border: '1px solid var(--line)', color: 'var(--ink)' }}>
+          Open HTML breakdown (if available)
+        </Link>
+      </div>
 
-      {/* Content */}
-      <section style={{ borderBottom: '1px solid var(--line)' }}>
-        <Container className="py-12">
-          <div className="grid gap-12 md:grid-cols-3">
-            {/* Main Content */}
-            <div className="md:col-span-2 space-y-8">
-              {/* Overview */}
-              <div>
-                <h2 className="font-display text-xl font-semibold mb-4" style={{ color: 'var(--ink)' }}>
-                  Program Overview
-                </h2>
-                <div className="space-y-4">
-                  {program.description && (
-                    <div>
-                      <p className="text-sm font-semibold mb-2" style={{ color: 'var(--ink-dim)' }}>
-                        Description
-                      </p>
-                      <p style={{ color: 'var(--ink)' }}>{program.description}</p>
-                    </div>
-                  )}
+      {program.overview && (
+        <section>
+          <h2 className="mb-2 text-lg font-semibold">Overview</h2>
+          <p className="text-sm" style={{ color: 'var(--ink-dim)' }}>{program.overview}</p>
+        </section>
+      )}
 
-                  {program.focus && (
-                    <div>
-                      <p className="text-sm font-semibold mb-2" style={{ color: 'var(--ink-dim)' }}>
-                        Focus
-                      </p>
-                      <p style={{ color: 'var(--ink)' }}>{program.focus}</p>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Phases */}
-              {program.phases && program.phases.length > 0 && (
-                <div>
-                  <h2 className="font-display text-xl font-semibold mb-6" style={{ color: 'var(--ink)' }}>
-                    Program Phases
-                  </h2>
-                  <div className="space-y-6">
-                    {program.phases.map((phase: any, idx: number) => (
-                      <div
-                        key={idx}
-                        className="rounded-lg border p-6"
-                        style={{
-                          borderColor: 'var(--line)',
-                          background: 'var(--panel)',
-                        }}
-                      >
-                        <h3 className="font-display text-lg font-semibold mb-3" style={{ color: 'var(--ink)' }}>
-                          {phase.title || `Phase ${idx + 1}`}
-                        </h3>
-
-                        {phase.description && (
-                          <p className="mb-4" style={{ color: 'var(--ink-dim)' }}>
-                            {phase.description}
-                          </p>
-                        )}
-
-                        {phase.weeks && (
-                          <div className="mb-4">
-                            <p className="text-sm font-semibold mb-2" style={{ color: 'var(--ink-dim)' }}>
-                              Duration: {phase.weeks} weeks
-                            </p>
-                          </div>
-                        )}
-
-                        {phase.days && phase.days.length > 0 && (
-                          <div>
-                            <p className="text-sm font-semibold mb-3" style={{ color: 'var(--ink-dim)' }}>
-                              Weekly Split:
-                            </p>
-                            <div className="grid gap-2 md:grid-cols-2">
-                              {phase.days.map((day: any, dayIdx: number) => (
-                                <div
-                                  key={dayIdx}
-                                  className="rounded p-3"
-                                  style={{
-                                    background: 'var(--surface)',
-                                    borderLeft: `3px solid var(--accent)`,
-                                  }}
-                                >
-                                  <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>
-                                    {day.title || `Day ${dayIdx + 1}`}
-                                  </p>
-                                  {day.focus && (
-                                    <p className="text-xs mt-1" style={{ color: 'var(--ink-dim)' }}>
-                                      {day.focus}
-                                    </p>
-                                  )}
-                                  {day.exercises && day.exercises.length > 0 && (
-                                    <p className="text-xs mt-1" style={{ color: 'var(--accent)' }}>
-                                      {day.exercises.length} exercises
-                                    </p>
-                                  )}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Sidebar */}
-            <div>
-              <div
-                className="rounded-lg border p-6 sticky top-24"
-                style={{
-                  borderColor: 'var(--line)',
-                  background: 'var(--panel)',
-                }}
-              >
-                <h3 className="font-display text-lg font-semibold mb-6" style={{ color: 'var(--ink)' }}>
-                  Program Details
-                </h3>
-
-                <div className="space-y-4">
-                  {program.meta.difficulty && (
-                    <div>
-                      <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>
-                        Difficulty
-                      </p>
-                      <p className="mt-1" style={{ color: 'var(--ink)' }}>
-                        {program.meta.difficulty}
-                      </p>
-                    </div>
-                  )}
-
-                  {program.meta.durationWeeks && (
-                    <div>
-                      <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>
-                        Duration
-                      </p>
-                      <p className="mt-1" style={{ color: 'var(--ink)' }}>
-                        {program.meta.durationWeeks} weeks
-                      </p>
-                    </div>
-                  )}
-
-                  {program.meta.sessionsPerWeek && (
-                    <div>
-                      <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>
-                        Sessions Per Week
-                      </p>
-                      <p className="mt-1" style={{ color: 'var(--ink)' }}>
-                        {program.meta.sessionsPerWeek}
-                      </p>
-                    </div>
-                  )}
-
-                  {program.meta.equipment && program.meta.equipment.length > 0 && (
-                    <div>
-                      <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>
-                        Equipment
-                      </p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {program.meta.equipment.map((eq: string) => (
-                          <span
-                            key={eq}
-                            className="text-xs px-2 py-1 rounded"
-                            style={{
-                              background: 'var(--surface)',
-                              color: 'var(--ink)',
-                            }}
-                          >
-                            {eq}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {program.meta.goals && program.meta.goals.length > 0 && (
-                    <div>
-                      <p className="text-xs font-semibold uppercase" style={{ color: 'var(--ink-dim)' }}>
-                        Goals
-                      </p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {program.meta.goals.map((goal: string) => (
-                          <span
-                            key={goal}
-                            className="text-xs px-2 py-1 rounded"
-                            style={{
-                              background: 'var(--accent)',
-                              color: 'var(--on-accent)',
-                            }}
-                          >
-                            {goal}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-8 pt-6" style={{ borderTop: '1px solid var(--line)' }}>
-                  <Link
-                    href={`/admin/workout-viewer/${program.meta.id}`}
-                    className="w-full block text-center px-4 py-2 rounded font-semibold text-sm"
-                    style={{
-                      background: 'var(--accent)',
-                      color: 'var(--on-accent)',
-                    }}
-                  >
-                    View Full HTML
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
+      <section className="space-y-6">
+        <h2 className="text-lg font-semibold">Phases</h2>
+        {program.phases.map((phase, i) => <PhaseBlock key={i} phase={phase} index={i} />)}
       </section>
     </main>
   );
