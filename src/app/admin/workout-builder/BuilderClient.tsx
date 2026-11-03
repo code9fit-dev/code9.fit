@@ -34,6 +34,7 @@ export function BuilderClient() {
   const [idTouched, setIdTouched] = useState(false);
   const [aiPrompt, setAiPrompt] = useState('');
   const [aiBusy, setAiBusy] = useState(false);
+  const [aiStatus, setAiStatus] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null);
   const [message, setMessage] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
 
@@ -88,7 +89,7 @@ export function BuilderClient() {
     update({ goals: draft.goals.includes(goal) ? draft.goals.filter((g) => g !== goal) : [...draft.goals, goal] });
 
   const draftWithAi = async () => {
-    setMessage(null);
+    setAiStatus(null);
     if (draft.days.length > 0 && !confirm('Replace the current days with an AI draft?')) return;
     setAiBusy(true);
     const res = await fetch('/api/admin/workout-ai', {
@@ -104,11 +105,12 @@ export function BuilderClient() {
     }).catch(() => null);
     setAiBusy(false);
     const body = await res?.json().catch(() => null);
-    if (res?.ok && body?.days) {
-      setDays(body.days);
-      setMessage({ kind: 'ok', text: `AI drafted ${body.days.length} days. Review and adjust before downloading.` });
+    if (res?.ok && Array.isArray(body?.days)) {
+      setDraft((d) => ({ ...d, days: body.days, daysPerWeek: body.days.length }));
+      setAiStatus({ kind: 'ok', text: `AI drafted ${body.days.length} days below. Review and adjust before downloading.` });
+      document.getElementById('days')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-      setMessage({ kind: 'error', text: body?.error || 'The AI draft failed.' });
+      setAiStatus({ kind: 'error', text: body?.error || 'The AI draft failed. Try again.' });
     }
   };
 
@@ -260,12 +262,20 @@ export function BuilderClient() {
           Describe the program. Example: &ldquo;upper body strength, dumbbells only, 4 days&rdquo; or &ldquo;HIIT finisher days with kettlebells&rdquo;.
         </p>
         <textarea className={field} style={fieldStyle} rows={3} value={aiPrompt} onChange={(e) => setAiPrompt(e.target.value)} />
-        <button onClick={draftWithAi} disabled={aiBusy || !aiPrompt.trim()} className={btn} style={btnPrimary}>
-          {aiBusy ? 'Drafting…' : 'Draft days with AI'}
-        </button>
+        <div className="flex flex-wrap items-center gap-3">
+          <button onClick={draftWithAi} disabled={aiBusy || !aiPrompt.trim()} className={btn} style={btnPrimary}>
+            {aiBusy ? 'Drafting…' : 'Draft days with AI'}
+          </button>
+          {aiBusy && <span className="text-sm" style={{ color: 'var(--ink-dim)' }}>This can take 20–40 seconds.</span>}
+        </div>
+        {aiStatus && (
+          <p className="text-sm" style={{ color: aiStatus.kind === 'ok' ? 'var(--ink)' : '#b91c1c' }}>
+            {aiStatus.text}
+          </p>
+        )}
       </section>
 
-      <section className="space-y-4">
+      <section id="days" className="scroll-mt-6 space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold">Days</h2>
           <button onClick={addDay} className={btn} style={btnGhost}>

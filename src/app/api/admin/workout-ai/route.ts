@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic';
 
 const MODEL = 'claude-sonnet-5';
 const MAX_EXERCISES_PER_DAY = 10;
+const MAX_DAYS = 7;
 
 const SYSTEM = `You write training programs for the CODE9 Fitness library. Output JSON only, no prose.
 
@@ -31,14 +32,14 @@ interface AiRequest {
   daysPerWeek: number;
 }
 
-function parseDays(text: string, daysPerWeek: number): DraftDay[] {
+function parseDays(text: string): DraftDay[] {
   const start = text.indexOf('{');
   const end = text.lastIndexOf('}');
   if (start < 0 || end < 0) throw new Error('No JSON in model output');
   const raw = JSON.parse(text.slice(start, end + 1));
   if (!Array.isArray(raw?.days)) throw new Error('Missing days array');
 
-  return raw.days.slice(0, daysPerWeek).map((d: any, i: number): DraftDay => ({
+  return raw.days.slice(0, MAX_DAYS).map((d: any, i: number): DraftDay => ({
     day: i + 1,
     title: String(d?.title ?? `Day ${i + 1}`).slice(0, 80),
     type: DAY_TYPES.includes(d?.type) ? d.type : 'strength',
@@ -73,14 +74,14 @@ export async function POST(req: NextRequest) {
     messages: [
       {
         role: 'user',
-        content: `Program request: ${body.prompt}\nLevel: ${body.level}\nGoals: ${body.goals.join(', ')}\nEquipment: ${body.equipment}\nTraining days per week: ${daysPerWeek}`,
+        content: `Program request: ${body.prompt}\nLevel: ${body.level}\nGoals: ${body.goals.join(', ')}\nEquipment: ${body.equipment}\nTraining days per week: ${daysPerWeek} (if the request names a different number of days, follow the request)`,
       },
     ],
   });
 
   const text = message.content.map((c) => (c.type === 'text' ? c.text : '')).join('');
   try {
-    return NextResponse.json({ days: parseDays(text, daysPerWeek) });
+    return NextResponse.json({ days: parseDays(text) });
   } catch {
     return NextResponse.json({ error: 'The AI reply could not be read. Try again or reword the request.' }, { status: 502 });
   }
