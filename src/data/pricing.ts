@@ -18,22 +18,22 @@ export const tiers: Tier[] = [
   {
     name: "One-Time",
     desc: "A complete structured program from your chosen coach. Yours to keep.",
-    value: "€39 / one-time",
+    value: "€44 / one-time",
   },
   {
     name: "Subscription",
     desc: "Your coach adapts weekly as you log progress — the system gets sharper the longer you use it.",
-    value: "From €19 / month",
+    value: "€19 / month · stack up to 3 coaches",
     featured: true,
   },
   {
     name: "Premium",
     desc: "Everything in Subscription, plus a real coach reviewing your plan before it reaches you.",
-    value: "From €79 / month",
+    value: "€79 / 3 weeks · €200 per 9 weeks",
   },
 ];
 
 export const valueCompare = {
   before: "Private coach: ~€320/mo",
-  after: "C9F Premium: €79/mo",
+  after: "C9F Premium: €79 / 3 weeks",
 };
